@@ -2026,7 +2026,7 @@ tokens:</p>
 </ul>
 <p>In our example, splitting the string results in the following list of
 tokens.</p>
-<p>{{attachment:parsing_2.png||width=800}}</p>
+<p><img alt="" src="../../../img/parsing_2.png" /></p>
 <p>Next we create the AST from that list of tokens. This interprets the
 options syntactically, without considering the registered features yet.
 For example, since the token stream starts with a <em>let</em> token, we know
@@ -2037,7 +2037,7 @@ variable at this point.</p>
 function (in this case <code>hm</code> and <code>astar</code>) is called with some positional and
 some keyword arguments. Think of a function call in Python.</p>
 <p>The resulting AST for our case is</p>
-<p>{{attachment:parsing_3.png||width=1000}}</p>
+<p><img alt="" src="../../../img/parsing_3.png" /></p>
 <p>The top-level node is a let-node (a variable definition) that defines
 variable <code>x</code> with a function call to a function <code>hm</code> without any positional or
 keyword arguments. This variable definition is then used in an another function
@@ -2066,7 +2066,7 @@ list of floats, even though it represents a list where the first entry is an
 empty list (that doesn't specify an element type), while the second element is
 a list of integers. While decorating, we add the necessary <code>ConvertNodes</code>.</p>
 <p>The decorated AST is</p>
-<p>{{attachment:parsing_4.png||width=1200}}</p>
+<p><img alt="" src="../../../img/parsing_4.png" /></p>
 <p>Finally, the objects in the decorated AST can be constructed. We do so
 in a recursive way, always returning constructed values wrapped in the <code>Any</code>
 type that can contain values of any type. For example, constructing the
@@ -2086,7 +2086,7 @@ use the same value.</p>
 <p>In our example, we thus construct two objects. First the h^m heuristic,
 then the search. Each of them gets an options object with the necessary
 parameters.</p>
-<p>{{attachment:parsing_5.png||width=1200}}</p>
+<p><img alt="" src="../../../img/parsing_5.png" /></p>
 <p>The feature classes <code>HMHeuristicFeature</code> and <code>AStarSearchFeature</code> determine how
 the final objects are constructed. We derived <code>HMHeuristicFeature</code> from
 <code>plugins::TypedFeature&lt;Evaluator, HMHeuristic&gt;</code> which adds a default
