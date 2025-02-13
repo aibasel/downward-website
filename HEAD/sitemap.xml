@@ -25,10 +25,6 @@
          <lastmod>2025-02-13</lastmod>
     </url>
     <url>
-         <loc>https://new.fast-downward.org/HEAD/documentation/option-syntax/</loc>
-         <lastmod>2025-02-13</lastmod>
-    </url>
-    <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/pddl-support/</loc>
          <lastmod>2025-02-13</lastmod>
     </url>
@@ -38,6 +34,10 @@
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/quick-start/</loc>
+         <lastmod>2025-02-13</lastmod>
+    </url>
+    <url>
+         <loc>https://new.fast-downward.org/HEAD/documentation/search-plugin-syntax/</loc>
          <lastmod>2025-02-13</lastmod>
     </url>
     <url>
