@@ -2192,8 +2192,10 @@ CPLEX if they are available at provisioning time. See "<a href="../../documentat
 </li>
 <li>
 <p>operator counting, for users: We added <code>delete_relaxation_rr_constraints</code>, which implements the delete-relaxation operator-counting constraints described in "Efficient Computation and Informative Estimation of h+
-  by Integer and Linear Programming" (Rankooh and Rintanen, ICAPS 2022). The old <code>delete_relaxation_constraints</code> plugin is now called <code>delete_relaxation_if_constraints</code>. For details, see https://www.fast-downward.org/Doc/ConstraintGenerator#Delete_relaxation_constraints_from_Rankooh_and_Rintanen
- https://issues.fast-downward.org/issue1134</p>
+  by Integer and Linear Programming" (Rankooh and Rintanen, ICAPS 2022). The
+old <code>delete_relaxation_constraints</code> plugin is now called
+<code>delete_relaxation_if_constraints</code>. For details, see <a href="../../documentation/search/ConstraintGenerator/#delete_relaxation_constraints_from_rankooh_and_rintanen">ConstraintGenerator</a>.</p>
+<p><a href="https://issues.fast-downward.org/issue1134">https://issues.fast-downward.org/issue1134</a></p>
 </li>
 <li>
 <p>option parser, for users and developers: constructors no longer use an encapsulated <code>Options</code> object, but take their parameters directly. As a side effect, some command-line options now take their parameters in a different order.</p>
