@@ -2001,10 +2001,10 @@
 <ul>
 <li>The option parser of the search component has been completely reimplemented. The new option parser has full error reporting where the old code crashed on errors or silently accepted them. This is also an important stepping stone towards a future use of Fast Downward as a library. With the change, the <code>-evaluator</code>, <code>-heuristic</code> and <code>-landmarks</code> options are now deprecated in favor of a new <code>let</code> syntax. For example,</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span>--evaluator<span class="w"> </span><span class="nv">h</span><span class="o">=</span>EVALUATOR<span class="w"> </span>--search<span class="w"> </span>SEARCH_ALGORITHM
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>--evaluator<span class="w"> </span><span class="nv">h</span><span class="o">=</span>EVALUATOR<span class="w"> </span>--search<span class="w"> </span>SEARCH_ALGORITHM
 </span></code></pre></div>
 <p>is deprecated in favor of the expression</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span>--search<span class="w"> </span>let<span class="o">(</span>h,<span class="w"> </span>EVALUATOR,<span class="w"> </span>SEARCH_ALGORITHM<span class="o">)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--search<span class="w"> </span>let<span class="o">(</span>h,<span class="w"> </span>EVALUATOR,<span class="w"> </span>SEARCH_ALGORITHM<span class="o">)</span>
 </span></code></pre></div>
 <ul>
 <li>
@@ -2026,12 +2026,12 @@
 <p>The MIASM merge strategy for merge-and-shrink (more precisely, the <code>sf_miasm</code> merge scoring function) now has an option to cache scores. Caching is enabled by default and greatly speeds up construction of MIASM-based merge-and-shrink heuristics.</p>
 </li>
 </ul>
-<p>The Apptainer and Docker distributions of the planner include LP support using the <a href="https://soplex.zib.de/" title="wikilink">SoPlex</a> solver.</p>
+<p>The Apptainer and Docker distributions of the planner include LP support using the <a href="https://soplex.zib.de/">SoPlex</a> solver.</p>
 <h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h2>
 <ul>
 <li>source tarball: <a href="../../files/release23.06/fast-downward-23.06.tar.gz">fast-downward-23.06.tar.gz</a></li>
 <li>Apptainer image: downloaded automatically by Apptainer (see QuickStart)</li>
-<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward" title="wikilink">aibasel/downward:23.06 on Docker Hub</a></li>
+<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward">aibasel/downward:23.06 on Docker Hub</a></li>
 <li>Vagrantfile: <a href="../../files/release23.06/Vagrantfile">Vagrantfile</a> for Fast Downward 23.06</li>
 </ul>
 <p>For Apptainer, Docker and Vagrant, see QuickStart for instructions on how to run the planner. That page explains how to run the latest release of Fast Downward, so you have to amend the instructions if you want to run an older release.</p>
@@ -2041,11 +2041,11 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>./build.py
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>./fast-downward.py<span class="w"> </span>--alias<span class="w"> </span>lama-first<span class="w"> </span>/path/to/domain.pddl<span class="w"> </span>/path/to/problem.pddl
 </span></code></pre></div>
-<p>For dependencies and more advanced information (including Windows builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md" title="wikilink">the build instructions</a>.</p>
+<p>For dependencies and more advanced information (including Windows builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">the build instructions</a>.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
 <p>For licensing reasons, the binary distributions of Fast Downward have limited support for commercial LP solvers (like CPLEX). The Docker and Apptainer distributions only support SoPlex. The Vagrant version supports SoPlex and/or CPLEX if they are available at provisioning time. See QuickStart for more information.</p>
 <h2 id="referencing_fast_downward_2306">Referencing Fast Downward 23.06<a class="headerlink" href="#referencing_fast_downward_2306" title="Permanent link">#</a></h2>
-<p>If you use this version of Fast Downward in a scientific publication, we encourage you to mention the version number, as in \"We ran experiments with Fast Downward 23.06.\" The canonical reference for citing Fast Downward is the following journal paper:</p>
+<p>If you use this version of Fast Downward in a scientific publication, we encourage you to mention the version number, as in "We ran experiments with Fast Downward 23.06." The canonical reference for citing Fast Downward is the following journal paper:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    @Article{helmert-jair2006,
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      author =  &quot;Malte Helmert&quot;,
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      title =   &quot;The {Fast} {Downward} Planning System&quot;,
@@ -2059,62 +2059,62 @@
 <p>Details:</p>
 <ul>
 <li>
-<p>option parser: We implemented a new way of defining features and parsing them from the command line. The new parser now supports defining variables for features (heuristics and landmark graphs so far) as an expression within the option string. For example, <code>let(h, lmcut(), astar(h))</code> instantiates the <code>lmcut</code> heuristic, binds it to the variable <code>h</code> and uses it within the <code>astar</code> search algorithm This change to the parser is an important stepping stone towards solving a more general problem about how components interact Details of the new parser are described in a blog article. We also improved the documentation of enum values.\
- <a href="https://www.fast-downward.org/ForDevelopers/Blog/TheNewOptionParser"><code>https://www.fast-downward.org/ForDevelopers/Blog/TheNewOptionParser</code></a>\
- <a href="https://issues.fast-downward.org/issue1073"><code>https://issues.fast-downward.org/issue1073</code></a>\
- <a href="https://issues.fast-downward.org/issue1040"><code>https://issues.fast-downward.org/issue1040</code></a></p>
+<p>option parser: We implemented a new way of defining features and parsing them from the command line. The new parser now supports defining variables for features (heuristics and landmark graphs so far) as an expression within the option string. For example, <code>let(h, lmcut(), astar(h))</code> instantiates the <code>lmcut</code> heuristic, binds it to the variable <code>h</code> and uses it within the <code>astar</code> search algorithm This change to the parser is an important stepping stone towards solving a more general problem about how components interact Details of the new parser are described in a blog article. We also improved the documentation of enum values.</p>
+<p><a href="https://www.fast-downward.org/ForDevelopers/Blog/TheNewOptionParser"><code>https://www.fast-downward.org/ForDevelopers/Blog/TheNewOptionParser</code></a></p>
+<p><a href="https://issues.fast-downward.org/issue1073"><code>https://issues.fast-downward.org/issue1073</code></a></p>
+<p><a href="https://issues.fast-downward.org/issue1040"><code>https://issues.fast-downward.org/issue1040</code></a></p>
 </li>
 <li>
-<p>translator, for developers: Unreachable atoms are now filtered from mutex groups in an earlier processing step than before. In a few domains this leads to a different finite-domain representation. We could remove an old hack related to static literals in goals, which is no longer necessary. We also added some type annotations, in particular to the core data structures.\
- <a href="https://issues.fast-downward.org/issue1079"><code>https://issues.fast-downward.org/issue1079</code></a></p>
+<p>translator, for developers: Unreachable atoms are now filtered from mutex groups in an earlier processing step than before. In a few domains this leads to a different finite-domain representation. We could remove an old hack related to static literals in goals, which is no longer necessary. We also added some type annotations, in particular to the core data structures.</p>
+<p><a href="https://issues.fast-downward.org/issue1079"><code>https://issues.fast-downward.org/issue1079</code></a></p>
 </li>
 <li>
 <p>translator, for users: The change described in the previous entry can lead to Fast Downward producing a slightly different finite-domain representation in some cases.</p>
 </li>
 <li>
-<p>search algorithms, for developers: Instead of \"search engine\" we now say \"search algorithm\" everywhere. Among other things, this affects source file and directory names, namespaces, class names. The change is also reflected in the documentation.\
- <a href="https://issues.fast-downward.org/issue1099"><code>https://issues.fast-downward.org/issue1099</code></a></p>
+<p>search algorithms, for developers: Instead of "search engine" we now say "search algorithm" everywhere. Among other things, this affects source file and directory names, namespaces, class names. The change is also reflected in the documentation.</p>
+<p><a href="https://issues.fast-downward.org/issue1099"><code>https://issues.fast-downward.org/issue1099</code></a></p>
 </li>
 <li>
-<p>Cartesian abstractions, for developers: The <code>cegar</code> directory and namespace have been renamed to <code>cartesian_abstractions</code> to avoid confusion with CEGAR-based code in the <code>pdbs</code> directory.\
- <a href="https://issues.fast-downward.org/issue1098"><code>https://issues.fast-downward.org/issue1098</code></a></p>
+<p>Cartesian abstractions, for developers: The <code>cegar</code> directory and namespace have been renamed to <code>cartesian_abstractions</code> to avoid confusion with CEGAR-based code in the <code>pdbs</code> directory.</p>
+<p><a href="https://issues.fast-downward.org/issue1098"><code>https://issues.fast-downward.org/issue1098</code></a></p>
 </li>
 <li>
-<p>landmarks: We replaced the <code>lmcount</code> heuristic with two new heuristics called <code>landmark_sum</code> and <code>landmark_cost_partitioning</code>. No functionality is added or removed: <code>landmark_sum</code> replaces <code>lmcount</code> with the option <code>admissible=false</code> and <code>landmark_cost_partitioning</code> replaces <code>lmcount</code> with the option <code>admissible=true</code>.\
- <a href="https://issues.fast-downward.org/issue1071"><code>https://issues.fast-downward.org/issue1071</code></a></p>
+<p>landmarks: We replaced the <code>lmcount</code> heuristic with two new heuristics called <code>landmark_sum</code> and <code>landmark_cost_partitioning</code>. No functionality is added or removed: <code>landmark_sum</code> replaces <code>lmcount</code> with the option <code>admissible=false</code> and <code>landmark_cost_partitioning</code> replaces <code>lmcount</code> with the option <code>admissible=true</code>.</p>
+<p><a href="https://issues.fast-downward.org/issue1071"><code>https://issues.fast-downward.org/issue1071</code></a></p>
 </li>
 <li>
-<p>landmarks: Refactor the computation of preferred operators in the landmark heuristics (<code>landmark_sum</code> and <code>landmark_cost_partitioning</code>). The change affects configurations based on LAMA that use preferred operators. While the semantics of the code did not change, the new version is slightly faster and can solve more tasks and/or improves plan quality in an anytime configuration within the same time limit.\
- <a href="https://issues.fast-downward.org/issue1070"><code>https://issues.fast-downward.org/issue1070</code></a></p>
+<p>landmarks: Refactor the computation of preferred operators in the landmark heuristics (<code>landmark_sum</code> and <code>landmark_cost_partitioning</code>). The change affects configurations based on LAMA that use preferred operators. While the semantics of the code did not change, the new version is slightly faster and can solve more tasks and/or improves plan quality in an anytime configuration within the same time limit.</p>
+<p><a href="https://issues.fast-downward.org/issue1070"><code>https://issues.fast-downward.org/issue1070</code></a></p>
 </li>
 <li>
-<p>merge-and-shrink: Improve the way that labels and their transitions are stored. We removed the class <code>LabelEquivalenceRelation</code>. Instead <code>TransitionSystem</code> now handles locally equivalent labels itself using a new <code>LocalLabelInfo</code> class and stores a mapping from global to local labels. Labels are now removed from label groups in batches during label reduction. With this change, we can now construct the atomic factored transition system (and the overall heuristic) in significantly more cases, reducing both memory usage and construction time.\
- <a href="https://issues.fast-downward.org/issue927"><code>https://issues.fast-downward.org/issue927</code></a></p>
+<p>merge-and-shrink: Improve the way that labels and their transitions are stored. We removed the class <code>LabelEquivalenceRelation</code>. Instead <code>TransitionSystem</code> now handles locally equivalent labels itself using a new <code>LocalLabelInfo</code> class and stores a mapping from global to local labels. Labels are now removed from label groups in batches during label reduction. With this change, we can now construct the atomic factored transition system (and the overall heuristic) in significantly more cases, reducing both memory usage and construction time.</p>
+<p><a href="https://issues.fast-downward.org/issue927"><code>https://issues.fast-downward.org/issue927</code></a></p>
 </li>
 <li>
-<p>merge-and-shrink: The MIASM scoring function (feature <code>sf_miasm</code>) now has an option to cache scores for merge candidates, enabled by default. This greatly decreases computation time of M&amp;S abstractions with this scoring function.\
- <a href="https://issues.fast-downward.org/issue1092"><code>https://issues.fast-downward.org/issue1092</code></a></p>
+<p>merge-and-shrink: The MIASM scoring function (feature <code>sf_miasm</code>) now has an option to cache scores for merge candidates, enabled by default. This greatly decreases computation time of M&amp;S abstractions with this scoring function.</p>
+<p><a href="https://issues.fast-downward.org/issue1092"><code>https://issues.fast-downward.org/issue1092</code></a></p>
 </li>
 <li>
 <p>pattern databases: The pattern generators <code>cegar_pattern</code> and <code>random_pattern</code> now correctly support fractional values for the <code>max_time</code> parameter. Previously the fractional part was silently ignored. For example a timeout of 7.5 seconds was treated as 7 seconds.</p>
 </li>
 <li>
-<p>pattern databases, for developers: We split off the computation of pattern databases from the <code>PatternDatabase</code> class. <code>PatternDatabase</code> now stores pattern, <code>hash_multipliers</code> and <code>num_states</code> in a new class <code>Projection</code>, used for ranking and unranking. PDBs can be computed via a function which uses an internal class <code>PatternDatabaseFactory</code>. Abstract operators live in their own files now, similar to <code>MatchTree</code>. Performance does not change due to this issue.\
- <a href="https://issues.fast-downward.org/issue1019"><code>https://issues.fast-downward.org/issue1019</code></a></p>
+<p>pattern databases, for developers: We split off the computation of pattern databases from the <code>PatternDatabase</code> class. <code>PatternDatabase</code> now stores pattern, <code>hash_multipliers</code> and <code>num_states</code> in a new class <code>Projection</code>, used for ranking and unranking. PDBs can be computed via a function which uses an internal class <code>PatternDatabaseFactory</code>. Abstract operators live in their own files now, similar to <code>MatchTree</code>. Performance does not change due to this issue.</p>
+<p><a href="https://issues.fast-downward.org/issue1019"><code>https://issues.fast-downward.org/issue1019</code></a></p>
 </li>
 <li>
-<p>LP/MIP solvers: So far, we used the open solver interface OSI to communicate with MIP and LP solvers. We now replaced this with our own interface to have more direct control and fewer external dependencies. We now support CPLEX 22.1.1 and SoPlex from their current main branch (released versions \&lt;= 6.0.3 are incompatible with C++20). We removed the solver options for CLP and Gurobi in the process: CLP has much worse performance than SoPlex, which is also open source, while Gurobi was never practically possible to compile with, as we did not have a CMake find script for it. Performance with CPLEX increases in MIP configurations and stays roughly the same in LP configurations. Performance with SoPlex increases for potential heuristics and decreased slightly in other configurations. Our Windows builds forced static linking because of OSI. With OSI removed, they no longer do.\
- <a href="https://issues.fast-downward.org/issue1076"><code>https://issues.fast-downward.org/issue1076</code></a>\
- <a href="https://issues.fast-downward.org/issue1093"><code>https://issues.fast-downward.org/issue1093</code></a>\
- <a href="https://issues.fast-downward.org/issue1095"><code>https://issues.fast-downward.org/issue1095</code></a></p>
+<p>LP/MIP solvers: So far, we used the open solver interface OSI to communicate with MIP and LP solvers. We now replaced this with our own interface to have more direct control and fewer external dependencies. We now support CPLEX 22.1.1 and SoPlex from their current main branch (released versions &lt;= 6.0.3 are incompatible with C++20). We removed the solver options for CLP and Gurobi in the process: CLP has much worse performance than SoPlex, which is also open source, while Gurobi was never practically possible to compile with, as we did not have a CMake find script for it. Performance with CPLEX increases in MIP configurations and stays roughly the same in LP configurations. Performance with SoPlex increases for potential heuristics and decreased slightly in other configurations. Our Windows builds forced static linking because of OSI. With OSI removed, they no longer do.</p>
+<p><a href="https://issues.fast-downward.org/issue1076"><code>https://issues.fast-downward.org/issue1076</code></a></p>
+<p><a href="https://issues.fast-downward.org/issue1093"><code>https://issues.fast-downward.org/issue1093</code></a></p>
+<p><a href="https://issues.fast-downward.org/issue1095"><code>https://issues.fast-downward.org/issue1095</code></a></p>
 </li>
 <li>
-<p>LP/MIP solvers, for developers: Previously, LP solvers could crash if a constraint included multiple terms for the same variable. We now protect against this with an assertion in debug mode. The change has no effect on release builds.\
- <a href="https://issues.fast-downward.org/issue1088"><code>https://issues.fast-downward.org/issue1088</code></a></p>
+<p>LP/MIP solvers, for developers: Previously, LP solvers could crash if a constraint included multiple terms for the same variable. We now protect against this with an assertion in debug mode. The change has no effect on release builds.</p>
+<p><a href="https://issues.fast-downward.org/issue1088"><code>https://issues.fast-downward.org/issue1088</code></a></p>
 </li>
 <li>
-<p>build: The build script now performs the requested builds in the given order. For example, <code>./build.py debug release</code> will perform a debug build and then a release build. Previously, the order was arbitrary, depending on Python dictionary order.\
- <a href="https://issues.fast-downward.org/issue1086"><code>https://issues.fast-downward.org/issue1086</code></a></p>
+<p>build: The build script now performs the requested builds in the given order. For example, <code>./build.py debug release</code> will perform a debug build and then a release build. Previously, the order was arbitrary, depending on Python dictionary order.</p>
+<p><a href="https://issues.fast-downward.org/issue1086"><code>https://issues.fast-downward.org/issue1086</code></a></p>
 </li>
 <li>
 <p>C++ standard: We now compile the planner using the C++20 standard. We added tests for GCC 12 and clang 14 but dropped tests for GCC 9, clang 10, and clang 11. The minimal supported compilers are now:</p>
@@ -2124,21 +2124,21 @@
 <li>MSVC 19.     </li>
 <li>AppleClang 13.0</li>
 </ul>
-<p>Language features supported by all of these compilers may now be used in the planner. For a list of such features and more details, see the issue tracker The list includes <code>std::optional</code>, so we removed the implementation of <code>optional</code> in <code>src/search/ext</code>.\
- <a href="https://issues.fast-downward.org/issue1028"><code>https://issues.fast-downward.org/issue1028</code></a>\
- <a href="https://issues.fast-downward.org/issue1094"><code>https://issues.fast-downward.org/issue1094</code></a></p>
+<p>Language features supported by all of these compilers may now be used in the planner. For a list of such features and more details, see the issue tracker The list includes <code>std::optional</code>, so we removed the implementation of <code>optional</code> in <code>src/search/ext</code>.</p>
+<p><a href="https://issues.fast-downward.org/issue1028"><code>https://issues.fast-downward.org/issue1028</code></a>
+<a href="https://issues.fast-downward.org/issue1094"><code>https://issues.fast-downward.org/issue1094</code></a></p>
 </li>
 <li>
-<p>Windows build: We now enable more compiler warnings on Windows builds. In detail, we no longer ignore warnings C4800, C4512, C4706, C4100, C4127, C4309, C4702, C4239, C4996, and C4505 on Windows builds as they no longer occur in our code. Warnings in GitHub actions are now also treated as errors in Windows builds.\
- <a href="https://issues.fast-downward.org/issue565"><code>https://issues.fast-downward.org/issue565</code></a></p>
+<p>Windows build: We now enable more compiler warnings on Windows builds. In detail, we no longer ignore warnings C4800, C4512, C4706, C4100, C4127, C4309, C4702, C4239, C4996, and C4505 on Windows builds as they no longer occur in our code. Warnings in GitHub actions are now also treated as errors in Windows builds.
+    <a href="https://issues.fast-downward.org/issue565"><code>https://issues.fast-downward.org/issue565</code></a></p>
 </li>
 <li>
-<p>infrastructure: We fixed a problem with using CPLEX in the GitHub action builds on Ubuntu.\
- <a href="https://issues.fast-downward.org/issue1093"><code>https://issues.fast-downward.org/issue1093</code></a></p>
+<p>infrastructure: We fixed a problem with using CPLEX in the GitHub action builds on Ubuntu.
+    <a href="https://issues.fast-downward.org/issue1093"><code>https://issues.fast-downward.org/issue1093</code></a></p>
 </li>
 <li>
-<p>infrastructure: We update the version of uncrustify used to fix code formatting. Instructions on how to install the new version can be found on the wiki: <a href="https://www.fast-downward.org/ForDevelopers/Uncrustify"><code>https://www.fast-downward.org/ForDevelopers/Uncrustify</code></a>.\
- <a href="https://issues.fast-downward.org/issue1090"><code>https://issues.fast-downward.org/issue1090</code></a></p>
+<p>infrastructure: We update the version of uncrustify used to fix code formatting. Instructions on how to install the new version can be found in the <a href="../../for-developers/uncrustify/">for develoepers section</a>.</p>
+<p><a href="https://issues.fast-downward.org/issue1090"><code>https://issues.fast-downward.org/issue1090</code></a></p>
 </li>
 </ul>
 
