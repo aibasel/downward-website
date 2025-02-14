@@ -1913,10 +1913,10 @@
 <p>This feature type can be bound to variables using <code>let(variable_name, variable_definition, expression)</code> where <code>expression</code> can use <code>variable_name</code>. Predefinitions using <code>--evaluator</code>, <code>--heuristic</code>, and <code>--landmarks</code> are automatically transformed into <code>let</code>-expressions but are deprecated.</p>
 <h2 id="exhaustive_landmarks">Exhaustive Landmarks<a class="headerlink" href="#exhaustive_landmarks" title="Permanent link">#</a></h2>
 <p>Exhaustively checks for each fact if it is a landmark.This check is done using relaxed planning.</p>
-<div class="language-text highlight"><pre><span></span><code>lm_exhaust(only_causal_landmarks=false, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code>lm_exhaust(use_unary_relaxation=false, verbosity=normal)
 </code></pre></div>
 <ul>
-<li><em>only_causal_landmarks</em> (bool): keep only causal landmarks</li>
+<li><em>use_unary_relaxation</em> (bool): compute landmarks of the unary relaxation, i.e., landmarks for the delete relaxation of a task transformation such that each operator is split into one operator for each of its effects. This kind of landmark was previously known as "causal landmarks". Setting the option to true can reduce the overall number of landmarks, which can make the search more memory-efficient but potentially less informative.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
 <li><code>silent</code>: only the most basic output</li>
 <li><code>normal</code>: relevant information to monitor progress</li>
@@ -1996,12 +1996,11 @@
 </ul>
 <h2 id="rhw_landmarks">RHW Landmarks<a class="headerlink" href="#rhw_landmarks" title="Permanent link">#</a></h2>
 <p>The landmark generation method introduced by Richter, Helmert and Westphal (AAAI 2008).</p>
-<div class="language-text highlight"><pre><span></span><code>lm_rhw(disjunctive_landmarks=true, use_orders=true, only_causal_landmarks=false, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code>lm_rhw(disjunctive_landmarks=true, use_orders=true, verbosity=normal)
 </code></pre></div>
 <ul>
 <li><em>disjunctive_landmarks</em> (bool): keep disjunctive landmarks</li>
 <li><em>use_orders</em> (bool): use orders between landmarks</li>
-<li><em>only_causal_landmarks</em> (bool): keep only causal landmarks</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
 <li><code>silent</code>: only the most basic output</li>
 <li><code>normal</code>: relevant information to monitor progress</li>
