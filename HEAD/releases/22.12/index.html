@@ -22,7 +22,7 @@
     
     
       
-        <title>22.12 - Fast Downward</title>
+        <title>Fast Downward 22.12 - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fast_downward_22.12" class="md-skip">
+        <a href="#fast_downward_2212" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              22.12
+              Fast Downward 22.12
             
           </span>
         </div>
@@ -1114,7 +1114,7 @@
           
   
   <span class="md-ellipsis">
-    22.12
+    Fast Downward 22.12
     
   </span>
   
@@ -1126,7 +1126,7 @@
         
   
   <span class="md-ellipsis">
-    22.12
+    Fast Downward 22.12
     
   </span>
   
@@ -1167,7 +1167,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#referencing_fast_downward_22.12" class="md-nav__link">
+  <a href="#referencing_fast_downward_2212" class="md-nav__link">
     <span class="md-ellipsis">
       Referencing Fast Downward 22.12
     </span>
@@ -1176,7 +1176,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#changes_in_fast_downward_22.12" class="md-nav__link">
+  <a href="#changes_in_fast_downward_2212" class="md-nav__link">
     <span class="md-ellipsis">
       Changes in Fast Downward 22.12
     </span>
@@ -1959,7 +1959,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#referencing_fast_downward_22.12" class="md-nav__link">
+  <a href="#referencing_fast_downward_2212" class="md-nav__link">
     <span class="md-ellipsis">
       Referencing Fast Downward 22.12
     </span>
@@ -1968,7 +1968,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#changes_in_fast_downward_22.12" class="md-nav__link">
+  <a href="#changes_in_fast_downward_2212" class="md-nav__link">
     <span class="md-ellipsis">
       Changes in Fast Downward 22.12
     </span>
@@ -1995,71 +1995,60 @@
   
 
 
-<p>Back to <a href="Releases" title="wikilink">Releases</a>.</p>
-<h1 id="fast_downward_22.12">Fast Downward 22.12<a class="headerlink" href="#fast_downward_22.12" title="Permanent link">#</a></h1>
+<h1 id="fast_downward_2212">Fast Downward 22.12<a class="headerlink" href="#fast_downward_2212" title="Permanent link">#</a></h1>
 <p>Fast Downward 22.12 was released on December 15, 2022.</p>
 <p>Highlights:</p>
 <ul>
-<li>We now test more recent versions of Ubuntu Linux (22.04 and 20.04),
-    macOS (11 and 12) and Python (3.8 and 3.10).</li>
-</ul>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;!-- --&gt;
-</span></code></pre></div>
--   Most search algorithms are now faster. We fixed a performance
+<li>
+<p>We now test more recent versions of Ubuntu Linux (22.04 and 20.04),
+    macOS (11 and 12) and Python (3.8 and 3.10).</p>
+</li>
+<li>
+<p>Most search algorithms are now faster. We fixed a performance
     problem related to state pruning, which also affected search
     configurations that did not explicitly select a pruning method.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;!-- --&gt;
-</span></code></pre></div>
--   All landmark factories now respect action costs. Previously, this
+</li>
+<li>
+<p>All landmark factories now respect action costs. Previously, this
     was only the case when using admissible landmark heuristic or when
-    using the `lm_rhw` landmark factory. Note that ignoring action
+    using the <code>lm_rhw</code> landmark factory. Note that ignoring action
     costs (i.e., the old behaviour for landmark factories other than
-    `lm_rhw`) often finds plans faster and is still possible with the
-    `adapt_costs` transformation.</p>
+    <code>lm_rhw</code>) often finds plans faster and is still possible with the
+    <code>adapt_costs</code> transformation.</p>
+</li>
+</ul>
 <p>The Apptainer and Docker distributions of the planner include LP support
-using the <a href="https://soplex.zib.de/" title="wikilink">SoPlex</a> solver. Thank you
+using the <a href="https://soplex.zib.de/">SoPlex</a> solver. Thank you
 to ZIB for their solver and for giving permission to include it in the
-release. !SoPlex is licensed under the <a href="https://scipopt.org/academic.txt" title="wikilink">ZIB Academic
+release. !SoPlex is licensed under the <a href="https://scipopt.org/academic.txt">ZIB Academic
 License</a>.</p>
 <h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h2>
 <ul>
-<li>source tarball:
-    <a href="attachment:fast-downward-22.12.tar.gz" title="wikilink">|&amp;do=get</a></li>
-<li>Apptainer (formerly known as Singularity) container:
-    <a href="attachment:fast-downward.sif" title="wikilink">|&amp;do=get</a></li>
-<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward" title="wikilink">aibasel/downward:22.12 on Docker
-    Hub</a></li>
-<li>Vagrantfile: <a href="attachment:Vagrantfile" title="wikilink">|&amp;do=get</a> for Fast
-    Downward 22.12</li>
+<li>source tarball: <a href="../../files/release22.12/fast-downward-22.12.tar.gz">fast-downward-22.12.tar.gz</a></li>
+<li>Apptainer image: download with <code>apptainer pull fast-downward.sif docker://aibasel/downward:22.12</code></li>
+<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward">aibasel/downward:22.12 on Docker Hub</a></li>
+<li>Vagrantfile: <a href="../../files/release22.12/Vagrantfile">Vagrantfile</a> for Fast Downward 22.12</li>
 </ul>
-<p>For Apptainer, Docker and Vagrant, see
-<a href="QuickStart" title="wikilink">QuickStart</a> for instructions on how to run the
-planner. That page explains how to run the latest release of Fast
-Downward, so you have to amend the instructions if you want to run an
-older release.</p>
-<p>For the tarball, if you have satisfied all dependencies, the following
-should build and run the planner with configuration alias `lama-first`
-on PDDL files `/path/to/domain.pddl` and `/path/to/problem.pddl` on
-a Linux or macOS system:</p>
-<div class="language-text highlight"><pre><span></span><code>#!bash
-tar -xvzf fast-downward-22.12.tar.gz
-cd fast-downward-22.12
-./build.py
-./fast-downward.py --alias lama-first /path/to/domain.pddl /path/to/problem.pddl
-</code></pre></div>
-<p>For dependencies and more advanced information (including Windows
-builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md" title="wikilink">the build
-instructions</a>.</p>
+<p>For Apptainer, Docker and Vagrant, see "<a href="../../documentation/quick-start/">getting
+started</a>" for instructions on how to run the
+planner. That page explains how to run the latest release of Fast Downward, so
+you have to amend the instructions if you want to run an older release.</p>
+<p>For the tarball, if you have satisfied all dependencies, the following should build and run the planner with configuration alias <code>lama-first</code> on PDDL files <code>/path/to/domain.pddl</code> and <code>/path/to/problem.pddl</code> on a Linux or macOS system:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>fast-downward-22.12.tar.gz
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>fast-downward-22.12
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./build.py
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>./fast-downward.py<span class="w"> </span>--alias<span class="w"> </span>lama-first<span class="w"> </span>/path/to/domain.pddl<span class="w"> </span>/path/to/problem.pddl
+</span></code></pre></div>
+For dependencies and more advanced information (including Windows builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">the build instructions</a>.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
-<p>For licensing reasons, the binary distributions of Fast Downward have
-limited support for commercial LP solvers (CPLEX and Gurobi). The Docker
-and Apptainer distributions only support !SoPlex. The Vagrant version
-supports !SoPlex and/or CPLEX if they are available at provisioning
-time. See <a href="QuickStart" title="wikilink">QuickStart</a> for more information.</p>
-<h2 id="referencing_fast_downward_22.12">Referencing Fast Downward 22.12<a class="headerlink" href="#referencing_fast_downward_22.12" title="Permanent link">#</a></h2>
+<p>For licensing reasons, the binary distributions of Fast Downward have limited
+support for commercial LP solvers (like CPLEX). The Docker and Apptainer
+distributions only support SoPlex. The Vagrant version supports SoPlex and/or
+CPLEX if they are available at provisioning time. See "<a href="../../documentation/quick-start/">getting started</a>" for more information.</p>
+<h2 id="referencing_fast_downward_2212">Referencing Fast Downward 22.12<a class="headerlink" href="#referencing_fast_downward_2212" title="Permanent link">#</a></h2>
 <p>If you use this version of Fast Downward in a scientific publication, we
-encourage you to mention the version number, as in \"We ran experiments
-with Fast Downward 22.12.\" The canonical reference for citing Fast
+encourage you to mention the version number, as in "We ran experiments
+with Fast Downward 22.12." The canonical reference for citing Fast
 Downward is the following journal paper:</p>
 <div class="language-text highlight"><pre><span></span><code>@Article{helmert-jair2006,
   author =  &quot;Malte Helmert&quot;,
@@ -2070,77 +2059,62 @@ Downward is the following journal paper:</p>
   pages =   &quot;191--246&quot;
 }
 </code></pre></div>
-<h2 id="changes_in_fast_downward_22.12">Changes in Fast Downward 22.12<a class="headerlink" href="#changes_in_fast_downward_22.12" title="Permanent link">#</a></h2>
+<h2 id="changes_in_fast_downward_2212">Changes in Fast Downward 22.12<a class="headerlink" href="#changes_in_fast_downward_2212" title="Permanent link">#</a></h2>
 <p>Details:</p>
 <ul>
-<li>driver: Planner time is now logged in a consistent format. \&lt;\
-    &gt;</li>
-</ul>
-<p><code>Previously, it would sometimes be logged in scientific notation.</code></p>
-<ul>
-<li>driver, for developers: Skip `__pycache__` directory when
-    collecting portfolios. \&lt;\
-    &gt;</li>
-</ul>
-<p><a href="https://issues.fast-downward.org/issue1057"><code>https://issues.fast-downward.org/issue1057</code></a></p>
-<ul>
-<li>translator: Allow importing `pddl_parser` without parsing
-    arguments from command line. \&lt;\
-    &gt;</li>
-</ul>
-<p><a href="https://issues.fast-downward.org/issue1068"><code>https://issues.fast-downward.org/issue1068</code></a></p>
-<ul>
-<li>pruning methods: Fix a performance regression caused by spending too
+<li>
+<p>driver: Planner time is now logged in a consistent format.</p>
+<p>Previously, it would sometimes be logged in scientific notation.</p>
+</li>
+<li>
+<p>driver, for developers: Skip <code>__pycache__</code> directory when
+    collecting portfolios.</p>
+<p><a href="https://issues.fast-downward.org/issue1057">https://issues.fast-downward.org/issue1057</a></p>
+</li>
+<li>
+<p>translator: Allow importing <code>pddl_parser</code> without parsing
+    arguments from command line.</p>
+<p><a href="https://issues.fast-downward.org/issue1068">https://issues.fast-downward.org/issue1068</a></p>
+</li>
+<li>
+<p>pruning methods: Fix a performance regression caused by spending too
     much time measuring elapsed time. This is now only done at verbosity
-    level `verbose` or higher. Verbosity level parameter added to all
-    pruning methods. \&lt;\
-    &gt;</li>
-</ul>
-<p><a href="https://issues.fast-downward.org/issue1058"><code>https://issues.fast-downward.org/issue1058</code></a><code>&lt;</code>\
-<code>&gt;</code>\
-<code>Note that most search algorithms in Fast Downward always use a pruning method (a trivial method pruning nothing is used by default) and were therefore affected by this performance problem.</code></p>
-<ul>
-<li>pruning methods, for developers: We cleaned up the internal
-    structure of stubborn set pruning. \&lt;\
-    &gt;</li>
-</ul>
-<p><a href="https://issues.fast-downward.org/issue1059"><code>https://issues.fast-downward.org/issue1059</code></a></p>
-<ul>
-<li>landmarks: All landmark factories are now sensitive to action costs.
-    \&lt;\
-    &gt;</li>
-</ul>
-<p><a href="https://issues.fast-downward.org/issue1009"><code>https://issues.fast-downward.org/issue1009</code></a><code>&lt;</code>\
-<code>&gt;</code>\
-<code>When using the `lmcount` heuristic in inadmissible mode (option `admissible=false`), previously only the `lm_rhw` landmark factory considered action costs. Now, all landmark factories do. (This was already the case with `admissible=true`.) Experiments show that ignoring action costs is often beneficial when we are more interested in planner speed or coverage than plan quality. This can be achieved by using the option `transform=adapt_costs(ONE)`.</code></p>
-<ul>
-<li>landmarks: Reduce verbosity of h\^m landmarks. \&lt;\
-    &gt;</li>
-</ul>
-<p><code>The `lm_hm` landmark factory is now less verbose by default. Use  verbosity level `verbose` or higher to enable the previous output.</code></p>
-<ul>
-<li>infrastructure: Update tested OS versions and clang-tidy version.
-    \&lt;\
-    &gt;</li>
-</ul>
-<p><a href="https://issues.fast-downward.org/issue1067"><code>https://issues.fast-downward.org/issue1067</code></a><code>&lt;</code>\
-<code>&gt;</code></p>
-<ul>
+    level <code>verbose</code> or higher. Verbosity level parameter added to all
+    pruning methods.</p>
+<p><a href="https://issues.fast-downward.org/issue1058">https://issues.fast-downward.org/issue1058</a></p>
+<p>Note that most search algorithms in Fast Downward always use a pruning method (a trivial method pruning nothing is used by default) and were therefore affected by this performance problem.</p>
+</li>
+<li>
+<p>pruning methods, for developers: We cleaned up the internal
+    structure of stubborn set pruning.</p>
+<p><a href="https://issues.fast-downward.org/issue1059">https://issues.fast-downward.org/issue1059</a></p>
+</li>
+<li>
+<p>landmarks: All landmark factories are now sensitive to action costs.</p>
+<p><a href="https://issues.fast-downward.org/issue1009">https://issues.fast-downward.org/issue1009</a></p>
+<p>When using the <code>lmcount</code> heuristic in inadmissible mode (option <code>admissible=false</code>), previously only the <code>lm_rhw</code> landmark factory considered action costs. Now, all landmark factories do. (This was already the case with <code>admissible=true</code>.) Experiments show that ignoring action costs is often beneficial when we are more interested in planner speed or coverage than plan quality. This can be achieved by using the option <code>transform=adapt_costs(ONE)</code>.</p>
+</li>
+<li>
+<p>landmarks: Reduce verbosity of h^m landmarks.</p>
+<p>The <code>lm_hm</code> landmark factory is now less verbose by default. Use  verbosity level <code>verbose</code> or higher to enable the previous output.</p>
+</li>
+<li>
+<p>infrastructure: Update tested OS versions and clang-tidy version.</p>
+<p><a href="https://issues.fast-downward.org/issue1067">https://issues.fast-downward.org/issue1067</a></p>
+</li>
 <li>
 <ul>
 <li>The tested Ubuntu versions are now 22.04 and 20.04.</li>
 <li>The tested macOS versions are now macOS 11 and macOS 12.</li>
 <li>The tested Windows version remains Windows 10.</li>
-<li>We now test Python 3.10 (Ubuntu 22.04, macOS 12) and Python 3.8
-    (Ubuntu 20.04, macOS11, Windows 10).</li>
+<li>We now test Python 3.10 (Ubuntu 22.04, macOS 12) and Python 3.8 (Ubuntu 20.04, macOS11, Windows 10).</li>
 <li>We now use clang-tidy-12.</li>
 </ul>
+<p>See <code>README.md</code> for details.</p>
 </li>
-</ul>
-<p><code>See `README.md` for details.</code></p>
-<ul>
-<li>infrastructure: Update `delete-artifact` version number in !GitHub
-    action, update `zlib` version in Windows build.</li>
+<li>
+<p>infrastructure: Update <code>delete-artifact</code> version number in GitHub action, update <code>zlib</code> version in Windows build.</p>
+</li>
 </ul>
 
 
