@@ -2048,7 +2048,7 @@
     <code>GlobalState</code> and <code>State</code>.</p>
 </li>
 </ul>
-<p>The Singularity and Docker distributions of the planner include LP
+<p>The Apptainer and Docker distributions of the planner include LP
 support using the <a href="https://soplex.zib.de/">SoPlex</a> solver.
 Thank you to ZIB for their solver and for giving permission to include
 it in the release. SoPlex is licensed under the <a href="https://scipopt.org/academic.txt">ZIB Academic
@@ -2056,11 +2056,11 @@ License</a>.</p>
 <h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h2>
 <ul>
 <li>source tarball: <a download="download" href="../../files/release21.12/fast-downward-21.12.tar.gz">fast-downward-21.12.tar.gz</a></li>
-<li>Singularity container: <a href="https://www.singularity-hub.org/collections/TODO">aibasel/downward:21.12 on Singularity Hub</a></li>
+<li>Apptainer image: download with <code>apptainer pull fast-downward.sif docker://aibasel/downward:21.12</code></li>
 <li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward/TODO">aibasel/downward:21.12 on Docker Hub</a></li>
 <li>Vagrantfile: <a download="download" href="../../files/release21.12/Vagrantfile">Vagrantfile</a> for Fast Downward 21.12</li>
 </ul>
-<p>For Singularity, Docker and Vagrant, see <a href="../../documentation/quick-start/">getting
+<p>For Apptainer, Docker and Vagrant, see <a href="../../documentation/quick-start/">getting
 started</a> for instructions on how to run the
 planner. That page explains how to run the latest release of Fast Downward, so
 you have to amend the instructions if you want to run an older release.</p>
@@ -2079,7 +2079,7 @@ instructions</a>.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
 <p>For licensing reasons, the binary distributions of Fast Downward have
 limited support for commercial LP solvers (CPLEX and Gurobi). The Docker
-and Singularity distributions only support SoPlex. The Vagrant version
+and Apptainer distributions only support SoPlex. The Vagrant version
 supports SoPlex and/or CPLEX if they are available at provisioning
 time. See <a href="../../documentation/quick-start/">getting started</a> for more
 information.</p>

@@ -1999,12 +1999,12 @@
 <p>Fast Downward 19.06 was released on June 11, 2019.</p>
 <h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h2>
 <ul>
-<li>source tarball: <a download="download" href="../../files/release19.06/fast-downward-19.06.tar.gz">fast-downward-19.06.tar.gz</a></li>
-<li>Singularity container: <a href="https://www.singularity-hub.org/collections/3944">aibasel/downward:19.06 on Singularity Hub</a></li>
+<li>source tarball: <a href="../../files/release19.06/fast-downward-19.06.tar.gz">fast-downward-19.06.tar.gz</a></li>
+<li>Apptainer image: download with <code>apptainer pull fast-downward.sif docker://aibasel/downward:19.06</code></li>
 <li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward">aibasel/downward:19.06 on Docker Hub</a></li>
 <li>Vagrantfile: <a download="download" href="../../files/release19.06/Vagrantfile">Vagrantfile</a> for Fast Downward 19.06</li>
 </ul>
-<p>For Singularity, Docker and Vagrant, see QuickStart for instructions on how to run the planner. That page explains how to run the latest release of Fast Downward, so you have to amend the instructions if you want to run an older release.</p>
+<p>For Apptainer, Docker and Vagrant, see QuickStart for instructions on how to run the planner. That page explains how to run the latest release of Fast Downward, so you have to amend the instructions if you want to run an older release.</p>
 <p>For the tarball, if you have satisfied all dependencies, the following should build and run the planner with configuration alias <code>lama-first</code> on PDDL files <code>/path/to/domain.pddl</code> and <code>/path/to/problem.pddl</code> on a Linux or macOS system:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>fast-downward-19.06.tar.gz
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>fast-downward-19.06
@@ -2013,7 +2013,7 @@
 </span></code></pre></div>
 <p>For dependencies and more advanced information (including Windows builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">the build instructions</a>.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
-<p>For licensing reasons, features related to LP solvers are unavailable in the released version if you use Docker, Singularity or Vagrant. We hope to improve integration of LP solvers into the releases in the future.</p>
+<p>For licensing reasons, features related to LP solvers are unavailable in the released version if you use Docker, Apptainer or Vagrant. We hope to improve integration of LP solvers into the releases in the future.</p>
 <p>The source tarball release will use an LP solver if it has been appropriately configured at build time.
 See <a href="https://github.com/aibasel/downward/blob/main/BUILD.md#optional-linear-programming-solvers">LP build instructions</a> for more information.</p>
 <h2 id="referencing_fast_downward_1906">Referencing Fast Downward 19.06<a class="headerlink" href="#referencing_fast_downward_1906" title="Permanent link">#</a></h2>
