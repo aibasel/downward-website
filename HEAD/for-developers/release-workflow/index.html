@@ -1937,25 +1937,37 @@
 <li>that we can successfully run the planner from the produced Vagrantfile (automatically includes SoPlex; to also build the VM with CPLEX, you need an environment variable <code>DOWNWARD_LP_INSTALLERS</code> that points to a directory containing the CPLEX installer in the correct version)</li>
 </ul>
 </li>
-<li>Regular releases only: create a Wiki page for the release. We suggest starting from a copy of the page for the [[Releases|last release]].<ol>
+<li>Regular releases only: create a documentation page for the release in the <em>downward-markdown</em> repository. We suggest starting from a copy of the page for the latest release in <code>docs/releases</code>.<ol>
 <li>Update the date and release version name.</li>
+<li>Update the links and references in section "Downloads".</li>
 <li>Update the changelog.</li>
-<li>Upload the tarball as an attachment to the page.</li>
-<li>Upload the Vagrant file created by the <code>prepare-release.sh</code> script as an attachment to the page.</li>
-<li>Create a link in [[Releases]] to the page of the new release.</li>
+<li>Add the tarball to a new folder for the release in <code>docs/files</code>.</li>
+<li>Add the Vagrant file created by the <code>prepare-release.sh</code> script to the same folder.</li>
+<li>Create a link in <code>docs/releases/index.md</code> to the page of the new release.</li>
 </ol>
 </li>
-<li>Bugfix releases only: update the Wiki page of the release (for bugfix release <code>22.06.1</code>, reuse the release page <code>22.06</code>). See the Wiki page for [[Releases/22.06|release 22.06]] for an example.<ol>
+<li>Bugfix releases only: update the documentation page of the release (for bugfix release <code>22.06.1</code>, reuse the release page <code>22.06</code>). See the page for <a href="../../releases/22.06/">release 22.06</a> for an example.<ol>
 <li>Adjust the date and mention the bugfix release version name.</li>
 <li>Update the changelog.</li>
-<li>Update the name of the tarball (it should include the bugfix number) and upload the tarball as an attachment to the page.</li>
+<li>Update the name of the tarball (it should include the bugfix number) and add the tarball to the respective folder in <code>docs/files</code>.</li>
 <li>Update the bash instructions.</li>
-<li>Upload the Vagrant file created by the prepare-release.sh script as an attachment to the page.</li>
+<li>Upload the Vagrant file created by the prepare-release.sh script to the respective folder in <code>docs/files</code>.</li>
+</ol>
+</li>
+<li>Regular releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
+<li>Branch from the <code>head-docs</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that release (instead of being auto-generated like the head-docs branch). This assumes that you make a release from the current HEAD of main in the Fast Downward code repository. If not, you can modify the branch as described for a bugfix release (next step).</li>
+<li>Add an entry for the release in <code>releases.json</code> of the <code>main</code> branch. Move the <code>latest</code> alias to the new release.</li>
+</ol>
+</li>
+<li>Bugfix releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
+<li>Branch from the <code>release-$TAG</code> branch to a new branch <code>release-$TAG.X</code> and update <code>README.md</code> file to state that this is the branch for that bugfix release.</li>
+<li>Make necessary changes in the documentation in this branch. If the generated documentation for the search plugins has changed, generate it with the <code>misc/autodocs/generate-docs.py</code> script in the code repository. It writes the documentation to <code>docs/search</code> there. You just have to copy the content into <code>docs/search</code> of the new branch.</li>
+<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "24.06" to "24.06.1".</li>
 </ol>
 </li>
 <li>Create a new release on github:<ol>
 <li>On <a href="https://github.com/aibasel/downward/releases">https://github.com/aibasel/downward/releases</a> click on <code>Draft a new release</code>.</li>
-<li>Set <code>Tag</code> to <code>release-$TAG</code>, <code>Release Title</code> to <code>$RELEASE</code>, and <code>Description</code> to <code>For information about this release, please visit the [Fast Downward wiki](https://www.fast-downward.org/Releases/$BRANCH)</code>.</li>
+<li>Set <code>Tag</code> to <code>release-$TAG</code>, <code>Release Title</code> to <code>$RELEASE</code>, and <code>Description</code> to <code>For information about this release, please visit the [Fast Downward documentation](https://www.fast-downward.org/latest/releases/$BRANCH/)</code>.</li>
 <li>Click on <code>Publish Release</code>.</li>
 </ol>
 </li>
