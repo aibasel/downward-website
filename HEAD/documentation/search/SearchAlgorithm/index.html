@@ -2204,9 +2204,9 @@
   <h1>SearchAlgorithm</h1>
 
 <h2 id="a_search_eager">A* search (eager)<a class="headerlink" href="#a_search_eager" title="Permanent link">#</a></h2>
-<p>A* is a special case of eager best first search that uses g+h as f-function. We break ties using the evaluator. Closed nodes are re-opened.</p>
-<div class="language-text highlight"><pre><span></span><code>astar(eval, lazy_evaluator=&lt;none&gt;, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;astar&quot;, verbosity=normal)
-</code></pre></div>
+<p>A* is a special case of eager best first search that uses g+h as f-function. We break ties using the evaluator. Closed nodes are re-opened.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>astar(eval, lazy_evaluator=&lt;none&gt;, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;astar&quot;, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>eval</em> (<a href="../Evaluator/">Evaluator</a>): evaluator for h-value</li>
 <li><em>lazy_evaluator</em> (<a href="../Evaluator/">Evaluator</a>): An evaluator that re-evaluates a state before it is expanded.</li>
@@ -2238,8 +2238,8 @@
                reopen_closed=true, f_eval=sum([g(), h]))
 </code></pre></div>
 <h2 id="eager_best-first_search">Eager best-first search<a class="headerlink" href="#eager_best-first_search" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>eager(open, reopen_closed=false, f_eval=&lt;none&gt;, preferred=[], pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;eager&quot;, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>eager(open, reopen_closed=false, f_eval=&lt;none&gt;, preferred=[], pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;eager&quot;, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>open</em> (<a href="../OpenList/">OpenList</a>): open list</li>
 <li><em>reopen_closed</em> (bool): reopen closed nodes</li>
@@ -2264,8 +2264,8 @@
 </li>
 </ul>
 <h2 id="greedy_search_eager">Greedy search (eager)<a class="headerlink" href="#greedy_search_eager" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>eager_greedy(evals, preferred=[], boost=0, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;eager_greedy&quot;, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>eager_greedy(evals, preferred=[], boost=0, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;eager_greedy&quot;, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>evals</em> (list of <a href="../Evaluator/">Evaluator</a>): evaluators</li>
 <li><em>preferred</em> (list of <a href="../Evaluator/">Evaluator</a>): use preferred operators of these evaluators</li>
@@ -2322,8 +2322,8 @@
 <div class="language-text highlight"><pre><span></span><code>--search eager(single(eval1))
 </code></pre></div>
 <h2 id="eager_weighted_a_search">Eager weighted A* search<a class="headerlink" href="#eager_weighted_a_search" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>eager_wastar(evals, preferred=[], reopen_closed=true, boost=0, w=1, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;eager_wastar&quot;, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>eager_wastar(evals, preferred=[], reopen_closed=true, boost=0, w=1, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description=&quot;eager_wastar&quot;, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>evals</em> (list of <a href="../Evaluator/">Evaluator</a>): evaluators</li>
 <li><em>preferred</em> (list of <a href="../Evaluator/">Evaluator</a>): use preferred operators of these evaluators</li>
@@ -2356,8 +2356,8 @@
 <div class="language-text highlight"><pre><span></span><code>--search astar(h())
 </code></pre></div>
 <h2 id="lazy_enforced_hill-climbing">Lazy enforced hill-climbing<a class="headerlink" href="#lazy_enforced_hill-climbing" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>ehc(h, preferred_usage=prune_by_preferred, preferred=[], cost_type=normal, bound=infinity, max_time=infinity, description=&quot;ehc&quot;, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ehc(h, preferred_usage=prune_by_preferred, preferred=[], cost_type=normal, bound=infinity, max_time=infinity, description=&quot;ehc&quot;, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>h</em> (<a href="../Evaluator/">Evaluator</a>): heuristic</li>
 <li><em>preferred_usage</em> ({prune_by_preferred, rank_preferred_first}): preferred operator usage<ul>
@@ -2384,8 +2384,8 @@
 </li>
 </ul>
 <h2 id="iterated_search">Iterated search<a class="headerlink" href="#iterated_search" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>iterated(algorithm_configs, pass_bound=true, repeat_last=false, continue_on_fail=false, continue_on_solve=true, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;iterated&quot;, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>iterated(algorithm_configs, pass_bound=true, repeat_last=false, continue_on_fail=false, continue_on_solve=true, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;iterated&quot;, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>algorithm_configs</em> (list of <a href="./">SearchAlgorithm</a>): list of search algorithms for each phase</li>
 <li><em>pass_bound</em> (bool): use the bound of iterated search as a bound for its component search algorithms, unless these already have a lower bound set. The iterated search bound is tightened whenever a component finds a cheaper plan.</li>
@@ -2418,8 +2418,8 @@
 <div class="language-text highlight"><pre><span></span><code>&quot;let(h,ipdb(),iterated([lazy_wastar([h],w=10), lazy_wastar([h],w=5), lazy_wastar([h],w=3), lazy_wastar([h],w=2), lazy_wastar([h],w=1)]))&quot;
 </code></pre></div>
 <h2 id="lazy_best-first_search">Lazy best-first search<a class="headerlink" href="#lazy_best-first_search" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>lazy(open, reopen_closed=false, preferred=[], randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;lazy&quot;, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>lazy(open, reopen_closed=false, preferred=[], randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;lazy&quot;, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>open</em> (<a href="../OpenList/">OpenList</a>): open list</li>
 <li><em>reopen_closed</em> (bool): reopen closed nodes</li>
@@ -2446,8 +2446,8 @@
 </ul>
 <p><strong>Successor ordering:</strong> When using randomize_successors=true and preferred_successors_first=true, randomization happens before preferred operators are moved to the front.</p>
 <h2 id="greedy_search_lazy">Greedy search (lazy)<a class="headerlink" href="#greedy_search_lazy" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>lazy_greedy(evals, boost=1000, reopen_closed=false, preferred=[], randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;lazy_greedy&quot;, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>lazy_greedy(evals, boost=1000, reopen_closed=false, preferred=[], randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;lazy_greedy&quot;, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>evals</em> (list of <a href="../Evaluator/">Evaluator</a>): evaluators</li>
 <li><em>boost</em> (int): boost value for alternation queues that are restricted to preferred operator nodes</li>
@@ -2507,9 +2507,9 @@
 <div class="language-text highlight"><pre><span></span><code>--search lazy(single(eval1))
 </code></pre></div>
 <h2 id="weighted_a_search_lazy">(Weighted) A* search (lazy)<a class="headerlink" href="#weighted_a_search_lazy" title="Permanent link">#</a></h2>
-<p>Weighted A* is a special case of lazy best first search.</p>
-<div class="language-text highlight"><pre><span></span><code>lazy_wastar(evals, preferred=[], reopen_closed=true, boost=1000, w=1, randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;lazy_wastar&quot;, verbosity=normal)
-</code></pre></div>
+<p>Weighted A* is a special case of lazy best first search.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>lazy_wastar(evals, preferred=[], reopen_closed=true, boost=1000, w=1, randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;lazy_wastar&quot;, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>evals</em> (list of <a href="../Evaluator/">Evaluator</a>): evaluators</li>
 <li><em>preferred</em> (list of <a href="../Evaluator/">Evaluator</a>): use preferred operators of these evaluators</li>

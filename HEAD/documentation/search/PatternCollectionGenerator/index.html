@@ -2343,8 +2343,8 @@
 
 <p>Factory for pattern collections</p>
 <h2 id="combo">combo<a class="headerlink" href="#combo" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>combo(max_states=1000000, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>combo(max_states=1000000, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>max_states</em> (int [1, infinity]): maximum abstraction size for combo strategy</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2358,15 +2358,14 @@
 <h2 id="disjoint_cegar">Disjoint CEGAR<a class="headerlink" href="#disjoint_cegar" title="Permanent link">#</a></h2>
 <p>This pattern collection generator uses the CEGAR algorithm to compute a pattern for the planning task. See below for a description of the algorithm and some implementation notes. The original algorithm (called single CEGAR) is described in the paper </p>
 <ul>
-<li>
-<p>Alexander Rovner, Silvan Sievers and Malte Helmert.<br />
+<li>Alexander Rovner, Silvan Sievers and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/rovner-et-al-icaps2019.pdf">Counterexample-Guided Abstraction Refinement for Pattern Selection in Optimal Classical Planning</a>.<br />
- In <em>Proceedings of the 29th International Conference on Automated Planning and Scheduling (ICAPS 2019)</em>, pp. 362-367. AAAI Press, 2019.</p>
-<p>disjoint_cegar(max_pdb_size=1000000, max_collection_size=10000000, max_time=infinity, use_wildcard_plans=true, random_seed=-1, verbosity=normal)</p>
-</li>
-<li>
-<p><em>max_pdb_size</em> (int [1, infinity]): maximum number of states per pattern database (ignored for the initial collection consisting of a singleton pattern for each goal variable)</p>
-</li>
+ In <em>Proceedings of the 29th International Conference on Automated Planning and Scheduling (ICAPS 2019)</em>, pp. 362-367. AAAI Press, 2019.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>disjoint_cegar(max_pdb_size=1000000, max_collection_size=10000000, max_time=infinity, use_wildcard_plans=true, random_seed=-1, verbosity=normal)
+</span></code></pre></div>
+<ul>
+<li><em>max_pdb_size</em> (int [1, infinity]): maximum number of states per pattern database (ignored for the initial collection consisting of a singleton pattern for each goal variable)</li>
 <li><em>max_collection_size</em> (int [1, infinity]): maximum number of states in the pattern collection (ignored for the initial collection consisting of a singleton pattern for each goal variable)</li>
 <li><em>max_time</em> (double [0.0, infinity]): maximum time in seconds for this pattern collection generator (ignored for computing the initial collection consisting of a singleton pattern for each goal variable)</li>
 <li><em>use_wildcard_plans</em> (bool): if true, compute wildcard plans which are sequences of sets of operators that induce the same transition; otherwise compute regular plans which are sequences of single operators</li>
@@ -2391,15 +2390,14 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
 <h2 id="genetic_algorithm_patterns">Genetic Algorithm Patterns<a class="headerlink" href="#genetic_algorithm_patterns" title="Permanent link">#</a></h2>
 <p>The following paper describes the automated creation of pattern databases with a genetic algorithm. Pattern collections are initially created with a bin-packing algorithm. The genetic algorithm is used to optimize the pattern collections with an objective function that estimates the mean heuristic value of the the pattern collections. Pattern collections with higher mean heuristic estimates are more likely selected for the next generation.</p>
 <ul>
-<li>
-<p>Stefan Edelkamp.<br />
+<li>Stefan Edelkamp.<br />
  <a href="http://www.springerlink.com/content/20613345434608x1/">Automated Creation of Pattern Database Search Heuristics</a>.<br />
- In <em>Proceedings of the 4th Workshop on Model Checking and Artificial Intelligence (!MoChArt 2006)</em>, pp. 35-50. AAAI Press, 2007.</p>
-<p>genetic(pdb_max_size=50000, num_collections=5, num_episodes=30, mutation_probability=0.01, disjoint=false, random_seed=-1, verbosity=normal)</p>
-</li>
-<li>
-<p><em>pdb_max_size</em> (int [1, infinity]): maximal number of states per pattern database </p>
-</li>
+ In <em>Proceedings of the 4th Workshop on Model Checking and Artificial Intelligence (!MoChArt 2006)</em>, pp. 35-50. AAAI Press, 2007.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>genetic(pdb_max_size=50000, num_collections=5, num_episodes=30, mutation_probability=0.01, disjoint=false, random_seed=-1, verbosity=normal)
+</span></code></pre></div>
+<ul>
+<li><em>pdb_max_size</em> (int [1, infinity]): maximal number of states per pattern database </li>
 <li><em>num_collections</em> (int [1, infinity]): number of pattern collections to maintain in the genetic algorithm (population size)</li>
 <li><em>num_episodes</em> (int [0, infinity]): number of episodes for the genetic algorithm</li>
 <li><em>mutation_probability</em> (double [0.0, 1.0]): probability for flipping a bit in the genetic algorithm</li>
@@ -2438,15 +2436,14 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
 </ul>
 <p>For implementation notes, see:</p>
 <ul>
-<li>
-<p>Silvan Sievers, Manuela Ortlieb and Malte Helmert.<br />
+<li>Silvan Sievers, Manuela Ortlieb and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-socs2012.pdf">Efficient Implementation of Pattern Database Heuristics for Classical Planning</a>.<br />
- In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 105-111. AAAI Press, 2012.</p>
-<p>hillclimbing(pdb_max_size=2000000, collection_max_size=20000000, num_samples=1000, min_improvement=10, max_time=infinity, random_seed=-1, verbosity=normal)</p>
-</li>
-<li>
-<p><em>pdb_max_size</em> (int [1, infinity]): maximal number of states per pattern database </p>
-</li>
+ In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 105-111. AAAI Press, 2012.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>hillclimbing(pdb_max_size=2000000, collection_max_size=20000000, num_samples=1000, min_improvement=10, max_time=infinity, random_seed=-1, verbosity=normal)
+</span></code></pre></div>
+<ul>
+<li><em>pdb_max_size</em> (int [1, infinity]): maximal number of states per pattern database </li>
 <li><em>collection_max_size</em> (int [1, infinity]): maximal number of states in the pattern collection</li>
 <li><em>num_samples</em> (int [1, infinity]): number of samples (random states) on which to evaluate each candidate pattern collection</li>
 <li><em>min_improvement</em> (int [1, infinity]): minimum number of samples on which a candidate pattern collection must improve on the current one to be considered as the next pattern collection </li>
@@ -2470,8 +2467,8 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
 <p>The section "avoiding redundant evaluations" describes how the search neighbourhood of patterns can be restricted to variables that are relevant to the variables already included in the pattern by analyzing causal graphs. There is a mistake in the paper that leads to some relevant neighbouring patterns being ignored. See the <a href="https://ai.dmi.unibas.ch/research/publications.html">errata</a> for details. This mistake has been addressed in this implementation. The second approach described in the paper (statistical confidence interval) is not applicable to this implementation, as it doesn't use A* search but constructs the entire pattern databases for all candidate patterns anyway.
 The search is ended if there is no more improvement (or the improvement is smaller than the minimal improvement which can be set as an option), however there is no limit of iterations of the local search. This is similar to the techniques used in the original implementation as described in the paper.</p>
 <h2 id="manual_patterns">manual_patterns<a class="headerlink" href="#manual_patterns" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>manual_patterns(patterns, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>manual_patterns(patterns, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>patterns</em> (list of list of int): list of patterns (which are lists of variable numbers of the planning task).</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2489,9 +2486,9 @@ The search is ended if there is no more improvement (or the improvement is small
  <a href="https://ai.dmi.unibas.ch/papers/rovner-et-al-icaps2019.pdf">Counterexample-Guided Abstraction Refinement for Pattern Selection in Optimal Classical Planning</a>.<br />
  In <em>Proceedings of the 29th International Conference on Automated Planning and Scheduling (ICAPS 2019)</em>, pp. 362-367. AAAI Press, 2019.</li>
 </ul>
-<p>It is an instantiation of the 'multiple algorithm framework'. To compute a pattern in each iteration, it uses the CEGAR algorithm restricted to a single goal variable. See below for descriptions of the algorithms.</p>
-<div class="language-text highlight"><pre><span></span><code>multiple_cegar(use_wildcard_plans=true, max_pdb_size=1M, max_collection_size=10M, pattern_generation_max_time=infinity, total_max_time=100.0, stagnation_limit=20.0, blacklist_trigger_percentage=0.75, enable_blacklist_on_stagnation=true, random_seed=-1, verbosity=normal)
-</code></pre></div>
+<p>It is an instantiation of the 'multiple algorithm framework'. To compute a pattern in each iteration, it uses the CEGAR algorithm restricted to a single goal variable. See below for descriptions of the algorithms.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>multiple_cegar(use_wildcard_plans=true, max_pdb_size=1M, max_collection_size=10M, pattern_generation_max_time=infinity, total_max_time=100.0, stagnation_limit=20.0, blacklist_trigger_percentage=0.75, enable_blacklist_on_stagnation=true, random_seed=-1, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>use_wildcard_plans</em> (bool): if true, compute wildcard plans which are sequences of sets of operators that induce the same transition; otherwise compute regular plans which are sequences of single operators</li>
 <li><em>max_pdb_size</em> (int [1, infinity]): maximum number of states for each pattern database, computed by compute_pattern (possibly ignored by singleton patterns consisting of a goal variable)</li>
@@ -2531,9 +2528,9 @@ The algorithm runs until reaching a given time limit. Another parameter allows e
  <a href="https://ai.dmi.unibas.ch/papers/rovner-et-al-icaps2019.pdf">Counterexample-Guided Abstraction Refinement for Pattern Selection in Optimal Classical Planning</a>.<br />
  In <em>Proceedings of the 29th International Conference on Automated Planning and Scheduling (ICAPS 2019)</em>, pp. 362-367. AAAI Press, 2019.</li>
 </ul>
-<p>It is an instantiation of the 'multiple algorithm framework'. To compute a pattern in each iteration, it uses the random pattern algorithm, called 'single randomized causal graph' (sRCG) in the paper. See below for descriptions of the algorithms.</p>
-<div class="language-text highlight"><pre><span></span><code>random_patterns(bidirectional=true, max_pdb_size=1M, max_collection_size=10M, pattern_generation_max_time=infinity, total_max_time=100.0, stagnation_limit=20.0, blacklist_trigger_percentage=0.75, enable_blacklist_on_stagnation=true, random_seed=-1, verbosity=normal)
-</code></pre></div>
+<p>It is an instantiation of the 'multiple algorithm framework'. To compute a pattern in each iteration, it uses the random pattern algorithm, called 'single randomized causal graph' (sRCG) in the paper. See below for descriptions of the algorithms.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>random_patterns(bidirectional=true, max_pdb_size=1M, max_collection_size=10M, pattern_generation_max_time=infinity, total_max_time=100.0, stagnation_limit=20.0, blacklist_trigger_percentage=0.75, enable_blacklist_on_stagnation=true, random_seed=-1, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>bidirectional</em> (bool): this option decides if the causal graph is considered to be directed or undirected selecting predecessors of already selected variables. If true (default), it is considered to be undirected (precondition-effect edges are bidirectional). If false, it is considered to be directed (a variable is a neighbor only if it is a predecessor.</li>
 <li><em>max_pdb_size</em> (int [1, infinity]): maximum number of states for each pattern database, computed by compute_pattern (possibly ignored by singleton patterns consisting of a goal variable)</li>
@@ -2564,15 +2561,14 @@ The algorithm runs until reaching a given time limit. Another parameter allows e
 <h2 id="systematically_generated_patterns">Systematically generated patterns<a class="headerlink" href="#systematically_generated_patterns" title="Permanent link">#</a></h2>
 <p>Generates all (interesting) patterns with up to pattern_max_size variables. For details, see</p>
 <ul>
-<li>
-<p>Florian Pommerening, Gabriele Roeger and Malte Helmert.<br />
+<li>Florian Pommerening, Gabriele Roeger and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/pommerening-et-al-ijcai2013.pdf">Getting the Most Out of Pattern Databases for Classical Planning</a>.<br />
- In <em>Proceedings of the Twenty-Third International Joint Conference on Artificial Intelligence (IJCAI 2013)</em>, pp. 2357-2364. AAAI Press, 2013.</p>
-<p>systematic(pattern_max_size=1, only_interesting_patterns=true, verbosity=normal)</p>
-</li>
-<li>
-<p><em>pattern_max_size</em> (int [1, infinity]): max number of variables per pattern</p>
-</li>
+ In <em>Proceedings of the Twenty-Third International Joint Conference on Artificial Intelligence (IJCAI 2013)</em>, pp. 2357-2364. AAAI Press, 2013.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>systematic(pattern_max_size=1, only_interesting_patterns=true, verbosity=normal)
+</span></code></pre></div>
+<ul>
+<li><em>pattern_max_size</em> (int [1, infinity]): max number of variables per pattern</li>
 <li><em>only_interesting_patterns</em> (bool): Only consider the union of two disjoint patterns if the union has more information than the individual patterns.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
 <li><code>silent</code>: only the most basic output</li>

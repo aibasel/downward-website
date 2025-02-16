@@ -1977,9 +1977,9 @@
 
 <p>This page describes the various merge strategies supported by the planner.</p>
 <h2 id="precomputed_merge_strategy">Precomputed merge strategy<a class="headerlink" href="#precomputed_merge_strategy" title="Permanent link">#</a></h2>
-<p>This merge strategy has a precomputed merge tree. Note that this merge strategy does not take into account the current state of the factored transition system. This also means that this merge strategy relies on the factored transition system being synchronized with this merge tree, i.e. all merges are performed exactly as given by the merge tree.</p>
-<div class="language-text highlight"><pre><span></span><code>merge_precomputed(merge_tree, verbosity=normal)
-</code></pre></div>
+<p>This merge strategy has a precomputed merge tree. Note that this merge strategy does not take into account the current state of the factored transition system. This also means that this merge strategy relies on the factored transition system being synchronized with this merge tree, i.e. all merges are performed exactly as given by the merge tree.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>merge_precomputed(merge_tree, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>merge_tree</em> (<a href="../MergeTree/">MergeTree</a>): The precomputed merge tree.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -1991,7 +1991,7 @@
 </li>
 </ul>
 <p><strong>Note:</strong> An example of a precomputed merge startegy is a linear merge strategy, which can be obtained using:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>merge_strategy=merge_precomputed(merge_tree=linear(&lt;variable_order&gt;))
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>merge_strategy=merge_precomputed(merge_tree=linear(&lt;variable_order&gt;))
 </span></code></pre></div></p>
 <h2 id="merge_strategy_sscs">Merge strategy SSCs<a class="headerlink" href="#merge_strategy_sscs" title="Permanent link">#</a></h2>
 <p>This merge strategy implements the algorithm described in the paper </p>
@@ -2000,9 +2000,9 @@
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-icaps2016.pdf">An Analysis of Merge Strategies for Merge-and-Shrink Heuristics</a>.<br />
  In <em>Proceedings of the 26th International Conference on Planning and Scheduling (ICAPS 2016)</em>, pp. 2358-2366. AAAI Press, 2016.</li>
 </ul>
-<p>In a nutshell, it computes the maximal SCCs of the causal graph, obtaining a partitioning of the task's variables. Every such partition is then merged individually, using the specified fallback merge strategy, considering the SCCs in a configurable order. Afterwards, all resulting composite abstractions are merged to form the final abstraction, again using the specified fallback merge strategy and the configurable order of the SCCs.</p>
-<div class="language-text highlight"><pre><span></span><code>merge_sccs(order_of_sccs=topological, merge_selector, verbosity=normal)
-</code></pre></div>
+<p>In a nutshell, it computes the maximal SCCs of the causal graph, obtaining a partitioning of the task's variables. Every such partition is then merged individually, using the specified fallback merge strategy, considering the SCCs in a configurable order. Afterwards, all resulting composite abstractions are merged to form the final abstraction, again using the specified fallback merge strategy and the configurable order of the SCCs.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>merge_sccs(order_of_sccs=topological, merge_selector, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>order_of_sccs</em> ({topological, reverse_topological, decreasing, increasing}): how the SCCs should be ordered<ul>
 <li><code>topological</code>: according to the topological ordering of the directed graph where each obtained SCC is a 'supervertex'</li>
@@ -2021,9 +2021,9 @@
 </li>
 </ul>
 <h2 id="stateless_merge_strategy">Stateless merge strategy<a class="headerlink" href="#stateless_merge_strategy" title="Permanent link">#</a></h2>
-<p>This merge strategy has a merge selector, which computes the next merge only depending on the current state of the factored transition system, not requiring any additional information.</p>
-<div class="language-text highlight"><pre><span></span><code>merge_stateless(merge_selector, verbosity=normal)
-</code></pre></div>
+<p>This merge strategy has a merge selector, which computes the next merge only depending on the current state of the factored transition system, not requiring any additional information.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>merge_stateless(merge_selector, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>merge_selector</em> (<a href="../MergeSelector/">MergeSelector</a>): The merge selector to be used.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2035,10 +2035,10 @@
 </li>
 </ul>
 <p><strong>Note:</strong> Examples include the DFP merge strategy, which can be obtained using:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order(&lt;order_option&gt;))]))
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order(&lt;order_option&gt;))]))
 </span></code></pre></div>
 and the (dynamic/score-based) MIASM strategy, which can be obtained using:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[sf_miasm(&lt;shrinking_options&gt;),total_order(&lt;order_option&gt;)]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[sf_miasm(&lt;shrinking_options&gt;),total_order(&lt;order_option&gt;)]
 </span></code></pre></div></p>
 
 

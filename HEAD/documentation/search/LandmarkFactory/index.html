@@ -2032,9 +2032,9 @@
 <p>A landmark factory specification is either a newly created instance or a landmark factory that has been defined previously. This page describes how one can specify a new landmark factory instance. For re-using landmark factories, see OptionSyntax#Landmark_Predefinitions.</p>
 <p>This feature type can be bound to variables using <code>let(variable_name, variable_definition, expression)</code> where <code>expression</code> can use <code>variable_name</code>. Predefinitions using <code>--evaluator</code>, <code>--heuristic</code>, and <code>--landmarks</code> are automatically transformed into <code>let</code>-expressions but are deprecated.</p>
 <h2 id="exhaustive_landmarks">Exhaustive Landmarks<a class="headerlink" href="#exhaustive_landmarks" title="Permanent link">#</a></h2>
-<p>Exhaustively checks for each fact if it is a landmark.This check is done using relaxed planning.</p>
-<div class="language-text highlight"><pre><span></span><code>lm_exhaust(use_unary_relaxation=false, verbosity=normal)
-</code></pre></div>
+<p>Exhaustively checks for each fact if it is a landmark.This check is done using relaxed planning.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lm_exhaust(use_unary_relaxation=false, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>use_unary_relaxation</em> (bool): compute landmarks of the unary relaxation, i.e., landmarks for the delete relaxation of a task transformation such that each operator is split into one operator for each of its effects. This kind of landmark was previously known as "causal landmarks". Setting the option to true can reduce the overall number of landmarks, which can make the search more memory-efficient but potentially less informative.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2050,9 +2050,9 @@
 <li><strong>conditional_effects:</strong> ignored, i.e. not supported</li>
 </ul>
 <h2 id="hm_landmarks">h^m Landmarks<a class="headerlink" href="#hm_landmarks" title="Permanent link">#</a></h2>
-<p>The landmark generation method introduced by Keyder, Richter &amp; Helmert (ECAI 2010).</p>
-<div class="language-text highlight"><pre><span></span><code>lm_hm(m=2, conjunctive_landmarks=true, use_orders=true, verbosity=normal)
-</code></pre></div>
+<p>The landmark generation method introduced by Keyder, Richter &amp; Helmert (ECAI 2010).
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lm_hm(m=2, conjunctive_landmarks=true, use_orders=true, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>m</em> (int): subset size (if unsure, use the default of 2)</li>
 <li><em>conjunctive_landmarks</em> (bool): keep conjunctive landmarks</li>
@@ -2070,9 +2070,9 @@
 <li><strong>conditional_effects:</strong> ignored, i.e. not supported</li>
 </ul>
 <h2 id="merged_landmarks">Merged Landmarks<a class="headerlink" href="#merged_landmarks" title="Permanent link">#</a></h2>
-<p>Merges the landmarks and orderings from the parameter landmarks</p>
-<div class="language-text highlight"><pre><span></span><code>lm_merged(lm_factories, verbosity=normal)
-</code></pre></div>
+<p>Merges the landmarks and orderings from the parameter landmarks
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lm_merged(lm_factories, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>lm_factories</em> (list of <a href="./">LandmarkFactory</a>): </li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2092,15 +2092,14 @@
 <h2 id="hps_orders">HPS Orders<a class="headerlink" href="#hps_orders" title="Permanent link">#</a></h2>
 <p>Adds reasonable orders described in the following paper</p>
 <ul>
-<li>
-<p>Jörg Hoffmann, Julie Porteous and Laura Sebastia.<br />
+<li>Jörg Hoffmann, Julie Porteous and Laura Sebastia.<br />
  <a href="https://jair.org/index.php/jair/article/view/10390/24882">Ordered Landmarks in Planning</a>.<br />
- <em>Journal of Artificial Intelligence Research</em> 22:215-278. 2004.</p>
-<p>lm_reasonable_orders_hps(lm_factory, verbosity=normal)</p>
-</li>
-<li>
-<p><em>lm_factory</em> (<a href="./">LandmarkFactory</a>): </p>
-</li>
+ <em>Journal of Artificial Intelligence Research</em> 22:215-278. 2004.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lm_reasonable_orders_hps(lm_factory, verbosity=normal)
+</span></code></pre></div>
+<ul>
+<li><em>lm_factory</em> (<a href="./">LandmarkFactory</a>): </li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
 <li><code>silent</code>: only the most basic output</li>
 <li><code>normal</code>: relevant information to monitor progress</li>
@@ -2115,9 +2114,9 @@
 <li><strong>conditional_effects:</strong> supported if subcomponent supports them</li>
 </ul>
 <h2 id="rhw_landmarks">RHW Landmarks<a class="headerlink" href="#rhw_landmarks" title="Permanent link">#</a></h2>
-<p>The landmark generation method introduced by Richter, Helmert and Westphal (AAAI 2008).</p>
-<div class="language-text highlight"><pre><span></span><code>lm_rhw(disjunctive_landmarks=true, use_orders=true, verbosity=normal)
-</code></pre></div>
+<p>The landmark generation method introduced by Richter, Helmert and Westphal (AAAI 2008).
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>lm_rhw(disjunctive_landmarks=true, use_orders=true, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>disjunctive_landmarks</em> (bool): keep disjunctive landmarks</li>
 <li><em>use_orders</em> (bool): use orders between landmarks</li>
@@ -2134,9 +2133,9 @@
 <li><strong>conditional_effects:</strong> supported</li>
 </ul>
 <h2 id="zhugivan_landmarks">Zhu/Givan Landmarks<a class="headerlink" href="#zhugivan_landmarks" title="Permanent link">#</a></h2>
-<p>The landmark generation method introduced by Zhu &amp; Givan (ICAPS 2003 Doctoral Consortium).</p>
-<div class="language-text highlight"><pre><span></span><code>lm_zg(use_orders=true, verbosity=normal)
-</code></pre></div>
+<p>The landmark generation method introduced by Zhu &amp; Givan (ICAPS 2003 Doctoral Consortium).
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>lm_zg(use_orders=true, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>use_orders</em> (bool): use orders between landmarks</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
