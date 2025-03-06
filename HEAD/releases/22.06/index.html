@@ -1323,10 +1323,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1727,28 +1723,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for-developers/includes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Include what you use
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../for-developers/long-term-plans/" class="md-nav__link">
         
   
@@ -1842,28 +1816,6 @@
   
   <span class="md-ellipsis">
     Requirements
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../for-developers/review-queue/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Review queue
     
   </span>
   
@@ -2062,72 +2014,75 @@
 </ul>
 <p>For Apptainer, Docker and Vagrant, see QuickStart for instructions on how to run the planner. That page explains how to run the latest release of Fast Downward, so you have to amend the instructions if you want to run an older release.</p>
 <p>For the tarball, if you have satisfied all dependencies, the following should build and run the planner with configuration alias <code>lama-first</code> on PDDL files <code>/path/to/domain.pddl</code> and <code>/path/to/problem.pddl</code> on a Linux or macOS system:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span>tar<span class="w"> </span>-xvzf<span class="w"> </span>fast-downward-22.06.tar.gz
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nb">cd</span><span class="w"> </span>fast-downward-22.06
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>./build.py
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>./fast-downward.py<span class="w"> </span>--alias<span class="w"> </span>lama-first<span class="w"> </span>/path/to/domain.pddl<span class="w"> </span>/path/to/problem.pddl
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>fast-downward-22.06.tar.gz
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>fast-downward-22.06
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./build.py
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>./fast-downward.py<span class="w"> </span>--alias<span class="w"> </span>lama-first<span class="w"> </span>/path/to/domain.pddl<span class="w"> </span>/path/to/problem.pddl
 </span></code></pre></div>
 <p>For dependencies and more advanced information (including Windows builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">the build instructions</a>.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
 <p>For licensing reasons, the binary distributions of Fast Downward have limited support for commercial LP solvers (CPLEX and Gurobi). The Docker and Apptainer distributions only support SoPlex. The Vagrant version supports SoPlex and/or CPLEX if they are available at provisioning time. See QuickStart for more information.</p>
 <h2 id="referencing_fast_downward_2206">Referencing Fast Downward 22.06<a class="headerlink" href="#referencing_fast_downward_2206" title="Permanent link">#</a></h2>
-<p>If you use this version of Fast Downward in a scientific publication, we encourage you to mention the version number, as in \"We ran experiments with Fast Downward 22.06.\" The canonical reference for citing Fast Downward is the following journal paper:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    @Article{helmert-jair2006,
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>      author =  &quot;Malte Helmert&quot;,
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      title =   &quot;The {Fast} {Downward} Planning System&quot;,
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>      journal = &quot;Journal of Artificial Intelligence Research&quot;,
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>      year =    &quot;2006&quot;,
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      volume =  &quot;26&quot;,
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      pages =   &quot;191--246&quot;
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    }
+<p>If you use this version of Fast Downward in a scientific publication, we encourage you to mention the version number, as in "We ran experiments with Fast Downward 22.06." The canonical reference for citing Fast Downward is the following journal paper:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>@Article{helmert-jair2006,
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  author =  &quot;Malte Helmert&quot;,
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  title =   &quot;The {Fast} {Downward} Planning System&quot;,
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  journal = &quot;Journal of Artificial Intelligence Research&quot;,
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  year =    &quot;2006&quot;,
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  volume =  &quot;26&quot;,
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  pages =   &quot;191--246&quot;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>}
 </span></code></pre></div>
 <h2 id="changes_in_fast_downward_2206">Changes in Fast Downward 22.06<a class="headerlink" href="#changes_in_fast_downward_2206" title="Permanent link">#</a></h2>
 <ul>
 <li>
 <p>translator: Fix a bug where the translator would not check goal
-    conditions on predicates that are not modified by actions.\
- <a href="https://issues.fast-downward.org/issue1055"><code>https://issues.fast-downward.org/issue1055</code></a></p>
+    conditions on predicates that are not modified by actions.</p>
+<p><a href="https://issues.fast-downward.org/issue1055">https://issues.fast-downward.org/issue1055</a></p>
 </li>
 <li>
 <p>driver: Print overall planner resource limits and overall planner
-     runtime on Linux and macOS systems.\
- <a href="https://issues.fast-downward.org/issue1056"><code>https://issues.fast-downward.org/issue1056</code></a></p>
+     runtime on Linux and macOS systems.</p>
+<p><a href="https://issues.fast-downward.org/issue1056">https://issues.fast-downward.org/issue1056</a></p>
 </li>
 <li>
-<p>logging: verbosity option for all evaluators\
- <a href="https://issues.fast-downward.org/issue921"><code>https://issues.fast-downward.org/issue921</code></a> All evaluators and heuristics now have their own configurable logger and no longer use <code>g_log</code>. These loggers have a verbosity option, which allows choosing between silent, normal, verbose and debug for all instances of evaluators created on the command line.</p>
+<p>logging: verbosity option for all evaluators</p>
+<p><a href="https://issues.fast-downward.org/issue921">https://issues.fast-downward.org/issue921</a></p>
+<p>All evaluators and heuristics now have their own configurable logger and no longer use <code>g_log</code>. These loggers have a verbosity option, which allows choosing between silent, normal, verbose and debug for all instances of evaluators created on the command line.</p>
 </li>
 <li>
-<p>landmarks: Speed up landmark generation time by 10-20% for <code>lm_rhw</code>, <code>lm_zg</code>, and <code>lm_exhaust</code> by avoiding unnecessary computations in the landmark exploration.\
- <a href="https://issues.fast-downward.org/issue1044"><code>https://issues.fast-downward.org/issue1044</code></a></p>
+<p>landmarks: Speed up landmark generation time by 10-20% for <code>lm_rhw</code>, <code>lm_zg</code>, and <code>lm_exhaust</code> by avoiding unnecessary computations in the landmark exploration.</p>
+<p><a href="https://issues.fast-downward.org/issue1044">https://issues.fast-downward.org/issue1044</a></p>
 </li>
 <li>
-<p>landmarks: Speed up landmark generation time by 5-15% for <code>lm_rhw</code>, <code>lm_zg</code>, and <code>lm_exhaust</code> by computing reachability in the landmark exploration as boolean information instead of (unused) integer cost/level information.\
- <a href="https://issues.fast-downward.org/issue1045"><code>https://issues.fast-downward.org/issue1045</code></a></p>
+<p>landmarks: Speed up landmark generation time by 5-15% for <code>lm_rhw</code>, <code>lm_zg</code>, and <code>lm_exhaust</code> by computing reachability in the landmark exploration as boolean information instead of (unused) integer cost/level information.</p>
+<p><a href="https://issues.fast-downward.org/issue1045">https://issues.fast-downward.org/issue1045</a></p>
 </li>
 <li>
-<p>landmarks: Improve landmark dead-end detection so that relevant static information is only computed once, instead of at every state evaluation.\
- <a href="https://issues.fast-downward.org/issue1049"><code>https://issues.fast-downward.org/issue1049</code></a></p>
+<p>landmarks: Improve landmark dead-end detection so that relevant static information is only computed once, instead of at every state evaluation.</p>
+<p><a href="https://issues.fast-downward.org/issue1049">https://issues.fast-downward.org/issue1049</a></p>
 </li>
 <li>
-<p>infrastructure: Upgrade GitHub Actions to Windows Server 2019 (Visual Studio Enterprise 2019) and Windows Server 2022 (Visual Studio Enterprise 2022). Remove Windows Server 2016, because GitHub Actions no longer support it.
- <a href="https://issues.fast-downward.org/issue1054"><code>https://issues.fast-downward.org/issue1054</code></a></p>
+<p>infrastructure: Upgrade GitHub Actions to Windows Server 2019 (Visual Studio Enterprise 2019) and Windows Server 2022 (Visual Studio Enterprise 2022). Remove Windows Server 2016, because GitHub Actions no longer support it.</p>
 </li>
+</ul>
+<p><a href="https://issues.fast-downward.org/issue1054">https://issues.fast-downward.org/issue1054</a></p>
+<ul>
 <li>
-<p>infrastructure: Run GitHub Actions only for the following branches: <code>main</code>, <code>issue\*</code>, <code>release-\*</code>.\
- <a href="https://issues.fast-downward.org/issue1027"><code>https://issues.fast-downward.org/issue1027</code></a></p>
+<p>infrastructure: Run GitHub Actions only for the following branches: <code>main</code>, <code>issue\*</code>, <code>release-\*</code>.</p>
+<p><a href="https://issues.fast-downward.org/issue1027">https://issues.fast-downward.org/issue1027</a></p>
 </li>
 </ul>
 <h2 id="changes_in_fast_downward_22061">Changes in Fast Downward 22.06.1<a class="headerlink" href="#changes_in_fast_downward_22061" title="Permanent link">#</a></h2>
 <ul>
 <li>
-<p>Driver configurations relying on certain kinds of time limits (using the <code>--overall-time-limit</code> option or portfolios) crashed when using Python 3.10.\
- <a href="https://issues.fast-downward.org/issue1064"><code>https://issues.fast-downward.org/issue1064</code></a></p>
+<p>Driver configurations relying on certain kinds of time limits (using the <code>--overall-time-limit</code> option or portfolios) crashed when using Python 3.10.</p>
+<p><a href="https://issues.fast-downward.org/issue1064">https://issues.fast-downward.org/issue1064</a></p>
 </li>
 <li>
 <p>Using post-hoc optimization constraints (<code>pho_constraints</code>) caused
-    crashes (segmentation faults) or other undefined behavior.\
- <a href="https://issues.fast-downward.org/issue1061"><code>https://issues.fast-downward.org/issue1061</code></a></p>
+    crashes (segmentation faults) or other undefined behavior.</p>
+<p><a href="https://issues.fast-downward.org/issue1061">https://issues.fast-downward.org/issue1061</a></p>
 </li>
 </ul>
 

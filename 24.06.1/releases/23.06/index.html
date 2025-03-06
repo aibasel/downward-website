@@ -1314,10 +1314,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1718,28 +1714,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for-developers/includes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Include what you use
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../for-developers/long-term-plans/" class="md-nav__link">
         
   
@@ -1833,28 +1807,6 @@
   
   <span class="md-ellipsis">
     Requirements
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../for-developers/review-queue/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Review queue
     
   </span>
   
@@ -2070,14 +2022,14 @@
 <p>For licensing reasons, the binary distributions of Fast Downward have limited support for commercial LP solvers (like CPLEX). The Docker and Apptainer distributions only support SoPlex. The Vagrant version supports SoPlex and/or CPLEX if they are available at provisioning time. See QuickStart for more information.</p>
 <h2 id="referencing_fast_downward_2306">Referencing Fast Downward 23.06<a class="headerlink" href="#referencing_fast_downward_2306" title="Permanent link">#</a></h2>
 <p>If you use this version of Fast Downward in a scientific publication, we encourage you to mention the version number, as in "We ran experiments with Fast Downward 23.06." The canonical reference for citing Fast Downward is the following journal paper:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    @Article{helmert-jair2006,
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      author =  &quot;Malte Helmert&quot;,
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      title =   &quot;The {Fast} {Downward} Planning System&quot;,
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>      journal = &quot;Journal of Artificial Intelligence Research&quot;,
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>      year =    &quot;2006&quot;,
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>      volume =  &quot;26&quot;,
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>      pages =   &quot;191--246&quot;
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    }
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>@Article{helmert-jair2006,
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  author =  &quot;Malte Helmert&quot;,
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  title =   &quot;The {Fast} {Downward} Planning System&quot;,
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  journal = &quot;Journal of Artificial Intelligence Research&quot;,
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  year =    &quot;2006&quot;,
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  volume =  &quot;26&quot;,
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  pages =   &quot;191--246&quot;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>}
 </span></code></pre></div>
 <h2 id="changes_in_fast_downward_2306">Changes in Fast Downward 23.06<a class="headerlink" href="#changes_in_fast_downward_2306" title="Permanent link">#</a></h2>
 <p>Details:</p>
@@ -2149,8 +2101,8 @@
 <li>AppleClang 13.0</li>
 </ul>
 <p>Language features supported by all of these compilers may now be used in the planner. For a list of such features and more details, see the issue tracker The list includes <code>std::optional</code>, so we removed the implementation of <code>optional</code> in <code>src/search/ext</code>.</p>
-<p><a href="https://issues.fast-downward.org/issue1028">https://issues.fast-downward.org/issue1028</a>
-<a href="https://issues.fast-downward.org/issue1094">https://issues.fast-downward.org/issue1094</a></p>
+<p><a href="https://issues.fast-downward.org/issue1028">https://issues.fast-downward.org/issue1028</a></p>
+<p><a href="https://issues.fast-downward.org/issue1094">https://issues.fast-downward.org/issue1094</a></p>
 </li>
 <li>
 <p>Windows build: We now enable more compiler warnings on Windows builds. In detail, we no longer ignore warnings C4800, C4512, C4706, C4100, C4127, C4309, C4702, C4239, C4996, and C4505 on Windows builds as they no longer occur in our code. Warnings in GitHub actions are now also treated as errors in Windows builds.</p>
@@ -2161,7 +2113,7 @@
 <p><a href="https://issues.fast-downward.org/issue1093">https://issues.fast-downward.org/issue1093</a></p>
 </li>
 <li>
-<p>infrastructure: We update the version of uncrustify used to fix code formatting. Instructions on how to install the new version can be found in the <a href="../../for-developers/uncrustify/">for develoepers section</a>.</p>
+<p>infrastructure: We update the version of uncrustify used to fix code formatting. Instructions on how to install the new version can be found in the <a href="../../for-developers/uncrustify/">for developers section</a>.</p>
 <p><a href="https://issues.fast-downward.org/issue1090">https://issues.fast-downward.org/issue1090</a></p>
 </li>
 </ul>

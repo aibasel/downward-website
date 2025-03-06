@@ -1314,10 +1314,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1718,28 +1714,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for-developers/includes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Include what you use
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../for-developers/long-term-plans/" class="md-nav__link">
         
   
@@ -1833,28 +1807,6 @@
   
   <span class="md-ellipsis">
     Requirements
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../for-developers/review-queue/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Review queue
     
   </span>
   
@@ -2079,10 +2031,10 @@ it in the release. SoPlex is licensed under the <a href="https://scipopt.org/aca
 License</a>.</p>
 <h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h2>
 <ul>
-<li>source tarball: <a download="download" href="../../files/release21.12/fast-downward-21.12.tar.gz">fast-downward-21.12.tar.gz</a></li>
+<li>source tarball: <a href="../../files/release21.12/fast-downward-21.12.tar.gz">fast-downward-21.12.tar.gz</a></li>
 <li>Apptainer image: download with <code>apptainer pull fast-downward.sif docker://aibasel/downward:21.12</code></li>
-<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward/TODO">aibasel/downward:21.12 on Docker Hub</a></li>
-<li>Vagrantfile: <a download="download" href="../../files/release21.12/Vagrantfile">Vagrantfile</a> for Fast Downward 21.12</li>
+<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward/">aibasel/downward:21.12 on Docker Hub</a></li>
+<li>Vagrantfile: <a href="../../files/release21.12/Vagrantfile">Vagrantfile</a> for Fast Downward 21.12</li>
 </ul>
 <p>For Apptainer, Docker and Vagrant, see <a href="../../documentation/quick-start/">getting
 started</a> for instructions on how to run the
@@ -2125,9 +2077,10 @@ Downward is the following journal paper:</p>
 <ul>
 <li>
 <p>new Fast Downward logo</p>
-<p>https://issues.fast-downward.org/issue1024</p>
-<p>You can see the logo in the <a href="https://github.com/aibasel/downward">README</a>. Check out <a href="../for-developers/TODO">LogoDesigns</a> for alternative suggestions including the ever so
-popular "truck falling down the hill" logo.</p>
+<p><a href="https://issues.fast-downward.org/issue1024">https://issues.fast-downward.org/issue1024</a></p>
+<p>You can see the logo in the <a href="https://github.com/aibasel/downward">README</a>. Check out our
+<a href="../../for-developers/blog/logo/">alternative suggestions for the logo designs</a>, including
+the ever so popular "truck falling down the hill" logo.</p>
 </li>
 <li>
 <p><code>fast-downward.py</code> main script: The script now automatically finds
@@ -2170,14 +2123,13 @@ and usually takes much longer than solving the corresponding LP.</p>
     operator-counting framework. The constraints defined by Imai and
     Fukunaga (JAIR 2015) encode different relaxations of the
     delete-relaxation heuristic. For details, see
-    <a href="TODO">Delete relaxation constraints</a>.</p>
+    <a href="../documentation/search/ConstraintGenerator/#delete_relaxation_constraints_from_imai_and_fukunaga">Delete relaxation constraints</a>.</p>
 <p><a href="https://issues.fast-downward.org/issue983">https://issues.fast-downward.org/issue983</a></p>
 </li>
 <li>
 <p>LP/IP: Fix a bug which induced inadmissible heuristic values when
-    solving <a href="TODO">MIPs</a>. This only occurred for
-    operator-counting heuristics with integer variables and very large
-    heuristic values (at least 10,000).</p>
+    solving MIPs. This only occurred for operator-counting heuristics with
+    integer variables and very large heuristic values (at least 10,000).</p>
 <p><a href="https://issues.fast-downward.org/issue983">https://issues.fast-downward.org/issue983</a></p>
 </li>
 <li>
@@ -2209,7 +2161,7 @@ against using this feature when running experiments.</p>
     the new landmark factory <code>lm_reasonable_orders_hps</code>.</p>
 <p><a href="https://issues.fast-downward.org/issue995">https://issues.fast-downward.org/issue995</a></p>
 <p>For example, the old command line
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>-evaluator hlm=lmcount(lm_factory=lm_rhw(reasonable_orders=true))
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>--evaluator hlm=lmcount(lm_factory=lm_rhw(reasonable_orders=true))
 </span></code></pre></div>
 is now expressed as
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>--evaluator hlm=lmcount(lm_factory=lm_reasonable_orders_hps(lm_rhw()))
@@ -2305,7 +2257,7 @@ is now expressed as
 <li>
 <p>for developers: Unify the <code>State</code> and <code>GlobalState</code> classes.</p>
 <p><a href="https://issues.fast-downward.org/issue348">https://issues.fast-downward.org/issue348</a></p>
-<p>We unified the classes <code>GlobalState</code> and <code>State</code> into a new class also called <code>State</code>. This removed a lot of code duplication and hacks from the code. A description of the new class can be found in the <a href="TODO">wiki</a>.</p>
+<p>We unified the classes <code>GlobalState</code> and <code>State</code> into a new class also called <code>State</code>. This removed a lot of code duplication and hacks from the code. A description of the new class can be found in the <a href="../../for-developers/blog/a-deeper-look-at-states/">blog</a>.</p>
 </li>
 <li>
 <p>for developers: Change public interface of generation of random ints

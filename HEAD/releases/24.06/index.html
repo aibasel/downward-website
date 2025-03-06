@@ -1323,10 +1323,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1727,28 +1723,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for-developers/includes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Include what you use
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../for-developers/long-term-plans/" class="md-nav__link">
         
   
@@ -1842,28 +1816,6 @@
   
   <span class="md-ellipsis">
     Requirements
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../for-developers/review-queue/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Review queue
     
   </span>
   
@@ -2098,11 +2050,12 @@ CPLEX if they are available at provisioning time. See "<a href="../../documentat
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>}
 </span></code></pre></div>
 <h2 id="changes_in_fast_downward_2406">Changes in Fast Downward 24.06<a class="headerlink" href="#changes_in_fast_downward_2406" title="Permanent link">#</a></h2>
-<p>Details:
- * bug fix: The planner now invokes destructors when terminating (except for emergency situations where this is not possible) and exits gracefully when running out of memory.</p>
-<div class="language-text highlight"><pre><span></span><code>&lt;https://issues.fast-downward.org/issue1138&gt;, &lt;https://issues.fast-downward.org/issue984&gt;
-</code></pre></div>
+<p>Details:</p>
 <ul>
+<li>
+<p>bug fix: The planner now invokes destructors when terminating (except for emergency situations where this is not possible) and exits gracefully when running out of memory.</p>
+<p><a href="https://issues.fast-downward.org/issue1138">https://issues.fast-downward.org/issue1138</a>, <a href="https://issues.fast-downward.org/issue984">https://issues.fast-downward.org/issue984</a></p>
+</li>
 <li>
 <p>bug fix: Removed a dangling pointer in the state registry caused by state copying.</p>
 <p><a href="https://issues.fast-downward.org/issue1115">https://issues.fast-downward.org/issue1115</a></p>
