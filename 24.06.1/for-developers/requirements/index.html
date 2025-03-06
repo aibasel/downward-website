@@ -1870,7 +1870,10 @@ systems, compilers, Python and other tools we test:</p>
 <p>GCC and Clang on Ubuntu: the latest GCC and Clang versions available
     via apt on the latest two Ubuntu LTS releases and the default GCC
     version in the latest Ubuntu LTS release.</p>
-<p>!!! note We dropped support for clang-15 in Ubuntu 22.04 because it
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>We dropped support for clang-15 in Ubuntu 22.04 because it
 does not support certain features of C++20 which we would like to
 use. Users of Ubuntu 22.04 should either install clang-16 manually
 or use GCC instead.
