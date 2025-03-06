@@ -852,6 +852,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#landmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      landmarks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#original" class="md-nav__link">
+    <span class="md-ellipsis">
+      original
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1894,6 +1912,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#landmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      landmarks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#original" class="md-nav__link">
+    <span class="md-ellipsis">
+      original
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1920,34 +1956,34 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>goals(order=hadd_down, random_seed=-1)
 </span></code></pre></div>
 <ul>
-<li><em>order</em> ({original, random, hadd_up, hadd_down}): ordering of goal or landmark facts</li>
+<li><em>order</em> ({original, random, hadd_up, hadd_down}): ordering of goal or landmark facts<ul>
 <li><code>original</code>: according to their (internal) variable index</li>
 <li><code>random</code>: according to a random permutation</li>
 <li><code>hadd_up</code>: according to their h^add value, lowest first</li>
 <li><code>hadd_down</code>: according to their h^add value, highest first </li>
-<li>
-<p><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.
-== landmarks ==
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>landmarks(order=hadd_down, random_seed=-1, combine_facts=true)
-</span></code></pre></div></p>
+</ul>
 </li>
-<li>
-<p><em>order</em> ({original, random, hadd_up, hadd_down}): ordering of goal or landmark facts</p>
-</li>
-<li><code>original</code>: according to their (internal) variable index</li>
-<li><code>random</code>: according to a random permutation</li>
-<li><code>hadd_up</code>: according to their h^add value, lowest first</li>
-<li><code>hadd_down</code>: according to their h^add value, highest first </li>
 <li><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.</li>
-<li>
-<p><em>combine_facts</em> (bool): combine landmark facts with domain abstraction
-== original ==
+</ul>
+<h2 id="landmarks">landmarks<a class="headerlink" href="#landmarks" title="Permanent link">#</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>landmarks(order=hadd_down, random_seed=-1, combine_facts=true)
+</span></code></pre></div>
+<ul>
+<li><em>order</em> ({original, random, hadd_up, hadd_down}): ordering of goal or landmark facts<ul>
+<li><code>original</code>: according to their (internal) variable index</li>
+<li><code>random</code>: according to a random permutation</li>
+<li><code>hadd_up</code>: according to their h^add value, lowest first</li>
+<li><code>hadd_down</code>: according to their h^add value, highest first </li>
+</ul>
+</li>
+<li><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.</li>
+<li><em>combine_facts</em> (bool): combine landmark facts with domain abstraction</li>
+</ul>
+<h2 id="original">original<a class="headerlink" href="#original" title="Permanent link">#</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>original(copies=1)
-</span></code></pre></div></p>
-</li>
-<li>
-<p><em>copies</em> (int [1, infinity]): number of task copies</p>
-</li>
+</span></code></pre></div>
+<ul>
+<li><em>copies</em> (int [1, infinity]): number of task copies</li>
 </ul>
 
 

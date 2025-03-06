@@ -830,6 +830,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#f-preserving_shrink_strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      f-preserving shrink strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1894,6 +1912,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#f-preserving_shrink_strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      f-preserving shrink strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1927,14 +1963,16 @@
 </span></code></pre></div>
 <ul>
 <li><em>greedy</em> (bool): use greedy bisimulation</li>
-<li><em>at_limit</em> ({return, use_up}): what to do when the size limit is hit</li>
+<li><em>at_limit</em> ({return, use_up}): what to do when the size limit is hit<ul>
 <li><code>return</code>: stop without refining the equivalence class further</li>
-<li><code>use_up</code>: continue refining the equivalence class until the size limit is hit
-<strong>shrink_bisimulation(greedy=true):</strong> Combine this with the merge-and-shrink options max_states=infinity and threshold_before_merge=1 and with the linear merge strategy reverse_level to obtain the variant 'greedy bisimulation without size limit', called M&amp;S-gop in the IJCAI 2011 paper. When we last ran experiments on interaction of shrink strategies with label reduction, this strategy performed best when used with label reduction before shrinking (and no label reduction before merging).</li>
+<li><code>use_up</code>: continue refining the equivalence class until the size limit is hit</li>
 </ul>
+</li>
+</ul>
+<p><strong>shrink_bisimulation(greedy=true):</strong> Combine this with the merge-and-shrink options max_states=infinity and threshold_before_merge=1 and with the linear merge strategy reverse_level to obtain the variant 'greedy bisimulation without size limit', called M&amp;S-gop in the IJCAI 2011 paper. When we last ran experiments on interaction of shrink strategies with label reduction, this strategy performed best when used with label reduction before shrinking (and no label reduction before merging).</p>
 <p><strong>shrink_bisimulation(greedy=false):</strong> Combine this with the merge-and-shrink option max_states=N (where N is a numerical parameter for which sensible values include 1000, 10000, 50000, 100000 and 200000) and with the linear merge strategy reverse_level to obtain the variant 'exact bisimulation with a size limit', called DFP-bop in the IJCAI 2011 paper. When we last ran experiments on interaction of shrink strategies with label reduction, this strategy performed best when used with label reduction before shrinking (and no label reduction before merging).</p>
-<p>== f-preserving shrink strategy ==
-This shrink strategy implements the algorithm described in the paper:</p>
+<h2 id="f-preserving_shrink_strategy">f-preserving shrink strategy<a class="headerlink" href="#f-preserving_shrink_strategy" title="Permanent link">#</a></h2>
+<p>This shrink strategy implements the algorithm described in the paper:</p>
 <ul>
 <li>Malte Helmert, Patrik Haslum and Joerg Hoffmann.<br />
  <a href="https://ai.dmi.unibas.ch/papers/helmert-et-al-icaps2007.pdf">Flexible Abstraction Heuristics for Optimal Sequential Planning</a>.<br />
@@ -1944,18 +1982,22 @@ This shrink strategy implements the algorithm described in the paper:</p>
 </span></code></pre></div>
 <ul>
 <li><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.</li>
-<li><em>shrink_f</em> ({high, low}): in which direction the f based shrink priority is ordered</li>
+<li><em>shrink_f</em> ({high, low}): in which direction the f based shrink priority is ordered<ul>
 <li><code>high</code>: prefer shrinking states with high value</li>
 <li><code>low</code>: prefer shrinking states with low value</li>
-<li><em>shrink_h</em> ({high, low}): in which direction the h based shrink priority is ordered</li>
-<li><code>high</code>: prefer shrinking states with high value</li>
-<li><code>low</code>: prefer shrinking states with low value
-<strong>Note:</strong> The strategy first partitions all states according to their combination of f- and g-values. These partitions are then sorted, first according to their f-value, then according to their h-value (increasing or decreasing, depending on the chosen options). States sorted last are shrinked together until reaching max_states.</li>
 </ul>
+</li>
+<li><em>shrink_h</em> ({high, low}): in which direction the h based shrink priority is ordered<ul>
+<li><code>high</code>: prefer shrinking states with high value</li>
+<li><code>low</code>: prefer shrinking states with low value</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> The strategy first partitions all states according to their combination of f- and g-values. These partitions are then sorted, first according to their f-value, then according to their h-value (increasing or decreasing, depending on the chosen options). States sorted last are shrinked together until reaching max_states.</p>
 <p><strong>shrink_fh():</strong> Combine this with the merge-and-shrink option max_states=N (where N is a numerical parameter for which sensible values include 1000, 10000, 50000, 100000 and 200000) and the linear merge startegy cg_goal_level to obtain the variant 'f-preserving shrinking of transition systems', called called HHH in the IJCAI 2011 paper, see bisimulation based shrink strategy. When we last ran experiments on interaction of shrink strategies with label reduction, this strategy performed best when used with label reduction before merging (and no label reduction before shrinking). We also recommend using full pruning with this shrink strategy, because both distances from the initial state and to the goal states must be computed anyway, and because the existence of only one dead state causes this shrink strategy to always use the map-based approach for partitioning states rather than the more efficient vector-based approach.</p>
-<p>== Random ==
+<h2 id="random">Random<a class="headerlink" href="#random" title="Permanent link">#</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>shrink_random(random_seed=-1)
-</span></code></pre></div></p>
+</span></code></pre></div>
 <ul>
 <li><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.</li>
 </ul>

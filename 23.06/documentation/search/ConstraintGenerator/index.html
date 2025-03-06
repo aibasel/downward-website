@@ -562,6 +562,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#state_equation_constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      State equation constraints
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1930,6 +1939,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#state_equation_constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      State equation constraints
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1962,11 +1980,11 @@
 </span></code></pre></div>
 <ul>
 <li><em>use_time_vars</em> (bool): use variables for time steps. With these additional variables the constraints enforce an order between the selected operators. Leaving this off (default) corresponds to the time relaxation by Imai and Fukunaga. Switching it on, can increase the heuristic value but will increase the size of the constraints which has a strong impact on runtime. Constraints involving time variables use a big-M encoding, so they are more useful if used with integer variables.</li>
-<li><em>use_integer_vars</em> (bool): restrict auxiliary variables to integer values. These variables encode whether operators are used, facts are reached, which operator first achieves which fact, and in which order the operators are used. Restricting them to integers generally improves the heuristic value at the cost of increased runtime.
-<strong>Example:</strong> To compute the optimal delete-relaxation heuristic h^+^, use
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>operatorcounting([delete_relaxation_constraints(use_time_vars=true, use_integer_vars=true)], use_integer_operator_counts=true))
-</span></code></pre></div></li>
+<li><em>use_integer_vars</em> (bool): restrict auxiliary variables to integer values. These variables encode whether operators are used, facts are reached, which operator first achieves which fact, and in which order the operators are used. Restricting them to integers generally improves the heuristic value at the cost of increased runtime.</li>
 </ul>
+<p><strong>Example:</strong> To compute the optimal delete-relaxation heuristic h^+^, use
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>operatorcounting([delete_relaxation_constraints(use_time_vars=true, use_integer_vars=true)], use_integer_operator_counts=true))
+</span></code></pre></div></p>
 <h2 id="lm-cut_landmark_constraints">LM-cut landmark constraints<a class="headerlink" href="#lm-cut_landmark_constraints" title="Permanent link">#</a></h2>
 <p>Computes a set of landmarks in each state using the LM-cut method. For each landmark L the constraint sum_{o in L} Count_o &gt;= 1 is added to the operator-counting LP temporarily. After the heuristic value for the state is computed, all temporary constraints are removed again. For details, see</p>
 <ul>
@@ -1993,11 +2011,11 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pho_constraints(patterns=systematic(2))
 </span></code></pre></div>
 <ul>
-<li>
-<p><em>patterns</em> (<a href="../PatternCollectionGenerator/">PatternCollectionGenerator</a>): pattern generation method
-== State equation constraints ==
-For each fact, a permanent constraint is added that considers the net change of the fact, i.e., the total number of times the fact is added minus the total number of times is removed. The bounds of each constraint depend on the current state and the goal state and are updated in each state. For details, see</p>
-</li>
+<li><em>patterns</em> (<a href="../PatternCollectionGenerator/">PatternCollectionGenerator</a>): pattern generation method</li>
+</ul>
+<h2 id="state_equation_constraints">State equation constraints<a class="headerlink" href="#state_equation_constraints" title="Permanent link">#</a></h2>
+<p>For each fact, a permanent constraint is added that considers the net change of the fact, i.e., the total number of times the fact is added minus the total number of times is removed. The bounds of each constraint depend on the current state and the goal state and are updated in each state. For details, see</p>
+<ul>
 <li>
 <p>Menkes van den Briel, J. Benton, Subbarao Kambhampati and Thomas Vossen.<br />
  <a href="http://link.springer.com/chapter/10.1007/978-3-540-74970-7_46">An LP-based heuristic for optimal planning</a>.<br />
@@ -2017,11 +2035,13 @@ For each fact, a permanent constraint is added that considers the net change of 
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>state_equation_constraints(verbosity=normal)
 </span></code></pre></div>
 <ul>
-<li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.</li>
+<li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
 <li><code>silent</code>: only the most basic output</li>
 <li><code>normal</code>: relevant information to monitor progress</li>
 <li><code>verbose</code>: full output</li>
 <li><code>debug</code>: like verbose with additional debug output</li>
+</ul>
+</li>
 </ul>
 
 
