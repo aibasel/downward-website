@@ -1,0 +1,2390 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://new.fast-downward.org/23.06/for-developers/blog/a-deeper-look-at-states/">
+      
+      
+        <link rel="prev" href="../logo/">
+      
+      
+        <link rel="next" href="../a-day-in-the-life-of-a-state/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>29.01.2021: A Deeper Look at States - Fast Downward</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#29012021_a_deeper_look_at_states" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Fast Downward" class="md-header__button md-logo" aria-label="Fast Downward" data-md-component="logo">
+      
+  <img src="../../../img/driller.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fast Downward
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              29.01.2021: A Deeper Look at States
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aibasel/downward/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Fast Downward" class="md-nav__button md-logo" aria-label="Fast Downward" data-md-component="logo">
+      
+  <img src="../../../img/driller.svg" alt="logo">
+
+    </a>
+    Fast Downward
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aibasel/downward/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../documentation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/planner-usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planner usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/pddl-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDDL support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../documentation/search/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Search plugins
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Search plugins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/AbstractTask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AbstractTask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/ConstraintGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConstraintGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/Evaluator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/LabelReduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LabelReduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/LandmarkFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LandmarkFactory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/MergeScoringFunction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeScoringFunction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/MergeSelector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeSelector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/MergeStrategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeStrategy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/MergeTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/OpenList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenList
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/PatternCollectionGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatternCollectionGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/PatternGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatternGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/PruningMethod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PruningMethod
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/SearchAlgorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SearchAlgorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/ShrinkStrategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShrinkStrategy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search/SubtaskGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SubtaskGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/search-plugin-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syntax for search plugins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/ipc-planners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPC planners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/exit-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exit codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation/translator-output-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator output format
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../releases/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Releases
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/19.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 19.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/19.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 19.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/20.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 20.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/21.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 21.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/22.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 22.06.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/22.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 22.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/23.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 23.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/24.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 24.06.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../literature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Literature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    For Developers
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            For Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-option-parser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.01.2023: The New Option Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    31.01.2022: A Logo for Fast Downward
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    29.01.2021: A Deeper Look at States
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    29.01.2021: A Deeper Look at States
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the_state_class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The State Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The State Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpacked_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unpacked Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packed_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packed Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three_kinds_of_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Three Kinds of States
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immutable_states_through_mutable_pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immutable States through Mutable Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working_with_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with States
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructing_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructing States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing_states_around" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing States Around
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing_and_hashing_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing and Hashing States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how_not_to_use_a_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Not to Use a State
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a-day-in-the-life-of-a-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.01.2021: A Day in the Life of a State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog entries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code reviews with Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding-conventions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ coding conventions and style guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp-whitespace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ whitespace guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation details
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../long-term-plans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Long-term plans
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problem-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problem transformations performed by the planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../profiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translator-output-format-v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator Output Format v4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uncrustify/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using uncrustify to fix code layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the_state_class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The State Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The State Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpacked_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unpacked Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packed_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packed Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three_kinds_of_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Three Kinds of States
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immutable_states_through_mutable_pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immutable States through Mutable Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working_with_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with States
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructing_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructing States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing_states_around" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing States Around
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing_and_hashing_states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing and Hashing States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how_not_to_use_a_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Not to Use a State
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="29012021_a_deeper_look_at_states">29.01.2021: A Deeper Look at States<a class="headerlink" href="#29012021_a_deeper_look_at_states" title="Permanent link">#</a></h1>
+<p>In issue348 we changed one of our most fundamental classes - the
+representation of states. In this blog post, we want to explain the
+details of the state class, some design choices, and how to efficiently
+work with states.</p>
+<h2 id="the_state_class">The State Class<a class="headerlink" href="#the_state_class" title="Permanent link">#</a></h2>
+<p>States internally store the following data (reordered slightly to match
+the order of discussion here):</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">State</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">AbstractTask</span><span class="w"> </span><span class="o">*</span><span class="n">task</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num_variables</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">mutable</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">StateRegistry</span><span class="w"> </span><span class="o">*</span><span class="n">registry</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">StateID</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">PackedStateBin</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">int_packer</span><span class="o">::</span><span class="n">IntPacker</span><span class="w"> </span><span class="o">*</span><span class="n">state_packer</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="general_data">General Data<a class="headerlink" href="#general_data" title="Permanent link">#</a></h4>
+<p>Every state belongs to a task, which is stored internally as a pointer
+to an <code>AbstractTask</code>. This class is a private implementation detail and not
+accessible outside, so through the public interface (<code>State::get_task()</code>), the
+task is available only as a <code>TaskProxy</code>.</p>
+<p>Next up is the number of variables. We store this in each state for
+faster access but this might not be necessary and will possibly
+disappear in the future.</p>
+<h4 id="unpacked_data">Unpacked Data<a class="headerlink" href="#unpacked_data" title="Permanent link">#</a></h4>
+<p>Finally, the next two blocks are related to the actual data of the
+states. Our states can have data associated with them in two ways. The
+most straight-forward way is a vector of integers where position <em>i</em>
+contains the value of variable <em>i</em>. We store this data behind a shared
+pointer, so states remain light-weight and cheap to copy. The use of
+<code>mutable</code> is probably surprising but we will discuss this later.</p>
+<h4 id="packed_data">Packed Data<a class="headerlink" href="#packed_data" title="Permanent link">#</a></h4>
+<p>The alternative to a vector is packed data where values of multiple
+variables can be represented in one byte (for example, 8 boolean state
+variables fit into a single byte). This packed representation is used
+internally by the <code>StateRegistry</code> which stores states for long term storage.
+The idea is that <code>State</code> objects usually do not live too long (say only for one
+expansion) and we never store a large amount of them. When storing millions of
+states, the overhead of storing an additional pointer for each of them becomes
+very noticeable. This concerns explicit elements such as <code>const
+AbstractTask *task</code> but also the pointers hidden inside the <code>vector</code> class.
+This is why we store only packed data in a very compact way in the registry for
+such states. The state class then offers a nice public-facing interface to this
+data. Such states store their data in a registry (identified by <code>registry</code>) at
+a specific position (identified by <code>id</code>). To avoid looking up the position of
+the data every time, the state also stores the memory position of the actual
+data (pointed to by <code>buffer</code>). Finally, the <code>state_packer</code> encapsulates the bit
+magic that is required to access the value of a variable from the packed
+representation.</p>
+<h2 id="three_kinds_of_states">Three Kinds of States<a class="headerlink" href="#three_kinds_of_states" title="Permanent link">#</a></h2>
+<p>As we have two kinds of possible data representations, there are three
+kinds of states: those that have only unpacked data, those that have
+only packed data, and those that have both (the fourth case of a state
+without data doesn't require an object).</p>
+<p>States derived from a registry (registered states) always have packed data
+available but can be unpacked (with <code>State::unpack</code>) to have both kinds of data
+available. Unpacking the data requires accessing every packed value once but
+afterwards, accessing the unpacked data is faster than accessing the packed
+data. This makes sense in cases where many values of the state need to be
+accessed multiple times.  Calling <code>state::unpack</code> on state that is already
+unpacked is allowed and cheap.</p>
+<p>States that are created without a registry (unregistered states) never
+have packed data available and always use unpacked data only.</p>
+<p>The subscript operator (<code>State::operator[]</code>) automatically uses the fastest way
+available to access the data and unifies the interface to all three kinds of
+states.</p>
+<h2 id="immutable_states_through_mutable_pointers">Immutable States through Mutable Pointers<a class="headerlink" href="#immutable_states_through_mutable_pointers" title="Permanent link">#</a></h2>
+<p>Our states are meant to be <em>immutable</em> in the sense that a given state object
+will not change its identity but you can assign a new state to a <code>State</code>
+variable. A variable representing the state [1,2,3] cannot be changed to
+represent the state [1,1,1] except by assignment. Technically, this means
+that all methods of the class are <code>const</code> except for the (copy and move)
+assignment operators.  The method <code>State::unpack</code> seems to contradict this
+paradigm because it modifies the pointer <code>values</code>. We use the (maybe somewhat
+controversial) keyword <code>mutable</code> on the pointer to still allow the method to be
+considered <code>const</code>. The argument for this is that unpacking the data does not
+change the logical identity of the state. If it represents [1,2,3] before the
+operation, it still does so after unpacking.</p>
+<h2 id="working_with_states">Working with States<a class="headerlink" href="#working_with_states" title="Permanent link">#</a></h2>
+<p>In this section, we want to go over the most important steps for working
+with <code>State</code> objects.</p>
+<h4 id="constructing_states">Constructing States<a class="headerlink" href="#constructing_states" title="Permanent link">#</a></h4>
+<p>Registered states can be created with <code>StateRegistry::get_initial_state</code> and
+<code>StateRegistry::get_successor_state</code>. As these are the only ways to create
+registered states, such states are always reachable and always use duplicate
+detection (each state is represented in the registry at most once and creating
+a state along two paths will yield states with the same IDs).</p>
+<p>Unregistered states can be created in a similar way with
+<code>TaskProxy::get_initial_state</code> and <code>State::get_unregistered_successor</code>. In
+addition, they can also be created from arbitrary values using
+<code>TaskProxy::create_state</code>.</p>
+<p>The other two overloads of <code>TaskProxy::create_state</code> (the ones involving
+pointers to packed data) should only be used by the <code>StateRegistry</code> and should
+otherwise be considered private.</p>
+<h4 id="passing_states_around">Passing States Around<a class="headerlink" href="#passing_states_around" title="Permanent link">#</a></h4>
+<p>States are relatively light-weight, copying them only copies a handful
+of pointers and possibly updates the reference count of the shared
+pointer. But even if this copy is cheap, it is not free. We recommend
+passing states around by <code>const</code> reference where possible but copying them
+should not kill performance unless this happens in a very tight loop.</p>
+<h4 id="accessing_states">Accessing States<a class="headerlink" href="#accessing_states" title="Permanent link">#</a></h4>
+<p>In most circumstances, accessing state values with <code>State::operator[]</code> should
+be the right thing. If many values are requested from a registered state, it
+might pay off to call <code>State::unpack</code> first but this should be profiled. Also
+note that within heuristics all states are already unpacked at the moment.</p>
+<p>In extreme circumstances where performance is absolutely critical,
+<code>State::get_unpacked_values</code> can be used after unpacking the state to get
+a reference to the internal vector. Passing this vector to a function instead
+of the state saves one level of indirection when accessing the data and one
+<code>if</code> statement during the access. In very tight loops this can make
+a difference but this should only be done after identifying the issue with
+a profile.</p>
+<h4 id="comparing_and_hashing_states">Comparing and Hashing States<a class="headerlink" href="#comparing_and_hashing_states" title="Permanent link">#</a></h4>
+<p>Two states are considered equal if they contain the same values.
+However, mixing registered and unregistered states or registered states
+from different registries is likely unintentional and thus comparing
+them is considered an error. We currently have no use case where such a
+comparison would be necessary. If you do, contact us.</p>
+<p>We provide a hash function (<code>feed(HashState &amp;hash_state, const State &amp;state)</code>)
+for our implementation of hash maps (<code>utils::HashMap</code>) and hash sets
+(<code>utils::HashSet</code>). This function is meant for hashing unregistered states.
+Hashing registered states is considered an error for two reasons: first it is
+not possible to implement an efficient hash function that computes the same
+value for logically equal packed and unpacked states without unpacking the
+packed state. Second, when hashing registered states, it is much more efficient
+to hash their IDs instead of the state data, so we consider hashing the state
+data a performance bug.</p>
+<h4 id="how_not_to_use_a_state">How Not to Use a State<a class="headerlink" href="#how_not_to_use_a_state" title="Permanent link">#</a></h4>
+<p>Certain usage patters of a state are considered errors and will stop the
+planner with a critical error. In the future, these tests may disappear
+(leading to silent corruption) in release builds for performance
+reasons, which is already the case for many other similar checks in the
+planner. So we recommend thoroughly testing your code with debug builds,
+switching to the more efficient release builds once you trust your code.</p>
+<ol>
+<li>Accessing packed data through <code>State::get_buffer</code> is an error on
+    unregistered states (they do not have a buffer). You can use <code>if
+    (s.get_registry())</code> to check if the state is registered.</li>
+<li>Accessing unpacked data through <code>State::get_unpacked_values()</code> is an error
+    if the state has no unpacked data. We never implicitly
+    unpack a state as this is an expensive operation. Call <code>s.unpack();</code> if you
+    work with states where you are unsure if they have
+    unpacked data available.</li>
+<li>Creating unregistered successor states through
+    <code>State::get_unregistered_successor</code> also requires access to unpacked data
+    and thus leads to an error if the state doesn't have it available.</li>
+<li>As described above, hashing a registered state is considered an
+    error.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../logo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 31.01.2022: A Logo for Fast Downward">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                31.01.2022: A Logo for Fast Downward
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../a-day-in-the-life-of-a-state/" class="md-footer__link md-footer__link--next" aria-label="Next: 22.01.2021: A Day in the Life of a State">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                22.01.2021: A Day in the Life of a State
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
