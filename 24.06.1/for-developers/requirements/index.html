@@ -1872,21 +1872,23 @@ systems, compilers, Python and other tools we test:</p>
     version in the latest Ubuntu LTS release.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>We dropped support for clang-15 in Ubuntu 22.04 because it
 does not support certain features of C++20 which we would like to
 use. Users of Ubuntu 22.04 should either install clang-16 manually
-or use GCC instead.
--   Clang on macOS: we test the default AppleClang compiler on the
-latest two macOS versions available on GitHub actions.
--   MSVC on Windows: we test the default MSVC compiler that comes with
+or use GCC instead.</p>
+</div>
+<ul>
+<li>Clang on macOS: we test the default AppleClang compiler on the
+latest two macOS versions available on GitHub actions.</li>
+<li>MSVC on Windows: we test the default MSVC compiler that comes with
 the Visual Studio version on the latest two Windows versions
-available on GitHub actions.
--   LP solvers (CPLEX and SoPlex): we test one specific version. We
+available on GitHub actions.</li>
+<li>LP solvers (CPLEX and SoPlex): we test one specific version. We
 only upgrade the tested version if the current version no longer
-works or someone wants to test a newer version instead.
--   CMake: we test the default CMake version that comes with the
-operating systems we test on GitHub Actions.</p>
+works or someone wants to test a newer version instead.</li>
+<li>CMake: we test the default CMake version that comes with the
+operating systems we test on GitHub Actions.</li>
+</ul>
 </li>
 </ul>
 <p>See the <code>README.md</code> file in the repository for what this means in
