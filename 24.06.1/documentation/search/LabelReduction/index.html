@@ -880,7 +880,7 @@
         
   
   <span class="md-ellipsis">
-    Sytax for search plugins
+    Syntax for search plugins
     
   </span>
   
@@ -1919,15 +1919,14 @@
 <h2 id="exact_generalized_label_reduction">Exact generalized label reduction<a class="headerlink" href="#exact_generalized_label_reduction" title="Permanent link">#</a></h2>
 <p>This class implements the exact generalized label reduction described in the following paper:</p>
 <ul>
-<li>
-<p>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
+<li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-aaai2014.pdf">Generalized Label Reduction for Merge-and-Shrink Heuristics</a>.<br />
- In <em>Proceedings of the 28th AAAI Conference on Artificial Intelligence (AAAI 2014)</em>, pp. 2358-2366. AAAI Press, 2014.</p>
-<p>exact(before_shrinking, before_merging, method=all_transition_systems_with_fixpoint, system_order=random, random_seed=-1)</p>
-</li>
-<li>
-<p><em>before_shrinking</em> (bool): apply label reduction before shrinking</p>
-</li>
+ In <em>Proceedings of the 28th AAAI Conference on Artificial Intelligence (AAAI 2014)</em>, pp. 2358-2366. AAAI Press, 2014.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>exact(before_shrinking, before_merging, method=all_transition_systems_with_fixpoint, system_order=random, random_seed=-1)
+</span></code></pre></div>
+<ul>
+<li><em>before_shrinking</em> (bool): apply label reduction before shrinking</li>
 <li><em>before_merging</em> (bool): apply label reduction before merging</li>
 <li><em>method</em> ({two_transition_systems, all_transition_systems, all_transition_systems_with_fixpoint}): Label reduction method. See the AAAI14 paper by Sievers et al. for explanation of the default label reduction method and the 'combinable relation' .Also note that you must set at least one of the options reduce_labels_before_shrinking or reduce_labels_before_merging in order to use the chosen label reduction configuration.<ul>
 <li><code>two_transition_systems</code>: compute the 'combinable relation' only for the two transition systems being merged next</li>

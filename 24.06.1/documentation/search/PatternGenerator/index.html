@@ -955,7 +955,7 @@
         
   
   <span class="md-ellipsis">
-    Sytax for search plugins
+    Syntax for search plugins
     
   </span>
   
@@ -2069,15 +2069,14 @@
 <h2 id="cegar">CEGAR<a class="headerlink" href="#cegar" title="Permanent link">#</a></h2>
 <p>This pattern generator uses the CEGAR algorithm restricted to a random single goal of the task to compute a pattern. See below for a description of the algorithm and some implementation notes. The original algorithm (called single CEGAR) is described in the paper </p>
 <ul>
-<li>
-<p>Alexander Rovner, Silvan Sievers and Malte Helmert.<br />
+<li>Alexander Rovner, Silvan Sievers and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/rovner-et-al-icaps2019.pdf">Counterexample-Guided Abstraction Refinement for Pattern Selection in Optimal Classical Planning</a>.<br />
- In <em>Proceedings of the 29th International Conference on Automated Planning and Scheduling (ICAPS 2019)</em>, pp. 362-367. AAAI Press, 2019.</p>
-<p>cegar_pattern(max_pdb_size=1000000, max_time=infinity, use_wildcard_plans=true, random_seed=-1, verbosity=normal)</p>
-</li>
-<li>
-<p><em>max_pdb_size</em> (int [1, infinity]): maximum number of states in the final pattern database (possibly ignored by a singleton pattern consisting of a single goal variable)</p>
-</li>
+ In <em>Proceedings of the 29th International Conference on Automated Planning and Scheduling (ICAPS 2019)</em>, pp. 362-367. AAAI Press, 2019.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cegar_pattern(max_pdb_size=1000000, max_time=infinity, use_wildcard_plans=true, random_seed=-1, verbosity=normal)
+</span></code></pre></div>
+<ul>
+<li><em>max_pdb_size</em> (int [1, infinity]): maximum number of states in the final pattern database (possibly ignored by a singleton pattern consisting of a single goal variable)</li>
 <li><em>max_time</em> (double [0.0, infinity]): maximum time in seconds for the pattern generation</li>
 <li><em>use_wildcard_plans</em> (bool): if true, compute wildcard plans which are sequences of sets of operators that induce the same transition; otherwise compute regular plans which are sequences of single operators</li>
 <li><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.</li>
@@ -2099,8 +2098,8 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
 <p>Note that this kind of plan extraction does not consider all successors of a state uniformly at random but rather uses the previously deterministically chosen generating operator to settle on one successor state, which is biased by the number of operators leading to the same successor from the given state. Further note that in the presence of zero-cost operators, this procedure does not guarantee that the computed plan is strongly optimal because it does not minimize the number of used zero-cost operators leading to the state when choosing a generating operator. Experiments have shown (issue1007) that this speeds up the computation significantly while not having a strongly negative effect on heuristic quality due to potentially computing worse plans.</p>
 <p>Two further changes fix bugs of the original implementation to match the description in the paper. The first bug fix is to raise a flaw for all goal variables of the task if the plan for a PDB can be executed on the concrete task but does not lead to a goal state. Previously, such flaws would not have been raised because all goal variables are part of the collection from the start on and therefore not considered. This means that the original implementation accidentally disallowed merging patterns due to goal violation flaws. The second bug fix is to actually randomize the order of parallel operators in wildcard plan steps.</p>
 <h2 id="greedy">greedy<a class="headerlink" href="#greedy" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>greedy(max_states=1000000, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>greedy(max_states=1000000, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>max_states</em> (int [1, infinity]): maximal number of abstract states in the pattern database.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2112,8 +2111,8 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
 </li>
 </ul>
 <h2 id="manual_pattern">manual_pattern<a class="headerlink" href="#manual_pattern" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>manual_pattern(pattern, verbosity=normal)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>manual_pattern(pattern, verbosity=normal)
+</span></code></pre></div>
 <ul>
 <li><em>pattern</em> (list of int): list of variable numbers of the planning task that should be used as pattern.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2131,9 +2130,9 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
  <a href="https://ai.dmi.unibas.ch/papers/rovner-et-al-icaps2019.pdf">Counterexample-Guided Abstraction Refinement for Pattern Selection in Optimal Classical Planning</a>.<br />
  In <em>Proceedings of the 29th International Conference on Automated Planning and Scheduling (ICAPS 2019)</em>, pp. 362-367. AAAI Press, 2019.</li>
 </ul>
-<p>See below for a description of the algorithm and some implementation notes.</p>
-<div class="language-text highlight"><pre><span></span><code>random_pattern(max_pdb_size=1000000, max_time=infinity, bidirectional=true, random_seed=-1, verbosity=normal)
-</code></pre></div>
+<p>See below for a description of the algorithm and some implementation notes.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>random_pattern(max_pdb_size=1000000, max_time=infinity, bidirectional=true, random_seed=-1, verbosity=normal)
+</span></code></pre></div></p>
 <ul>
 <li><em>max_pdb_size</em> (int [1, infinity]): maximum number of states in the final pattern database (possibly ignored by a singleton pattern consisting of a single goal variable)</li>
 <li><em>max_time</em> (double [0.0, infinity]): maximum time in seconds for the pattern generation</li>
