@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://new.fast-downward.org/23.06/for-developers/release-workflow/">
+        <link rel="canonical" href="https://new.fast-downward.org/24.06/documentation/planner-usage/">
       
       
-        <link rel="prev" href="../profiling/">
+        <link rel="prev" href="../quick-start/">
       
       
-        <link rel="next" href="../requirements/">
+        <link rel="next" href="../pddl-support/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Release Workflow - Fast Downward</title>
+        <title>Planner usage - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#release_workflow" class="md-skip">
+        <a href="#usage" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Release Workflow
+              Planner usage
             
           </span>
         </div>
@@ -245,6 +245,8 @@
       
   
   
+    
+  
   
   
     
@@ -273,16 +275,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../documentation/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -300,7 +302,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Documentation
@@ -316,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/quick-start/" class="md-nav__link">
+      <a href="../quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -335,10 +337,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../documentation/planner-usage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Planner usage
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -348,6 +371,122 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caveats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different_builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Different builds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit_codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exit codes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lp_support" class="md-nav__link">
+    <span class="md-ellipsis">
+      LP support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      A* search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lazy greedy best-first search with preferred operators and the queue alternation method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lama_2011" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAMA 2011
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-bit_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      64-bit mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other questions?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -360,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/pddl-support/" class="md-nav__link">
+      <a href="../pddl-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -432,7 +571,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../documentation/search/" class="md-nav__link ">
+            <a href="../search/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -466,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/AbstractTask/" class="md-nav__link">
+      <a href="../search/AbstractTask/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -488,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/ConstraintGenerator/" class="md-nav__link">
+      <a href="../search/ConstraintGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -510,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/Evaluator/" class="md-nav__link">
+      <a href="../search/Evaluator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/LabelReduction/" class="md-nav__link">
+      <a href="../search/LabelReduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -554,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/LandmarkFactory/" class="md-nav__link">
+      <a href="../search/LandmarkFactory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeScoringFunction/" class="md-nav__link">
+      <a href="../search/MergeScoringFunction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -598,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeSelector/" class="md-nav__link">
+      <a href="../search/MergeSelector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeStrategy/" class="md-nav__link">
+      <a href="../search/MergeStrategy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -642,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeTree/" class="md-nav__link">
+      <a href="../search/MergeTree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -664,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/OpenList/" class="md-nav__link">
+      <a href="../search/OpenList/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/PatternCollectionGenerator/" class="md-nav__link">
+      <a href="../search/PatternCollectionGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -708,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/PatternGenerator/" class="md-nav__link">
+      <a href="../search/PatternGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -730,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/PruningMethod/" class="md-nav__link">
+      <a href="../search/PruningMethod/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/SearchAlgorithm/" class="md-nav__link">
+      <a href="../search/SearchAlgorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/ShrinkStrategy/" class="md-nav__link">
+      <a href="../search/ShrinkStrategy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -796,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/SubtaskGenerator/" class="md-nav__link">
+      <a href="../search/SubtaskGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -826,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search-plugin-syntax/" class="md-nav__link">
+      <a href="../search-plugin-syntax/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -848,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/ipc-planners/" class="md-nav__link">
+      <a href="../ipc-planners/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -870,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/exit-codes/" class="md-nav__link">
+      <a href="../exit-codes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/translator-output-format/" class="md-nav__link">
+      <a href="../translator-output-format/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1190,8 +1329,6 @@
       
   
   
-    
-  
   
   
     
@@ -1240,16 +1377,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../for-developers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1267,7 +1404,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             For Developers
@@ -1307,7 +1444,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../blog/" class="md-nav__link ">
+            <a href="../../for-developers/blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1341,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/new-option-parser/" class="md-nav__link">
+      <a href="../../for-developers/blog/new-option-parser/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1363,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/logo/" class="md-nav__link">
+      <a href="../../for-developers/blog/logo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1385,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/a-deeper-look-at-states/" class="md-nav__link">
+      <a href="../../for-developers/blog/a-deeper-look-at-states/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1407,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/a-day-in-the-life-of-a-state/" class="md-nav__link">
+      <a href="../../for-developers/blog/a-day-in-the-life-of-a-state/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1439,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog-format/" class="md-nav__link">
+      <a href="../../for-developers/changelog-format/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1461,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cmake/" class="md-nav__link">
+      <a href="../../for-developers/cmake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1483,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../code-review/" class="md-nav__link">
+      <a href="../../for-developers/code-review/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1505,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-conventions/" class="md-nav__link">
+      <a href="../../for-developers/coding-conventions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1527,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cpp-whitespace/" class="md-nav__link">
+      <a href="../../for-developers/cpp-whitespace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../development-setup/" class="md-nav__link">
+      <a href="../../for-developers/development-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1571,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+      <a href="../../for-developers/git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1593,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../github-actions/" class="md-nav__link">
+      <a href="../../for-developers/github-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1615,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../implementation-details/" class="md-nav__link">
+      <a href="../../for-developers/implementation-details/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1637,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../long-term-plans/" class="md-nav__link">
+      <a href="../../for-developers/long-term-plans/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1659,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../problem-transformations/" class="md-nav__link">
+      <a href="../../for-developers/problem-transformations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1681,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../profiling/" class="md-nav__link">
+      <a href="../../for-developers/profiling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1700,19 +1837,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../for-developers/release-workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1722,7 +1850,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1735,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../requirements/" class="md-nav__link">
+      <a href="../../for-developers/requirements/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1757,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sprint/" class="md-nav__link">
+      <a href="../../for-developers/sprint/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1779,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../translator-output-format-v4/" class="md-nav__link">
+      <a href="../../for-developers/translator-output-format-v4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1801,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../uncrustify/" class="md-nav__link">
+      <a href="../../for-developers/uncrustify/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1843,6 +1970,110 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caveats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different_builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Different builds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit_codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exit codes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lp_support" class="md-nav__link">
+    <span class="md-ellipsis">
+      LP support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      A* search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lazy greedy best-first search with preferred operators and the queue alternation method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lama_2011" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAMA 2011
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-bit_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      64-bit mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other questions?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1860,95 +2091,101 @@
   
 
 
-<h1 id="release_workflow">Release Workflow<a class="headerlink" href="#release_workflow" title="Permanent link">#</a></h1>
-<p>We have <em>regular releases</em> and <em>bugfix releases</em>. We use <code>20.06</code> as an example for a regular release and <code>22.06.1</code> as an example for a bugfix release.</p>
-<p>Release steps:</p>
-<ol>
-<li>Set the variables used in the following steps as in this example for a regular release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RELEASE=20.06
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BRANCH=20.06
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TAG=20.06.0
+<h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h1>
+<p>To run Fast Downward, use the <code>fast-downward.py</code> driver script. At minimum, you
+need to specify the PDDL input files and search options consisting of a <a href="../search/SearchAlgorithm/">search
+algorithm</a> with one or more <a href="../search/Evaluator/">evaluator
+specifications</a>. The driver script has many options to do
+things like running portfolios, running only the translation component of the
+planner, using a non-standard build, running a plan validator and various other
+things. To see the complete list of options, run</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --help
+</code></pre></div>
+<p>If you want to run any of the planners based on Fast Downward that
+participated in IPC 2011, please also check the page on
+<a href="../ipc-planners/">IPC planners</a>.</p>
+<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">#</a></h2>
+<p>The <strong>search options</strong> are built with flexibility in mind, not ease of
+use. It is very easy to use option settings that look plausible, yet
+introduce significant inefficiencies. For example, an invocation like</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./fast-downward.py domain.pddl problem.pddl --search &quot;lazy_greedy([ff()], preferred=[ff()])&quot;
 </span></code></pre></div>
- Set them as in this example for a bugfix release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RELEASE=22.06.1
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BRANCH=22.06
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>TAG=22.06.1
-</span></code></pre></div></li>
-<li>Regular releases only: make sure that you are on the commit on which you want to base the release.</li>
-<li>Bugfix releases only: check out the release branch and cherry-pick each commit with hash <code>HASH</code> that you want to include:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git checkout release-$BRANCH
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git cherry-pick HASH
-</span></code></pre></div></li>
-<li>Make sure that the list of contributors and copyright years in the <code>README.md</code> file are up to date.</li>
-<li>Make sure the changelog (see <a href="../changelog-format/">ChangelogFormat</a>) is up to date and committed. In particular:<ol>
-<li>Make sure the changelog includes the line giving the date of the release.</li>
-<li>Add a new section like <code>## Fast Downward 20.06</code> or <code>## Fast Downward 22.06.1</code> and gather all changes since the last release from the commit messages. Use an existing regular/bugfix release as an example.</li>
-</ol>
-</li>
-<li>Make sure that the working directory is clean and that any last-minute changes from the above steps are committed.</li>
-<li>Update version number and create branches, tags and recipe files by running the <code>prepare-release.sh</code> script:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./misc/releases/prepare-release.sh $TAG
-</span></code></pre></div></li>
-<li>Verify the following manually:<ol>
-<li>The <code>fast-downward-$RELEASE.tar.gz</code> tarball created in the previous step contains the appropriate files.</li>
-<li>Branches and tags were created as expected. In a bugfix release, a tag like <code>22.06.1</code> should have been created on the existing release branch <code>22.06</code>.</li>
-<li>A new commit was created with the right recipe files and version changes.</li>
-</ol>
-</li>
-<li>Push all changes.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git push --all
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git push --tags
-</span></code></pre></div></li>
-<li>Make sure that all Github actions are green on the release branch.</li>
-<li>Build the Docker image and push it to the Docker Hub. Note that we build the <code>20.06</code>/<code>22.06</code> Docker image, not <code>20.06.0</code>/<code>22.06.1</code>. Under normal conditions, Docker needs root rights. The actual push to Docker hub needs appropriate credentials. Malte has them; not sure anyone else does. (Please edit if you do.)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo ./misc/releases/push-docker.sh $BRANCH
-</span></code></pre></div></li>
-<li>Build the Apptainer image:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>apptainer pull fast-downward.sif docker://aibasel/downward:$BRANCH
+<p>looks plausible, yet is hugely inefficient since it will compute the FF
+heuristic twice per state. See the <a href="#examples">examples</a> at the bottom of this
+page to see how to call the planner properly. If in doubt, ask.</p>
+<h2 id="different_builds">Different builds<a class="headerlink" href="#different_builds" title="Permanent link">#</a></h2>
+<p>Different builds of Fast Downward (e.g. release vs. debug) are placed in
+different directories by the build script. Hence, several builds can
+coexist and <code>fast-downward.py</code> must be told which build to use. By default, the
+<code>release</code> build is used, which is also the default build produced by
+<code>build.py</code>.  To use a different build, pass <code>--build=&lt;name&gt;</code> to the driver
+script. The parameter <code>--debug</code> is an alias for <code>--build=debug --validate</code>.</p>
+<p><strong>Note on IDE projects (Visual Studio, XCode)</strong>: You can use the CMake
+build system to generate a project for you favourite IDE. These projects
+are what CMake calls "multi-config generators", i.e., they are created
+without fixing the build configuration. At build time, the IDE decides
+whether to do a debug or release build and creates subdirectories in the
+output folder. Use the full path to the binaries as the value of
+<code>--build</code> (e.g., <code>--build=path/to/visual/studio/project/bin/Debug/</code>).</p>
+<h2 id="exit_codes">Exit codes<a class="headerlink" href="#exit_codes" title="Permanent link">#</a></h2>
+<p>The driver exits with 0 if no errors are encountered. Otherwise, it
+returns the exit code of the first component that failed (cf. <a href="../exit-codes/">documentation of
+exit codes</a>).</p>
+<h2 id="lp_support">LP support<a class="headerlink" href="#lp_support" title="Permanent link">#</a></h2>
+<p>Features that use an LP solver have a command-line option <code>lpsolver</code>
+to switch between different solver types. See
+<a href="http://issues.fast-downward.org/issue752">issue752</a> and
+<a href="http://issues.fast-downward.org/issue1076">issue1076</a> for a
+discussion of the relative performance of CPLEX and SoPlex.</p>
+<p>Note that SoPlex is not a MIP solver, so using it for configurations
+that require integer variables will result in an error. Please use CPLEX
+for such cases.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h3 id="a_search">A* search<a class="headerlink" href="#a_search" title="Permanent link">#</a></h3>
+<div class="language-text highlight"><pre><span></span><code># landmark-cut heuristic
+ ./fast-downward.py domain.pddl task.pddl --search &quot;astar(lmcut())&quot;
+
+# iPDB heuristic with default settings
+ ./fast-downward.py domain.pddl task.pddl --search &quot;astar(ipdb())&quot;
+
+# blind heuristic
+ ./fast-downward.py domain.pddl task.pddl --search &quot;astar(blind())&quot;
+</code></pre></div>
+<h3 id="lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method">Lazy greedy best-first search with preferred operators and the queue alternation method<a class="headerlink" href="#lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method" title="Permanent link">#</a></h3>
+<div class="language-text highlight"><pre><span></span><code>## using FF heuristic and context-enhanced additive heuristic (previously: &quot;fFyY&quot;)
+ ./fast-downward.py domain.pddl task.pddl \
+    --search &quot;let(hff, ff(), let(hcea, cea(), lazy_greedy([hff, hcea], preferred=[hff, hcea])))&quot;
+
+
+## using FF heuristic (previously: &quot;fF&quot;)
+ ./fast-downward.py domain.pddl task.pddl \
+    --search &quot;let(hff, ff(), lazy_greedy([hff], preferred=[hff]))&quot;
+
+
+## using context-enhanced additive heuristic (previously: &quot;yY&quot;)
+ ./fast-downward.py domain.pddl task.pddl \
+    --search &quot;let(hcea, cea(), lazy_greedy([hcea], preferred=[hcea]))&quot;
+</code></pre></div>
+<h3 id="lama_2011">LAMA 2011<a class="headerlink" href="#lama_2011" title="Permanent link">#</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./fast-downward.py --alias seq-sat-lama-2011 domain.pddl task.pddl
 </span></code></pre></div>
- Note: Ubuntu (*.deb) packages for Apptainer are available here: <a href="https://github.com/apptainer/apptainer/releases">https://github.com/apptainer/apptainer/releases</a>. Tested with Apptainer 1.3.6.</li>
-<li>Test:<ul>
-<li>that we can build and successfully run the planner from the produced tarball</li>
-<li>that we can successfully run the planner from the produced Apptainer image, including a configuration using SoPlex</li>
-<li>that we can successfully run the planner from the produced Vagrantfile (automatically includes SoPlex; to also build the VM with CPLEX, you need an environment variable <code>DOWNWARD_LP_INSTALLERS</code> that points to a directory containing the CPLEX installer in the correct version)</li>
-</ul>
-</li>
-<li>Regular releases only: create a documentation page for the release in the <em>downward-markdown</em> repository. We suggest starting from a copy of the page for the latest release in <code>docs/releases</code>.<ol>
-<li>Update the date and release version name.</li>
-<li>Update the links and references in section "Downloads".</li>
-<li>Update the changelog.</li>
-<li>Add the tarball to a new folder for the release in <code>docs/files</code>.</li>
-<li>Add the Vagrant file created by the <code>prepare-release.sh</code> script to the same folder.</li>
-<li>Create a link in <code>docs/releases/index.md</code> to the page of the new release.</li>
-</ol>
-</li>
-<li>Bugfix releases only: update the documentation page of the release (for bugfix release <code>22.06.1</code>, reuse the release page <code>22.06</code>). See the page for <a href="../../releases/22.06/">release 22.06</a> for an example. The Vagrantfile does not need to be updated for a bugfix release.<ol>
-<li>Adjust the date and mention the bugfix release version name.</li>
-<li>Update the changelog.</li>
-<li>Update the name of the tarball (it should include the bugfix number) and add the tarball to the respective folder in <code>docs/files</code>.</li>
-<li>Update the bash instructions.</li>
-</ol>
-</li>
-<li>Regular releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
-<li>Branch from the <code>head-docs</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that release (instead of being auto-generated like the head-docs branch). This assumes that you make a release from the current HEAD of main in the Fast Downward code repository. If not, you can modify the branch as described for a bugfix release (next step).</li>
-<li>Add an entry for the release in <code>releases.json</code> of the <code>main</code> branch. Move the <code>latest</code> alias to the new release.</li>
-</ol>
-</li>
-<li>Bugfix releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
-<li>Branch from the earlier <code>release-{$TAG-1}</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that bugfix release.</li>
-<li>Make necessary changes in the documentation in this branch. If the generated documentation for the search plugins has changed, generate it with the <code>misc/autodocs/generate-docs.py</code> script in the code repository. It writes the documentation to <code>docs/search</code> there. You just have to copy the content into <code>docs/search</code> of the new branch.</li>
-<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "24.06.0" to "24.06.1".</li>
-</ol>
-</li>
-<li>Create a new release on github:<ol>
-<li>On <a href="https://github.com/aibasel/downward/releases">https://github.com/aibasel/downward/releases</a> click on <code>Draft a new release</code>.</li>
-<li>Set <code>Tag</code> to <code>release-$TAG</code>, <code>Release Title</code> to <code>$RELEASE</code>, and <code>Description</code> to <code>For information about this release, please visit the [Fast Downward documentation](https://www.fast-downward.org/latest/releases/$BRANCH/)</code>.</li>
-<li>Click on <code>Publish Release</code>.</li>
-</ol>
-</li>
-<li>Send an announcement e-mail to the Fast Downward list including changelog information.</li>
-<li>Send the same announcement as a message in the Fast Downward Discord server.</li>
-</ol>
+<p>runs the "LAMA 2011 configuration" of the planner. (Note that this is
+not really the same as "LAMA 2011" as it participated at IPC 2011
+because there have been bug fixes and other changes to the planner since
+2011. See <a href="../ipc-planners/">"IPC planners"</a> for more information.)
+To find out which actual search options the LAMA 2011 configuration
+corresponds to, check the source code of the <code>src/driver/aliases.py</code> module.</p>
+<h2 id="64-bit_mode">64-bit mode<a class="headerlink" href="#64-bit_mode" title="Permanent link">#</a></h2>
+<p>Older planner versions built the planner in 32-bit mode by default
+because of lower memory consumption. As part of the meta issue
+<a href="http://issues.fast-downward.org/issue213">issue213</a> we
+decreased the memory consumption of 64-bit builds to the point where
+there should be no difference between 32- and 64-bit builds for most
+configurations. Therefore, we use the native bitwidth of the operating
+system since January 2019.</p>
+<h2 id="other_questions">Other questions?<a class="headerlink" href="#other_questions" title="Permanent link">#</a></h2>
+<p>Please get in touch! See the <a href="https://www.fast-downward.org">home page</a> for various
+contact options.</p>
 
 
 
@@ -1978,7 +2215,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../profiling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Profiling">
+          <a href="../quick-start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting started">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1988,20 +2225,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Profiling
+                Getting started
               </div>
             </div>
           </a>
         
         
           
-          <a href="../requirements/" class="md-footer__link md-footer__link--next" aria-label="Next: Requirements">
+          <a href="../pddl-support/" class="md-footer__link md-footer__link--next" aria-label="Next: PDDL support">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Requirements
+                PDDL support
               </div>
             </div>
             <div class="md-footer__button md-icon">

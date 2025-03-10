@@ -1935,9 +1935,9 @@
 </ol>
 </li>
 <li>Bugfix releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
-<li>Branch from the <code>release-$TAG</code> branch to a new branch <code>release-$TAG.X</code> and update <code>README.md</code> file to state that this is the branch for that bugfix release.</li>
+<li>Branch from the earlier <code>release-{$TAG-1}</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that bugfix release.</li>
 <li>Make necessary changes in the documentation in this branch. If the generated documentation for the search plugins has changed, generate it with the <code>misc/autodocs/generate-docs.py</code> script in the code repository. It writes the documentation to <code>docs/search</code> there. You just have to copy the content into <code>docs/search</code> of the new branch.</li>
-<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "24.06" to "24.06.1".</li>
+<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "24.06.0" to "24.06.1".</li>
 </ol>
 </li>
 <li>Create a new release on github:<ol>

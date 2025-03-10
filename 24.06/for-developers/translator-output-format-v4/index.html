@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://new.fast-downward.org/23.06/for-developers/release-workflow/">
+        <link rel="canonical" href="https://new.fast-downward.org/24.06/for-developers/translator-output-format-v4/">
       
       
-        <link rel="prev" href="../profiling/">
+        <link rel="prev" href="../sprint/">
       
       
-        <link rel="next" href="../requirements/">
+        <link rel="next" href="../uncrustify/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Release Workflow - Fast Downward</title>
+        <title>Translator Output Format v4 - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#release_workflow" class="md-skip">
+        <a href="#translator_output_format_v4" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Release Workflow
+              Translator Output Format v4
             
           </span>
         </div>
@@ -1700,19 +1700,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../release-workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1722,7 +1713,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1776,10 +1766,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../translator-output-format-v4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1789,6 +1788,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1860,95 +1860,516 @@
   
 
 
-<h1 id="release_workflow">Release Workflow<a class="headerlink" href="#release_workflow" title="Permanent link">#</a></h1>
-<p>We have <em>regular releases</em> and <em>bugfix releases</em>. We use <code>20.06</code> as an example for a regular release and <code>22.06.1</code> as an example for a bugfix release.</p>
-<p>Release steps:</p>
-<ol>
-<li>Set the variables used in the following steps as in this example for a regular release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RELEASE=20.06
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BRANCH=20.06
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TAG=20.06.0
-</span></code></pre></div>
- Set them as in this example for a bugfix release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RELEASE=22.06.1
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BRANCH=22.06
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>TAG=22.06.1
-</span></code></pre></div></li>
-<li>Regular releases only: make sure that you are on the commit on which you want to base the release.</li>
-<li>Bugfix releases only: check out the release branch and cherry-pick each commit with hash <code>HASH</code> that you want to include:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git checkout release-$BRANCH
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git cherry-pick HASH
-</span></code></pre></div></li>
-<li>Make sure that the list of contributors and copyright years in the <code>README.md</code> file are up to date.</li>
-<li>Make sure the changelog (see <a href="../changelog-format/">ChangelogFormat</a>) is up to date and committed. In particular:<ol>
-<li>Make sure the changelog includes the line giving the date of the release.</li>
-<li>Add a new section like <code>## Fast Downward 20.06</code> or <code>## Fast Downward 22.06.1</code> and gather all changes since the last release from the commit messages. Use an existing regular/bugfix release as an example.</li>
-</ol>
-</li>
-<li>Make sure that the working directory is clean and that any last-minute changes from the above steps are committed.</li>
-<li>Update version number and create branches, tags and recipe files by running the <code>prepare-release.sh</code> script:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./misc/releases/prepare-release.sh $TAG
-</span></code></pre></div></li>
-<li>Verify the following manually:<ol>
-<li>The <code>fast-downward-$RELEASE.tar.gz</code> tarball created in the previous step contains the appropriate files.</li>
-<li>Branches and tags were created as expected. In a bugfix release, a tag like <code>22.06.1</code> should have been created on the existing release branch <code>22.06</code>.</li>
-<li>A new commit was created with the right recipe files and version changes.</li>
-</ol>
-</li>
-<li>Push all changes.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git push --all
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git push --tags
-</span></code></pre></div></li>
-<li>Make sure that all Github actions are green on the release branch.</li>
-<li>Build the Docker image and push it to the Docker Hub. Note that we build the <code>20.06</code>/<code>22.06</code> Docker image, not <code>20.06.0</code>/<code>22.06.1</code>. Under normal conditions, Docker needs root rights. The actual push to Docker hub needs appropriate credentials. Malte has them; not sure anyone else does. (Please edit if you do.)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo ./misc/releases/push-docker.sh $BRANCH
-</span></code></pre></div></li>
-<li>Build the Apptainer image:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>apptainer pull fast-downward.sif docker://aibasel/downward:$BRANCH
-</span></code></pre></div>
- Note: Ubuntu (*.deb) packages for Apptainer are available here: <a href="https://github.com/apptainer/apptainer/releases">https://github.com/apptainer/apptainer/releases</a>. Tested with Apptainer 1.3.6.</li>
-<li>Test:<ul>
-<li>that we can build and successfully run the planner from the produced tarball</li>
-<li>that we can successfully run the planner from the produced Apptainer image, including a configuration using SoPlex</li>
-<li>that we can successfully run the planner from the produced Vagrantfile (automatically includes SoPlex; to also build the VM with CPLEX, you need an environment variable <code>DOWNWARD_LP_INSTALLERS</code> that points to a directory containing the CPLEX installer in the correct version)</li>
+<h1 id="translator_output_format_v4">Translator Output Format v4<a class="headerlink" href="#translator_output_format_v4" title="Permanent link">#</a></h1>
+<p>On this page we collect ideas for a future revision of the translator output
+format. The rest of the document corresponds to the envisioned format.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There can be changes to the <a href="../../documentation/translator-output-format/">translator output format v3</a>
+that have not yet been ported to this page. (We synchronized the documents when
+transitioning from the wiki to the new website.)
+It is probably difficult to try to keep this in sync all the time because
+not everyone is aware of the existence of this page, so I suggest we do
+a diff/meld/trawl through the history to see which changes to
+the <a href="../../documentation/translator-output-format/">translator output format</a>
+need to be merged to this page at the time that this page becomes the
+"official" documentation page for the translator output format.</p>
+</div>
+<h1 id="output_of_the_fast_downward_translator_v4">Output of the Fast Downward translator v4<a class="headerlink" href="#output_of_the_fast_downward_translator_v4" title="Permanent link">#</a></h1>
+<p>This page describes the output format of the translator component of
+Fast Downward.</p>
+<h2 id="version_history">Version history<a class="headerlink" href="#version_history" title="Permanent link">#</a></h2>
+<p>This page describes <strong>version 4</strong> of the output file format. The
+following list gives a brief version history:</p>
+<ul>
+<li><strong>Version 1</strong> (introduced 2004): the original Fast Downward translator,
+    generating the <code>output.sas</code> file with information for the preprocessor and
+    search code and a <code>test.groups</code> file with some additional information for
+    human users. Output files from this version can be identified by their lack
+    of either a <code>version</code> or <code>metric</code> section.</li>
+<li><strong>Version 2</strong> (introduced 2008): added the <code>metric</code> section and action cost
+    information and introduced a third output file, <code>all.groups</code>, with mutex
+    information used by the landmark generation procedures.  Output files from
+    this version can be identified by their lack of a <code>version</code> and inclusion of
+    a <code>metric</code> section.</li>
+<li><strong>Version 3</strong> (introduced September 2011): integrated the three
+    output files into one and added the <code>version</code> section.</li>
+<li><strong>Version 4</strong> (not yet stable): do not distinguish prevail and
+    preconditions; changed order of sections; new <code>axiom_defaults</code> section;
+    require specific order of output;</li>
 </ul>
-</li>
-<li>Regular releases only: create a documentation page for the release in the <em>downward-markdown</em> repository. We suggest starting from a copy of the page for the latest release in <code>docs/releases</code>.<ol>
-<li>Update the date and release version name.</li>
-<li>Update the links and references in section "Downloads".</li>
-<li>Update the changelog.</li>
-<li>Add the tarball to a new folder for the release in <code>docs/files</code>.</li>
-<li>Add the Vagrant file created by the <code>prepare-release.sh</code> script to the same folder.</li>
-<li>Create a link in <code>docs/releases/index.md</code> to the page of the new release.</li>
+<h2 id="translator_file_format">Translator file format<a class="headerlink" href="#translator_file_format" title="Permanent link">#</a></h2>
+<p>The translator file consists of nine sections:</p>
+<ol>
+<li><a href="#translator_file_format_version_section">Version section</a></li>
+<li><a href="#translator_file_format_metric_section">Metric section</a></li>
+<li><a href="#translator_file_format_variables_section">Variables section</a></li>
+<li><a href="#translator_file_format_mutex_section">Mutex section</a></li>
+<li><a href="#translator_file_format_axiom_defaults_section">Axiom defaults section</a></li>
+<li><a href="#translator_file_format_axiom_section">Axiom section</a></li>
+<li><a href="#translator_file_format_operator_section">Operator section</a></li>
+<li><a href="#translator_file_format_initial_state_section">Initial state section</a></li>
+<li><a href="#translator_file_format_goal_section">Goal section</a></li>
 </ol>
-</li>
-<li>Bugfix releases only: update the documentation page of the release (for bugfix release <code>22.06.1</code>, reuse the release page <code>22.06</code>). See the page for <a href="../../releases/22.06/">release 22.06</a> for an example. The Vagrantfile does not need to be updated for a bugfix release.<ol>
-<li>Adjust the date and mention the bugfix release version name.</li>
-<li>Update the changelog.</li>
-<li>Update the name of the tarball (it should include the bugfix number) and add the tarball to the respective folder in <code>docs/files</code>.</li>
-<li>Update the bash instructions.</li>
-</ol>
-</li>
-<li>Regular releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
-<li>Branch from the <code>head-docs</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that release (instead of being auto-generated like the head-docs branch). This assumes that you make a release from the current HEAD of main in the Fast Downward code repository. If not, you can modify the branch as described for a bugfix release (next step).</li>
-<li>Add an entry for the release in <code>releases.json</code> of the <code>main</code> branch. Move the <code>latest</code> alias to the new release.</li>
-</ol>
-</li>
-<li>Bugfix releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
-<li>Branch from the earlier <code>release-{$TAG-1}</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that bugfix release.</li>
-<li>Make necessary changes in the documentation in this branch. If the generated documentation for the search plugins has changed, generate it with the <code>misc/autodocs/generate-docs.py</code> script in the code repository. It writes the documentation to <code>docs/search</code> there. You just have to copy the content into <code>docs/search</code> of the new branch.</li>
-<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "24.06.0" to "24.06.1".</li>
-</ol>
-</li>
-<li>Create a new release on github:<ol>
-<li>On <a href="https://github.com/aibasel/downward/releases">https://github.com/aibasel/downward/releases</a> click on <code>Draft a new release</code>.</li>
-<li>Set <code>Tag</code> to <code>release-$TAG</code>, <code>Release Title</code> to <code>$RELEASE</code>, and <code>Description</code> to <code>For information about this release, please visit the [Fast Downward documentation](https://www.fast-downward.org/latest/releases/$BRANCH/)</code>.</li>
-<li>Click on <code>Publish Release</code>.</li>
-</ol>
-</li>
-<li>Send an announcement e-mail to the Fast Downward list including changelog information.</li>
-<li>Send the same announcement as a message in the Fast Downward Discord server.</li>
-</ol>
+<h3 id="translatior_file_format_version_section">Translatior file format: version section<a class="headerlink" href="#translatior_file_format_version_section" title="Permanent link">#</a></h3>
+<p>The version section includes a version number that is used by the
+search component to determine if its input has been generated by a
+compatible translator version.</p>
+<p>It always looks like this for the version of the translator documented
+here:</p>
+<p><em>Sample version section:</em></p>
+<div class="language-text highlight"><pre><span></span><code>begin_version
+4
+end_version
+</code></pre></div>
+<h3 id="translator_file_format_metric_section">Translator file format: metric section<a class="headerlink" href="#translator_file_format_metric_section" title="Permanent link">#</a></h3>
+<p>The metric section indicates whether action costs are used or not. It
+begins with the line "begin_metric", followed by either a 0 or 1. 0
+indicates that action costs are not used, and all actions are treated as
+unit-cost. 1 indicates that action costs are used. The section ends with
+the line "end_metric".</p>
+<p><em>Sample metric section (Gripper domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>begin_metric
+0
+end_metric
+</code></pre></div>
+<h3 id="translator_file_format_variables_section">Translator file format: variables section<a class="headerlink" href="#translator_file_format_variables_section" title="Permanent link">#</a></h3>
+<p><em>Background:</em> the translator process works by partitioning the fluent
+facts of the grounded PDDL task into sets of mutually exclusive
+propositions ("mutex groups"). Such a partitioning is always possible
+since a decomposition into trivial mutex groups with only one element
+always works. However, the translator prefers to use larger mutex
+groups, trying to find a cover with few groups. A mutex group consisting
+of facts {<em>p</em><em>1, ..., <em>p</em></em><em>k</em>} is turned into a finite-domain
+variable with domain {0, 1, ..., <em>k</em>}, where value <em>i</em> &lt; <em>k</em> means
+that fact <em>p</em>_{<em>i</em>+1} is true and all others are false, and value <em>k</em>
+means that all facts are false. (Sometimes this last value is omitted
+because the translator detects that at least one fact from the group
+must always be true.)</p>
+<p>The variables section begins with a line containing a single number, the
+number of finite-domain variables in the task. Following that line, each
+variable is defined in sequence.</p>
+<p>An variable definition is structured as follows:</p>
+<ul>
+<li>The first line is "begin_variable".</li>
+<li>The second line contains the name of the variable (which is
+    usually a nondescriptive name like "var7").</li>
+<li>The third line specifies the axiom layer of the variable.</li>
+<li>The fourth line specifies the variable's <code>range</code>, i.e., the number of
+    different values it can take it on. The value of a variable is always
+    from the set {0, 1, 2, ..., <code>range</code> - 1}.</li>
+<li>The following <code>range</code> lines specify the symbolic names for each of the
+    <code>range</code> values the variable can take on, one at a time. These typically
+    correspond to grounded PDDL facts, except for values that represent
+    that none out a set of PDDL facts is true.</li>
+<li>The final line is "end_variable".</li>
+</ul>
+<p>For state variables that do not correspond to axioms, i.e. which are not
+computed from the values of other state variables, the axiom layer is
+always -1. For state variables that do correspond to axioms, the axiom
+layer determines the order of evaluation of axiom rules, described
+further below in the section <a href="#evaluating_axioms">"Evaluating Axioms"</a>.</p>
+<p>Sample variables section (Gripper domain, <code>prob01.pddl</code> from IPC 1998):</p>
+<div class="language-text highlight"><pre><span></span><code>  7
+  begin_variable
+  var0
+  -1
+  5
+  Atom carry(ball1, right)
+  Atom carry(ball2, right)
+  Atom carry(ball3, right)
+  Atom free(right)
+  Atom carry(ball4, right)
+  end_variable
+  begin_variable
+  var1
+  -1
+  5
+  Atom carry(ball3, left)
+  Atom free(left)
+  Atom carry(ball2, left)
+  Atom carry(ball1, left)
+  Atom carry(ball4, left)
+  end_variable
+  begin_variable
+  var2
+  -1
+  3
+  Atom at(ball4, rooma)
+  Atom at(ball4, roomb)
+  &lt;none of those&gt;
+  end_variable
+  begin_variable
+  var3
+  -1
+  3
+  Atom at(ball3, rooma)
+  Atom at(ball3, roomb)
+  &lt;none of those&gt;
+  end_variable
+  begin_variable
+  var4
+  -1
+  3
+  Atom at(ball1, rooma)
+  Atom at(ball1, roomb)
+  &lt;none of those&gt;
+  end_variable
+  begin_variable
+  var5
+  -1
+  3
+  Atom at(ball2, rooma)
+  Atom at(ball2, roomb)
+  &lt;none of those&gt;
+  end_variable
+  begin_variable
+  var6
+  -1
+  2
+  Atom at-robby(roomb)
+  Atom at-robby(rooma)
+  end_variable
+</code></pre></div>
+<p>The example shows that there are 7 finite-domain variables in this task.
+Please note that the order in which the variables are generated and the
+order of their values are not deterministic and can vary between
+translator runs.</p>
+<p>The first variable is not a derived variable (its axiom layer is -1),
+and it can take on 5 different values (from the set {0, 1, 2, 3, 4, 5}),
+which correspond to the PDDL facts <code>(carry ball1 right)</code>, <code>(carry ball2
+right)</code>, <code>(carry ball3 right)</code>, <code>(free right)</code>, and <code>(carry ball4 right)</code>. This
+represents the state of the right gripper. The next variable is similar, but
+represents a state of the left gripper.</p>
+<p>The third variable is again not derived (axiom layer -1) and takes on
+three values, corresponding to ball4 being in rooma, ball4 being in
+roomb, and ball4 being in neither room (which implies that it is carried
+by either gripper). The next three state variables similarly represent
+the other balls, and the final state variable represents the location of
+the robot.</p>
+<h3 id="translator_file_format_mutex_section">Translator file format: mutex section<a class="headerlink" href="#translator_file_format_mutex_section" title="Permanent link">#</a></h3>
+<p>The mutex section encodes additional mutual exclusion constraints in the
+form of mutex groups (groups of variable/value pairs of which no two can
+be simultaneously true). </p>
+<p>A mutex group is called <em>trivial</em> if it only
+represents information that is obvious from the finite-domain
+representation (that the same variable cannot hold two different values
+concurrently).  When used with default options, the translator will discard
+trivial mutexes, so the search component can rely on the fact that all mutexes
+are non-trivial. However, this is not guaranteed when using translator options
+<code>--translate-options</code> and <code>--keep-unreachable-facts</code>.</p>
+<p>The mutex section begins with a line containing a single number, the
+number of mutex groups in the task. Following that line, each mutex
+group is defined in sequence.</p>
+<p>An mutex group definition is structured as follows:</p>
+<ul>
+<li>The first line is "begin_mutex_group".</li>
+<li>The second line contains a single number, denoting the number of
+    facts in the mutex group.</li>
+<li>The following lines describe the facts in the group, one line
+    for each fact. Each fact is is given by two numbers separated by
+    a space, denoting the variable (indexing into the variable
+    section above, counting from 0) and a value for that variable
+    (indexing into the list of value names for that variable,
+    counting from 0).</li>
+<li>The final line is "end_mutex_group".</li>
+</ul>
+<p><em>Sample mutex section (Gripper):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  7
+  begin_mutex_group
+  4
+  1 4
+  0 4
+  2 0
+  2 1
+  end_mutex_group
+  begin_mutex_group
+  4
+  1 0
+  0 2
+  3 0
+  3 1
+  end_mutex_group
+  begin_mutex_group
+  4
+  1 3
+  0 0
+  4 0
+  4 1
+  end_mutex_group
+  begin_mutex_group
+  5
+  1 1
+  1 4
+  1 0
+  1 2
+  1 3
+  end_mutex_group
+  begin_mutex_group
+  5
+  0 3
+  0 4
+  0 2
+  0 1
+  0 0
+  end_mutex_group
+  begin_mutex_group
+  2
+  6 1
+  6 0
+  end_mutex_group
+  begin_mutex_group
+  4
+  1 2
+  0 1
+  5 0
+  5 1
+  end_mutex_group
+</code></pre></div>
+<p>There are 7 mutex groups.</p>
+<p>The first group encodes that the following variable/value pairs are
+mutually exclusive: variable 1 has value 4; variable 0 has value 4;
+variable 2 has value 0; variable 2 has value 1. This corresponds to the
+PDDL facts <code>(carry ball4 left)</code>, <code>(carry ball4 right)</code>, <code>(at ball4 rooma)</code>,
+<code>(at ball4 roomb)</code>.</p>
+<p>The second, third and seventh mutex groups encode similar mutual
+exclusion constraints for the other three balls.</p>
+<p>The fourth, fifth and sixth mutex groups are trivial.</p>
+<h3 id="translator_file_format_axiom_defaults_section">Translator file format: axiom defaults section<a class="headerlink" href="#translator_file_format_axiom_defaults_section" title="Permanent link">#</a></h3>
+<p>The axiom defaults section begins with the line
+"begin_axiom_defaults", followed by the number of axiom variables
+(with a non-negative axiom layer). Each of the following lines contains
+the number of an axiom variable and its "default value" (see section
+<a href="#evaluating_axioms">"Evaluating Axioms"</a>below). The axiom defaults
+specification is ordered by increasing variable index. The section ends with
+the line "end_axiom_defaults".</p>
+<p>Here are the axiom defaults for the Gripper example:</p>
+<p><em>Sample axiom defaults section (Gripper domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  begin_axiom_defaults
+  0
+  end_axiom_defaults
+</code></pre></div>
+<p>This shows that there are no axiom variables in this domain, which is
+the case for all pure-STRIPS benchmarks. Axiom variables will of course
+be generated for domains that contain derived predicates, but they can
+also be generated for PDDL tasks without derived predicates if they use
+non-STRIPS features such as universally quantified conditions, as some
+of these are compiled away with the help of axioms. As an example, here
+is an axiom rules from a Miconic-FullADL task:</p>
+<p><em>Sample axiom defaults section (Miconic-FullADL domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  begin_axiom_defaults
+  1
+  2 0
+  end_axiom_defaults
+</code></pre></div>
+<h3 id="translator_file_format_axiom_section">Translator file format: axiom section<a class="headerlink" href="#translator_file_format_axiom_section" title="Permanent link">#</a></h3>
+<p>The axiom section begins with a line containing the number of axiom
+rules. Following that line, each axiom rule is defined in sequence.</p>
+<p>An axiom rule is structured as follows:</p>
+<div class="language-text highlight"><pre><span></span><code>-   The first line is &quot;begin_rule&quot;
+-   The second line contains a single number, denoting the number of
+    conditions in the &quot;body&quot; of the rule.
+-   The following lines describe these conditions, one line for each
+    condition. A condition is given by two numbers separated by
+    spaces, denoting a variable/value pairing. The lines with the
+    conditions are lexicographically ordered.
+-   The following line contains two numbers, denoting the variable
+    affected by the axiom rule, and the new value assigned
+    to this variable. The variable and this latter value together
+    form the &quot;head&quot; of the rule.
+-   The final line is &quot;end_rule&quot;.
+</code></pre></div>
+<p>Variables appearing in the head of axiom rules (axiom variables) are
+disjoint from variables affected by operators. In the current version of
+the translator, axiom variables always have a binary domain.</p>
+<p>Axiom rules are ordered increasingly by the affected variable and the
+assigned value.</p>
+<p>In the Gripper example, the axiom section (which has no axiom variables)
+looks as follows:</p>
+<p><em>Sample axiom section (Gripper domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  0
+</code></pre></div>
+<p>As an example for a task with axiom variables, here is an axiom rules
+from a Miconic-FullADL task:</p>
+<p><em>Sample axiom section (Miconic-FullADL domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  1
+  begin_rule
+  2
+  4 0
+  5 0
+  3 1
+  end_rule
+</code></pre></div>
+<p>The axiom section contains a single axiom rule. It has two conditions in
+the body, namely that var4 and var5 are both set to 0, i.e. that
+passengers p1 and p0 have both been served. The head of the axiom states
+that if the condition is satisfied, then var3 will assume the value 1.
+Variable var5 corresponds to a proposition over a newly introduced
+predicate "new-axiom@9" which has been generated to simplify the
+original PDDL goal
+<code>(forall (?p - passenger) (served ?p))</code>.  (Of course, in this case the goal
+could also have been transformed to a simple conjunction in a different way
+that does not require axioms.)</p>
+<h3 id="translator_file_format_operator_section">Translator file format: operator section<a class="headerlink" href="#translator_file_format_operator_section" title="Permanent link">#</a></h3>
+<p>The operator section begins with a line containing a single number, the
+number of operators in the task. Following that line, each operator is
+defined in sequence.</p>
+<p>An operator definition is structured as follows:</p>
+<ul>
+<li>The first line is "begin_operator".</li>
+<li>The second line contains the name of the operator.</li>
+<li>The third line contains a single number, denoting the number of
+    preconditions.</li>
+<li>The following lines describe the preconditions, one line for each
+    condition. A precondition is given by two numbers separated by spaces,
+    denoting a variable/value pairing in the same notation for goals described
+    below. The precondition lines are lexicographically ordered.</li>
+<li>The first line after the preconditions contains a single
+    number, denoting the number of effects.</li>
+<li>The following lines describe the effects, one line for each
+    effect (read on).</li>
+<li>The line before last gives the operator cost. This line only
+    matters if <a href="#translator_file_format_metric_section">metric</a> is
+    1 (otherwise, any number here will be treated as 1).</li>
+<li>The final line is "end_operator".</li>
+</ul>
+<p>Effects can have associated effect conditions (similar to axiom rules).
+An effect is always given in a single line, with the individual parts
+separated by spaces. It is structured as follows:</p>
+<ul>
+<li>First comes the number of effect conditions. In STRIPS domains, this
+    will usually be 0 (additional effect conditions can be introduced by
+    the translator in rare cases, though).</li>
+<li>This is followed by one variable/value pair for each effect
+    condition. This is given as two numbers and sorted like for goal
+    conditions and preconditions.</li>
+<li>This is followed by a number denoting the variable affected by the
+    effect in the third-last position.</li>
+<li>Finally, the last number denotes the new value for the affected
+    variable.</li>
+</ul>
+<p>Effects are sorted increasingly by the affected variable. For each
+variable the effects do not need to be sorted.</p>
+<p>Even for fairly small examples, the operator section becomes quite big,
+so we omit most operator definitions of the Gripper example:</p>
+<p><em>Sample operator section (Gripper domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  34
+  begin_operator
+  drop ball1 rooma left
+  2
+  4 0
+  5 0
+  2
+  0 0 0
+  0 5 4
+  1
+  end_operator
+  [... 33 operators omitted]
+</code></pre></div>
+<p>The example shows that there are 34 operators in this domain, and one of
+them is shown in detail.</p>
+<p>It is called "drop ball1 rooma left" and has two preconditions: It requires
+that var4 and var5 are both set to 0 (robot must be in room A and must carry
+ball 1 in the left gripper). The two effects are unconditional and set var0 to
+0 (ball 1 in room A) and var5 to 4 (left gripper empty).</p>
+<p>This domain does not use explicit action_costs (as encoded in the <code>metric</code>
+section), so the final line is <code>1</code>.</p>
+<p>As an example of an operator involving effect conditions, consider the
+following operator from a task in the Schedule domain:</p>
+<p><em>Sample operator with effect conditions and cost (miconic simple-adl
+domain, modified with costs):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  begin_operator
+  stop f1
+  1
+  1 1
+  1
+  1 2 1 0 0
+  7
+  end_operator
+</code></pre></div>
+<p>The operator is named "stop f1". It is applicable if the lift is at
+floor f1 (var1=1). There is only one effect with one effect condition:
+If var2 is 1 (passenger p0 not served) then it sets var0 to 0 (passenger
+p0 boarded).</p>
+<p>Finally, the 7 before the "end_operator" line indicates that this
+operator has a cost of 7.</p>
+<h3 id="translator_file_format_initial_state_section">Translator file format: initial state section<a class="headerlink" href="#translator_file_format_initial_state_section" title="Permanent link">#</a></h3>
+<p>The initial state section begins with the line "begin_initial_state",
+followed by the number of SAS state variables which are no axiom
+variables (i.e., which do not correspond to derived predicates). Each of
+the following lines contains the value of one such variable, given by
+two numbers separated by spaces: pair "i j" means that
+"var<i>" has initially the value j. These lines are sorted by
+variable index i. The section ends with the line "end_initial_state".</p>
+<p>Here is the initial state section for the Gripper example:</p>
+<p><em>Sample initial state section (Gripper domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  begin_initial_state
+  7
+  0 0
+  1 0
+  2 0
+  3 0
+  4 0
+  5 4
+  6 4
+  end_initial_state
+</code></pre></div>
+<p>There are 7 non-axiom variables (in this STRIPS tasks there are no axiom
+variables). The initial value of variables var0 to var4 is intitially 0
+and the value of var5 and var6 is 4. Looking up the meaning of these
+values in the variable section shown earlier, this means that exactly
+the following STRIPS propositions are true in the initial state: <code>(free right)</code>,
+<code>(free left)</code>, <code>(at ball4 rooma)</code>, <code>(at ball3 rooma)</code>, <code>(at ball1 rooma)</code>, <code>(at
+ball2 rooma)</code>, <code>(at-robby rooma)</code>.</p>
+<h3 id="translator_file_format_goal_section">Translator file format: goal section<a class="headerlink" href="#translator_file_format_goal_section" title="Permanent link">#</a></h3>
+<p>The goal section begins with the line "begin_goal", followed by a line
+which contains the number of goal pairings. This is followed by one line
+for each goal pairing, where a goal pairing is given by two numbers
+separated by spaces, where the pair "i j" means that
+"var<i>" must have the value j in the goal. These lines are
+sorted by variable index i. The goal section ends with the line
+"end_goal".</p>
+<p>Here is the goal section for the Gripper example:</p>
+<p><em>Sample goal section (Gripper domain):</em></p>
+<div class="language-text highlight"><pre><span></span><code>  begin_goal
+  4
+  2 1
+  3 1
+  4 1
+  5 1
+  end_goal
+</code></pre></div>
+<p>We see that there are four goal conditions: Each of the variables var2
+through var5 shall assume the value 1. In other words, the goal is
+reached if all four balls are in roomb.</p>
+<p>Note that the goal condition of the translated task is always a simple
+conjunction of atomic goals. If the original PDDL goal is more
+complicated, it is transformed by the translator to fit this
+requirement. In some cases, this leads to the introduction of derived
+variables, even if the original PDDL task did not use derived
+predicates.</p>
+<h2 id="evaluating_axioms">Evaluating axioms<a class="headerlink" href="#evaluating_axioms" title="Permanent link">#</a></h2>
+<p>State variables that correspond to derived predicates are not directly
+affected by operator applications. Instead, their values in a given
+world state are computed from the values of the other state variables
+using the following algorithm:</p>
+<ul>
+<li>First, all axiom state variables are set to their default value
+    (the one specified in the initial state section).</li>
+<li>Second, all axiom rules which affect variables at axiom layer 0
+    are evaluated. An axiom rule is evaluated by determining whether
+    all variable/value pairings in its body match the current state.
+    If so, the variable in the head is changed to the value in the
+    head. This process is repeated until no further changes occur.</li>
+<li>Third, all axioms rules which affect variables at axiom layer 1
+    are evaluated.</li>
+<li>Fourth, all axioms rules which affect variables at axiom layer 2
+    are evaluated.</li>
+<li>...</li>
+</ul>
+<p>The semantics of the translator guarantees that the algorithm always
+terminates and that the result is independent of the order in which
+axiom rules at the same layer are considered.</p>
 
 
 
@@ -1978,7 +2399,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../profiling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Profiling">
+          <a href="../sprint/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sprint">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1988,20 +2409,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Profiling
+                Sprint
               </div>
             </div>
           </a>
         
         
           
-          <a href="../requirements/" class="md-footer__link md-footer__link--next" aria-label="Next: Requirements">
+          <a href="../uncrustify/" class="md-footer__link md-footer__link--next" aria-label="Next: Using uncrustify to fix code layout">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Requirements
+                Using uncrustify to fix code layout
               </div>
             </div>
             <div class="md-footer__button md-icon">

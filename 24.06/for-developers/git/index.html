@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://new.fast-downward.org/23.06/for-developers/release-workflow/">
+        <link rel="canonical" href="https://new.fast-downward.org/24.06/for-developers/git/">
       
       
-        <link rel="prev" href="../profiling/">
+        <link rel="prev" href="../development-setup/">
       
       
-        <link rel="next" href="../requirements/">
+        <link rel="next" href="../github-actions/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Release Workflow - Fast Downward</title>
+        <title>Git - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#release_workflow" class="md-skip">
+        <a href="#git" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Release Workflow
+              Git
             
           </span>
         </div>
@@ -1568,10 +1568,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1581,6 +1602,122 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#our_git_workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Git workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Conventions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_commands_for_developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Commands for Developers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips_and_tricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips and Tricks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips and Tricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding_a_problem_with_bisect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding a Problem with bisect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful_aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful aliases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoring_ide_files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignoring IDE files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring_meld_to_work_with_git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring meld to work with git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interact_with_a_git_repo_from_mercurial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interact with a Git repo from Mercurial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github_configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1700,19 +1837,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../release-workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1722,7 +1850,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1843,6 +1970,110 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#our_git_workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Git workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Conventions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_commands_for_developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Commands for Developers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips_and_tricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips and Tricks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips and Tricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding_a_problem_with_bisect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding a Problem with bisect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful_aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful aliases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoring_ide_files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignoring IDE files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring_meld_to_work_with_git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring meld to work with git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interact_with_a_git_repo_from_mercurial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interact with a Git repo from Mercurial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github_configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1860,95 +2091,252 @@
   
 
 
-<h1 id="release_workflow">Release Workflow<a class="headerlink" href="#release_workflow" title="Permanent link">#</a></h1>
-<p>We have <em>regular releases</em> and <em>bugfix releases</em>. We use <code>20.06</code> as an example for a regular release and <code>22.06.1</code> as an example for a bugfix release.</p>
-<p>Release steps:</p>
+<h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">#</a></h1>
+<h2 id="our_git_workflow">Our Git workflow<a class="headerlink" href="#our_git_workflow" title="Permanent link">#</a></h2>
+<p>We use Git, following the task-based workflow explained below. All
+significant development should be in response to an issue in the
+tracker. Then the usual development process involves two roles,
+"developer" and "reviewer", and works as follows:</p>
 <ol>
-<li>Set the variables used in the following steps as in this example for a regular release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RELEASE=20.06
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BRANCH=20.06
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TAG=20.06.0
-</span></code></pre></div>
- Set them as in this example for a bugfix release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RELEASE=22.06.1
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BRANCH=22.06
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>TAG=22.06.1
-</span></code></pre></div></li>
-<li>Regular releases only: make sure that you are on the commit on which you want to base the release.</li>
-<li>Bugfix releases only: check out the release branch and cherry-pick each commit with hash <code>HASH</code> that you want to include:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git checkout release-$BRANCH
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git cherry-pick HASH
-</span></code></pre></div></li>
-<li>Make sure that the list of contributors and copyright years in the <code>README.md</code> file are up to date.</li>
-<li>Make sure the changelog (see <a href="../changelog-format/">ChangelogFormat</a>) is up to date and committed. In particular:<ol>
-<li>Make sure the changelog includes the line giving the date of the release.</li>
-<li>Add a new section like <code>## Fast Downward 20.06</code> or <code>## Fast Downward 22.06.1</code> and gather all changes since the last release from the commit messages. Use an existing regular/bugfix release as an example.</li>
+<li>Developer forks the primary Fast Downward repo ("the primary") to
+    their own account (creating "the fork")</li>
+<li>Developer creates a new branch &lt;branch&gt; in the fork,
+    usually branching off the newest revision in main. The Git commands
+    for this step and the following are shown under Git Commands for
+    Developers below.</li>
+<li>Developer resolves the issue in &lt;branch&gt;.</li>
+<li>Developer pushes the changes to the fork on GitHub.</li>
+<li>Developer makes a pull request on !GitHub from &lt;branch&gt; to
+    the main branch in the primary repository (see <a href="../code-review/">page on code
+    review</a>).</li>
+<li>Developer adds a link to the pull request to the issue tracker.</li>
+<li>Reviewer reviews the code and usually makes comments in the pull
+    request. If reviewer is not satisfied, go back to step 3.</li>
+<li>Developer makes sure that all code tests pass. We recommend running
+    tox in the misc/tests directory.</li>
+<li>Developer and Reviewer prepare the commit message for the main
+    branch summarizing the changes (see Git Conventions below for more
+    details and an example).</li>
+<li>Developer merges a squash of &lt;branch&gt; into the main branch.
+    There are different workflows that achieve this. You can merge
+    through the web interface of the pull request with the button
+    "Squash and merge".</li>
+<li>
+<p>Alternatively, you can perform the following on the local clone of
+    your fork.</p>
+<ol>
+<li>Developer sets the primary repository as upstream with <code>git remote add upstream ssh://git@github.com/aibasel/downward.git</code>.</li>
+<li>Developer checks out the main branch in his fork with <code>git checkout main</code>.</li>
+<li>Developer pulls the latest changes from the primary repository with <code>git pull upstream main</code>.</li>
+<li>Developer performs the merge with <code>git merge --squash &lt;branch&gt;</code>, then fixes conflicts if necessary.</li>
+<li>Developer commits with <code>git commit</code>, which opens an editor where the commit message is added.</li>
+<li>Developer pushes the changes to the primary repository (<code>git push upstream main</code>).</li>
+<li>Developer deletes &lt;branch&gt; on their fork. Locally, this is done using
+    <code>git branch -d &lt;branch&gt;</code>. Remotely, use <code>git push --delete origin &lt;branch&gt;</code>.</li>
 </ol>
 </li>
-<li>Make sure that the working directory is clean and that any last-minute changes from the above steps are committed.</li>
-<li>Update version number and create branches, tags and recipe files by running the <code>prepare-release.sh</code> script:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./misc/releases/prepare-release.sh $TAG
-</span></code></pre></div></li>
-<li>Verify the following manually:<ol>
-<li>The <code>fast-downward-$RELEASE.tar.gz</code> tarball created in the previous step contains the appropriate files.</li>
-<li>Branches and tags were created as expected. In a bugfix release, a tag like <code>22.06.1</code> should have been created on the existing release branch <code>22.06</code>.</li>
-<li>A new commit was created with the right recipe files and version changes.</li>
+<li>
+<p>Alternative for those who have a separate development fork and a
+    main fork checked out locally:</p>
+<ol>
+<li>Developer checks out the main branch in their development fork.</li>
+<li>Developer pulls the latest HEAD from the main for.</li>
+<li>Developer does the merge as explained above.</li>
+<li>Developer goes to their main fork and pulls from their development fork.</li>
+<li>Developer deletes their branch locally and remotely in their development fork as explained above.</li>
 </ol>
 </li>
-<li>Push all changes.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git push --all
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git push --tags
-</span></code></pre></div></li>
-<li>Make sure that all Github actions are green on the release branch.</li>
-<li>Build the Docker image and push it to the Docker Hub. Note that we build the <code>20.06</code>/<code>22.06</code> Docker image, not <code>20.06.0</code>/<code>22.06.1</code>. Under normal conditions, Docker needs root rights. The actual push to Docker hub needs appropriate credentials. Malte has them; not sure anyone else does. (Please edit if you do.)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo ./misc/releases/push-docker.sh $BRANCH
-</span></code></pre></div></li>
-<li>Build the Apptainer image:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>apptainer pull fast-downward.sif docker://aibasel/downward:$BRANCH
-</span></code></pre></div>
- Note: Ubuntu (*.deb) packages for Apptainer are available here: <a href="https://github.com/apptainer/apptainer/releases">https://github.com/apptainer/apptainer/releases</a>. Tested with Apptainer 1.3.6.</li>
-<li>Test:<ul>
-<li>that we can build and successfully run the planner from the produced tarball</li>
-<li>that we can successfully run the planner from the produced Apptainer image, including a configuration using SoPlex</li>
-<li>that we can successfully run the planner from the produced Vagrantfile (automatically includes SoPlex; to also build the VM with CPLEX, you need an environment variable <code>DOWNWARD_LP_INSTALLERS</code> that points to a directory containing the CPLEX installer in the correct version)</li>
+<li>
+<p>Developer verifies that the status of the pull request has been
+    automatically set to "Merged". If not, developer changes the status
+    accordingly.</p>
+</li>
+<li>Developer sets the status of the issue to "resolved".</li>
+</ol>
+<h2 id="git_conventions">Git Conventions<a class="headerlink" href="#git_conventions" title="Permanent link">#</a></h2>
+<p><strong>Commit messages:</strong></p>
+<p>The commit message for merging an issue branch contains a concise
+summary of the changes that will be used for creating the release
+changelog. It must adhere to the following guidelines:</p>
+<ul>
+<li>The first line starts with [issueX] and gives a one-sentence
+    summary of the issue. On further lines, add a more detailed
+    description explaining what changed from a user/developer
+    perspective.</li>
+<li>All lines should be below <strong>80 characters</strong>. In particular, please
+    avoid very long commit messages without line wrapping.</li>
+<li>Always mention usage changes such as added functionality or changed
+    command line arguments.</li>
 </ul>
-</li>
-<li>Regular releases only: create a documentation page for the release in the <em>downward-markdown</em> repository. We suggest starting from a copy of the page for the latest release in <code>docs/releases</code>.<ol>
-<li>Update the date and release version name.</li>
-<li>Update the links and references in section "Downloads".</li>
-<li>Update the changelog.</li>
-<li>Add the tarball to a new folder for the release in <code>docs/files</code>.</li>
-<li>Add the Vagrant file created by the <code>prepare-release.sh</code> script to the same folder.</li>
-<li>Create a link in <code>docs/releases/index.md</code> to the page of the new release.</li>
-</ol>
-</li>
-<li>Bugfix releases only: update the documentation page of the release (for bugfix release <code>22.06.1</code>, reuse the release page <code>22.06</code>). See the page for <a href="../../releases/22.06/">release 22.06</a> for an example. The Vagrantfile does not need to be updated for a bugfix release.<ol>
-<li>Adjust the date and mention the bugfix release version name.</li>
-<li>Update the changelog.</li>
-<li>Update the name of the tarball (it should include the bugfix number) and add the tarball to the respective folder in <code>docs/files</code>.</li>
-<li>Update the bash instructions.</li>
-</ol>
-</li>
-<li>Regular releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
-<li>Branch from the <code>head-docs</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that release (instead of being auto-generated like the head-docs branch). This assumes that you make a release from the current HEAD of main in the Fast Downward code repository. If not, you can modify the branch as described for a bugfix release (next step).</li>
-<li>Add an entry for the release in <code>releases.json</code> of the <code>main</code> branch. Move the <code>latest</code> alias to the new release.</li>
-</ol>
-</li>
-<li>Bugfix releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
-<li>Branch from the earlier <code>release-{$TAG-1}</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that bugfix release.</li>
-<li>Make necessary changes in the documentation in this branch. If the generated documentation for the search plugins has changed, generate it with the <code>misc/autodocs/generate-docs.py</code> script in the code repository. It writes the documentation to <code>docs/search</code> there. You just have to copy the content into <code>docs/search</code> of the new branch.</li>
-<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "24.06.0" to "24.06.1".</li>
-</ol>
-</li>
-<li>Create a new release on github:<ol>
-<li>On <a href="https://github.com/aibasel/downward/releases">https://github.com/aibasel/downward/releases</a> click on <code>Draft a new release</code>.</li>
-<li>Set <code>Tag</code> to <code>release-$TAG</code>, <code>Release Title</code> to <code>$RELEASE</code>, and <code>Description</code> to <code>For information about this release, please visit the [Fast Downward documentation](https://www.fast-downward.org/latest/releases/$BRANCH/)</code>.</li>
-<li>Click on <code>Publish Release</code>.</li>
-</ol>
-</li>
-<li>Send an announcement e-mail to the Fast Downward list including changelog information.</li>
-<li>Send the same announcement as a message in the Fast Downward Discord server.</li>
-</ol>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[issue666] search component reimplemented in C#
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Prior to this change, the search component was implemented in C++.
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>We have changed the planner to run in C#, which is an industry
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>standard language. Expect a performance increase of at least -37%
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>in common cases. The planner is now able to solve large tasks
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>in the Gripper and Spanner domains.
+</span></code></pre></div>
+<p>Within the issue branch, you are free to write commit messages however
+you like, since these commits will be squashed. We still recommend the
+following guidelines as it will make doing reviews and writing the final
+commit message easier.</p>
+<ul>
+<li>Prepend "[&lt;branch&gt;]" to all commits of the branch
+    &lt;branch&gt;. You can copy <code>misc/hooks/commit-msg</code> to
+    <code>.git/hooks/commit-msg</code> to enable a hook which automatically
+    prepends the right string to each commit message.</li>
+<li>The first line of the commit message should consist of a
+    self-contained summary.</li>
+<li>Please write the summary in the imperative mode (e.g., "Make
+    translator faster." instead of "Made translator faster.", see
+    <a href="https://chris.beams.io/posts/git-commit/">https://chris.beams.io/posts/git-commit/</a>).</li>
+</ul>
+<p><strong>Branches:</strong></p>
+<ul>
+<li>Use one feature branch for each issue.</li>
+<li>Only commit merges of issue branches on <code>main</code> (we make occasional
+    exceptions for small changes like fixing typos).</li>
+<li>Delete branches (the pointer) after integration.</li>
+</ul>
+<h2 id="git_commands_for_developers">Git Commands for Developers<a class="headerlink" href="#git_commands_for_developers" title="Permanent link">#</a></h2>
+<p>Before starting to work on an issue, make sure your working copy is
+clean and up to date, and that you are on the branch <code>main</code>.</p>
+<div class="language-text highlight"><pre><span></span><code>git pull
+git status
+git branch
+</code></pre></div>
+<p>To start working on an issue, create the branch:</p>
+<div class="language-text highlight"><pre><span></span><code>git checkout -b &lt;branch&gt; main
+</code></pre></div>
+<p>Fix the issue and commit your changes. If you run experiments, you might
+also need to create tags.</p>
+<div class="language-text highlight"><pre><span></span><code>git add modified_file
+git commit -m &quot;[&lt;branch&gt;] My meaningful commit message.&quot;
+git tag &lt;branch&gt;-base &lt;rev&gt;
+git tag &lt;branch&gt;-v1 &lt;rev&gt;
+</code></pre></div>
+<p>Then push your changes to GitHub for review.</p>
+<div class="language-text highlight"><pre><span></span><code>git push --set-upstream origin &lt;branch&gt; --tags
+</code></pre></div>
+<p>When the issue is ready to be merged, merge it into main, delete the
+branch and push it to the main repository.</p>
+<div class="language-text highlight"><pre><span></span><code>git remote add upstream ssh://git@github.com/aibasel/downward.git
+git checkout main
+git pull upstream main
+git merge --squash &lt;branch&gt;
+git commit
+git push upstream main
+git branch -d &lt;branch&gt;
+</code></pre></div>
+<p>To delete the remote branch, use</p>
+<div class="language-text highlight"><pre><span></span><code>git push --delete origin &lt;branch&gt;
+</code></pre></div>
+<p>Note that this does <strong>not</strong> work on our main repository due to branch
+protection. However, if you haven't pushed your branch to the main
+repository during development, the main repository does not know about
+the existence of the branch, so nothing needs to be deleted anyway.</p>
+<p>You can fix wrong commit messages in the following way. This modifies
+history, so the resulting repository is no longer compatible with the
+main repository. If there is a reason to push this to the primary
+repository, you have to disable the branch protection and use
+<code>--force</code> to push. Note that this loses all commits that came after
+the amended commit, so proceed with caution.</p>
+<div class="language-text highlight"><pre><span></span><code>git commit --amend
+</code></pre></div>
+<h2 id="tips_and_tricks">Tips and Tricks<a class="headerlink" href="#tips_and_tricks" title="Permanent link">#</a></h2>
+<h3 id="finding_a_problem_with_bisect">Finding a Problem with bisect<a class="headerlink" href="#finding_a_problem_with_bisect" title="Permanent link">#</a></h3>
+<ul>
+<li>TODO: git bisect with --first-parent etc. (Malte sent a few links)</li>
+</ul>
+<h3 id="useful_aliases">Useful aliases<a class="headerlink" href="#useful_aliases" title="Permanent link">#</a></h3>
+<p>Adding the following to your <code>.gitconfig</code> (or <code>~/.gitconfig</code>) file
+enables some useful shortcuts:</p>
+<div class="language-text highlight"><pre><span></span><code>[alias]
+ci = commit
+st = status
+adog = log --all --decorate --oneline --graph
+</code></pre></div>
+<h3 id="ignoring_ide_files">Ignoring IDE files<a class="headerlink" href="#ignoring_ide_files" title="Permanent link">#</a></h3>
+<p>To ignore files you create but that should not be ignored in Fast
+Downward (e.g., files generated by a specific IDE), you can add them tto
+<code>~/.gitignore</code> and add the following to <code>~/.gitconfig</code>:</p>
+<div class="language-text highlight"><pre><span></span><code>[core]
+    excludesfile = ~/.gitignore
+</code></pre></div>
+<h3 id="configuring_meld_to_work_with_git">Configuring meld to work with git<a class="headerlink" href="#configuring_meld_to_work_with_git" title="Permanent link">#</a></h3>
+<p>Meld works directly with git but it has to be started with the path to
+the repository (e.g., <code>meld .</code>).</p>
+<p>Alternatively, it can be set up like this in the <code>.gitconfig</code> file:</p>
+<div class="language-text highlight"><pre><span></span><code>[merge]
+tool = meld
+
+[mergetool &quot;meld&quot;]
+#cmd = meld &quot;$LOCAL&quot; &quot;$BASE&quot; &quot;$REMOTE&quot; --output &quot;$MERGED&quot;
+cmd = meld &quot;$LOCAL&quot; &quot;$MERGED&quot; &quot;$REMOTE&quot; --output &quot;$MERGED&quot;
+
+[diff]
+tool = meld
+
+[difftool &quot;meld&quot;]
+cmd = meld &quot;$LOCAL&quot; &quot;$REMOTE&quot;
+
+[difftool]
+prompt = false
+
+[alias]
+meld = difftool -d
+</code></pre></div>
+<p>The workflow for using meld to resolve merge conflicts is as follows:</p>
+<ul>
+<li>First, attempt to do the automatic merge via <code>git merge
+    &lt;branch&gt;</code> (or <code>git pull</code> if this causes an automated merge and conflicts)</li>
+<li>Second, use <code>git mergetool</code> to resolve the conflicts in all
+    conflicted files.</li>
+</ul>
+<p>More information about how to configure the three-way diff can be found
+in this great answer that inspired above configuration:
+<a href="https://stackoverflow.com/a/34119867">https://stackoverflow.com/a/34119867</a></p>
+<h3 id="interact_with_a_git_repo_from_mercurial">Interact with a Git repo from Mercurial<a class="headerlink" href="#interact_with_a_git_repo_from_mercurial" title="Permanent link">#</a></h3>
+<p>The <a href="https://foss.heptapod.net/mercurial/hg-git">hg-git</a> tool
+allows to pull and push from and to a Git repository with Mercurial,
+allowing you use Mercurial for working on Git projects. It does so by
+converting all Git branches to Mercurial bookmarks and vice versa. Here
+is how to set it up:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt install python3-venv
+
+mkdir hg-git
+cd hg-git
+python3 -m venv --prompt hg-git .venv
+pip install -U pip wheel
+pip install certifi==2020.6.20 dulwich==0.20.5 hg-git==0.9.0a1 mercurial==5.4.2 pkg-resources==0.0.0 urllib3==1.25.9
+
+# Add to ~/.hgrc file:
+[extensions]
+hggit =
+
+# Ensure that new Mercurial binary is found before system Mercurial:
+sudo ln -s /path/to/hg-git/.venv/bin/hg /usr/local/bin/hg  # or adjust $PATH
+</code></pre></div>
+<p>(Instead of the last two steps, you could also define a Bash alias that
+calls the new Mercurial with the hg-git extension enabled, but this
+breaks tab completion for Mercurial. Details: tab completion breaks if
+the alias is not named "hg" or if the alias command contains spaces.)</p>
+<p>Now you can clone a repository. Remember to update to a bookmark to make
+it follow your commits:</p>
+<div class="language-text highlight"><pre><span></span><code>hg clone git+ssh://git@github.com/aibasel/downward.git
+cd downward
+hg update main
+</code></pre></div>
+<p>[tested with Ubuntu 18.04]</p>
+<h2 id="github_configuration">GitHub Configuration<a class="headerlink" href="#github_configuration" title="Permanent link">#</a></h2>
+<ul>
+<li>We use GitHub's autolink feature to link from commit messages to
+    the issue tracker
+    (<a href="https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls">https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls</a>).</li>
+<li>We also decided to protect all branches on the main Fast Downward
+    repository. This means that no force pushes are allowed and branches
+    can't be deleted.</li>
+</ul>
 
 
 
@@ -1978,7 +2366,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../profiling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Profiling">
+          <a href="../development-setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Development environment">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1988,20 +2376,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Profiling
+                Development environment
               </div>
             </div>
           </a>
         
         
           
-          <a href="../requirements/" class="md-footer__link md-footer__link--next" aria-label="Next: Requirements">
+          <a href="../github-actions/" class="md-footer__link md-footer__link--next" aria-label="Next: GitHub Actions">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Requirements
+                GitHub Actions
               </div>
             </div>
             <div class="md-footer__button md-icon">
