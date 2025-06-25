@@ -1638,6 +1638,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using_ccache_to_speed_up_builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using ccache to speed up builds
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1940,6 +1949,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using_ccache_to_speed_up_builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using ccache to speed up builds
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2000,6 +2018,17 @@ of tests, e.g., only the style checks, use <code>tox -e style</code> (see <code>
 for other test environments). Many of the tests that tox executes are
 Bash/Python scripts or pytest modules, which you can also run individually. To
 check a pytest module, execute <code>pytest my_module.py</code>.</p>
+<h2 id="using_ccache_to_speed_up_builds">Using <code>ccache</code> to speed up builds<a class="headerlink" href="#using_ccache_to_speed_up_builds" title="Permanent link">#</a></h2>
+<p>When building the same code files multiple times, <code>ccache</code> can cache and re-use the resulting objects to speed up build times.</p>
+<ol>
+<li><code>sudo apt install ccache</code></li>
+<li>Set the following variables in your <code>.bashrc</code> to use it
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>export CCACHE_BASEDIR=/home/user   # Replace /home/user with your home directory
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>export CCACHE_NOHASHDIR=true
+</span></code></pre></div></li>
+</ol>
+<p>The last two lines are optional but they allow <code>ccache</code> to use the cache across different file locations. For example, you could build in <code>~/projects/downward/main</code> and then reuse the cache in <code>~/projects/downward/issue999</code>. This will store file paths that start with <code>$CCACHE_BASEDIR</code> inside the binary as relative paths rather than absolute paths. That should be fine and I never had a problem with this but under some circumstances it could mean that debug symbols are not resolved correctly. If that happens, you can switch off the setting and rebuild.</p>
 
 
 
