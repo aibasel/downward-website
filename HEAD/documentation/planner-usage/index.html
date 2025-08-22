@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://new.fast-downward.org/HEAD/documentation/planner-usage/">
       
       
-        <link rel="prev" href="../quick-start/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../pddl-support/">
+        <link rel="next" href="../search/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -291,8 +291,6 @@
       
         
       
-        
-      
     
     
     
@@ -330,28 +328,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../quick-start/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -409,6 +385,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#translation_component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translation component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search_component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search component
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#caveats" class="md-nav__link">
     <span class="md-ellipsis">
       Caveats
@@ -416,11 +429,16 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#different_builds" class="md-nav__link">
+  <a href="#validating_plans" class="md-nav__link">
     <span class="md-ellipsis">
-      Different builds
+      Validating plans
     </span>
   </a>
   
@@ -436,69 +454,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#different_builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Different builds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lp_support" class="md-nav__link">
     <span class="md-ellipsis">
       LP support
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a_search" class="md-nav__link">
-    <span class="md-ellipsis">
-      A* search
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lazy greedy best-first search with preferred operators and the queue alternation method
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lama_2011" class="md-nav__link">
-    <span class="md-ellipsis">
-      LAMA 2011
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#64-bit_mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      64-bit mode
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other_questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other questions?
     </span>
   </a>
   
@@ -508,28 +475,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pddl-support/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    PDDL support
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -587,7 +532,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           
@@ -604,14 +549,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Search plugins
           </label>
@@ -1008,11 +953,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../ipc-planners/" class="md-nav__link">
+      <a href="../exit-codes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    IPC planners
+    Exit codes
     
   </span>
   
@@ -1030,11 +975,33 @@
   
   
     <li class="md-nav__item">
-      <a href="../exit-codes/" class="md-nav__link">
+      <a href="../pddl-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Exit codes
+    PDDL support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipc-planners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPC planners
     
   </span>
   
@@ -2022,6 +1989,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#translation_component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translation component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search_component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search component
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#caveats" class="md-nav__link">
     <span class="md-ellipsis">
       Caveats
@@ -2029,11 +2033,16 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#different_builds" class="md-nav__link">
+  <a href="#validating_plans" class="md-nav__link">
     <span class="md-ellipsis">
-      Different builds
+      Validating plans
     </span>
   </a>
   
@@ -2049,69 +2058,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#different_builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Different builds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lp_support" class="md-nav__link">
     <span class="md-ellipsis">
       LP support
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a_search" class="md-nav__link">
-    <span class="md-ellipsis">
-      A* search
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lazy greedy best-first search with preferred operators and the queue alternation method
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lama_2011" class="md-nav__link">
-    <span class="md-ellipsis">
-      LAMA 2011
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#64-bit_mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      64-bit mode
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other_questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other questions?
     </span>
   </a>
   
@@ -2137,27 +2095,93 @@
 
 
 <h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h1>
-<p>To run Fast Downward, use the <code>fast-downward.py</code> driver script. At minimum, you
-need to specify the PDDL input files and search options consisting of a <a href="../search/SearchAlgorithm/">search
-algorithm</a> with one or more <a href="../search/Evaluator/">evaluator
-specifications</a>. The driver script has many options to do
-things like running portfolios, running only the translation component of the
-planner, using a non-standard build, running a plan validator and various other
+<p>Fast Downward is a domain-independent classical planning system that consists of two main components:</p>
+<ul>
+<li>a translation phase translates a PDDL input task into a SAS+ tasks. </li>
+<li>a search phase perfoms a search on a SAS+ task to find a plan.</li>
+</ul>
+<p>To run Fast Downward, use the <code>fast-downward.py</code> driver script.
+We will here give a short introduction into the basic usage of the main components. </p>
+<p>Note that the driver script has many additional options to do things like running portfolios, using a non-standard build and various other
 things. To see the complete list of options, run</p>
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.py --help
 </code></pre></div>
 <p>If you want to run any of the planners based on Fast Downward that
 participated in IPC 2011, please also check the page on
 <a href="../ipc-planners/">IPC planners</a>.</p>
-<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">#</a></h2>
-<p>The <strong>search options</strong> are built with flexibility in mind, not ease of
+<h2 id="translation_component">Translation component<a class="headerlink" href="#translation_component" title="Permanent link">#</a></h2>
+<p>To translate a PDDL input task into a SAS+ task without performing a search run the following:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --translate [&lt;domain.pddl&gt;] &lt;task.pddl&gt;
+</code></pre></div>
+<p>Note:</p>
+<ul>
+<li>Giving the domain file as input is optional. 
+    In case no domain file is specified, the component will search for a file called <code>domain.pddl</code> located in the same directory as the task file. </li>
+<li>Translator component options can be specified after the input files following the <code>--translator-options</code> flag.</li>
+</ul>
+<h2 id="search_component">Search component<a class="headerlink" href="#search_component" title="Permanent link">#</a></h2>
+<p>To run a search on a PDDL input task run the following:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;task.pddl&gt; \
+--search &quot;&lt;some-search-algorithm&gt;(&lt;algorithm-parameters&gt;)&quot;
+</code></pre></div>
+<p>Note:</p>
+<ul>
+<li>The PDDL task is translated into a SAS+ task internally without the need to explicitly call the <code>translate</code> component.
+    Instead of a PDDL task a SAS+ translator output file could be given as input. In this case the translation step is omitted.</li>
+<li>Giving the domain file as input is optional. 
+    In case no domain file is specified, the component will search for a file called <code>domain.pddl</code> located in the same directory as the task file. </li>
+<li><code>&lt;some-search-algorithm&gt;</code> can be any of the <a href="../search/SearchAlgorithm/">search algorithms</a> with corresponding <code>&lt;algorithm-parameters&gt;</code> as input.</li>
+<li>Search component options can be specified anywhere after the input files. 
+    Search component options following translator component options need to first be escaped with the <code>--search-options</code> flag.</li>
+</ul>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
+<p>The following example is a recommended search algorithm configuration:
+<a href="search/SearchAlgorithm/#a_search_eager">A* algorithm</a> with the <a href="search/Evaluator/#landmark-cut_heuristic">LM-cut heuristic</a>, which can be run as follows:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;task.pddl&gt; --search &quot;astar(lmcut())&quot;
+</code></pre></div>
+<p>As this is a common search configuration an alias (<code>seq-opt-lmcut</code>) exists that results in the same execution and can be used as follows:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --alias seq-opt-lmcut [&lt;domain.pddl&gt;] &lt;task.pddl&gt;
+</code></pre></div>
+<h3 id="aliases">Aliases<a class="headerlink" href="#aliases" title="Permanent link">#</a></h3>
+<p>Many other common search configurations are also specified as aliases. To see the full list of aliases call:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --show-aliases
+</code></pre></div>
+<p>To find out which actual search options the aliases corresponds to, check the source code of the <code>src/driver/aliases.py</code> module.</p>
+<p>For example to run the "LAMA 2011 configuration" of the planner, call:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --alias seq-sat-lama-2011 [&lt;domain.pddl&gt;] &lt;task.pddl&gt;
+</code></pre></div>
+<p>Note:</p>
+<ul>
+<li>This is not really the same as "LAMA 2011" as it participated at IPC 2011
+    because there have been bug fixes and other changes to the planner since 2011.
+    See <a href="../ipc-planners/">"IPC planners"</a> for more information. </li>
+</ul>
+<h3 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">#</a></h3>
+<p>The search options are built with flexibility in mind, not ease of
 use. It is very easy to use option settings that look plausible, yet
 introduce significant inefficiencies. For example, an invocation like</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./fast-downward.py domain.pddl problem.pddl --search &quot;lazy_greedy([ff()], preferred=[ff()])&quot;
-</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;task.pddl&gt; \
+--search &quot;lazy_greedy([ff()], preferred=[ff()])&quot;
+</code></pre></div>
 <p>looks plausible, yet is hugely inefficient since it will compute the FF
-heuristic twice per state. See the <a href="#examples">examples</a> at the bottom of this
-page to see how to call the planner properly. If in doubt, ask.</p>
+heuristic twice per state. To circumvent this a <a href="../search-plugin-syntax/#variables_as_parameters"><code>let</code>-expression</a> could be used:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;task.pddl&gt; \
+--search &quot;let(hff, ff(), lazy_greedy([hff], preferred=[hff]))&quot;
+</code></pre></div>
+<h2 id="validating_plans">Validating plans<a class="headerlink" href="#validating_plans" title="Permanent link">#</a></h2>
+<p>To validate a plan found by some search algorithm using <a href="https://github.com/KCL-Planning/VAL">VAL</a> run the following:</p>
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --validate [&lt;domain.pddl&gt;] &lt;task.pddl&gt; \
+--search &quot;&lt;some-search-algorithm&gt;(&lt;algorithm-parameters&gt;)&quot;
+</code></pre></div>
+<p>Note:</p>
+<ul>
+<li><a href="https://github.com/KCL-Planning/VAL">VAL</a> must be available locally and added to the PATH (see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md#optional-plan-validator">Plan Validator</a>).</li>
+<li>The search algorithm must be specified (see <a href="#search_component">Search component</a>).</li>
+</ul>
+<h2 id="exit_codes">Exit codes<a class="headerlink" href="#exit_codes" title="Permanent link">#</a></h2>
+<p>The driver exits with 0 if no errors are encountered. Otherwise, it
+returns the exit code of the first component that failed (cf. <a href="../exit-codes/">documentation of
+exit codes</a>).</p>
 <h2 id="different_builds">Different builds<a class="headerlink" href="#different_builds" title="Permanent link">#</a></h2>
 <p>Different builds of Fast Downward (e.g. release vs. debug) are placed in
 different directories by the build script. Hence, several builds can
@@ -2172,10 +2196,6 @@ without fixing the build configuration. At build time, the IDE decides
 whether to do a debug or release build and creates subdirectories in the
 output folder. Use the full path to the binaries as the value of
 <code>--build</code> (e.g., <code>--build=path/to/visual/studio/project/bin/Debug/</code>).</p>
-<h2 id="exit_codes">Exit codes<a class="headerlink" href="#exit_codes" title="Permanent link">#</a></h2>
-<p>The driver exits with 0 if no errors are encountered. Otherwise, it
-returns the exit code of the first component that failed (cf. <a href="../exit-codes/">documentation of
-exit codes</a>).</p>
 <h2 id="lp_support">LP support<a class="headerlink" href="#lp_support" title="Permanent link">#</a></h2>
 <p>Features that use an LP solver have a command-line option <code>lpsolver</code>
 to switch between different solver types. See
@@ -2185,52 +2205,6 @@ discussion of the relative performance of CPLEX and SoPlex.</p>
 <p>Note that SoPlex is not a MIP solver, so using it for configurations
 that require integer variables will result in an error. Please use CPLEX
 for such cases.</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
-<h3 id="a_search">A* search<a class="headerlink" href="#a_search" title="Permanent link">#</a></h3>
-<div class="language-text highlight"><pre><span></span><code># landmark-cut heuristic
- ./fast-downward.py domain.pddl task.pddl --search &quot;astar(lmcut())&quot;
-
-# iPDB heuristic with default settings
- ./fast-downward.py domain.pddl task.pddl --search &quot;astar(ipdb())&quot;
-
-# blind heuristic
- ./fast-downward.py domain.pddl task.pddl --search &quot;astar(blind())&quot;
-</code></pre></div>
-<h3 id="lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method">Lazy greedy best-first search with preferred operators and the queue alternation method<a class="headerlink" href="#lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method" title="Permanent link">#</a></h3>
-<div class="language-text highlight"><pre><span></span><code>## using FF heuristic and context-enhanced additive heuristic (previously: &quot;fFyY&quot;)
- ./fast-downward.py domain.pddl task.pddl \
-    --search &quot;let(hff, ff(), let(hcea, cea(), lazy_greedy([hff, hcea], preferred=[hff, hcea])))&quot;
-
-
-## using FF heuristic (previously: &quot;fF&quot;)
- ./fast-downward.py domain.pddl task.pddl \
-    --search &quot;let(hff, ff(), lazy_greedy([hff], preferred=[hff]))&quot;
-
-
-## using context-enhanced additive heuristic (previously: &quot;yY&quot;)
- ./fast-downward.py domain.pddl task.pddl \
-    --search &quot;let(hcea, cea(), lazy_greedy([hcea], preferred=[hcea]))&quot;
-</code></pre></div>
-<h3 id="lama_2011">LAMA 2011<a class="headerlink" href="#lama_2011" title="Permanent link">#</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./fast-downward.py --alias seq-sat-lama-2011 domain.pddl task.pddl
-</span></code></pre></div>
-<p>runs the "LAMA 2011 configuration" of the planner. (Note that this is
-not really the same as "LAMA 2011" as it participated at IPC 2011
-because there have been bug fixes and other changes to the planner since
-2011. See <a href="../ipc-planners/">"IPC planners"</a> for more information.)
-To find out which actual search options the LAMA 2011 configuration
-corresponds to, check the source code of the <code>src/driver/aliases.py</code> module.</p>
-<h2 id="64-bit_mode">64-bit mode<a class="headerlink" href="#64-bit_mode" title="Permanent link">#</a></h2>
-<p>Older planner versions built the planner in 32-bit mode by default
-because of lower memory consumption. As part of the meta issue
-<a href="http://issues.fast-downward.org/issue213">issue213</a> we
-decreased the memory consumption of 64-bit builds to the point where
-there should be no difference between 32- and 64-bit builds for most
-configurations. Therefore, we use the native bitwidth of the operating
-system since January 2019.</p>
-<h2 id="other_questions">Other questions?<a class="headerlink" href="#other_questions" title="Permanent link">#</a></h2>
-<p>Please get in touch! See the <a href="https://www.fast-downward.org">home page</a> for various
-contact options.</p>
 
 
 
@@ -2260,7 +2234,7 @@ contact options.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../quick-start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2270,20 +2244,20 @@ contact options.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Getting Started
+                
               </div>
             </div>
           </a>
         
         
           
-          <a href="../pddl-support/" class="md-footer__link md-footer__link--next" aria-label="Next: PDDL support">
+          <a href="../search/" class="md-footer__link md-footer__link--next" aria-label="Next: Search Plugins">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                PDDL support
+                Search Plugins
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -291,8 +291,6 @@
       
         
       
-        
-      
     
     
     
@@ -339,55 +337,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quick-start/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../planner-usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Planner usage
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../pddl-support/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    PDDL support
     
   </span>
   
@@ -452,7 +406,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           
@@ -469,14 +423,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Search plugins
           </label>
@@ -937,11 +891,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ipc-planners/" class="md-nav__link">
+      <a href="../../exit-codes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    IPC planners
+    Exit codes
     
   </span>
   
@@ -959,11 +913,33 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exit-codes/" class="md-nav__link">
+      <a href="../../pddl-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Exit codes
+    PDDL support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ipc-planners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPC planners
     
   </span>
   
@@ -2056,10 +2032,15 @@
 </li>
 </ul>
 <p><strong>Note:</strong> Examples include the DFP merge strategy, which can be obtained using:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order(&lt;order_option&gt;))]))
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>merge_strategy=merge_stateless(
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   merge_selector=score_based_filtering(
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>       scoring_functions=[goal_relevance,dfp,total_order(&lt;order_option&gt;))]))
 </span></code></pre></div>
 and the (dynamic/score-based) MIASM strategy, which can be obtained using:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[sf_miasm(&lt;shrinking_options&gt;),total_order(&lt;order_option&gt;)]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>merge_strategy=merge_stateless(
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   merge_selector=score_based_filtering(
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>       scoring_functions=[sf_miasm(&lt;shrinking_options&gt;),
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                          total_order(&lt;order_option&gt;)]))
 </span></code></pre></div></p>
 
 
