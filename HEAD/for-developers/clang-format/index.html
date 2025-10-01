@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://new.fast-downward.org/HEAD/for-developers/uncrustify/">
+        <link rel="canonical" href="https://new.fast-downward.org/HEAD/for-developers/clang-format/">
       
       
-        <link rel="prev" href="../translator-output-format-v4/">
+        <link rel="prev" href="../changelog-format/">
       
+      
+        <link rel="next" href="../cmake/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Using uncrustify to fix code layout - Fast Downward</title>
+        <title>Clang-format to fix code layout - Fast Downward</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using_uncrustify_to_fix_code_layout" class="md-skip">
+        <a href="#clang-format_to_fix_code_layout" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using uncrustify to fix code layout
+              Clang-format to fix code layout
             
           </span>
         </div>
@@ -1477,6 +1479,87 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Clang-format to fix code layout
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Clang-format to fix code layout
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing_clang-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing clang-format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running_clang-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running clang-format
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -1803,87 +1886,6 @@
 
               
             
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Using uncrustify to fix code layout
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Using uncrustify to fix code layout
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installing_uncrustify" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing uncrustify
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running_uncrustify" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running uncrustify
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1918,18 +1920,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installing_uncrustify" class="md-nav__link">
+  <a href="#installing_clang-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing uncrustify
+      Installing clang-format
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running_uncrustify" class="md-nav__link">
+  <a href="#running_clang-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Running uncrustify
+      Running clang-format
     </span>
   </a>
   
@@ -1954,40 +1956,34 @@
   
 
 
-<h1 id="using_uncrustify_to_fix_code_layout">Using uncrustify to fix code layout<a class="headerlink" href="#using_uncrustify_to_fix_code_layout" title="Permanent link">#</a></h1>
-<p>We use <code>uncrustify</code>
-with a Fast Downward configuration file (<code>.uncrustify.cfg</code> in the repository
+<h1 id="clang-format_to_fix_code_layout">Clang-format to fix code layout<a class="headerlink" href="#clang-format_to_fix_code_layout" title="Permanent link">#</a></h1>
+<p>We use <code>clang-format</code>
+with a Fast Downward configuration file (<code>.clang-format</code> in the repository
 root) to enforce some of our formatting conventions.  If a source file is
-properly formatted, applying <code>uncrustify</code> should be an idempotent operation
+properly formatted, applying <code>clang-format</code> should be an idempotent operation
 (i.e., result in an identical file).  This is important so that we can verify
-our style rules automatically, at least for those rules which<code>uncrustify</code>
+our style rules automatically, at least for those rules which <code>clang-format</code>
 can handle.</p>
-<p>Not all aspects of source layout are handled by <code>uncrustify</code>, so please still
+<p>Not all aspects of source layout are handled by <code>clang-format</code>, so please still
 pay attention to our <a href="../cpp-whitespace/">whitespace</a> rules and other <a href="../coding-conventions/">coding
 conventions</a>.</p>
-<h2 id="installing_uncrustify">Installing uncrustify<a class="headerlink" href="#installing_uncrustify" title="Permanent link">#</a></h2>
-<p>Please note that we require a specific uncrustify version. On Ubuntu 22.04,
-22.10 and 23.04, you get this uncrustify version by calling <code>sudo apt install
-uncrustify</code> , so on these Ubuntu versions you don't need the steps below.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://github.com/uncrustify/uncrustify/archive/uncrustify-0.72.0.tar.gz
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tar -xzvf uncrustify-0.72.0.tar.gz
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cd uncrustify-uncrustify-0.72.0
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>mkdir build
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>cd build
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>cmake ../
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>make -j4
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo cp uncrustify /usr/local/bin  # Add binary to a directory on PATH.
+<h2 id="installing_clang-format">Installing clang-format<a class="headerlink" href="#installing_clang-format" title="Permanent link">#</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt install clang-format-18
 </span></code></pre></div>
-<h2 id="running_uncrustify">Running uncrustify<a class="headerlink" href="#running_uncrustify" title="Permanent link">#</a></h2>
+<h2 id="running_clang-format">Running clang-format<a class="headerlink" href="#running_clang-format" title="Permanent link">#</a></h2>
 <p>To check the formatting of all C++ files, use
-<code>./misc/style/run-uncrustify.py</code>. To actually edit the files that need
-to be uncrustified, use <code>./misc/style/run-uncrustify.py \--modify</code>.
+<code>./misc/style/run-clang-format.py</code>. To actually edit the files that need
+to be clang-formatted, use <code>./misc/style/run-clang-format.py \--modify</code>.
+Optionally, you can use the flag <code>-f</code> to fix the style on uncommitted changes.
 This script is also part of our tox tests:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apt install tox
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cd misc/
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>tox -e fix-style
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip3 install tox
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo apt-get install clang-tidy-16
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo apt-get install clang-format-18
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>cd misc/
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tox -e style,clang-tidy
 </span></code></pre></div>
-<p>To check the style of Python and C++ files, you can use <code>tox -e style</code>.</p>
+<p>To check the style of Python and C++ files, you can use <code>tox -e style</code>.
+To automatically fix the style, you can use <code>tox -e fix-style</code>.</p>
 
 
 
@@ -2017,7 +2013,7 @@ This script is also part of our tox tests:</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../translator-output-format-v4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Translator Output Format v4">
+          <a href="../changelog-format/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changelog entries">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2027,11 +2023,27 @@ This script is also part of our tox tests:</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Translator Output Format v4
+                Changelog entries
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../cmake/" class="md-footer__link md-footer__link--next" aria-label="Next: CMake">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                CMake
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
