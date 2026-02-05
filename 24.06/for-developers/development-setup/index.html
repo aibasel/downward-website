@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://new.fast-downward.org/24.06/for-developers/development-setup/">
       
       
-        <link rel="prev" href="../cpp-whitespace/">
+        <link rel="prev" href="../coding-conventions/">
       
       
         <link rel="next" href="../git/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Development environment - Fast Downward</title>
+        <title>Development setup - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#development_environment" class="md-skip">
+        <a href="#development_setup" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Development environment
+              Development setup
             
           </span>
         </div>
@@ -1232,8 +1232,6 @@
       
         
       
-        
-      
     
     
     
@@ -1482,28 +1480,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../clang-format/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Clang-format to fix code layout
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../cmake/" class="md-nav__link">
         
   
@@ -1552,29 +1528,7 @@
         
   
   <span class="md-ellipsis">
-    C++ coding conventions and style guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cpp-whitespace/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    C++ whitespace guide
+    C++ coding conventions
     
   </span>
   
@@ -1605,7 +1559,7 @@
           
   
   <span class="md-ellipsis">
-    Development environment
+    Development setup
     
   </span>
   
@@ -1617,7 +1571,7 @@
         
   
   <span class="md-ellipsis">
-    Development environment
+    Development setup
     
   </span>
   
@@ -1640,9 +1594,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installing_clang-tidy-16_on_ubuntu_2204" class="md-nav__link">
+  <a href="#using_clang-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing clang-tidy-16 on Ubuntu 22.04
+      Using clang-format
     </span>
   </a>
   
@@ -1880,6 +1834,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../style-conventions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Style conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../translator-output-format-v4/" class="md-nav__link">
         
   
@@ -1929,9 +1905,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installing_clang-tidy-16_on_ubuntu_2204" class="md-nav__link">
+  <a href="#using_clang-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing clang-tidy-16 on Ubuntu 22.04
+      Using clang-format
     </span>
   </a>
   
@@ -1974,18 +1950,18 @@
   
 
 
-<h1 id="development_environment">Development environment<a class="headerlink" href="#development_environment" title="Permanent link">#</a></h1>
+<h1 id="development_setup">Development setup<a class="headerlink" href="#development_setup" title="Permanent link">#</a></h1>
 <p>The requirements for compiling Fast Downward are listed in <a href="https://github.com/aibasel/downward/blob/main/BUILD.md" title="wikilink">the build
 instructions</a>.
 Our automated tests have additional dependencies that can be installed
 as follows:</p>
-<div class="language-text highlight"><pre><span></span><code>apt-get install clang-tidy-16 python3.8 python3.10 python3-pip valgrind wget
-python3 -m pip install tox
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>apt-get install clang-format-18 clang-tidy-18 python3.8 python3.10 python3-pip valgrind wget
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3 -m pip install tox
+</span></code></pre></div>
 <p>For running the autodoc script you'll need to install txt2tags via
 <code>python3 -m pip install -r misc/autodoc/requirements.txt</code>.</p>
-<p>We recommend using Ubuntu 22.04 or 24.04 for Fast Downward development
-since these versions are also used by the core developers and they allow
+<p>We recommend using Ubuntu 24.04 for Fast Downward development
+since this version is also used by the core developers and it allows
 installing many dependencies via the package manager.</p>
 <p><strong>Important</strong>: We want the code to compile without warnings, but in
 favour of user-friendliness we did not add the -Werror flag to the build
@@ -1994,18 +1970,30 @@ example by adding <code>export CXXFLAGS+=-Werror</code> to your bashrc. Note tha
 should build the binary from scratch after this (i.e. remove the builds
 directory if it exists), since it will not recompile files unless they have
 been changed.</p>
-<h2 id="installing_clang-tidy-16_on_ubuntu_2204">Installing clang-tidy-16 on Ubuntu 22.04<a class="headerlink" href="#installing_clang-tidy-16_on_ubuntu_2204" title="Permanent link">#</a></h2>
-<p>We use clang-tidy-16 for our style checks which cannot be installed
-through apt on Ubuntu 22.04. To install it manually, follow these steps:</p>
-<ol>
-<li>Download <code>clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz</code>
-    from <a href="https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0">https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0</a>
-    (yes, 18.04 is correct even for Ubuntu 22.04).</li>
-<li>Unpack the downloaded file to any directory you like, say <code>~/local/opt/llvm16</code>.</li>
-<li>Somewhere in your PATH, set two symlinks called <code>clang-tidy-16</code> to <code>~/local/opt/llvm16/bin/clang-tidy</code> and <code>run-clang-tidy-16</code> to <code>~/local/opt/llvm16/bin/run-clang-tidy</code>.</li>
-<li>Install dependencies: <code>sudo apt install libtinfo5 libstdc++-12-dev</code>.</li>
-<li>Try to run <code>clang-tidy-16</code>.  If you get errors about missing shared libraries, install the missing dependencies.</li>
-</ol>
+<h2 id="using_clang-format">Using <code>clang-format</code><a class="headerlink" href="#using_clang-format" title="Permanent link">#</a></h2>
+<p>We use <code>clang-format</code> with a Fast Downward configuration file (<code>.clang-format</code>
+in the repository root) to enforce some of our formatting conventions. If a
+source file is properly formatted, applying <code>clang-format</code> should be an
+idempotent operation (i.e., result in an identical file). This is important so
+that we can verify our style rules automatically, at least for those rules which
+<code>clang-format</code> can handle.</p>
+<p>Not all aspects of source layout are handled by <code>clang-format</code>, so please still
+pay attention to
+<a href="../style-conventions/#things_not_handled_by_clang-format">things not handled by clang-format</a>
+and our <a href="../coding-conventions/">coding conventions</a>.</p>
+<p>Install <code>clang-format</code> with
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apt install clang-format-18
+</span></code></pre></div></p>
+<p>To then check the style of Python and C++ files, you can navigate to the <code>misc</code> directory and run
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tox -e style
+</span></code></pre></div>
+To automatically fix the style, you can run
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tox -e fix-style
+</span></code></pre></div>
+When fixing style, <code>tox</code> complains if there are uncommitted changes. If you want
+to fix the style of C++ files before committing, you can instead run
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./misc/style/run-clang-format.py --force --modify
+</span></code></pre></div></p>
 <h2 id="running_tests">Running tests<a class="headerlink" href="#running_tests" title="Permanent link">#</a></h2>
 <p>To run all tests under all locally-available Python versions, run <code>tox</code> in the
 <code>misc/</code> directory. The command creates Python virtual environments under
@@ -2020,9 +2008,9 @@ check a pytest module, execute <code>pytest my_module.py</code>.</p>
 <ol>
 <li><code>sudo apt install ccache</code></li>
 <li>Set the following variables in your <code>.bashrc</code> to use it
-   <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export CMAKE_CXX_COMPILER_LAUNCHER=ccache
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>export CCACHE_BASEDIR=/home/user   # Replace /home/user with your home directory
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>export CCACHE_NOHASHDIR=true
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>export CCACHE_BASEDIR=/home/user   # Replace /home/user with your home directory
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>export CCACHE_NOHASHDIR=true
 </span></code></pre></div></li>
 </ol>
 <p>The last two lines are optional but they allow <code>ccache</code> to use the cache across different file locations. For example, you could build in <code>~/projects/downward/main</code> and then reuse the cache in <code>~/projects/downward/issue999</code>. This will store file paths that start with <code>$CCACHE_BASEDIR</code> inside the binary as relative paths rather than absolute paths. That should be fine and I never had a problem with this but under some circumstances it could mean that debug symbols are not resolved correctly. If that happens, you can switch off the setting and rebuild.</p>
@@ -2055,7 +2043,7 @@ check a pytest module, execute <code>pytest my_module.py</code>.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../cpp-whitespace/" class="md-footer__link md-footer__link--prev" aria-label="Previous: C++ whitespace guide">
+          <a href="../coding-conventions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: C++ coding conventions">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2065,7 +2053,7 @@ check a pytest module, execute <code>pytest my_module.py</code>.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                C++ whitespace guide
+                C++ coding conventions
               </div>
             </div>
           </a>

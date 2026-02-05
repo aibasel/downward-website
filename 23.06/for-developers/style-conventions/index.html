@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://new.fast-downward.org/23.06/for-developers/clang-format/">
+        <link rel="canonical" href="https://new.fast-downward.org/23.06/for-developers/style-conventions/">
       
       
-        <link rel="prev" href="../changelog-format/">
+        <link rel="prev" href="../sprint/">
       
       
-        <link rel="next" href="../cmake/">
+        <link rel="next" href="../translator-output-format-v4/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Clang-format to fix code layout - Fast Downward</title>
+        <title>Style conventions - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#clang-format_to_fix_code_layout" class="md-skip">
+        <a href="#style_conventions" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Clang-format to fix code layout
+              Style conventions
             
           </span>
         </div>
@@ -1232,8 +1232,6 @@
       
         
       
-        
-      
     
     
     
@@ -1479,87 +1477,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Clang-format to fix code layout
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Clang-format to fix code layout
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installing_clang-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing clang-format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running_clang-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running clang-format
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -1611,29 +1528,7 @@
         
   
   <span class="md-ellipsis">
-    C++ coding conventions and style guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cpp-whitespace/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    C++ whitespace guide
+    C++ coding conventions
     
   </span>
   
@@ -1655,7 +1550,7 @@
         
   
   <span class="md-ellipsis">
-    Development environment
+    Development setup
     
   </span>
   
@@ -1868,6 +1763,180 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Style conventions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Style conventions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#things_not_handled_by_clang-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things not handled by clang-format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things not handled by clang-format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditionals_and_loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditionals and Loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things_handled_by_clang-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things handled by clang-format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things handled by clang-format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#column_width" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column Width
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bin_packing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bin Packing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Includes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single_line_function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Line Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_type_on_its_own_line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Type on Its Own Line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -1920,20 +1989,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installing_clang-format" class="md-nav__link">
+  <a href="#things_not_handled_by_clang-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing clang-format
+      Things not handled by clang-format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things not handled by clang-format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strings
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#running_clang-format" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
     <span class="md-ellipsis">
-      Running clang-format
+      Comments
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditionals_and_loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditionals and Loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things_handled_by_clang-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things handled by clang-format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things handled by clang-format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#column_width" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column Width
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bin_packing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bin Packing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Includes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single_line_function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Line Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_type_on_its_own_line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Type on Its Own Line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1956,34 +2118,114 @@
   
 
 
-<h1 id="clang-format_to_fix_code_layout">Clang-format to fix code layout<a class="headerlink" href="#clang-format_to_fix_code_layout" title="Permanent link">#</a></h1>
-<p>We use <code>clang-format</code>
-with a Fast Downward configuration file (<code>.clang-format</code> in the repository
-root) to enforce some of our formatting conventions.  If a source file is
-properly formatted, applying <code>clang-format</code> should be an idempotent operation
-(i.e., result in an identical file).  This is important so that we can verify
-our style rules automatically, at least for those rules which <code>clang-format</code>
-can handle.</p>
-<p>Not all aspects of source layout are handled by <code>clang-format</code>, so please still
-pay attention to our <a href="../cpp-whitespace/">whitespace</a> rules and other <a href="../coding-conventions/">coding
-conventions</a>.</p>
-<h2 id="installing_clang-format">Installing clang-format<a class="headerlink" href="#installing_clang-format" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt install clang-format-18
+<h1 id="style_conventions">Style conventions<a class="headerlink" href="#style_conventions" title="Permanent link">#</a></h1>
+<p>On this page we first discuss style conventions that developers have to manually
+take care of, as they are not automatically handled by <code>clang-format</code>. Then we
+introduce the most important components of our <code>clang-format</code> configuration and
+motivate the decisions made. Refer to the
+<a href="../development-setup/#using_clang-format">development setup</a> for installation
+instructions and see our <a href="../coding-conventions/">coding conventions</a>.</p>
+<p>As with our other conventions: when something is not specified here and you're
+in doubt, follow the examples in the existing code.</p>
+<h2 id="things_not_handled_by_clang-format">Things not handled by <code>clang-format</code><a class="headerlink" href="#things_not_handled_by_clang-format" title="Permanent link">#</a></h2>
+<h3 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">#</a></h3>
+<p>Column width is not enforced for strings, they are left as they are. Please
+ensure manually that lines stay within 80 characters.</p>
+<h3 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">#</a></h3>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Use this style for short comments.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// TODO: Use this format for todo items.</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// Write complete sentences ending with periods.</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm">/* Use imperative if possible: &quot;Return the factorial.&quot; is better than &quot;Returns</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="cm">   the factorial.&quot;. */</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="cm">/*</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="cm">  Use this style for comments spanning multiple lines and strive to write</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="cm">  self-explanatory code that doesn&#39;t need comments.</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cm">*/</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="cm">/* For shorter multi-line comments (2-3 lines)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="cm">   this style is also fine. */</span>
 </span></code></pre></div>
-<h2 id="running_clang-format">Running clang-format<a class="headerlink" href="#running_clang-format" title="Permanent link">#</a></h2>
-<p>To check the formatting of all C++ files, use
-<code>./misc/style/run-clang-format.py</code>. To actually edit the files that need
-to be clang-formatted, use <code>./misc/style/run-clang-format.py \--modify</code>.
-Optionally, you can use the flag <code>-f</code> to fix the style on uncommitted changes.
-This script is also part of our tox tests:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip3 install tox
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo apt-get install clang-tidy-16
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo apt-get install clang-format-18
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>cd misc/
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tox -e style,clang-tidy
+<ul>
+<li>Column width is enforced when lines are too long. Stay within the character
+  limit to stop <code>clang-format</code> from changing line breaks.</li>
+<li><code>clang-format</code> splits long <code>//</code> comments into multiple lines each starting
+  with <code>//</code>.</li>
+<li>We generally prefer comments above the code, not next to it.</li>
+</ul>
+<h3 id="conditionals_and_loops">Conditionals and Loops<a class="headerlink" href="#conditionals_and_loops" title="Permanent link">#</a></h3>
+<p>For if, while statements etc. with only a single statement in the body, braces
+are optional. For constructs with several blocks (if/else, try/catch) either all
+blocks should have braces or none.</p>
+<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h3>
+<ul>
+<li>Add an empty line between the last group of includes and the remaining code.</li>
+<li>If <code>using namespace std</code>, put it after all includes.</li>
+</ul>
+<h2 id="things_handled_by_clang-format">Things handled by <code>clang-format</code><a class="headerlink" href="#things_handled_by_clang-format" title="Permanent link">#</a></h2>
+<p>The configuration file contains definitions for all options that we actively
+thought about. We chose a base style whose default parameters have the greatest
+overlap with these explicit choices, which happened to be the LLVM style. In the
+<code>.clang-format</code> file, we list the overlapping options explicitly, along with
+options that deviate.</p>
+<h3 id="column_width">Column Width<a class="headerlink" href="#column_width" title="Permanent link">#</a></h3>
+<p>We stick to the 80 character column width. A compelling argument for this choice
+was that it allows viewing of diffs on GitHub without breaking lines, even on
+laptop screens. <code>clang-format</code> enforces this limit strictly.</p>
+<h3 id="bin_packing">Bin Packing<a class="headerlink" href="#bin_packing" title="Permanent link">#</a></h3>
+<p>The options connected to bin packing control how function definitions and calls
+that do not fit on a single line are formatted. We decided to allow bin packing,
+that is, that parameters and arguments may fill lines below the function instead
+of being placed on single lines. The motivation was that we save vertical space
+and improve readability of plain code, compromising on diff readability.
+<code>clang-format</code> does not allow member initializer lists in constructors to be bin
+packed, instead we put entries on single lines for long initializer lists.</p>
+<h3 id="includes">Includes<a class="headerlink" href="#includes" title="Permanent link">#</a></h3>
+<p>We allow <code>clang-format</code> to group includes and sort entries alphabetically within
+groups. The groups are sorted as follows:</p>
+<ol>
+<li>header corresponding to .cc file</li>
+<li>headers that are neighbors</li>
+<li>headers in neighboring subdirectories</li>
+<li>headers in parent directory</li>
+<li>headers in subdirectories of parent directory</li>
+<li>standard libraries</li>
+</ol>
+<p>Note that with the current directory structure, where src/search/ contains no
+subsubdirectories, a file may only include headers from either group 3 (if the
+file is in src/search/) or from group 4 and 5 (if the file is in a subdirectory
+of src/search/).</p>
+<p>Here is a contrived example for <code>pattern_generation_edelkamp.cc</code>:</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pattern_generation_edelkamp.h&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;zero_one_pdbs_heuristic.h&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../abstract_task.h&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../causal_graph.h&quot;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../utils/timer.h&quot;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 </span></code></pre></div>
-<p>To check the style of Python and C++ files, you can use <code>tox -e style</code>.
-To automatically fix the style, you can use <code>tox -e fix-style</code>.</p>
+<h3 id="single_line_function">Single Line Function<a class="headerlink" href="#single_line_function" title="Permanent link">#</a></h3>
+<p>We do not allow single line function definitions. This makes diffs more readable
+and separates the function body more clearly.</p>
+<h3 id="return_type_on_its_own_line">Return Type on Its Own Line<a class="headerlink" href="#return_type_on_its_own_line" title="Permanent link">#</a></h3>
+<p>To avoid line breaks like this
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">are_facts_mutex</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FactPair</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fact1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FactPair</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fact2</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span></code></pre></div>
+we increased the penalty for putting the return type on a single line to instead
+get
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">are_facts_mutex</span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FactPair</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fact1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FactPair</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fact2</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span></code></pre></div>
+in most cases.</p>
 
 
 
@@ -2013,7 +2255,7 @@ To automatically fix the style, you can use <code>tox -e fix-style</code>.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../changelog-format/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changelog entries">
+          <a href="../sprint/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sprint">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2023,20 +2265,20 @@ To automatically fix the style, you can use <code>tox -e fix-style</code>.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Changelog entries
+                Sprint
               </div>
             </div>
           </a>
         
         
           
-          <a href="../cmake/" class="md-footer__link md-footer__link--next" aria-label="Next: CMake">
+          <a href="../translator-output-format-v4/" class="md-footer__link md-footer__link--next" aria-label="Next: Translator Output Format v4">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CMake
+                Translator Output Format v4
               </div>
             </div>
             <div class="md-footer__button md-icon">

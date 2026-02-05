@@ -14,7 +14,7 @@
         <link rel="prev" href="../code-review/">
       
       
-        <link rel="next" href="../cpp-whitespace/">
+        <link rel="next" href="../development-setup/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>C++ coding conventions and style guide - Fast Downward</title>
+        <title>C++ coding conventions - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#c_coding_conventions_and_style_guide" class="md-skip">
+        <a href="#c_coding_conventions" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              C++ coding conventions and style guide
+              C++ coding conventions
             
           </span>
         </div>
@@ -1232,8 +1232,6 @@
       
         
       
-        
-      
     
     
     
@@ -1482,28 +1480,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../clang-format/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Clang-format to fix code layout
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../cmake/" class="md-nav__link">
         
   
@@ -1561,7 +1537,7 @@
           
   
   <span class="md-ellipsis">
-    C++ coding conventions and style guide
+    C++ coding conventions
     
   </span>
   
@@ -1573,7 +1549,7 @@
         
   
   <span class="md-ellipsis">
-    C++ coding conventions and style guide
+    C++ coding conventions
     
   </span>
   
@@ -1596,15 +1572,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#language_support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Language support
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#general_recommendation" class="md-nav__link">
     <span class="md-ellipsis">
       General recommendation
@@ -1614,18 +1581,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
+  <a href="#files_subdirectories_namespaces_and_cmake_libraries" class="md-nav__link">
     <span class="md-ellipsis">
-      Comments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subdirectories_namespaces_and_cmake_libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Subdirectories, namespaces and CMake libraries
+      Files, Subdirectories, namespaces and CMake libraries
     </span>
   </a>
   
@@ -1635,15 +1593,6 @@
   <a href="#header_file_guards" class="md-nav__link">
     <span class="md-ellipsis">
       Header file guards
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#includes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Includes
     </span>
   </a>
   
@@ -1737,33 +1686,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cpp-whitespace/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    C++ whitespace guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../development-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Development environment
+    Development setup
     
   </span>
   
@@ -1979,6 +1906,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../style-conventions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Style conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../translator-output-format-v4/" class="md-nav__link">
         
   
@@ -2028,15 +1977,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#language_support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Language support
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#general_recommendation" class="md-nav__link">
     <span class="md-ellipsis">
       General recommendation
@@ -2046,18 +1986,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
+  <a href="#files_subdirectories_namespaces_and_cmake_libraries" class="md-nav__link">
     <span class="md-ellipsis">
-      Comments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subdirectories_namespaces_and_cmake_libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Subdirectories, namespaces and CMake libraries
+      Files, Subdirectories, namespaces and CMake libraries
     </span>
   </a>
   
@@ -2067,15 +1998,6 @@
   <a href="#header_file_guards" class="md-nav__link">
     <span class="md-ellipsis">
       Header file guards
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#includes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Includes
     </span>
   </a>
   
@@ -2172,106 +2094,60 @@
   
 
 
-<h1 id="c_coding_conventions_and_style_guide">C++ coding conventions and style guide<a class="headerlink" href="#c_coding_conventions_and_style_guide" title="Permanent link">#</a></h1>
-<p>We try to maintain a consistent coding style because it makes reading
-and modifying the code easier. Our coding conventions aren't
-necessarily better than others (though we try to follow ones that make
-sense and change those that don't), but the main utility of this is
-consistency.</p>
-<p>We're much stricter these days than we were, say, 10 years ago. The
-reason for this is that a codebase with many contributors and large size
-is much harder to maintain than a small one. So new code must pass
-tougher tests than some of the existing code. (Of course, the existing
-code should ideally be cleaned up more, too, but few people are
-motivated to work on such tasks if there are other things to do that
-seem more urgent.) Once code is in, it usually isn't changed for years
-unless we discover a bug. So we really try to put a lot of effort on
-making things as right as possible on the first try.</p>
+<h1 id="c_coding_conventions">C++ coding conventions<a class="headerlink" href="#c_coding_conventions" title="Permanent link">#</a></h1>
 <p>The following is not meant to be a complete description of our coding
 conventions. When in doubt, follow the example of the existing code.</p>
-<p>See also the information on how and where to put <a href="../cpp-whitespace/">whitespaces</a>.</p>
-<h3 id="language_support">Language support<a class="headerlink" href="#language_support" title="Permanent link">#</a></h3>
-<p>The translator runs on Python &gt;= 3.6. The search code uses C++20 and
-may use all language features supported by GCC 10, clang 12, MSVC 19.34,
-and AppleClang 13.</p>
-<h3 id="general_recommendation">General recommendation<a class="headerlink" href="#general_recommendation" title="Permanent link">#</a></h3>
+<p>See also our <a href="../style-conventions/">style conventions</a>.</p>
+<p>The search code is written in C++20. Refer to <a href="../requirements/">requirements</a>
+for the C++ compiler and Python versions we currently use to see what language
+features you may use.</p>
+<h2 id="general_recommendation">General recommendation<a class="headerlink" href="#general_recommendation" title="Permanent link">#</a></h2>
 <p>We generally follow the recommendations in the book <a href="http://www.gotw.ca/publications/c++cs.htm">C++ Coding
 Standards: 101 Rules, Guidelines, and Best
 Practices</a> by Herb
-Sutter and Andrei Alexandrescu. In the tracker or elsewhere, a mark of
-the form <strong>[SA </strong><em>x</em><strong>]</strong> is a reference to a rule in that book. For
-example, <strong>[SA 9]</strong> refers to Sutter and Alexandrescu's rule 9:
-"Don't pessimize prematurely".</p>
-<h3 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">#</a></h3>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Write complete sentences ending with periods.</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// Use imperative if possible: &quot;Return the factorial.&quot; is better than &quot;Returns the factorial.&quot;.</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// Leave a space between the slashes and the comment.</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// TODO: Use this format for todo items.</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="cm">/*</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="cm">  Use this style for comments spanning </span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="cm">  multiple lines and strive to write </span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="cm">  self-explanatory code that doesn&#39;t need </span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cm">  comments.</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">*/</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="cm">/* For shorter multi-line comments (2-3 lines)</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="cm">   this style is also fine. */</span>
-</span></code></pre></div>
-<p>We generally prefer comments above the code (not next to it). If you
-really want to put a short comment next to the code, leave <strong>one</strong> space
-before and after the <code>//</code> slashes.</p>
-<h3 id="subdirectories_namespaces_and_cmake_libraries">Subdirectories, namespaces and CMake libraries<a class="headerlink" href="#subdirectories_namespaces_and_cmake_libraries" title="Permanent link">#</a></h3>
+Sutter and Andrei Alexandrescu.</p>
+<h2 id="files_subdirectories_namespaces_and_cmake_libraries">Files, Subdirectories, namespaces and CMake libraries<a class="headerlink" href="#files_subdirectories_namespaces_and_cmake_libraries" title="Permanent link">#</a></h2>
+<p>Files:</p>
+<ul>
+<li>File names should be in snake_case and end in <code>.h</code> or <code>.cc</code>. For example:<ul>
+<li>Code for the merge-and-shrink heuristic lives in
+    <code>merge_and_shrink_heuristic.h</code> and <code>merge_and_shrink_heuristic.cc</code>.</li>
+<li>Code for the Pareto open list lives in <code>pareto_open_list.h</code> and
+    <code>pareto_open_list.cc</code>.</li>
+</ul>
+</li>
+</ul>
 <p>Subdirectories:</p>
 <ul>
 <li>We don't use nested subdirectories (at least for now).</li>
 <li>There are two types of subdirectories:<ul>
 <li><em>component subdirectories</em> correspond to a single component
     (e.g. one subdirectory for the PDB code, one for the
-    landmarks code, one for the merge-and-shrink code)</li>
+    landmarks code, one for the merge-and-shrink code).</li>
 <li><em>grouping subdirectories</em> group together many components
     that are related and too small to deserve their individual
     subdirectories (e.g. one for all open list variants and one
-    for all heuristics that don't need their own subdirectory)</li>
+    for all heuristics that don't need their own subdirectory).</li>
 </ul>
 </li>
-<li>Subdirectories follow the same naming conventions as filenames,
-    methods and variables.</li>
-<li>Subdirectory names should be kept short.</li>
+<li>Subdirectory names should be kept short and in snake_case.</li>
 </ul>
 <p>Namespaces:</p>
 <ul>
 <li>We don't use nested namespaces (at least for now).</li>
 <li>Every component (= CMake library) should correspond to a namespace.<ul>
 <li>For components that have their own directory, the namespace
-    name is derived from the directory name.</li>
+    name is the same as the directory name.</li>
 <li>For components that are too small for their own directory,
-    the namespace name is derived from the main file name (or
-    equivalently, the main class name).</li>
+    the namespace name is the same as the main file name without the suffix.</li>
 </ul>
 </li>
-<li>Namespaces follow the same camel-case naming convention as classes.</li>
 <li>We don't use <code>using namespace</code> for our own namespaces.</li>
 </ul>
 <p>CMake libraries:</p>
 <ul>
 <li>There's a 1:1 correspondence between namespaces and CMake
     libraries.</li>
-</ul>
-<p>Examples:</p>
-<ul>
-<li>Component directory <code>merge_and_shrink</code> contains the code the
-    merge-and-shrink component in namespace <code>MergeAndShrink</code>.</li>
-<li>The file <code>merge_and_shrink/transition_system.h</code> would be expected to
-    contain the class <code>MergeAndShrink::TransitionSystem</code>.</li>
-<li>Grouping directory <code>open_lists</code> contains the code for various open list
-    components, for example an alternation open list.</li>
-<li>The file <code>open_lists/alternation_open_list.h</code> would be expected to contain
-    the class <code>AlternationOpenList::AlternationOpenList</code>.</li>
 </ul>
 <p>Open questions:</p>
 <ul>
@@ -2281,81 +2157,50 @@ before and after the <code>//</code> slashes.</p>
 <li>We might eventually consider settling for shorter class names and/or
     filenames in cases where the directory name or namespace already
     provide the necessary context. For example, we might say
-    <code>MergeAndShrink::Heuristic</code> instead of <code>MergeAndShrink::Heuristic</code>; we
-    might say <code>AlternationOpenList::OpenList</code> or <code>Alternation::OpenList</code>
-    instead of <code>AlternationOpenList</code>. (If you want to argue for this, this
-    would need further discussion.)</li>
+    <code>AlternationOpenList::OpenList</code> or <code>Alternation::OpenList</code> instead of
+    <code>AlternationOpenList</code>. (If you want to argue for this, this would need
+    further discussion.)</li>
 </ul>
-<h3 id="header_file_guards">Header file guards<a class="headerlink" href="#header_file_guards" title="Permanent link">#</a></h3>
+<h2 id="header_file_guards">Header file guards<a class="headerlink" href="#header_file_guards" title="Permanent link">#</a></h2>
 <p>Macro names for header file guards follow this algorithm:</p>
 <ul>
 <li>Take the filename, including subdirectory name if in a subdirectory.</li>
 <li>Convert to uppercase.</li>
-<li>Replace all <code>.</code> and <code>/</code> with <code>-</code>.</li>
+<li>Replace all <code>.</code> and <code>/</code> with <code>_</code>.</li>
 </ul>
 <p>Example: <code>learning/state_space_sample.h</code> becomes
 <code>LEARNING_STATE_SPACE_SAMPLE_H</code>.</p>
 <p>Guard blocks should look like this:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#ifndef LEARNING_STATE_SPACE_SAMPLE_H</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#define LEARNING_STATE_SPACE_SAMPLE_H</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// ...</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cp">#endif</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#ifndef LEARNING_STATE_SPACE_SAMPLE_H</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#define LEARNING_STATE_SPACE_SAMPLE_H</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// ...</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#endif</span>
 </span></code></pre></div>
 <p>That's all. In particular, don't add comments to the preprocessor
 directives and don't add further underscores.</p>
-<h3 id="includes">Includes<a class="headerlink" href="#includes" title="Permanent link">#</a></h3>
-<p>Order includes in the following way: header corresponding to .cc file,
-headers from the same directory, headers from the <code>src/search</code>
-directory, headers from other directories, standard library includes,
-and third-party library includes. If using the <code>using namespace std</code>
-declaration, put it after all other includes. Order each group
-alphabetically and separate the groups by empty lines. Add an empty line
-between the last group and the remaining code. Here is a contrived
-example:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pattern_generation_edelkamp.h&quot;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;zero_one_pdbs_heuristic.h&quot;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../abstract_task.h&quot;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../causal_graph.h&quot;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../algorithms/ordered_set.h&quot;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../utils/timer.h&quot;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tree.hh&gt;</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">PatternGenerationEdelkamp</span><span class="o">::</span><span class="n">PatternGenerationEdelkamp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Options</span><span class="w"> </span><span class="o">&amp;</span><span class="n">opts</span><span class="p">)</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">...</span>
-</span></code></pre></div>
-<h3 id="constructors_destructors_and_assignment_operators">Constructors, destructors and assignment operators<a class="headerlink" href="#constructors_destructors_and_assignment_operators" title="Permanent link">#</a></h3>
+<h2 id="constructors_destructors_and_assignment_operators">Constructors, destructors and assignment operators<a class="headerlink" href="#constructors_destructors_and_assignment_operators" title="Permanent link">#</a></h2>
 <ul>
 <li>Add default destructor only for base classes (i.e., if other classes
     derive from them). The destructor should of course be virtual.</li>
 <li>Explicitly remove copy constructor, i.e., declare it as <code>= delete</code>, for
     most types, especially those created by plug-ins and used polymorphically.
     Generally, we want to permit copy constructions only for cases where we've
-    explicitly decided that it's useful.  Many of our objects are heavy-weight
+    explicitly decided that it's useful. Many of our objects are heavy-weight
     and should not be copied.</li>
 </ul>
-<h3 id="function_signatures">Function signatures<a class="headerlink" href="#function_signatures" title="Permanent link">#</a></h3>
+<h2 id="function_signatures">Function signatures<a class="headerlink" href="#function_signatures" title="Permanent link">#</a></h2>
 <ul>
 <li>Use <code>const</code> methods whenever appropriate.</li>
-<li>Pass <code>string</code>s by const reference.</li>
-<li>When overriding a virtual method, mention
-   <code>virtual</code> again in the declaration and mark it as <code>override</code> (i.e., <code>virtual
-    int foo() override;</code> rather than <code>int foo();</code>).</li>
+<li>Pass <code>string</code>s by <code>const</code> reference.</li>
+<li>When overriding a virtual method, mention <code>virtual</code> again in the declaration
+    and mark it as <code>override</code> (i.e., <code>virtual int foo() override;</code> rather than
+    <code>int foo();</code>).</li>
 <li>Mark function declarations in headers as <code>extern</code> (global functions).</li>
 <li>Mark function declarations in .cc files <code>static</code> (local functions).</li>
 </ul>
-<h3 id="const_attributes">const attributes<a class="headerlink" href="#const_attributes" title="Permanent link">#</a></h3>
+<h2 id="const_attributes">const attributes<a class="headerlink" href="#const_attributes" title="Permanent link">#</a></h2>
 <p>We generally don't make attributes of classes <code>const</code>. See the
-<a discussion_const_attributes.txt="discussion_const_attributes.txt" href="../../files/const_discussion.txt">attached discussion</a>
+<a href="../../files/const_discussion.txt">attached discussion</a>
 for the rationale behind this convention. (This is a convention that may
 be changed if there is sufficient support, but while it is the way it
 is, we should all follow the same style.) Exceptions include:</p>
@@ -2373,7 +2218,7 @@ is, we should all follow the same style.) Exceptions include:</p>
     the code.)</li>
 </ul>
 <p>The same rules apply to function parameters and local variables.</p>
-<h3 id="push_back_vs_emplace_back">push_back vs. emplace_back<a class="headerlink" href="#push_back_vs_emplace_back" title="Permanent link">#</a></h3>
+<h2 id="push_back_vs_emplace_back">push_back vs. emplace_back<a class="headerlink" href="#push_back_vs_emplace_back" title="Permanent link">#</a></h2>
 <ul>
 <li>
 <p>For a <code>vector&lt;T&gt;</code>, use <code>push_back</code> with arguments of type <code>T</code> or <code>T&amp;&amp;</code> to
@@ -2389,13 +2234,13 @@ is, we should all follow the same style.) Exceptions include:</p>
 </li>
 </ul>
 <p>Examples:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Foo</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"> </span><span class="c1">// construct a Foo</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">vector</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">foos</span><span class="p">;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">foos</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">));</span><span class="w">    </span><span class="c1">// move the constructed Foo into the container</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">foos</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span><span class="w">  </span><span class="c1">// Foo has a constructor that takes two ints. Use emplace_back to directly construct the object inside the container.</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Foo</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"> </span><span class="c1">// construct a Foo</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">vector</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">foos</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">foos</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">));</span><span class="w">    </span><span class="c1">// move the constructed Foo into the container</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">foos</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span><span class="w">  </span><span class="c1">// Foo has a constructor that takes two ints. Use emplace_back to directly construct the object inside the container.</span>
 </span></code></pre></div>
-<h3 id="anti-idioms">Anti-idioms<a class="headerlink" href="#anti-idioms" title="Permanent link">#</a></h3>
+<h2 id="anti-idioms">Anti-idioms<a class="headerlink" href="#anti-idioms" title="Permanent link">#</a></h2>
 <ul>
 <li>Don't write <code>NULL</code> or <code>0</code> for null pointers. Use <code>nullptr</code>.</li>
 <li>Don't write <code>(ptr != nullptr)</code>.  Write <code>(ptr)</code>.</li>
@@ -2405,7 +2250,7 @@ is, we should all follow the same style.) Exceptions include:</p>
 <li>Don't append underscores to constructor variables. Use the same
     name as the member variable (preferrable) or a different name.</li>
 </ul>
-<h3 id="passing_and_storing_tasks">Passing and storing tasks<a class="headerlink" href="#passing_and_storing_tasks" title="Permanent link">#</a></h3>
+<h2 id="passing_and_storing_tasks">Passing and storing tasks<a class="headerlink" href="#passing_and_storing_tasks" title="Permanent link">#</a></h2>
 <ul>
 <li>By default, pass <code>const TaskProxy &amp;</code>.</li>
 <li>
@@ -2431,7 +2276,7 @@ the task.</p>
     same task) contains 10000 copies of the same abstract task pointer.</li>
 <li>Avoid using proxies in performance-critical code.</li>
 </ul>
-<h3 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">#</a></h3>
+<h2 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">#</a></h2>
 <p>Derive custom exception classes from <code>utils::Exception</code>.</p>
 <ul>
 <li>This rule does not apply to internal exceptions never seen by the
@@ -2442,7 +2287,7 @@ the task.</p>
     <code>std::exception</code>. See <a exception_discussion.txt="exception_discussion.txt" href="../../files/exception_discussion.txt">the attached file</a>
     for some discussion.</li>
 </ul>
-<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h3>
+<h2 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h2>
 <ul>
 <li>Prefer <code>template&lt;typename T&gt;</code> over <code>template&lt;class T&gt;</code>.</li>
 </ul>
@@ -2492,13 +2337,13 @@ the task.</p>
         
         
           
-          <a href="../cpp-whitespace/" class="md-footer__link md-footer__link--next" aria-label="Next: C++ whitespace guide">
+          <a href="../development-setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Development setup">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                C++ whitespace guide
+                Development setup
               </div>
             </div>
             <div class="md-footer__button md-icon">
