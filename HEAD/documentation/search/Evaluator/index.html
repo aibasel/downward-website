@@ -2877,6 +2877,19 @@
 </li>
 </ul>
 <p><strong>Note:</strong> to use an LP solver, you must build the planner with LP support. See <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">build instructions</a>.</p>
+<p><strong>History Note:</strong> Formerly known as the admissible landmark heuristic.
+See the papers</p>
+<ul>
+<li>Erez Karpas and Carmel Domshlak.<br />
+ <a href="https://www.ijcai.org/Proceedings/09/Papers/288.pdf">Cost-Optimal Planning with Landmarks</a>.<br />
+ In <em>Proceedings of the 21st International Joint Conference on Artificial Intelligence (IJCAI 2009)</em>, pp. 1728-1733. AAAI Press, 2009.</li>
+</ul>
+<p>and</p>
+<ul>
+<li>Emil Keyder and Silvia Richter and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/keyder-et-al-ecai2010.pdf">Sound and Complete Landmarks for And/Or Graphs</a>.<br />
+ In <em>Proceedings of the 19th European Conference on Artificial Intelligence (ECAI 2010)</em>, pp. 335-340. IOS Press, 2010.</li>
+</ul>
 <p><strong>Usage with A*:</strong> We recommend to add this heuristic as lazy_evaluator when using it in the A* algorithm. This way, the heuristic is recomputed before a state is expanded, leading to improved estimates that incorporate all knowledge gained from paths that were found after the state was inserted into the open list.</p>
 <p><strong>Consistency:</strong> The heuristic is consistent along single paths if it is set as lazy_evaluator; i.e. when expanding s then we have h(s) &lt;= h(s')+cost(a) for all successors s' of s reached with a. But newly found paths to s can increase h(s), at which point the above inequality might not hold anymore.</p>
 <p><strong>Optimal Cost Partitioning:</strong> To use <code>cost_partitioning=optimal</code>, you must build the planner with LP support. See <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">build instructions</a>.</p>
@@ -2924,6 +2937,19 @@
 <li><code>approximate_negative_cycles</code>: Overapproximate negated axioms for all derived variables which have cyclic dependencies by setting an empty condition, indicating the default value can always be achieved for free. For all other derived variables, the negated axioms are computed exactly. Note that this can potentially lead to a combinatorial explosion.</li>
 </ul>
 </li>
+</ul>
+<p><strong>History Note:</strong> Formerly known as the landmark heuristic or landmark count heuristic.
+See the papers</p>
+<ul>
+<li>Silvia Richter, Malte Helmert and Matthias Westphal.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/richter-et-al-aaai2008.pdf">Landmarks Revisited</a>.<br />
+ In <em>Proceedings of the 23rd AAAI Conference on Artificial Intelligence (AAAI 2008)</em>, pp. 975-982. AAAI Press, 2008.</li>
+</ul>
+<p>and</p>
+<ul>
+<li>Silvia Richter and Matthias Westphal.<br />
+ <a href="http://www.aaai.org/Papers/JAIR/Vol39/JAIR-3903.pdf">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
 </ul>
 <p><strong>Note on performance for satisficing planning:</strong> The cost of a landmark is based on the cost of the operators that achieve it. For satisficing search this can be counterproductive since it is often better to focus on distance from goal (i.e. length of the plan) rather than cost. In experiments we achieved the best performance using the option 'transform=adapt_costs(one)' to enforce unit costs.</p>
 <p><strong>Preferred operators:</strong> Computing preferred operators is <em>only enabled</em> when setting pref=true because it has a nontrivial runtime cost. Using the heuristic for preferred operators without setting pref=true has no effect.
