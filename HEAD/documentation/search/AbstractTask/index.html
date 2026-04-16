@@ -1932,9 +1932,14 @@
 
 <p>This page describes available transformations of the root task.</p>
 <h2 id="cost-adapted_task">Cost-adapted task<a class="headerlink" href="#cost-adapted_task" title="Permanent link">#</a></h2>
-<p>A cost-adapting transformation of the root task.
+<p>A cost-adapting transformation of the root task. Related paper:</p>
+<ul>
+<li>Silvia Richter and Matthias Westphal.<br />
+ <a href="https://doi.org/10.1613/jair.2972">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>adapt_costs(cost_type=normal)
-</span></code></pre></div></p>
+</span></code></pre></div>
 <ul>
 <li><em>cost_type</em> ({normal, one, plusone}): Operator cost adjustment type. No matter what this setting is, axioms will always be considered as actions of cost 0 by the heuristics that treat axioms as actions.<ul>
 <li><code>normal</code>: all actions are accounted for with their real cost</li>
