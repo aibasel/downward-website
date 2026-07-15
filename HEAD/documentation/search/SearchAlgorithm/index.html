@@ -2300,7 +2300,7 @@
 <li><em>preferred</em> (list of <a href="../Evaluator/">Evaluator</a>): use preferred operators of these evaluators</li>
 <li><em>reopen_closed</em> (bool): reopen closed nodes</li>
 <li><em>boost</em> (int): boost value for preferred operator open lists</li>
-<li><em>w</em> (int): evaluator weight</li>
+<li><em>w</em> (int [0, infinity]): evaluator weight</li>
 <li><em>pruning</em> (<a href="../PruningMethod/">PruningMethod</a>): Pruning methods can prune or reorder the set of applicable operators in each state and thereby influence the number and order of successor states that are considered.</li>
 <li><em>cost_type</em> ({normal, one, plusone}): Operator cost adjustment type. No matter what this setting is, axioms will always be considered as actions of cost 0 by the heuristics that treat axioms as actions.<ul>
 <li><code>normal</code>: all actions are accounted for with their real cost</li>
@@ -2488,7 +2488,7 @@
 <li><em>preferred</em> (list of <a href="../Evaluator/">Evaluator</a>): use preferred operators of these evaluators</li>
 <li><em>reopen_closed</em> (bool): reopen closed nodes</li>
 <li><em>boost</em> (int): boost value for preferred operator open lists</li>
-<li><em>w</em> (int): evaluator weight</li>
+<li><em>w</em> (int [0, infinity]): evaluator weight</li>
 <li><em>randomize_successors</em> (bool): randomize the order in which successors are generated</li>
 <li><em>preferred_successors_first</em> (bool): consider preferred operators first</li>
 <li><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.</li>

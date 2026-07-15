@@ -3193,11 +3193,11 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 <h2 id="weighted_evaluator">Weighted evaluator<a class="headerlink" href="#weighted_evaluator" title="Permanent link">#</a></h2>
 <p>Multiplies the value of the evaluator with the given weight.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>weight(eval, weight, description=&quot;weight&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>weight(eval, weight=1, description=&quot;weight&quot;, verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>eval</em> (<a href="./">Evaluator</a>): evaluator</li>
-<li><em>weight</em> (int): weight</li>
+<li><em>weight</em> (int [0, infinity]): weight</li>
 <li><em>description</em> (string): description used to identify evaluator in logs</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
 <li><code>silent</code>: only the most basic output</li>
