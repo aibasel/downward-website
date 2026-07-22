@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://new.fast-downward.org/HEAD/releases/20.06/">
+        <link rel="canonical" href="https://new.fast-downward.org/HEAD/documentation/translator-usage/">
       
       
-        <link rel="prev" href="../21.12/">
+        <link rel="prev" href="../planner-usage/">
       
       
-        <link rel="next" href="../19.12/">
+        <link rel="next" href="../search/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Fast Downward 20.06 - Fast Downward</title>
+        <title>Translator usage - Fast Downward</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fast_downward_2006" class="md-skip">
+        <a href="#translator_usage" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fast Downward 20.06
+              Translator usage
             
           </span>
         </div>
@@ -248,7 +248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/quick-start/" class="md-nav__link">
+      <a href="../quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -266,6 +266,8 @@
       
   
   
+    
+  
   
   
     
@@ -294,16 +296,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../documentation/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -321,7 +323,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Documentation
@@ -337,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/planner-usage/" class="md-nav__link">
+      <a href="../planner-usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -356,10 +358,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../documentation/translator-usage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Translator usage
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -369,6 +392,176 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-h_--help" class="md-nav__link">
+    <span class="md-ellipsis">
+      -h, --help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      domain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    <span class="md-ellipsis">
+      task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--relaxed" class="md-nav__link">
+    <span class="md-ellipsis">
+      --relaxed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--full-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      --full-encoding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--invariant-generation-max-candidates_invariant_generation_max_candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      --invariant-generation-max-candidates INVARIANT_GENERATION_MAX_CANDIDATES
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--sas-file_sas_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      --sas-file SAS_FILE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--invariant-generation-max-time_invariant_generation_max_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      --invariant-generation-max-time INVARIANT_GENERATION_MAX_TIME
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--add-implied-preconditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      --add-implied-preconditions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--keep-unreachable-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      --keep-unreachable-facts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--skip-variable-reordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      --skip-variable-reordering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--keep-unimportant-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      --keep-unimportant-variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--keep-no-ops" class="md-nav__link">
+    <span class="md-ellipsis">
+      --keep-no-ops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--dump-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      --dump-task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--layer-strategy_minmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      --layer-strategy {min,max}
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -429,7 +622,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../documentation/search/" class="md-nav__link ">
+            <a href="../search/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -463,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/ConstraintGenerator/" class="md-nav__link">
+      <a href="../search/ConstraintGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -485,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/Evaluator/" class="md-nav__link">
+      <a href="../search/Evaluator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/LabelReduction/" class="md-nav__link">
+      <a href="../search/LabelReduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -529,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/LandmarkFactory/" class="md-nav__link">
+      <a href="../search/LandmarkFactory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeScoringFunction/" class="md-nav__link">
+      <a href="../search/MergeScoringFunction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -573,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeSelector/" class="md-nav__link">
+      <a href="../search/MergeSelector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeStrategy/" class="md-nav__link">
+      <a href="../search/MergeStrategy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -617,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/MergeTree/" class="md-nav__link">
+      <a href="../search/MergeTree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/OpenList/" class="md-nav__link">
+      <a href="../search/OpenList/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/PatternCollectionGenerator/" class="md-nav__link">
+      <a href="../search/PatternCollectionGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/PatternGenerator/" class="md-nav__link">
+      <a href="../search/PatternGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -705,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/PruningMethod/" class="md-nav__link">
+      <a href="../search/PruningMethod/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -727,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/SearchAlgorithm/" class="md-nav__link">
+      <a href="../search/SearchAlgorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -749,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/ShrinkStrategy/" class="md-nav__link">
+      <a href="../search/ShrinkStrategy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -771,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search/SubtaskGenerator/" class="md-nav__link">
+      <a href="../search/SubtaskGenerator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -801,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/search-plugin-syntax/" class="md-nav__link">
+      <a href="../search-plugin-syntax/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -823,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/exit-codes/" class="md-nav__link">
+      <a href="../exit-codes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -845,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/pddl-support/" class="md-nav__link">
+      <a href="../pddl-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -867,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/ipc-planners/" class="md-nav__link">
+      <a href="../ipc-planners/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -889,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/translator-output-format/" class="md-nav__link">
+      <a href="../translator-output-format/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,8 +1108,6 @@
       
   
   
-    
-  
   
   
     
@@ -945,16 +1136,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../releases/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -972,7 +1163,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Releases
@@ -988,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../24.06/" class="md-nav__link">
+      <a href="../../releases/24.06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1010,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../23.06/" class="md-nav__link">
+      <a href="../../releases/23.06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1032,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../22.12/" class="md-nav__link">
+      <a href="../../releases/22.12/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1054,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../22.06/" class="md-nav__link">
+      <a href="../../releases/22.06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../21.12/" class="md-nav__link">
+      <a href="../../releases/21.12/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1095,31 +1286,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Fast Downward 20.06
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../releases/20.06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1129,62 +1299,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Downloads
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Limitations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencing_fast_downward_2006" class="md-nav__link">
-    <span class="md-ellipsis">
-      Referencing Fast Downward 20.06
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#changes_in_fast_downward_2006" class="md-nav__link">
-    <span class="md-ellipsis">
-      Changes in Fast Downward 20.06
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1197,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../19.12/" class="md-nav__link">
+      <a href="../../releases/19.12/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1219,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../19.06/" class="md-nav__link">
+      <a href="../../releases/19.06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1938,38 +2052,152 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
+  <a href="#options" class="md-nav__link">
     <span class="md-ellipsis">
-      Downloads
+      Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-h_--help" class="md-nav__link">
+    <span class="md-ellipsis">
+      -h, --help
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
     <span class="md-ellipsis">
-      Limitations
+      domain
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#referencing_fast_downward_2006" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
     <span class="md-ellipsis">
-      Referencing Fast Downward 20.06
+      task
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#changes_in_fast_downward_2006" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#--relaxed" class="md-nav__link">
     <span class="md-ellipsis">
-      Changes in Fast Downward 20.06
+      --relaxed
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--full-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      --full-encoding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--invariant-generation-max-candidates_invariant_generation_max_candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      --invariant-generation-max-candidates INVARIANT_GENERATION_MAX_CANDIDATES
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--sas-file_sas_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      --sas-file SAS_FILE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--invariant-generation-max-time_invariant_generation_max_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      --invariant-generation-max-time INVARIANT_GENERATION_MAX_TIME
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--add-implied-preconditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      --add-implied-preconditions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--keep-unreachable-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      --keep-unreachable-facts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--skip-variable-reordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      --skip-variable-reordering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--keep-unimportant-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      --keep-unimportant-variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--keep-no-ops" class="md-nav__link">
+    <span class="md-ellipsis">
+      --keep-no-ops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--dump-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      --dump-task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#--layer-strategy_minmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      --layer-strategy {min,max}
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1992,124 +2220,41 @@
   
 
 
-<h1 id="fast_downward_2006">Fast Downward 20.06<a class="headerlink" href="#fast_downward_2006" title="Permanent link">#</a></h1>
-<p>Fast Downward 20.06 was released on July 26, 2020.</p>
-<p>Highlights:</p>
-<ul>
-<li>
-<p>The Singularity and Docker distributions of the planner now include
-    LP support using the <a href="https://soplex.zib.de/">SoPlex</a>
-    solver out of the box. Thank you to ZIB for their solver and for
-    giving permission to include it in the release.</p>
-<ul>
-<li>SoPlex is licensed under the <a href="https://scipopt.org/academic.txt">ZIB Academic License</a>.</li>
-</ul>
-</li>
-<li>
-<p>The Vagrant distribution of the planner now includes LP support
-    using the SoPlex and/or CPLEX solvers out of the box if they are made available when the virtual machine is first provisioned. 
-    See <a href="../../documentation/quick-start/">getting started</a> for more information.</p>
-</li>
-<li>
-<p>A long-standing bug in the computation of derived predicates has
-    been fixed. Thanks to everyone who provided bug reports for their
-    help and for their patience!</p>
-</li>
-<li>
-<p>A new and much faster method for computing stubborn sets has been
-    added to the planner.</p>
-</li>
-<li>
-<p>The deprecated merge strategy aliases <code>merge_linear</code> and
-    <code>merge_dfp</code> have been removed.</p>
-</li>
-</ul>
-<h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h2>
-<ul>
-<li>source tarball: <a href="../../files/release20.06/fast-downward-20.06.tar.gz">fast-downward-20.06.tar.gz</a></li>
-<li>Apptainer image: download with <code>apptainer pull fast-downward.sif docker://aibasel/downward:20.06</code></li>
-<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward">aibasel/downward:20.06 on Docker Hub</a></li>
-<li>Vagrantfile: <a href="../../files/release20.06/Vagrantfile">Vagrantfile</a> for Fast Downward 20.06</li>
-</ul>
-<p>For Apptainer, Docker and Vagrant, see <a href="../../documentation/quick-start/">getting
-started</a> for instructions on how to run the
-planner. That page explains how to run the latest release of Fast Downward, so
-you have to amend the instructions if you want to run an older release.</p>
-<p>For the tarball, if you have satisfied all dependencies, the following
-should build and run the planner with configuration alias <code>lama-first</code>
-on PDDL files <code>/path/to/domain.pddl</code> and <code>/path/to/problem.pddl</code> on
-a Linux or macOS system:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>fast-downward-20.06.tar.gz
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>fast-downward-20.06
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./build.py
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>./fast-downward.py<span class="w"> </span>--alias<span class="w"> </span>lama-first<span class="w"> </span>/path/to/domain.pddl<span class="w"> </span>/path/to/problem.pddl
+<h1 id="translator_usage">Translator Usage<a class="headerlink" href="#translator_usage" title="Permanent link">#</a></h1>
+<p>Fast Downward's PDDL to SAS^+ translator can be called through Fast Downward's driver script</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./fast-downward.py --translate [domain] problem [--translate-options OPTIONS]
 </span></code></pre></div>
-<p>For dependencies and more advanced information (including Windows
-builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">the build
-instructions</a>.</p>
-<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
-<p>For licensing reasons, the binary distributions of Fast Downward have
-limited support for commercial LP solvers (CPLEX and Gurobi). The Docker
-and Singularity distributions only support SoPlex. The Vagrant version
-supports SoPlex and/or CPLEX if they are available at provisioning
-time. See <a href="../../documentation/quick-start/">getting started</a> for more
-information.</p>
-<h2 id="referencing_fast_downward_2006">Referencing Fast Downward 20.06<a class="headerlink" href="#referencing_fast_downward_2006" title="Permanent link">#</a></h2>
-<p>If you use this version of Fast Downward in a scientific publication, we
-encourage you to mention the version number, as in "We ran experiments
-with Fast Downward 20.06." The canonical reference for citing Fast
-Downward is the following journal paper:</p>
-<div class="language-text highlight"><pre><span></span><code>@Article{helmert-jair2006,
-  author =  &quot;Malte Helmert&quot;,
-  title =   &quot;The {Fast} {Downward} Planning System&quot;,
-  journal = &quot;Journal of Artificial Intelligence Research&quot;,
-  year =    &quot;2006&quot;,
-  volume =  &quot;26&quot;,
-  pages =   &quot;191--246&quot;
-}
-</code></pre></div>
-<h2 id="changes_in_fast_downward_2006">Changes in Fast Downward 20.06<a class="headerlink" href="#changes_in_fast_downward_2006" title="Permanent link">#</a></h2>
-<ul>
-<li>
-<p>Fix crash of <code>--show-aliases</code> option of fast-downward.py.</p>
-</li>
-<li>
-<p>Fix incorrect computation of derived predicates.</p>
-<p><a href="http://issues.fast-downward.org/issue453">http://issues.fast-downward.org/issue453</a></p>
-<p>Derived predicates that were only needed in negated form and
-cyclically depended on other derived predicates could be computed incorrectly.</p>
-</li>
-<li>
-<p>Integrate new pruning method <code>atom_centric_stubborn_sets</code></p>
-<p><a href="http://issues.fast-downward.org/issue781">http://issues.fast-downward.org/issue781</a></p>
-<p>We merged the code for the SoCS 2020 paper <a href="https://ai.dmi.unibas.ch/papers/roeger-et-al-socs2020.pdf">"An Atom-Centric Perspective on Stubborn Sets"</a>.
-See <a href="../../documentation/search/PruningMethod/"><code>PruningMethod</code></a> for more information.</p>
-</li>
-<li>
-<p>Remove deprecated merge strategy aliases <code>merge_linear</code> and
-    <code>merge_dfp</code>.</p>
-<p>The deprecated merge strategy aliases <code>merge_linear</code> for linear
-merge strategies and <code>merge_dfp</code> for the DFP merge strategy are no longer
-available. See <a href="../../documentation/search/MergeStrategy/"><code>MergeStrategy</code></a> for equivalent command line options to use these merge strategies.</p>
-</li>
-<li>
-<p>For developers: use global logging mechanism for all output.</p>
-<p><a href="http://issues.fast-downward.org/issue963">http://issues.fast-downward.org/issue963</a></p>
-<p>All output of the planner is now handled by a global logging mechanism, which
-prefaces printed lines with time and memory information. For developers, this
-means that output should no longer be passed to <code>cout</code> but to <code>utils::g_log</code>.
-Further changes to logging are in the works.</p>
-</li>
-<li>
-<p>For developers: store enum options as enums (not ints) in Options
-    objects.</p>
-<p><a href="http://issues.fast-downward.org/issue962">http://issues.fast-downward.org/issue962</a></p>
-</li>
-<li>
-<p>For developers: allow creating Timers in stopped state.</p>
-<p><a href="http://issues.fast-downward.org/issue965">http://issues.fast-downward.org/issue965</a></p>
-</li>
-</ul>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">#</a></h2>
+<h3 id="-h_--help"><code>-h</code>, <code>--help</code><a class="headerlink" href="#-h_--help" title="Permanent link">#</a></h3>
+<p>show this help message and exit</p>
+<h3 id="domain"><code>domain</code><a class="headerlink" href="#domain" title="Permanent link">#</a></h3>
+<p>path to domain pddl file</p>
+<h3 id="task"><code>task</code><a class="headerlink" href="#task" title="Permanent link">#</a></h3>
+<p>path to task pddl file</p>
+<h3 id="--relaxed"><code>--relaxed</code><a class="headerlink" href="#--relaxed" title="Permanent link">#</a></h3>
+<p>output relaxed task (no delete effects)</p>
+<h3 id="--full-encoding"><code>--full-encoding</code><a class="headerlink" href="#--full-encoding" title="Permanent link">#</a></h3>
+<p>By default we represent facts that occur in multiple mutex groups only in one variable. Using this parameter adds these facts to multiple variables. This can make the meaning of the variables clearer, but increases the number of facts.</p>
+<h3 id="--invariant-generation-max-candidates_invariant_generation_max_candidates"><code>--invariant-generation-max-candidates INVARIANT_GENERATION_MAX_CANDIDATES</code><a class="headerlink" href="#--invariant-generation-max-candidates_invariant_generation_max_candidates" title="Permanent link">#</a></h3>
+<p>max number of candidates for invariant generation (default: 100000). Set to 0 to disable invariant generation and obtain only binary variables. The limit is needed for grounded input files that would otherwise produce too many candidates.</p>
+<h3 id="--sas-file_sas_file"><code>--sas-file SAS_FILE</code><a class="headerlink" href="#--sas-file_sas_file" title="Permanent link">#</a></h3>
+<p>path to the SAS output file (default: output.sas)</p>
+<h3 id="--invariant-generation-max-time_invariant_generation_max_time"><code>--invariant-generation-max-time INVARIANT_GENERATION_MAX_TIME</code><a class="headerlink" href="#--invariant-generation-max-time_invariant_generation_max_time" title="Permanent link">#</a></h3>
+<p>max time for invariant generation (default: 300s)</p>
+<h3 id="--add-implied-preconditions"><code>--add-implied-preconditions</code><a class="headerlink" href="#--add-implied-preconditions" title="Permanent link">#</a></h3>
+<p>infer additional preconditions. This setting can cause a severe performance penalty due to weaker relevance analysis (see issue7).</p>
+<h3 id="--keep-unreachable-facts"><code>--keep-unreachable-facts</code><a class="headerlink" href="#--keep-unreachable-facts" title="Permanent link">#</a></h3>
+<p>keep facts that can't be reached from the initial state</p>
+<h3 id="--skip-variable-reordering"><code>--skip-variable-reordering</code><a class="headerlink" href="#--skip-variable-reordering" title="Permanent link">#</a></h3>
+<p>do not reorder variables based on the causal graph. Do not use this option with the causal graph heuristic!</p>
+<h3 id="--keep-unimportant-variables"><code>--keep-unimportant-variables</code><a class="headerlink" href="#--keep-unimportant-variables" title="Permanent link">#</a></h3>
+<p>keep variables that do not influence the goal in the causal graph</p>
+<h3 id="--keep-no-ops"><code>--keep-no-ops</code><a class="headerlink" href="#--keep-no-ops" title="Permanent link">#</a></h3>
+<p>keep operators without effects in the output</p>
+<h3 id="--dump-task"><code>--dump-task</code><a class="headerlink" href="#--dump-task" title="Permanent link">#</a></h3>
+<p>dump human-readable SAS+ representation of the task</p>
+<h3 id="--layer-strategy_minmax"><code>--layer-strategy {min,max}</code><a class="headerlink" href="#--layer-strategy_minmax" title="Permanent link">#</a></h3>
+<p>How to assign layers to derived variables. 'min' attempts to put as many variables into the same layer as possible, while 'max' puts each variable into its own layer unless it is part of a cycle.</p>
 
 
 
@@ -2139,7 +2284,7 @@ Further changes to logging are in the works.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../21.12/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fast Downward 21.12">
+          <a href="../planner-usage/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Planner usage">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2149,20 +2294,20 @@ Further changes to logging are in the works.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Fast Downward 21.12
+                Planner usage
               </div>
             </div>
           </a>
         
         
           
-          <a href="../19.12/" class="md-footer__link md-footer__link--next" aria-label="Next: Fast Downward 19.12">
+          <a href="../search/" class="md-footer__link md-footer__link--next" aria-label="Next: Search Plugins">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Fast Downward 19.12
+                Search Plugins
               </div>
             </div>
             <div class="md-footer__button md-icon">
