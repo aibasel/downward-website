@@ -3004,9 +3004,17 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <li><strong>safe:</strong> yes except on tasks with axioms and on tasks with conditionaleffects when using a <a href="../LandmarkFactory/">LandmarkFactory</a> not supporting them</li>
 </ul>
 <h2 id="landmark-cut_heuristic">Landmark-cut heuristic<a class="headerlink" href="#landmark-cut_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>lmcut(cache_estimates=true, description=&quot;lmcut&quot;, verbosity=normal)
+<p>This heuristic implements tie-breaking strategies for the precondition choice function (options <code>goal_zone_detection</code> and <code>border_detection</code>) described in the following paper:</p>
+<ul>
+<li>Pascal Lauer and Maximilian Fickert.<br />
+ <a href="https://fai.cs.uni-saarland.de/lauer/papers/hsdip2020.pdf">Beating LM-cut with LM-cut: Quick Cutting and Practical Tie Breaking for the Precondition Choice Function</a>.<br />
+ In <em>Proceedings of the 12th Workshop on Heuristic Search for Domain-Independent Planning (HSDIP 2020)</em>, pp. 9-15. 2020.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>lmcut(goal_zone_detection=true, border_detection=true, cache_estimates=true, description=&quot;lmcut&quot;, verbosity=normal)
 </span></code></pre></div>
 <ul>
+<li><em>goal_zone_detection</em> (bool): When choosing the h^max supporter of a zero-cost operator while marking the goal zone, break ties in favor of a precondition that already belongs to the goal zone.</li>
+<li><em>border_detection</em> (bool): When choosing the h^max supporter of a zero-cost operator while marking the goal zone, break ties in favor of a precondition on the border of the goal zone (a proposition reachable only through operators with positive cost).</li>
 <li><em>cache_estimates</em> (bool): cache heuristic estimates</li>
 <li><em>description</em> (string): description used to identify evaluator in logs</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
