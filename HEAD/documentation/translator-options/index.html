@@ -525,6 +525,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#--condition-normalization-strategy_dnfaxiomatize_disjunctionsaxiomatize_disjunctions_existentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      --condition-normalization-strategy
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2135,6 +2144,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#--condition-normalization-strategy_dnfaxiomatize_disjunctionsaxiomatize_disjunctions_existentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      --condition-normalization-strategy
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2181,6 +2199,8 @@
 <p>dump human-readable SAS+ representation of the task</p>
 <h3 id="--layer-strategy_minmax"><code>--layer-strategy {min,max}</code><a class="headerlink" href="#--layer-strategy_minmax" title="Permanent link">#</a></h3>
 <p>How to assign layers to derived variables. 'min' attempts to put as many variables into the same layer as possible, while 'max' puts each variable into its own layer unless it is part of a cycle.</p>
+<h3 id="--condition-normalization-strategy_dnfaxiomatize_disjunctionsaxiomatize_disjunctions_existentials"><code>--condition-normalization-strategy {dnf,axiomatize_disjunctions,axiomatize_disjunctions_existentials}</code><a class="headerlink" href="#--condition-normalization-strategy_dnfaxiomatize_disjunctionsaxiomatize_disjunctions_existentials" title="Permanent link">#</a></h3>
+<p>Strategy for normalizing PDDL conditions. Strategy 'dnf' converts conditions to disjunctive normal form, which may cause exponential blow-up for complex formulas but introduces few derived predicates. Strategy 'axiomatize_disjunctions' replaces every disjunction by a derived predicate, avoiding the DNF blow-up while preserving existential quantifiers. Strategy 'axiomatize_disjunctions_existentials' additionally replaces existential quantifiers in action conditions and goals with derived predicates. This typically introduces more derived predicates but avoids creating multiple operator instances.</p>
 <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h1>
 <h3 id="translate_with_disabled_invariant_synthesis_and_find_a_plan_with_a_lm-cut">Translate with disabled invariant synthesis and find a plan with A* + LM-Cut:<a class="headerlink" href="#translate_with_disabled_invariant_synthesis_and_find_a_plan_with_a_lm-cut" title="Permanent link">#</a></h3>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fast-downward.py domain.pddl problem.pddl --search &quot;astar(lmcut())&quot; --translate-options --invariant-generation-max-candidates 0
