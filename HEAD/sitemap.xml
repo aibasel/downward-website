@@ -2,262 +2,262 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://new.fast-downward.org/HEAD/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/literature/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/SUMMARY/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/exit-codes/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/ipc-planners/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/pddl-support/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/planner-usage/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/quick-start/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search-plugin-syntax/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/translator-options/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/translator-output-format/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/what-flavour-is-for-me/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/ConstraintGenerator/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/Evaluator/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/LabelReduction/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/LandmarkFactory/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/MergeScoringFunction/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/MergeSelector/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/MergeStrategy/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/MergeTree/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/OpenList/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/PatternCollectionGenerator/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/PatternGenerator/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/PruningMethod/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/SearchAlgorithm/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/ShrinkStrategy/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/documentation/search/SubtaskGenerator/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/SUMMARY/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/changelog-format/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/cmake/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/code-review/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/coding-conventions/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/development-setup/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/git/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/github-actions/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/implementation-details/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/long-term-plans/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/problem-transformations/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/profiling/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/release-workflow/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/requirements/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/sprint/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/style-conventions/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/translator-output-format-v4/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/SUMMARY/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/a-day-in-the-life-of-a-state/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/a-deeper-look-at-states/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/component-interaction/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/install-on-windows/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/logo/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/for-developers/blog/new-option-parser/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/19.06/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/19.12/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/20.06/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/21.12/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/22.06/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/22.12/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/23.06/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/24.06/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://new.fast-downward.org/HEAD/releases/SUMMARY/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
 </urlset>
