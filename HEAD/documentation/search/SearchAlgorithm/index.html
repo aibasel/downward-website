@@ -2379,13 +2379,12 @@
 </li>
 </ul>
 <h2 id="iterated_search">Iterated search<a class="headerlink" href="#iterated_search" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>iterated(algorithm_configs, pass_bound=true, repeat_last=false, continue_on_fail=false, continue_on_solve=true, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;iterated&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>iterated(algorithm_configs, pass_bound=true, repeat_last=false, continue_on_solve=true, cost_type=normal, bound=infinity, max_time=infinity, description=&quot;iterated&quot;, verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>algorithm_configs</em> (list of <a href="./">SearchAlgorithm</a>): list of search algorithms for each phase</li>
 <li><em>pass_bound</em> (bool): use the bound of iterated search as a bound for its component search algorithms, unless these already have a lower bound set. The iterated search bound is tightened whenever a component finds a cheaper plan.</li>
-<li><em>repeat_last</em> (bool): repeat last phase of search</li>
-<li><em>continue_on_fail</em> (bool): continue search after no solution found</li>
+<li><em>repeat_last</em> (bool): repeat the last search phase while it continues finding solutions</li>
 <li><em>continue_on_solve</em> (bool): continue search after solution found</li>
 <li><em>cost_type</em> ({normal, one, plusone}): Operator cost adjustment type. No matter what this setting is, axioms will always be considered as actions of cost 0 by the heuristics that treat axioms as actions.<ul>
 <li><code>normal</code>: all actions are accounted for with their real cost</li>
