@@ -1885,7 +1885,11 @@
 <p>We have <em>regular releases</em> and <em>bugfix releases</em>. We use <code>20.06</code> as an example for a regular release and <code>22.06.1</code> as an example for a bugfix release.</p>
 <p>Release steps:</p>
 <ol>
-<li>Set the variables used in the following steps as in this example for a regular release:
+<li>
+<p>Check that our information on required Python versions is consistent. Our current policy is to require the oldest Python version tested by one of the Github actions. The tested versions are shown in <code>README.md</code>; the source of truth for these are the yml files defining the github actions (<code>grep -R 'python3:' .github/workflows</code> from the repository root). The lowest version number should be the same as the minimum required one in <code>src/translate/pyproject.toml</code>.</p>
+</li>
+<li>
+<p>Set the variables used in the following steps as in this example for a regular release:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RELEASE=20.06
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BRANCH=20.06
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TAG=20.06.0
@@ -1894,7 +1898,8 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RELEASE=22.06.1
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BRANCH=22.06
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>TAG=22.06.1
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>Regular releases only: make sure that you are on the commit on which you want to base the release.</li>
 <li>Bugfix releases only: check out the release branch and cherry-pick each commit with hash <code>HASH</code> that you want to include:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git checkout release-$BRANCH
@@ -1933,6 +1938,13 @@
 <li>that we can successfully run the planner from the produced Apptainer image, including a configuration using SoPlex</li>
 <li>that we can successfully run the planner from the produced Vagrantfile (automatically includes SoPlex; to also build the VM with CPLEX, you need an environment variable <code>DOWNWARD_LP_INSTALLERS</code> that points to a directory containing the CPLEX installer in the correct version)</li>
 </ul>
+</li>
+<li>Build and upload the Python package to PyPI (requires credentials, Gabi has them.)<ol>
+<li>Prepare the Python package.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./misc/releases/prepare-translator-package.sh $TAG
+</span></code></pre></div></li>
+<li>Follow the instructions printed by the script to test and upload the package to PyPI.</li>
+</ol>
 </li>
 <li>Regular releases only: create a documentation page for the release in the <em>downward-markdown</em> repository. We suggest starting from a copy of the page for the latest release in <code>docs/releases</code>.<ol>
 <li>Update the date and release version name.</li>
