@@ -1886,7 +1886,7 @@
 <p>Release steps:</p>
 <ol>
 <li>
-<p>Check that our information on required Python versions is consistent. Our current policy is to require the oldest Python version tested by one of the Github actions. The tested versions are shown in <code>README.md</code>; the source of truth for these are the yml files defining the github actions (<code>grep -R 'python3:' .github/workflows</code> from the repository root). The lowest version number should be the same as the minimum required one in <code>src/translate/pyproject.toml</code>.</p>
+<p>Check that our information on required Python versions is consistent. Our current policy is to require the oldest Python version tested by one of the Github actions. The tested versions are shown in <code>README.md</code>; the source of truth for these are the yml files defining the github actions (<code>grep -R 'python:' .github/workflows</code> from the repository root). The lowest version number should be the same as the minimum required one in <code>src/translate/pyproject.toml</code>.</p>
 </li>
 <li>
 <p>Set the variables used in the following steps as in this example for a regular release:
