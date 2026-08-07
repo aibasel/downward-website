@@ -1882,7 +1882,8 @@
 
 
 <h1 id="release_workflow">Release Workflow<a class="headerlink" href="#release_workflow" title="Permanent link">#</a></h1>
-<p>We have <em>regular releases</em> and <em>bugfix releases</em>. We use <code>20.06</code> as an example for a regular release and <code>22.06.1</code> as an example for a bugfix release.</p>
+<p>We have <em>regular releases</em> and <em>bugfix releases</em>. We use <code>26.6</code> as an example for a regular release and <code>26.6.1</code> as an example for a bugfix release.</p>
+<p><em>Note:</em> We moved away from Ubuntu's naming convention of two-digit months (<code>26.06</code> instead of <code>26.6</code>) because we now use Fast Downward version numbers on PyPI, which removes such leading zeros.</p>
 <p>Release steps:</p>
 <ol>
 <li>
@@ -1890,14 +1891,14 @@
 </li>
 <li>
 <p>Set the variables used in the following steps as in this example for a regular release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RELEASE=20.06
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BRANCH=20.06
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TAG=20.06.0
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RELEASE=26.6
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BRANCH=26.6
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TAG=26.6.0
 </span></code></pre></div>
  Set them as in this example for a bugfix release:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RELEASE=22.06.1
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BRANCH=22.06
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>TAG=22.06.1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RELEASE=26.6.1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BRANCH=26.6
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>TAG=26.6.1
 </span></code></pre></div></p>
 </li>
 <li>Regular releases only: make sure that you are on the commit on which you want to base the release.</li>
@@ -1908,7 +1909,7 @@
 <li>Make sure that the list of contributors and copyright years in the <code>README.md</code> file are up to date.</li>
 <li>Make sure the changelog (see <a href="../changelog-format/">ChangelogFormat</a>) is up to date and committed. In particular:<ol>
 <li>Make sure the changelog includes the line giving the date of the release.</li>
-<li>Add a new section like <code>## Fast Downward 20.06</code> or <code>## Fast Downward 22.06.1</code> and gather all changes since the last release from the commit messages. Use an existing regular/bugfix release as an example.</li>
+<li>Add a new section like <code>## Fast Downward 26.6</code> or <code>## Fast Downward 26.6.1</code> and gather all changes since the last release from the commit messages. Use an existing regular/bugfix release as an example.</li>
 </ol>
 </li>
 <li>Make sure that the working directory is clean and that any last-minute changes from the above steps are committed.</li>
@@ -1917,7 +1918,7 @@
 </span></code></pre></div></li>
 <li>Verify the following manually:<ol>
 <li>The <code>fast-downward-$RELEASE.tar.gz</code> tarball created in the previous step contains the appropriate files.</li>
-<li>Branches and tags were created as expected. In a bugfix release, a tag like <code>22.06.1</code> should have been created on the existing release branch <code>22.06</code>.</li>
+<li>Branches and tags were created as expected. In a bugfix release, a tag like <code>26.6.1</code> should have been created on the existing release branch <code>26.6</code>.</li>
 <li>A new commit was created with the right recipe files and version changes.</li>
 </ol>
 </li>
@@ -1926,7 +1927,7 @@
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git push --tags
 </span></code></pre></div></li>
 <li>Make sure that all Github actions are green on the release branch.</li>
-<li>Build the Docker image and push it to the Docker Hub. Note that we build the <code>20.06</code>/<code>22.06</code> Docker image, not <code>20.06.0</code>/<code>22.06.1</code>. Under normal conditions, Docker needs root rights. The actual push to Docker hub needs appropriate credentials. Malte has them; not sure anyone else does. (Please edit if you do.)
+<li>Build the Docker image and push it to the Docker Hub. Note that we build the <code>26.6</code> Docker image in both cases, not <code>26.6.0</code>/<code>26.6.1</code>. Under normal conditions, Docker needs root rights. The actual push to Docker hub needs appropriate credentials. Malte has them; not sure anyone else does. (Please edit if you do.)
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo ./misc/releases/push-docker.sh $BRANCH
 </span></code></pre></div></li>
 <li>Build the Apptainer image:
@@ -1955,7 +1956,7 @@
 <li>Create a link in <code>docs/releases/index.md</code> and <code>docs/releases/SUMMARY.md</code> to the page of the new release.</li>
 </ol>
 </li>
-<li>Bugfix releases only: update the documentation page of the release (for bugfix release <code>22.06.1</code>, reuse the release page <code>22.06</code>). See the page for <a href="../../releases/22.06/">release 22.06</a> for an example. The Vagrantfile does not need to be updated for a bugfix release.<ol>
+<li>Bugfix releases only: update the documentation page of the release (for bugfix release <code>26.6.1</code>, reuse the release page <code>26.6</code>). See the page for <a href="../../releases/22.06/">release 22.06</a> for an example. The Vagrantfile does not need to be updated for a bugfix release.<ol>
 <li>Adjust the date and mention the bugfix release version name.</li>
 <li>Update the changelog.</li>
 <li>Update the name of the tarball (it should include the bugfix number) and add the tarball to the respective folder in <code>docs/files</code>.</li>
@@ -1970,7 +1971,7 @@
 <li>Bugfix releases only: create a documentation version for the release in the <em>downward-markdown</em> repository.<ol>
 <li>Branch from the earlier <code>release-{$TAG-1}</code> branch to a new branch <code>release-$TAG</code> and update <code>README.md</code> file to state that this is the branch for that bugfix release.</li>
 <li>Make necessary changes in the documentation in this branch. If the generated documentation for the search plugins has changed, generate it with the <code>misc/autodocs/generate-docs.py</code> script in the code repository. It writes the documentation to <code>docs/search</code> there. You just have to copy the content into <code>docs/search</code> of the new branch.</li>
-<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "24.06.0" to "24.06.1".</li>
+<li>Update entry for the release in <code>releases.json</code> of the <code>main</code> branch, e.g. from "26.6.0" to "26.6.1".</li>
 </ol>
 </li>
 <li>Create a new release on github:<ol>
