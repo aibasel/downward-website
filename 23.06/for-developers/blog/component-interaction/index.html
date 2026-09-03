@@ -1987,7 +1987,7 @@ We call the process of creating a task-specific component from a task-independen
 <p>Components can have subcomponents (a search algorithm uses a heuristic, a PDB heuristic uses a pattern generator, etc.), which - somewhat simplified - leads to an implicit tree of subcomponents rooted in every component. When binding a task-independent component to a task, this recursively binds the task to each component in this tree and creates an equivalent tree of task-specific components.</p>
 <p><img alt="Binding a tree of components" src="../component-interaction-figures/binding_tree.png" /></p>
 <p>There are two additional complications: first, we allow <code>let</code> expressions to create variables that can be used in expressions. When the expression is parsed, these variables are resolved and mean that the same task-independent component is used in multiple places. The implicit tree of subcomponents then becomes a DAG instead. Here is an example of a commandline expression, equivalent python code, and the resulting DAG:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>--search<span class="w"> </span><span class="s2">&quot;let(h, ipdb(), eager(tiebreaking([sum([g(), h]), h]))&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>--search<span class="w"> </span><span class="s2">"let(h, ipdb(), eager(tiebreaking([sum([g(), h]), h]))"</span>
 </span></code></pre></div>
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">h</span> <span class="o">=</span> <span class="n">ipdb</span><span class="p">()</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">eager</span><span class="p">(</span><span class="n">tiebreaking</span><span class="p">([</span><span class="nb">sum</span><span class="p">([</span><span class="n">g</span><span class="p">(),</span> <span class="n">h</span><span class="p">]),</span> <span class="n">h</span><span class="p">]))</span>
@@ -2001,14 +2001,14 @@ We call the process of creating a task-specific component from a task-independen
 <p><img alt="Task-independent components reachable only through transforming nodes" src="../component-interaction-figures/transform_reachability.png" /></p>
 <h2 id="the_complication_with_iteratedsearch">The Complication with IteratedSearch<a class="headerlink" href="#the_complication_with_iteratedsearch" title="Permanent link">#</a></h2>
 <p>Our iterated search class runs multiple search algorithms one after the other. Say this involves four search algorithms with a common PDB heuristics, where the second and fourth search us a cost transformation on the heuristic.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--search<span class="w"> </span><span class="s2">&quot;let(h, ipdb(),</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--search<span class="w"> </span><span class="s2">"let(h, ipdb(),</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="s2">          let(h_mod, eval_modify_costs(h),</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s2">          iterated([</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s2">            wastar(h, w=16),</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="s2">            wastar(h_mod, w=8),</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="s2">            wastar(h, w=4),</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="s2">            wastar(h_mod, w=2)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="s2">          ])))&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="s2">          ])))"</span>
 </span></code></pre></div>
 <p>This corresponds to the following DAG of task-independent components</p>
 <p><img alt="DAG for iterated search" src="../component-interaction-figures/dag_iterated.png" /></p>

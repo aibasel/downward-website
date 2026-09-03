@@ -2122,7 +2122,7 @@ participated in IPC 2011, please also check the page on
 <h2 id="search_component">Search component<a class="headerlink" href="#search_component" title="Permanent link">#</a></h2>
 <p>To run a search on a PDDL input task run the following:</p>
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;problem.pddl&gt; \
---search &quot;&lt;some-search-algorithm&gt;(&lt;algorithm-parameters&gt;)&quot;
+--search "&lt;some-search-algorithm&gt;(&lt;algorithm-parameters&gt;)"
 </code></pre></div>
 <p>Note:</p>
 <ul>
@@ -2137,7 +2137,7 @@ participated in IPC 2011, please also check the page on
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
 <p>The following example is a recommended search algorithm configuration:
 <a href="search/SearchAlgorithm/#a_search_eager">A* algorithm</a> with the <a href="search/Evaluator/#landmark-cut_heuristic">LM-cut heuristic</a>, which can be run as follows:</p>
-<div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;problem.pddl&gt; --search &quot;astar(lmcut())&quot;
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;problem.pddl&gt; --search "astar(lmcut())"
 </code></pre></div>
 <p>As this is a common search configuration an alias (<code>seq-opt-lmcut</code>) exists that results in the same execution and can be used as follows:</p>
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.py --alias seq-opt-lmcut [&lt;domain.pddl&gt;] &lt;problem.pddl&gt;
@@ -2161,17 +2161,17 @@ participated in IPC 2011, please also check the page on
 use. It is very easy to use option settings that look plausible, yet
 introduce significant inefficiencies. For example, an invocation like</p>
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;problem.pddl&gt; \
---search &quot;lazy_greedy([ff()], preferred=[ff()])&quot;
+--search "lazy_greedy([ff()], preferred=[ff()])"
 </code></pre></div>
 <p>looks plausible, yet is hugely inefficient since it will compute the FF
 heuristic twice per state. To circumvent this a <a href="../search-plugin-syntax/#variables_as_parameters"><code>let</code>-expression</a> could be used:</p>
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.py [&lt;domain.pddl&gt;] &lt;problem.pddl&gt; \
---search &quot;let(hff, ff(), lazy_greedy([hff], preferred=[hff]))&quot;
+--search "let(hff, ff(), lazy_greedy([hff], preferred=[hff]))"
 </code></pre></div>
 <h2 id="validating_plans">Validating plans<a class="headerlink" href="#validating_plans" title="Permanent link">#</a></h2>
 <p>To validate a plan found by some search algorithm using <a href="https://github.com/KCL-Planning/VAL">VAL</a> run the following:</p>
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.py --validate [&lt;domain.pddl&gt;] &lt;problem.pddl&gt; \
---search &quot;&lt;some-search-algorithm&gt;(&lt;algorithm-parameters&gt;)&quot;
+--search "&lt;some-search-algorithm&gt;(&lt;algorithm-parameters&gt;)"
 </code></pre></div>
 <p>Note:</p>
 <ul>

@@ -2267,7 +2267,7 @@ is equivalent to <code>astar(blind(verbosity=verbose))</code></p>
 <p>To get positions and keywords for a search plugin, use</p>
 </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./fast-downward.py --search &quot;&quot; --help &lt;name&gt;  // e.g. with &lt;name&gt;=astar
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./fast-downward.py --search "" --help &lt;name&gt;  // e.g. with &lt;name&gt;=astar
 </span></code></pre></div>
 <h2 id="parameter_types">Parameter Types<a class="headerlink" href="#parameter_types" title="Permanent link">#</a></h2>
 <p>In the following we provide information on how parameters of common types have to be specified.</p>
@@ -2286,7 +2286,7 @@ value is multiplied by one thousand, one million or one billion, respectively. F
 <h3 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">#</a></h3>
 <p>Parameters of type <code>string</code> can be specified in double quotes. Nested quotes
 can be escaped as <code>\"</code>, backslashes as <code>\\</code>, and newlines as <code>\n</code>. For example,</p>
-<div class="language-text highlight"><pre><span></span><code>filename=&quot;C:\\some.file&quot;
+<div class="language-text highlight"><pre><span></span><code>filename="C:\\some.file"
 </code></pre></div>
 <h3 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">#</a></h3>
 <p>List arguments have to be enclosed in square brackets now. For example,</p>
@@ -2297,7 +2297,7 @@ can be escaped as <code>\"</code>, backslashes as <code>\\</code>, and newlines 
 <div class="language-text highlight"><pre><span></span><code>eager_greedy([h1,h2], cost_type=normal)
 </code></pre></div>
 <p>To get enumeration names (and more) for a search plugin parameter, run the help command for the search plugin</p>
-<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --search &quot;&quot; --help &lt;name&gt;  // e.g. with &lt;name&gt;=eager_greedy
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py --search "" --help &lt;name&gt;  // e.g. with &lt;name&gt;=eager_greedy
 </code></pre></div>
 <h2 id="variables_as_parameters">Variables as Parameters<a class="headerlink" href="#variables_as_parameters" title="Permanent link">#</a></h2>
 <p>Often an object should be used for several purposes, e.g. a
@@ -2308,7 +2308,7 @@ a variable for the object. We currently only support variables for
 <a href="../search/Evaluator/">Heuristics</a> and <a href="../search/LandmarkFactory/">LandmarkFactories</a>
 but will extend the support for other feature types in the future.</p>
 <p>Variables can be defined with</p>
-<div class="language-text highlight"><pre><span></span><code>&quot;let(var_name, definition, expression)&quot;
+<div class="language-text highlight"><pre><span></span><code>"let(var_name, definition, expression)"
 </code></pre></div>
 <ul>
 <li><code>var_name</code>: a variable name that should denote the feature</li>
@@ -2321,19 +2321,19 @@ but will extend the support for other feature types in the future.</p>
 <p>Suppose I want to run GBFS with the <code>landmark_sum</code> heuristic, and then run
 another GBFS search with the <code>landmark_cost_partitioning</code> heuristic, using the
 h^m landmarks without discovering the landmarks twice.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--search &quot;let(lm, lm_hm(m=2), 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--search "let(lm, lm_hm(m=2), 
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>              iterated([lazy_greedy([landmark_sum(lm)]),
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                        lazy_greedy([landmark_cost_partitioning(lm))]]))&quot;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                        lazy_greedy([landmark_cost_partitioning(lm))]]))"
 </span></code></pre></div>
 <h3 id="old-style_predefinitions">Old-style Predefinitions<a class="headerlink" href="#old-style_predefinitions" title="Permanent link">#</a></h3>
 <p>We still support but deprecate the use of "predefinitions" before the<code>--search</code>
 option. They are internally converted to <code>let</code>-expressions.</p>
 <p>The command lines</p>
-<div class="language-text highlight"><pre><span></span><code>--evaluator &quot;name=definition&quot; --search &quot;expression&quot;
---landmarks &quot;name=definition&quot; --search &quot;expression&quot;
+<div class="language-text highlight"><pre><span></span><code>--evaluator "name=definition" --search "expression"
+--landmarks "name=definition" --search "expression"
 </code></pre></div>
 <p>are both transformed to</p>
-<div class="language-text highlight"><pre><span></span><code>--search &quot;let(name, definition, expression)&quot;
+<div class="language-text highlight"><pre><span></span><code>--search "let(name, definition, expression)"
 </code></pre></div>
 <h2 id="conditional_options">Conditional options<a class="headerlink" href="#conditional_options" title="Permanent link">#</a></h2>
 <p>In some cases, it is useful to specify different options depending on
@@ -2341,9 +2341,9 @@ properties of the input file. For example, the LAMA 2011 configuration
 makes use of this, adding an additional cost-ignoring search run at the
 start for tasks with non-unit action costs.</p>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">#</a></h3>
-<div class="language-text highlight"><pre><span></span><code>--if-unit-cost --evaluator &quot;h1=ff()&quot; --evaluator &quot;h2=blind()&quot; \
---if-non-unit-cost --evaluator &quot;h1=cea()&quot; --evaluator &quot;h2=lmcut()&quot; \
---always --search &quot;eager_greedy([h1, h2])&quot;
+<div class="language-text highlight"><pre><span></span><code>--if-unit-cost --evaluator "h1=ff()" --evaluator "h2=blind()" \
+--if-non-unit-cost --evaluator "h1=cea()" --evaluator "h2=lmcut()" \
+--always --search "eager_greedy([h1, h2])"
 </code></pre></div>
 <p>This conducts an eager greedy search with two heuristics. On unit-cost
 tasks, it uses the FF heuristic and the blind heuristic. On other tasks,

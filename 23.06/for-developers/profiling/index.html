@@ -2021,7 +2021,7 @@ to profile the search component.</p>
 (substitute the appropriate build and search options):</p>
 <div class="language-text highlight"><pre><span></span><code>valgrind --tool=callgrind --callgrind-out-file=callgrind.out \
     --dump-instr=yes --collect-jumps=yes \
-    ./builds/release/bin/downward --search &quot;astar(blind())&quot; &lt; output.sas
+    ./builds/release/bin/downward --search "astar(blind())" &lt; output.sas
 </code></pre></div>
 <p>To browse the profiling results:</p>
 <div class="language-text highlight"><pre><span></span><code># either this:
@@ -2041,7 +2041,7 @@ to profile the CPU cache behaviour of the search component.</p>
 <p>To profile, run the search component manually under <code>valgrind</code>
 (substitute the appropriate build and search options):</p>
 <div class="language-text highlight"><pre><span></span><code>valgrind --tool=cachegrind --cachegrind-out-file=cachegrind.out \
-    ./builds/release/bin/downward --search &quot;astar(blind())&quot; &lt; output.sas
+    ./builds/release/bin/downward --search "astar(blind())" &lt; output.sas
 </code></pre></div>
 <p>To browse the profiling results:</p>
 <div class="language-text highlight"><pre><span></span><code># either this:
@@ -2065,7 +2065,7 @@ versions of Fast Downward use dynamic linking by default.</p>
 <p>To profile, run the search component manually under <code>valgrind</code>
 (substitute the appropriate search options):</p>
 <div class="language-text highlight"><pre><span></span><code>valgrind --tool=massif --massif-out-file=massif.out \
-    ./builds/release/bin/downward --search &quot;astar(blind())&quot; &lt; output.sas
+    ./builds/release/bin/downward --search "astar(blind())" &lt; output.sas
 </code></pre></div>
 <p>To browse the profiling results:</p>
 <div class="language-text highlight"><pre><span></span><code>sudo apt install massif-visualizer

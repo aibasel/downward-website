@@ -2232,7 +2232,7 @@ git branch
 <p>Fix the issue and commit your changes. If you run experiments, you might
 also need to create tags.</p>
 <div class="language-text highlight"><pre><span></span><code>git add modified_file
-git commit -m &quot;[&lt;branch&gt;] My meaningful commit message.&quot;
+git commit -m "[&lt;branch&gt;] My meaningful commit message."
 git tag &lt;branch&gt;-base &lt;rev&gt;
 git tag &lt;branch&gt;-v1 &lt;rev&gt;
 </code></pre></div>
@@ -2291,15 +2291,15 @@ the repository (e.g., <code>meld .</code>).</p>
 <div class="language-text highlight"><pre><span></span><code>[merge]
 tool = meld
 
-[mergetool &quot;meld&quot;]
-#cmd = meld &quot;$LOCAL&quot; &quot;$BASE&quot; &quot;$REMOTE&quot; --output &quot;$MERGED&quot;
-cmd = meld &quot;$LOCAL&quot; &quot;$MERGED&quot; &quot;$REMOTE&quot; --output &quot;$MERGED&quot;
+[mergetool "meld"]
+#cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
 [diff]
 tool = meld
 
-[difftool &quot;meld&quot;]
-cmd = meld &quot;$LOCAL&quot; &quot;$REMOTE&quot;
+[difftool "meld"]
+cmd = meld "$LOCAL" "$REMOTE"
 
 [difftool]
 prompt = false

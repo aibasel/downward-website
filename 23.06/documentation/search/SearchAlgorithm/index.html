@@ -2402,11 +2402,11 @@
 </ul>
 <p><strong>Note 1:</strong> We don't cache heuristic values between search iterations at the moment. If you perform a LAMA-style iterative search, heuristic values will be computed multiple times.</p>
 <p><strong>Note 2:</strong> The configuration</p>
-<div class="language-text highlight"><pre><span></span><code>--search &quot;iterated([lazy_wastar(ipdb(),w=10), lazy_wastar(ipdb(),w=5), lazy_wastar(ipdb(),w=3), lazy_wastar(ipdb(),w=2), lazy_wastar(ipdb(),w=1)])&quot;
+<div class="language-text highlight"><pre><span></span><code>--search "iterated([lazy_wastar(ipdb(),w=10), lazy_wastar(ipdb(),w=5), lazy_wastar(ipdb(),w=3), lazy_wastar(ipdb(),w=2), lazy_wastar(ipdb(),w=1)])"
 </code></pre></div>
 <p>would perform the preprocessing phase of the ipdb heuristic 5 times (once before each iteration).</p>
 <p>To avoid this, use heuristic predefinition, which avoids duplicate preprocessing, as follows:</p>
-<div class="language-text highlight"><pre><span></span><code>--evaluator &quot;h=ipdb()&quot; --search &quot;iterated([lazy_wastar(h,w=10), lazy_wastar(h,w=5), lazy_wastar(h,w=3), lazy_wastar(h,w=2), lazy_wastar(h,w=1)])&quot;
+<div class="language-text highlight"><pre><span></span><code>--evaluator "h=ipdb()" --search "iterated([lazy_wastar(h,w=10), lazy_wastar(h,w=5), lazy_wastar(h,w=3), lazy_wastar(h,w=2), lazy_wastar(h,w=1)])"
 </code></pre></div>
 <p><strong>Note 3:</strong> If you reuse the same landmark count heuristic (using heuristic predefinition) between iterations, the path data (that is, landmark status for each visited state) will be saved between iterations.</p>
 <h2 id="lazy_best-first_search">Lazy best-first search<a class="headerlink" href="#lazy_best-first_search" title="Permanent link">#</a></h2>

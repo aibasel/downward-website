@@ -2216,12 +2216,12 @@ For example, "bound=2K" is equivalent to "bound=2000".</p>
 <h2 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">#</a></h2>
 <p>Parameters of type <code>string</code> can be specified in double quotes. Nested quotes
 can be escaped as <code>\"</code>, backslashes as <code>\\</code>, and newlines as <code>\n</code>. E.g.,</p>
-<div class="language-text highlight"><pre><span></span><code>filename=&quot;C:\\some.file&quot;
+<div class="language-text highlight"><pre><span></span><code>filename="C:\\some.file"
 </code></pre></div>
 <h2 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">#</a></h2>
 <p>List arguments have to be enclosed in square brackets now. E.g.,</p>
-<div class="language-text highlight"><pre><span></span><code>--evaluator &quot;hff=ff()&quot; --evaluator &quot;hcea=cea()&quot; \
---search &quot;lazy_greedy([hff, hcea], preferred=[hff, hcea])&quot; \
+<div class="language-text highlight"><pre><span></span><code>--evaluator "hff=ff()" --evaluator "hcea=cea()" \
+--search "lazy_greedy([hff, hcea], preferred=[hff, hcea])" \
 </code></pre></div>
 <h2 id="enumerations">Enumerations<a class="headerlink" href="#enumerations" title="Permanent link">#</a></h2>
 <p>Enumeration arguments should be specified by name, e.g.:</p>
@@ -2252,9 +2252,9 @@ but will extend the support for other feature types in the future.</p>
 <p>Suppose I want to run GBFS with the <code>landmark_sum</code> heuristic, and then run
 another GBFS search with the <code>landmark_cost_partitioning</code> heuristic, using the
 h^m landmarks without discovering the landmarks twice.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--search &quot;let(lm, lm_hm(m=2), 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--search "let(lm, lm_hm(m=2), 
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>              iterated([lazy_greedy([landmark_sum(lm)]),
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                        lazy_greedy([landmark_cost_partitioning(lm))]]))&quot;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                        lazy_greedy([landmark_cost_partitioning(lm))]]))"
 </span></code></pre></div>
 <h3 id="old-style_predefinitions">Old-style Predefinitions<a class="headerlink" href="#old-style_predefinitions" title="Permanent link">#</a></h3>
 <p>We still support but deprecate the use of "predefinitions" before the<code>--search</code>
@@ -2272,9 +2272,9 @@ properties of the input file. For example, the LAMA 2011 configuration
 makes use of this, adding an additional cost-ignoring search run at the
 start for tasks with non-unit action costs.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
-<div class="language-text highlight"><pre><span></span><code>--if-unit-cost --evaluator &quot;h1=ff()&quot; --evaluator &quot;h2=blind()&quot; \
---if-non-unit-cost --evaluator &quot;h1=cea()&quot; --evaluator &quot;h2=lmcut()&quot; \
---always --search &quot;eager_greedy([h1, h2])&quot;
+<div class="language-text highlight"><pre><span></span><code>--if-unit-cost --evaluator "h1=ff()" --evaluator "h2=blind()" \
+--if-non-unit-cost --evaluator "h1=cea()" --evaluator "h2=lmcut()" \
+--always --search "eager_greedy([h1, h2])"
 </code></pre></div>
 <p>This conducts an eager greedy search with two heuristics. On unit-cost
 tasks, it uses the FF heuristic and the blind heuristic. On other tasks,

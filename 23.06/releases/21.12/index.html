@@ -2086,12 +2086,12 @@ encourage you to mention the version number, as in "We ran experiments
 with Fast Downward 21.12." The canonical reference for citing Fast
 Downward is the following journal paper:</p>
 <div class="language-text highlight"><pre><span></span><code>@Article{helmert-jair2006,
-  author =  &quot;Malte Helmert&quot;,
-  title =   &quot;The {Fast} {Downward} Planning System&quot;,
-  journal = &quot;Journal of Artificial Intelligence Research&quot;,
-  year =    &quot;2006&quot;,
-  volume =  &quot;26&quot;,
-  pages =   &quot;191--246&quot;
+  author =  "Malte Helmert",
+  title =   "The {Fast} {Downward} Planning System",
+  journal = "Journal of Artificial Intelligence Research",
+  year =    "2006",
+  volume =  "26",
+  pages =   "191--246"
 }
 </code></pre></div>
 <h2 id="changes_in_fast_downward_2112">Changes in Fast Downward 21.12<a class="headerlink" href="#changes_in_fast_downward_2112" title="Permanent link">#</a></h2>
@@ -2171,10 +2171,10 @@ against using this feature when running experiments.</p>
     options of individual pruning methods.</p>
 <p><a href="https://issues.fast-downward.org/issue1042">https://issues.fast-downward.org/issue1042</a></p>
 <p>For example, the old command line
- <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--search &quot;astar(lmcut(),pruning=atom_centric_stubborn_sets(min_required_pruning_ratio=0.2,expansions_before_checking_pruning_ratio=1000))
+ <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--search "astar(lmcut(),pruning=atom_centric_stubborn_sets(min_required_pruning_ratio=0.2,expansions_before_checking_pruning_ratio=1000))
 </span></code></pre></div>
  is now expressed as
- <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--search &quot;astar(lmcut(),pruning=limited_pruning(pruning=atom_centric_stubborn_sets(),min_required_pruning_ratio=0.2,expansions_before_checking_pruning_ratio=1000))
+ <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--search "astar(lmcut(),pruning=limited_pruning(pruning=atom_centric_stubborn_sets(),min_required_pruning_ratio=0.2,expansions_before_checking_pruning_ratio=1000))
 </span></code></pre></div></p>
 </li>
 <li>

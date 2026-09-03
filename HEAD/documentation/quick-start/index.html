@@ -2307,7 +2307,7 @@ We tested with versions 1.2.2 and 1.4.1.</p>
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.sif &lt;your-planner-options&gt;
 </code></pre></div>
 <p>Assume you want to solve a planning task (e.g. from the <a href="https://github.com/aibasel/downward-benchmarks">Fast Downward benchmarks</a>) using A* search with the LM-cut heuristic. To do so you can run the following:</p>
-<div class="language-text highlight"><pre><span></span><code>./fast-downward.sif &lt;domain.pddl&gt; &lt;problem.pddl&gt; --search &quot;astar(lmcut())&quot;
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.sif &lt;domain.pddl&gt; &lt;problem.pddl&gt; --search "astar(lmcut())"
 </code></pre></div>
 <p>See more planner options at <a href="../planner-usage/">planner usage</a>.</p>
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">#</a></h2>
@@ -2326,7 +2326,7 @@ We tested with versions 1.2.2 and 1.4.1.</p>
 <p>Assume you want to solve a planning task (e.g. from the <a href="https://github.com/aibasel/downward-benchmarks">Fast Downward benchmarks</a>) using A* search with the LM-cut heuristic. To do so you can run the following:</p>
 <div class="language-text highlight"><pre><span></span><code>sudo docker run --rm -v &lt;path-to-benchmarks&gt;:/benchmarks aibasel/downward \
 /benchmarks/&lt;domain.pddl&gt; /benchmarks/&lt;problem.pddl&gt; \
---search &quot;astar(lmcut())&quot;
+--search "astar(lmcut())"
 </code></pre></div>
 <p>Here <code>&lt;path-to-benchmarks&gt;</code> refers to your local directory containing your domain and problem file.</p>
 <p>Note:</p>
@@ -2380,7 +2380,7 @@ Downward 23.06, you will need CPLEX 22.1.1 (installer filename
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Run the planner.</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>downward/fast-downward.py<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>/vagrant/benchmarks/&lt;domain.pddl&gt;<span class="w"> </span>/vagrant/benchmarks/&lt;problem.pddl&gt;<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>--search<span class="w"> </span><span class="s2">&quot;astar(lmcut())&quot;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>--search<span class="w"> </span><span class="s2">"astar(lmcut())"</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># Log out from the VM.</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">logout</span>
@@ -2409,7 +2409,7 @@ cd fast-downward-24.06.1
 <div class="language-text highlight"><pre><span></span><code>./fast-downward.py &lt;your-planner-options&gt;
 </code></pre></div>
 <p>Assume you want to solve a planning task (e.g. from the <a href="https://github.com/aibasel/downward-benchmarks">Fast Downward benchmarks</a>) using A* search with the LM-cut heuristic. To do so you can run the following:</p>
-<div class="language-text highlight"><pre><span></span><code>./fast-downward.py &lt;domain.pddl&gt; &lt;problem.pddl&gt; --search &quot;astar(lmcut())&quot;
+<div class="language-text highlight"><pre><span></span><code>./fast-downward.py &lt;domain.pddl&gt; &lt;problem.pddl&gt; --search "astar(lmcut())"
 </code></pre></div>
 <p>See more planner options at <a href="../planner-usage/">planner usage</a>.</p>
 <h1 id="next_steps">Next steps<a class="headerlink" href="#next_steps" title="Permanent link">#</a></h1>

@@ -2550,7 +2550,7 @@
 </ul>
 <p>This feature type can be bound to variables using <code>let(variable_name, variable_definition, expression)</code> where <code>expression</code> can use <code>variable_name</code>. Predefinitions using <code>--evaluator</code>, <code>--heuristic</code>, and <code>--landmarks</code> are automatically transformed into <code>let</code>-expressions but are deprecated.</p>
 <h2 id="additive_heuristic">Additive heuristic<a class="headerlink" href="#additive_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>add(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description=&quot;add&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>add(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description="add", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>axioms</em> ({approximate_negative, approximate_negative_cycles}): How to compute axioms that describe how the negated (=default) value of a derived variable can be achieved.<ul>
@@ -2584,7 +2584,7 @@
 </ul>
 <h2 id="blind_heuristic">Blind heuristic<a class="headerlink" href="#blind_heuristic" title="Permanent link">#</a></h2>
 <p>Returns cost of cheapest action for non-goal states, 0 for goal states
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>blind(transform=no_transform(), cache_estimates=true, description=&quot;blind&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>blind(transform=no_transform(), cache_estimates=true, description="blind", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>transform</em> (<a href="../AbstractTask/">AbstractTask</a>): Optional task transformation for the heuristic. Currently, adapt_costs() and no_transform() are available.</li>
@@ -2612,7 +2612,7 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="context-enhanced_additive_heuristic">Context-enhanced additive heuristic<a class="headerlink" href="#context-enhanced_additive_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cea(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description=&quot;cea&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cea(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description="cea", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>axioms</em> ({approximate_negative, approximate_negative_cycles}): How to compute axioms that describe how the negated (=default) value of a derived variable can be achieved.<ul>
@@ -2663,7 +2663,7 @@
  <a href="https://ai.dmi.unibas.ch/papers/seipp-helmert-jair2018.pdf">Counterexample-Guided Cartesian Abstraction Refinement for Classical Planning</a>.<br />
  <em>Journal of Artificial Intelligence Research</em> 62:535-577. 2018.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cegar(subtasks=[landmarks(),goals()], max_states=infinity, max_transitions=1M, max_time=infinity, pick=max_refined, use_general_costs=true, random_seed=-1, transform=no_transform(), cache_estimates=true, description=&quot;cegar&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cegar(subtasks=[landmarks(),goals()], max_states=infinity, max_transitions=1M, max_time=infinity, pick=max_refined, use_general_costs=true, random_seed=-1, transform=no_transform(), cache_estimates=true, description="cegar", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>subtasks</em> (list of <a href="../SubtaskGenerator/">SubtaskGenerator</a>): subtask generators</li>
@@ -2707,7 +2707,7 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="causal_graph_heuristic">Causal graph heuristic<a class="headerlink" href="#causal_graph_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cg(max_cache_size=1000000, axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description=&quot;cg&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cg(max_cache_size=1000000, axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description="cg", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>max_cache_size</em> (int [0, infinity]): maximum number of cached entries per variable (set to 0 to disable cache)</li>
@@ -2741,7 +2741,7 @@
 <li><strong>preferred operators:</strong> yes</li>
 </ul>
 <h2 id="ff_heuristic">FF heuristic<a class="headerlink" href="#ff_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ff(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description=&quot;ff&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ff(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description="ff", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>axioms</em> ({approximate_negative, approximate_negative_cycles}): How to compute axioms that describe how the negated (=default) value of a derived variable can be achieved.<ul>
@@ -2774,7 +2774,7 @@
 <li><strong>preferred operators:</strong> yes</li>
 </ul>
 <h2 id="goal_count_heuristic">Goal count heuristic<a class="headerlink" href="#goal_count_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>goalcount(transform=no_transform(), cache_estimates=true, description=&quot;goalcount&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>goalcount(transform=no_transform(), cache_estimates=true, description="goalcount", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>transform</em> (<a href="../AbstractTask/">AbstractTask</a>): Optional task transformation for the heuristic. Currently, adapt_costs() and no_transform() are available.</li>
@@ -2802,7 +2802,7 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="hm_heuristic">h^m heuristic<a class="headerlink" href="#hm_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>hm(m=2, transform=no_transform(), cache_estimates=true, description=&quot;hm&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>hm(m=2, transform=no_transform(), cache_estimates=true, description="hm", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>m</em> (int [1, infinity]): subset size</li>
@@ -2831,7 +2831,7 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="max_heuristic">Max heuristic<a class="headerlink" href="#max_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>hmax(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description=&quot;hmax&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>hmax(axioms=approximate_negative_cycles, transform=no_transform(), cache_estimates=true, description="hmax", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>axioms</em> ({approximate_negative, approximate_negative_cycles}): How to compute axioms that describe how the negated (=default) value of a derived variable can be achieved.<ul>
@@ -2870,7 +2870,7 @@
  <a href="https://ai.dmi.unibas.ch/papers/buechner-et-al-icaps2023.pdf">Landmarks Progression in Heuristic Search</a>.<br />
  In <em>Proceedings of the Thirty-Third International Conference on Automated Planning and Scheduling (ICAPS 2023)</em>, pp. 70-79. AAAI Press, 2023.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>landmark_cost_partitioning(lm_factory, pref=false, prog_goal=true, prog_gn=true, prog_r=true, transform=no_transform(), cache_estimates=true, description=&quot;landmark_cost_partitioning&quot;, verbosity=normal, cost_partitioning=uniform, alm=true, lpsolver=cplex)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>landmark_cost_partitioning(lm_factory, pref=false, prog_goal=true, prog_gn=true, prog_r=true, transform=no_transform(), cache_estimates=true, description="landmark_cost_partitioning", verbosity=normal, cost_partitioning=uniform, alm=true, lpsolver=cplex)
 </span></code></pre></div>
 <ul>
 <li><em>lm_factory</em> (<a href="../LandmarkFactory/">LandmarkFactory</a>): the set of landmarks to use for this heuristic. The set of landmarks can be specified here, or predefined (see <a href="../LandmarkFactory/">LandmarkFactory</a>).</li>
@@ -2925,7 +2925,7 @@
  <a href="https://ai.dmi.unibas.ch/papers/buechner-et-al-icaps2023.pdf">Landmarks Progression in Heuristic Search</a>.<br />
  In <em>Proceedings of the Thirty-Third International Conference on Automated Planning and Scheduling (ICAPS 2023)</em>, pp. 70-79. AAAI Press, 2023.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>landmark_sum(lm_factory, pref=false, prog_goal=true, prog_gn=true, prog_r=true, transform=no_transform(), cache_estimates=true, description=&quot;landmark_sum_heuristic&quot;, verbosity=normal, axioms=approximate_negative_cycles)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>landmark_sum(lm_factory, pref=false, prog_goal=true, prog_gn=true, prog_r=true, transform=no_transform(), cache_estimates=true, description="landmark_sum_heuristic", verbosity=normal, axioms=approximate_negative_cycles)
 </span></code></pre></div>
 <ul>
 <li><em>lm_factory</em> (<a href="../LandmarkFactory/">LandmarkFactory</a>): the set of landmarks to use for this heuristic. The set of landmarks can be specified here, or predefined (see <a href="../LandmarkFactory/">LandmarkFactory</a>).</li>
@@ -2971,7 +2971,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <li><strong>safe:</strong> yes except on tasks with conditional effects when using a <a href="../LandmarkFactory/">LandmarkFactory</a> not supporting them</li>
 </ul>
 <h2 id="landmark-cut_heuristic">Landmark-cut heuristic<a class="headerlink" href="#landmark-cut_heuristic" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>lmcut(transform=no_transform(), cache_estimates=true, description=&quot;lmcut&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>lmcut(transform=no_transform(), cache_estimates=true, description="lmcut", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>transform</em> (<a href="../AbstractTask/">AbstractTask</a>): Optional task transformation for the heuristic. Currently, adapt_costs() and no_transform() are available.</li>
@@ -3023,7 +3023,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
  <a href="https://ai.dmi.unibas.ch/papers/sievers-socs2018.pdf">Merge-and-Shrink Heuristics for Classical Planning: Efficient Implementation and Partial Abstractions</a>.<br />
  In <em>Proceedings of the 11th Annual Symposium on Combinatorial Search (SoCS 2018)</em>, pp. 90-98. AAAI Press, 2018.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>merge_and_shrink(merge_strategy, shrink_strategy, label_reduction=&lt;none&gt;, prune_unreachable_states=true, prune_irrelevant_states=true, max_states=-1, max_states_before_merge=-1, threshold_before_merge=-1, main_loop_max_time=infinity, transform=no_transform(), cache_estimates=true, description=&quot;merge_and_shrink&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>merge_and_shrink(merge_strategy, shrink_strategy, label_reduction=&lt;none&gt;, prune_unreachable_states=true, prune_irrelevant_states=true, max_states=-1, max_states_before_merge=-1, threshold_before_merge=-1, main_loop_max_time=infinity, transform=no_transform(), cache_estimates=true, description="merge_and_shrink", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>merge_strategy</em> (<a href="../MergeStrategy/">MergeStrategy</a>): See detailed documentation for merge strategies. We currently recommend SCC-DFP, which can be achieved using <code>merge_strategy=merge_sccs(order_of_sccs=topological,merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order]))</code></li>
@@ -3072,7 +3072,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
  <a href="http://www.aaai.org/ocs/index.php/ICAPS/ICAPS14/paper/view/7892/8031">LP-based Heuristics for Cost-optimal Planning</a>.<br />
  In <em>Proceedings of the Twenty-Fourth International Conference on Automated Planning and Scheduling (ICAPS 2014)</em>, pp. 226-234. AAAI Press, 2014.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>operatorcounting(constraint_generators, use_integer_operator_counts=false, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description=&quot;operatorcounting&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>operatorcounting(constraint_generators, use_integer_operator_counts=false, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description="operatorcounting", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>constraint_generators</em> (list of <a href="../ConstraintGenerator/">ConstraintGenerator</a>): methods that generate constraints over operator-counting variables</li>
@@ -3110,7 +3110,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <h1 id="basic_evaluators">Basic Evaluators<a class="headerlink" href="#basic_evaluators" title="Permanent link">#</a></h1>
 <h2 id="constant_evaluator">Constant evaluator<a class="headerlink" href="#constant_evaluator" title="Permanent link">#</a></h2>
 <p>Returns a constant value.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>const(value=1, description=&quot;const&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>const(value=1, description="const", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>value</em> (int [0, infinity]): the constant value</li>
@@ -3125,7 +3125,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 <h2 id="g-value_evaluator">g-value evaluator<a class="headerlink" href="#g-value_evaluator" title="Permanent link">#</a></h2>
 <p>Returns the g-value (path cost) of the search node.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>g(description=&quot;g&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>g(description="g", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>description</em> (string): description used to identify evaluator in logs</li>
@@ -3139,7 +3139,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 <h2 id="max_evaluator">Max evaluator<a class="headerlink" href="#max_evaluator" title="Permanent link">#</a></h2>
 <p>Calculates the maximum of the sub-evaluators.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>max(evals, description=&quot;max&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>max(evals, description="max", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>evals</em> (list of <a href="./">Evaluator</a>): at least one evaluator</li>
@@ -3154,7 +3154,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 <h2 id="preference_evaluator">Preference evaluator<a class="headerlink" href="#preference_evaluator" title="Permanent link">#</a></h2>
 <p>Returns 0 if preferred is true and 1 otherwise.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pref(description=&quot;pref&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pref(description="pref", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>description</em> (string): description used to identify evaluator in logs</li>
@@ -3168,7 +3168,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 <h2 id="sum_evaluator">Sum evaluator<a class="headerlink" href="#sum_evaluator" title="Permanent link">#</a></h2>
 <p>Calculates the sum of the sub-evaluators.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sum(evals, description=&quot;sum&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sum(evals, description="sum", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>evals</em> (list of <a href="./">Evaluator</a>): at least one evaluator</li>
@@ -3183,7 +3183,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 <h2 id="weighted_evaluator">Weighted evaluator<a class="headerlink" href="#weighted_evaluator" title="Permanent link">#</a></h2>
 <p>Multiplies the value of the evaluator with the given weight.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>weight(eval, weight, description=&quot;weight&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>weight(eval, weight, description="weight", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>eval</em> (<a href="./">Evaluator</a>): evaluator</li>
@@ -3200,7 +3200,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <h1 id="pattern_database_heuristics">Pattern Database Heuristics<a class="headerlink" href="#pattern_database_heuristics" title="Permanent link">#</a></h1>
 <h2 id="canonical_pdb">Canonical PDB<a class="headerlink" href="#canonical_pdb" title="Permanent link">#</a></h2>
 <p>The canonical pattern database heuristic is calculated as follows. For a given pattern collection C, the value of the canonical heuristic function is the maximum over all maximal additive subsets A in C, where the value for one subset S in A is the sum of the heuristic values for all patterns in S for a given state.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>cpdbs(patterns=systematic(1), max_time_dominance_pruning=infinity, transform=no_transform(), cache_estimates=true, description=&quot;cpdbs&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>cpdbs(patterns=systematic(1), max_time_dominance_pruning=infinity, transform=no_transform(), cache_estimates=true, description="cpdbs", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>patterns</em> (<a href="../PatternCollectionGenerator/">PatternCollectionGenerator</a>): pattern generation method</li>
@@ -3243,7 +3243,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
  In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 105-111. AAAI Press, 2012.</li>
 </ul>
 <p>See also <a href="./#canonical_pdb">Canonical PDB</a> and <a href="../PatternCollectionGenerator/#hill_climbing">Hill climbing</a> for more details.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ipdb(pdb_max_size=2000000, collection_max_size=20000000, num_samples=1000, min_improvement=10, max_time=infinity, random_seed=-1, max_time_dominance_pruning=infinity, transform=no_transform(), cache_estimates=true, description=&quot;cpdbs&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ipdb(pdb_max_size=2000000, collection_max_size=20000000, num_samples=1000, min_improvement=10, max_time=infinity, random_seed=-1, max_time_dominance_pruning=infinity, transform=no_transform(), cache_estimates=true, description="cpdbs", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>pdb_max_size</em> (int [1, infinity]): maximal number of states per pattern database </li>
@@ -3299,7 +3299,7 @@ The search is ended if there is no more improvement (or the improvement is small
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-socs2012.pdf">Efficient Implementation of Pattern Database Heuristics for Classical Planning</a>.<br />
  In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 105-111. AAAI Press, 2012.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>pdb(pattern=greedy(), transform=no_transform(), cache_estimates=true, description=&quot;pdb&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>pdb(pattern=greedy(), transform=no_transform(), cache_estimates=true, description="pdb", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>pattern</em> (<a href="../PatternGenerator/">PatternGenerator</a>): pattern generation method</li>
@@ -3329,7 +3329,7 @@ The search is ended if there is no more improvement (or the improvement is small
 </ul>
 <h2 id="zero-one_pdb">Zero-One PDB<a class="headerlink" href="#zero-one_pdb" title="Permanent link">#</a></h2>
 <p>The zero/one pattern database heuristic is simply the sum of the heuristic values of all patterns in the pattern collection. In contrast to the canonical pattern database heuristic, there is no need to check for additive subsets, because the additivity of the patterns is guaranteed by action cost partitioning. This heuristic uses the most simple form of action cost partitioning, i.e. if an operator affects more than one pattern in the collection, its costs are entirely taken into account for one pattern (the first one which it affects) and set to zero for all other affected patterns.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>zopdbs(patterns=systematic(1), transform=no_transform(), cache_estimates=true, description=&quot;zopdbs&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>zopdbs(patterns=systematic(1), transform=no_transform(), cache_estimates=true, description="zopdbs", verbosity=normal)
 </span></code></pre></div></p>
 <ul>
 <li><em>patterns</em> (<a href="../PatternCollectionGenerator/">PatternCollectionGenerator</a>): pattern generation method</li>
@@ -3365,7 +3365,7 @@ The search is ended if there is no more improvement (or the improvement is small
  <a href="https://ai.dmi.unibas.ch/papers/seipp-et-al-icaps2015.pdf">New Optimization Functions for Potential Heuristics</a>.<br />
  In <em>Proceedings of the 25th International Conference on Automated Planning and Scheduling (ICAPS 2015)</em>, pp. 193-201. AAAI Press, 2015.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>all_states_potential(max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description=&quot;all_states_potential&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>all_states_potential(max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description="all_states_potential", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>max_potential</em> (double [0.0, infinity]): Bound potentials by this number. Using the bound <code>infinity</code> disables the bounds. In some domains this makes the computation of weights unbounded in which case no weights can be extracted. Using very high weights can cause numerical instability in the LP solver, while using very low weights limits the choice of potential heuristics. For details, see the ICAPS paper cited above.</li>
@@ -3406,7 +3406,7 @@ The search is ended if there is no more improvement (or the improvement is small
  <a href="https://ai.dmi.unibas.ch/papers/seipp-et-al-icaps2015.pdf">New Optimization Functions for Potential Heuristics</a>.<br />
  In <em>Proceedings of the 25th International Conference on Automated Planning and Scheduling (ICAPS 2015)</em>, pp. 193-201. AAAI Press, 2015.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>diverse_potentials(num_samples=1000, max_num_heuristics=infinity, max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description=&quot;diverse_potentials&quot;, verbosity=normal, random_seed=-1)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>diverse_potentials(num_samples=1000, max_num_heuristics=infinity, max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description="diverse_potentials", verbosity=normal, random_seed=-1)
 </span></code></pre></div>
 <ul>
 <li><em>num_samples</em> (int [0, infinity]): Number of states to sample</li>
@@ -3450,7 +3450,7 @@ The search is ended if there is no more improvement (or the improvement is small
  <a href="https://ai.dmi.unibas.ch/papers/seipp-et-al-icaps2015.pdf">New Optimization Functions for Potential Heuristics</a>.<br />
  In <em>Proceedings of the 25th International Conference on Automated Planning and Scheduling (ICAPS 2015)</em>, pp. 193-201. AAAI Press, 2015.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>initial_state_potential(max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description=&quot;initial_state_potential&quot;, verbosity=normal)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>initial_state_potential(max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description="initial_state_potential", verbosity=normal)
 </span></code></pre></div>
 <ul>
 <li><em>max_potential</em> (double [0.0, infinity]): Bound potentials by this number. Using the bound <code>infinity</code> disables the bounds. In some domains this makes the computation of weights unbounded in which case no weights can be extracted. Using very high weights can cause numerical instability in the LP solver, while using very low weights limits the choice of potential heuristics. For details, see the ICAPS paper cited above.</li>
@@ -3491,7 +3491,7 @@ The search is ended if there is no more improvement (or the improvement is small
  <a href="https://ai.dmi.unibas.ch/papers/seipp-et-al-icaps2015.pdf">New Optimization Functions for Potential Heuristics</a>.<br />
  In <em>Proceedings of the 25th International Conference on Automated Planning and Scheduling (ICAPS 2015)</em>, pp. 193-201. AAAI Press, 2015.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sample_based_potentials(num_heuristics=1, num_samples=1000, max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description=&quot;sample_based_potentials&quot;, verbosity=normal, random_seed=-1)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sample_based_potentials(num_heuristics=1, num_samples=1000, max_potential=1e8, lpsolver=cplex, transform=no_transform(), cache_estimates=true, description="sample_based_potentials", verbosity=normal, random_seed=-1)
 </span></code></pre></div>
 <ul>
 <li><em>num_heuristics</em> (int [0, infinity]): number of potential heuristics</li>

@@ -2129,7 +2129,7 @@ participated in IPC 2011, please also check the page on
 <p>The <strong>search options</strong> are built with flexibility in mind, not ease of
 use. It is very easy to use option settings that look plausible, yet
 introduce significant inefficiencies. For example, an invocation like</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./fast-downward.py domain.pddl problem.pddl --search &quot;lazy_greedy([ff()], preferred=[ff()])&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./fast-downward.py domain.pddl problem.pddl --search "lazy_greedy([ff()], preferred=[ff()])"
 </span></code></pre></div>
 <p>looks plausible, yet is hugely inefficient since it will compute the FF
 heuristic twice per state. See the <a href="#examples">examples</a> at the bottom of this
@@ -2164,28 +2164,28 @@ for such cases.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="a_search">A* search<a class="headerlink" href="#a_search" title="Permanent link">#</a></h3>
 <div class="language-text highlight"><pre><span></span><code># landmark-cut heuristic
- ./fast-downward.py domain.pddl task.pddl --search &quot;astar(lmcut())&quot;
+ ./fast-downward.py domain.pddl task.pddl --search "astar(lmcut())"
 
 # iPDB heuristic with default settings
- ./fast-downward.py domain.pddl task.pddl --search &quot;astar(ipdb())&quot;
+ ./fast-downward.py domain.pddl task.pddl --search "astar(ipdb())"
 
 # blind heuristic
- ./fast-downward.py domain.pddl task.pddl --search &quot;astar(blind())&quot;
+ ./fast-downward.py domain.pddl task.pddl --search "astar(blind())"
 </code></pre></div>
 <h3 id="lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method">Lazy greedy best-first search with preferred operators and the queue alternation method<a class="headerlink" href="#lazy_greedy_best-first_search_with_preferred_operators_and_the_queue_alternation_method" title="Permanent link">#</a></h3>
-<div class="language-text highlight"><pre><span></span><code>## using FF heuristic and context-enhanced additive heuristic (previously: &quot;fFyY&quot;)
+<div class="language-text highlight"><pre><span></span><code>## using FF heuristic and context-enhanced additive heuristic (previously: "fFyY")
  ./fast-downward.py domain.pddl task.pddl \
-    --search &quot;let(hff, ff(), let(hcea, cea(), lazy_greedy([hff, hcea], preferred=[hff, hcea])))&quot;
+    --search "let(hff, ff(), let(hcea, cea(), lazy_greedy([hff, hcea], preferred=[hff, hcea])))"
 
 
-## using FF heuristic (previously: &quot;fF&quot;)
+## using FF heuristic (previously: "fF")
  ./fast-downward.py domain.pddl task.pddl \
-    --search &quot;let(hff, ff(), lazy_greedy([hff], preferred=[hff]))&quot;
+    --search "let(hff, ff(), lazy_greedy([hff], preferred=[hff]))"
 
 
-## using context-enhanced additive heuristic (previously: &quot;yY&quot;)
+## using context-enhanced additive heuristic (previously: "yY")
  ./fast-downward.py domain.pddl task.pddl \
-    --search &quot;let(hcea, cea(), lazy_greedy([hcea], preferred=[hcea]))&quot;
+    --search "let(hcea, cea(), lazy_greedy([hcea], preferred=[hcea]))"
 </code></pre></div>
 <h3 id="lama_2011">LAMA 2011<a class="headerlink" href="#lama_2011" title="Permanent link">#</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./fast-downward.py --alias seq-sat-lama-2011 domain.pddl task.pddl
