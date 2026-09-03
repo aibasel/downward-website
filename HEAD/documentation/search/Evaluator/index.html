@@ -3004,7 +3004,13 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <li><strong>safe:</strong> yes except on tasks with axioms and on tasks with conditional effects when using a <a href="../LandmarkFactory/">LandmarkFactory</a> not supporting them</li>
 </ul>
 <h2 id="landmark-cut_heuristic">Landmark-cut heuristic<a class="headerlink" href="#landmark-cut_heuristic" title="Permanent link">#</a></h2>
-<p>This heuristic implements tie-breaking strategies for the precondition choice function (options <code>goal_zone_detection</code> and <code>border_detection</code>) described in the following paper:</p>
+<p>This heuristic was introduced in the following paper:</p>
+<ul>
+<li>Malte Helmert and Carmel Domshlak.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/helmert-domshlak-icaps2009.pdf">Landmarks, Critical Paths and Abstractions: What's the Difference Anyway?</a>.<br />
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 162-169. 2009.</li>
+</ul>
+<p>The tie-breaking strategies for the precondition choice function (options <code>goal_zone_detection</code> and <code>border_detection</code>) are described in the following paper:</p>
 <ul>
 <li>Pascal Lauer and Maximilian Fickert.<br />
  <a href="https://fai.cs.uni-saarland.de/lauer/papers/hsdip2020.pdf">Beating LM-cut with LM-cut: Quick Cutting and Practical Tie Breaking for the Precondition Choice Function</a>.<br />
