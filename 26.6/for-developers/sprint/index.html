@@ -1,0 +1,2809 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://new.fast-downward.org/26.6/for-developers/sprint/">
+      
+      
+        <link rel="prev" href="../requirements/">
+      
+      
+        <link rel="next" href="../style-conventions/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Sprint - Fast Downward</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sprint" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Fast Downward" class="md-header__button md-logo" aria-label="Fast Downward" data-md-component="logo">
+      
+  <img src="../../img/driller.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fast Downward
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aibasel/downward/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fast Downward" class="md-nav__button md-logo" aria-label="Fast Downward" data-md-component="logo">
+      
+  <img src="../../img/driller.svg" alt="logo">
+
+    </a>
+    Fast Downward
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aibasel/downward/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../documentation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/planner-usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planner usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/translator-options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../documentation/search/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Search plugins
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Search plugins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/ConstraintGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConstraintGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/Evaluator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/LabelReduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LabelReduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/LandmarkFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LandmarkFactory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeScoringFunction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeScoringFunction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeSelector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeSelector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeStrategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeStrategy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/OpenList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenList
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/PatternCollectionGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatternCollectionGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/PatternGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatternGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/PruningMethod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PruningMethod
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/SearchAlgorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SearchAlgorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/ShrinkStrategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShrinkStrategy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/SubtaskGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SubtaskGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search-plugin-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syntax for search plugins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/exit-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exit codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/pddl-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDDL support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/ipc-planners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPC planners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/translator-output-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator output format
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../releases/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Releases
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/26.6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 26.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/24.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 24.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/23.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 23.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/22.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 22.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/22.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 22.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/21.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 21.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/20.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 20.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/19.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 19.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/19.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 19.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../literature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Literature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    For Developers
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/component-interaction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.07.2026: Overview of the new design of components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/install-on-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01.04.2025: How to install and run Fast Downward on Windows 10 from source with Visual Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/new-option-parser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.01.2023: The New Option Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/logo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    31.01.2022: A Logo for Fast Downward
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/a-deeper-look-at-states/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    29.01.2021: A Deeper Look at States
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/a-day-in-the-life-of-a-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.01.2021: A Day in the Life of a State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog entries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code reviews with Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coding-conventions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ coding conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation-details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation details
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-term-plans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Long-term plans
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problem-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problem transformations performed by the planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprint
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sprint
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for_next_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      For next sprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#old_to_improve_outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Old "To Improve" Outcomes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Old "To Improve" Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2026-feb_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2026-Feb Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2025-jul_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2025-Jul Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2025-feb_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2025-Feb Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2024-jul_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2024-Jul Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2024-janfeb_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2024-Jan/Feb Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2023-sep_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2023-Sep Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2023-jul_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2023-Jul Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2023-jan_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2023-Jan Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2022-mar_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2022-Mar Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2022-jan_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2022-Jan Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2021-jun_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2021-Jun Sprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style-conventions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Style conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translator-output-format-v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator Output Format v4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for_next_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      For next sprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#old_to_improve_outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Old "To Improve" Outcomes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Old "To Improve" Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2026-feb_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2026-Feb Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2025-jul_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2025-Jul Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2025-feb_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2025-Feb Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2024-jul_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2024-Jul Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2024-janfeb_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2024-Jan/Feb Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2023-sep_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2023-Sep Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2023-jul_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2023-Jul Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2023-jan_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2023-Jan Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2022-mar_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2022-Mar Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2022-jan_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2022-Jan Sprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_improve_after_2021-jun_sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Improve After 2021-Jun Sprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sprint">Sprint<a class="headerlink" href="#sprint" title="Permanent link">#</a></h1>
+<p>A Fast Downward sprint is a two weeks period in which we invest most of
+our time in improving the planner and tackle larger work packages called
+"stories".</p>
+<h2 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">#</a></h2>
+<p>We estimate the effort of a story using the fictional <em>Haslum</em> (HSM)
+score. A <em>Person Day</em> (PD) represents the work one person accomplishes
+per day.</p>
+<table>
+<thead>
+<tr>
+<th>Sprint</th>
+<th>Work Days</th>
+<th>Person Days</th>
+<th>Total HSM Done</th>
+<th>Total HSM Pulled</th>
+<th>HSM/PD Done</th>
+<th>HSM/PD Pulled</th>
+<th>Satisfaction /5</th>
+<th>Queen/King</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2018-09-10 - 2018-09-21</td>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Gabi (first Scrum sprint)</td>
+</tr>
+<tr>
+<td>2018-10-03 - 2018-10-14</td>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Gabi</td>
+</tr>
+<tr>
+<td>2019-06-03 - 2019-06-14</td>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Florian</td>
+</tr>
+<tr>
+<td>2019-12-02 - 2019-12-13</td>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Florian</td>
+</tr>
+<tr>
+<td>2020-06-29 - 2020-07-10</td>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Gabi</td>
+</tr>
+<tr>
+<td>2020-01-18 - 2020-01-29</td>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Gabi</td>
+</tr>
+<tr>
+<td>2021-02-08 - 2020-02-19</td>
+<td>10</td>
+<td></td>
+<td>4</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Salomé</td>
+</tr>
+<tr>
+<td>2021-04-26 - 2021-05-07</td>
+<td>10</td>
+<td></td>
+<td>5</td>
+<td>11</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Silvan</td>
+</tr>
+<tr>
+<td>2021-06-21 - 2021-07-02</td>
+<td>10</td>
+<td>45</td>
+<td>9</td>
+<td>19</td>
+<td>0.20</td>
+<td>0.4</td>
+<td>4</td>
+<td>Patrick</td>
+</tr>
+<tr>
+<td>2022-01-31 - 2022-02-11</td>
+<td>10</td>
+<td>45</td>
+<td>11</td>
+<td>22</td>
+<td>0.25</td>
+<td>0.5</td>
+<td>4.4</td>
+<td>Patrick</td>
+</tr>
+<tr>
+<td>2022-03-07 - 2022-03-11</td>
+<td>5</td>
+<td>16.5</td>
+<td>3</td>
+<td>14</td>
+<td>0.18</td>
+<td>0.85</td>
+<td>4</td>
+<td>Silvan</td>
+</tr>
+<tr>
+<td>2022-07-11 - 2022-07-19</td>
+<td>7</td>
+<td>29.5</td>
+<td>11</td>
+<td>19</td>
+<td>0.37</td>
+<td>0.64</td>
+<td>3.7</td>
+<td>Gabi</td>
+</tr>
+<tr>
+<td>2023-01-23 - 2023-02-10</td>
+<td>15</td>
+<td>90.75</td>
+<td>16</td>
+<td>52</td>
+<td>0.17</td>
+<td>0.57</td>
+<td>4.3</td>
+<td>Salomé (Clemens retreat organization)</td>
+</tr>
+<tr>
+<td>2023-02 aftermath</td>
+<td></td>
+<td></td>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2023-07-18 - 2023-07-28</td>
+<td>9</td>
+<td>40</td>
+<td>14</td>
+<td>35</td>
+<td>0.35</td>
+<td>0.88</td>
+<td>4</td>
+<td>Remo</td>
+</tr>
+<tr>
+<td>2023-09-11 - 2023-09-15</td>
+<td>5</td>
+<td>24</td>
+<td>18</td>
+<td>29</td>
+<td>0.75</td>
+<td>1.21</td>
+<td>4.3</td>
+<td>Simon</td>
+</tr>
+<tr>
+<td>2024-01-29 - 2024-02-09</td>
+<td>9</td>
+<td>45.5</td>
+<td>18</td>
+<td>30</td>
+<td>0.40</td>
+<td>0.66</td>
+<td>4</td>
+<td>Florian</td>
+</tr>
+<tr>
+<td>2024-07-08 - 2024-07-19</td>
+<td>10</td>
+<td>52.5</td>
+<td>21</td>
+<td>36</td>
+<td>0.40</td>
+<td>0.69</td>
+<td>3.9</td>
+<td>Simon</td>
+</tr>
+<tr>
+<td>2025-02-03 - 2025-02-14</td>
+<td>10</td>
+<td>60</td>
+<td>22</td>
+<td>29</td>
+<td>0.37</td>
+<td>0.48</td>
+<td>-</td>
+<td>Salomé</td>
+</tr>
+<tr>
+<td>2025-07-21 - 2025-07-31</td>
+<td>9</td>
+<td>52</td>
+<td>24</td>
+<td>32</td>
+<td>0.46</td>
+<td>0.62</td>
+<td>4.3</td>
+<td>Remo</td>
+</tr>
+<tr>
+<td>2026-02-02 - 2026-02-13</td>
+<td>10</td>
+<td>57.5</td>
+<td>9</td>
+<td>39</td>
+<td>0.16</td>
+<td>0.68</td>
+<td>4.7</td>
+<td>David</td>
+</tr>
+<tr>
+<td>2026-07-20 - 2026-07-31</td>
+<td>10</td>
+<td>63.5</td>
+<td>24</td>
+<td>37</td>
+<td>0.38</td>
+<td>0.58</td>
+<td>4.5</td>
+<td>Claudia</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for_next_sprint">For next sprint<a class="headerlink" href="#for_next_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Speed up the story poker.</li>
+<li>Remind people early enough before the sprint to add stories to the backlog
+    (to reduce the time needed in the kick-off meeting for adding new stories).</li>
+<li>Suggest only adding stories that someone wants to work on in the near
+    future (to keep the number of stories low that need to be pokered).</li>
+<li>Re-poker (only) InProgress stories that were flagged. Consider adding a
+    "remaining Haslums" column to the backlog for keeping track of the current
+    estimate and the original estimate.</li>
+<li>People that flag a story with a Jira ID but no nickname should add a nickname.</li>
+<li>Add a bullet point to the sprint pad where everyone can set a mark when they
+  have finished contributing, e.g., flagging stories or writing sprint
+  feedback (to reduce the wait for everyone to finish).</li>
+<li>When the person responsible for a story works from home they should update
+  the sprint board the evening before, or delegate updating the sprint board to
+  someone in the office.</li>
+</ul>
+<h2 id="old_to_improve_outcomes">Old "To Improve" Outcomes<a class="headerlink" href="#old_to_improve_outcomes" title="Permanent link">#</a></h2>
+<h3 id="to_improve_after_2026-feb_sprint">To Improve After 2026-Feb Sprint<a class="headerlink" href="#to_improve_after_2026-feb_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Optimize sprint scheduling<ul>
+<li>Avoid conflicts with examination periods</li>
+<li>Avoid conflicts with conference rebuttal phases</li>
+</ul>
+</li>
+<li>Organize a mid-sprint meeting<ul>
+<li>Clarify and finalize the Definition of Done for each story</li>
+</ul>
+</li>
+<li>Consider a session on collaborative PR reviews</li>
+</ul>
+<h3 id="to_improve_after_2025-jul_sprint">To Improve After 2025-Jul Sprint<a class="headerlink" href="#to_improve_after_2025-jul_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Splitting the responsibility for a story among people that are away for part
+    of the Sprint did not work well because the exact status of the story was
+    unclear after the hand-off</li>
+<li>Notes on feedback<ul>
+<li>When asking for feedback, consider specifying on what level and through
+    what channel feedback should be given</li>
+<li>When feedback is required, not from anybody in particular, but from
+    anybody or everybody, consider using <code>@everybody</code> on, e.g., the Sprint
+    channel of the current Sprint so that potential reviewers are notified
+    and the call does not get lost in a text channel that most participants
+    do not check regularly</li>
+<li>Create pull requests early to allow detailed feedback directly referring
+    to the code, even if the issue is not ready to merge</li>
+</ul>
+</li>
+<li>Notes on the voting process<ul>
+<li>For the Summer 2025 Sprint I (Remo) went for a more monarchical and less
+    mechanical process for choosing Stories to work on, which consisted of
+    the following steps:<ul>
+<li>Everybody can freely nominate candidate Stories</li>
+<li>Everybody fills in a hidden poll where for each Story a participant
+    can choose either "interested and willing to work on", "interested
+    but not willing to work on", or "not interested" (no limit on the
+    number of positive or negative votes; only the monarch sees the
+    results)</li>
+<li>The monarch considers the results and works out a proposal by
+    themself, with possible considerations being that for each
+    participant a story is selected that they would like to work on,
+    that the total number of Stories/Haslums is low enough to keep the
+    Sprint focused, and that there is still a good amount of variety in
+    the selected Stories (other participants may take a coffee break
+    during this time)</li>
+<li>The monarch presents the proposal to everybody and each participant
+    gets the chance to take a minute to file a complaint and at the same
+    time suggest how the proposal should be adapted</li>
+<li>The monarch takes the suggestion(s) into account and may revise the
+    proposal accordingly</li>
+<li>Repeat the last two steps until everybody is happy or until the
+    monarch decides that the current proposal is final</li>
+</ul>
+</li>
+<li>The process was generally well received because it allows for more
+    flexibility and does not mechanically rule out anything, a potential
+    downside is that the process puts a lot of pressure on the monarch in
+    cases where it is not easy to find an assignment that works well for
+    everybody</li>
+</ul>
+</li>
+<li>Note on statistics<ul>
+<li>We discussed the option of not only listing the number of Person Days
+    estimated at the start of Sprints here, but adjusting the number at the
+    end of the Sprint to reflect the actual time spent more accurately, or
+    alternatively to report this more accurate estimate separately</li>
+<li>With voices for and against we did not come to an agreement and did not
+    implement this change for now, we may want to pick this discussion back
+    up in the future</li>
+</ul>
+</li>
+</ul>
+<h3 id="to_improve_after_2025-feb_sprint">To Improve After 2025-Feb Sprint<a class="headerlink" href="#to_improve_after_2025-feb_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Story voting too biased towards the work hours of people<ul>
+<li>Setting: Every person got 1 vote per 10% they could work for the sprint;
+    stories needed two times as many votes as they were worth in Haslums</li>
+<li>The idea was should vote for things you can work on so everyone has
+    something to do (avoid the "not enough Florian" problem).</li>
+<li>Problem: Vote distribution too extreme; people with less time had
+    almost no say.</li>
+<li>Maybe a middle ground, where everyone starts with some base votes and
+    work hours give extra votes could be worth trying out?</li>
+</ul>
+</li>
+<li>Having one person responsible for each story worked well</li>
+<li>Spelling out the definition of done after half of the sprint worked well</li>
+<li>More sweets, and less poison</li>
+</ul>
+<h3 id="to_improve_after_2024-jul_sprint">To Improve After 2024-Jul Sprint<a class="headerlink" href="#to_improve_after_2024-jul_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Consider a dedicated review/review reaction phase.</li>
+<li>Add/update the definition of done in the backlog.</li>
+</ul>
+<h3 id="to_improve_after_2024-janfeb_sprint">To Improve After 2024-Jan/Feb Sprint<a class="headerlink" href="#to_improve_after_2024-janfeb_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Improve Daily:<ul>
+<li>Try not to solve problems directly in the daily. Instead, find
+    time and place to solve them.</li>
+<li>Stop discussions that run on for too long. Sprint monarch should
+    moderate, others should have an option to signal a boring
+    discussion.</li>
+<li>Keep the "What I did yesterday" part short if it is not
+    relevant for a blocker</li>
+<li>separate "blockers" from "how much time do I have today and
+    when".</li>
+<li>When deciding on meeting times, quickly repeat the goal of the
+    meeting.</li>
+</ul>
+</li>
+<li>New concepts in last sprint:<ul>
+<li>Grab bag of 1-point stories. Could try this again but it should
+    be clearer how it is supposed to be used.</li>
+<li>Ranked-Choice Voting (with <a href="https://www.rankedchoices.com">https://www.rankedchoices.com</a>). Had
+    upsides and downsides. The choice of whether to use it again is
+    up to the sprint monarch.</li>
+</ul>
+</li>
+<li>Reduce pressure at the end of the sprint to finish all stories:<ul>
+<li>dropping stories to focus more on others is good but finishing
+    stories under time pressure just to make the deadline should be
+    avoided.</li>
+<li>Count Haslums partially for just the parts that were achieved?</li>
+<li>weekly meetings to finish stories outside of sprint?</li>
+</ul>
+</li>
+<li>Use meeting room for sprint planning, not the PhD office.</li>
+</ul>
+<h3 id="to_improve_after_2023-sep_sprint">To Improve After 2023-Sep Sprint<a class="headerlink" href="#to_improve_after_2023-sep_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>1 week sprint is good for many open stories. Otherwise prefer longer
+    sprints.</li>
+<li>Have more small tasks on the board, use (traffic light) magnet (also
+    outside of the daily).</li>
+<li>Make it easier to find a new point to enter.</li>
+<li>Organize the daily by topic.</li>
+</ul>
+<h3 id="to_improve_after_2023-jul_sprint">To Improve After 2023-Jul Sprint<a class="headerlink" href="#to_improve_after_2023-jul_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Work in pairs more often as a means to distribute knowledge.</li>
+<li>When goals/stories are fuzzy, set a deadline for some subgoal.<ul>
+<li>The negative example for this was learning about CMake.</li>
+<li>We could have for example said that we want to have a more
+    concrete plan by day 2.</li>
+</ul>
+</li>
+<li>Consider defining time boxes for meetings.<ul>
+<li>Maybe subdivide meeting into parts and ensure that there is an
+    adequate amount of time to discuss each part.</li>
+</ul>
+</li>
+</ul>
+<h3 id="to_improve_after_2023-jan_sprint">To Improve After 2023-Jan Sprint<a class="headerlink" href="#to_improve_after_2023-jan_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Analyze grid performance</li>
+<li>3 weeks are long since usually there are things left to do after the
+    sprint, so effectively the sprint is almost a month long.</li>
+<li>Towards the end of the sprint, meet to discuss on which stories we
+    want to focus so we can finish them.</li>
+<li>Every story has one person that is responsible for keeping it up to
+    date (board &amp; tracker).</li>
+</ul>
+<h3 id="to_improve_after_2022-mar_sprint">To Improve After 2022-Mar Sprint<a class="headerlink" href="#to_improve_after_2022-mar_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>daily meetings: go back to previous model where everyone says what
+    they did and what they can do on that day, but go story by story</li>
+<li>it could be helpful to always pull a story that has an easy entry
+    barrier so that someone who has spare time can directly contribute
+    (e.g., stories which require mainly mechanical work)</li>
+</ul>
+<h3 id="to_improve_after_2022-jan_sprint">To Improve After 2022-Jan Sprint<a class="headerlink" href="#to_improve_after_2022-jan_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>Daily Meetings: We will try to report the progress on a per story
+    basis and the plan for the day on an individual basis.</li>
+<li>As reviewer: Provide a time frame for your review (in consultation
+    with the person for whom the review is).</li>
+<li>Feel free to use @everyone to make announcements interesting for
+    everyone.</li>
+<li>If you are searching for new work, just ask in the Discord channels
+    of stories which interest you.</li>
+</ul>
+<h3 id="to_improve_after_2021-jun_sprint">To Improve After 2021-Jun Sprint<a class="headerlink" href="#to_improve_after_2021-jun_sprint" title="Permanent link">#</a></h3>
+<ul>
+<li>We are not happy with our story voting rules. We want to try
+    something new. Next time, one person becomes the product owner.
+    He/She decides the focus of the sprint. The product owner prepares a
+    set of well defined stories (with subtasks). The product owner does
+    not need to know everything, but should consult the developers. It
+    is his/her responsibility to create stories that motivate the sprint
+    participants. At the sprint meeting, the developers will estimate
+    the <em>Haslum</em> scores for each story and select a subset for the
+    sprint.</li>
+<li>We are not happy with the Jira board, but also do not know how to
+    improve it. The board is useful to see on which tasks someone can
+    help, but:<ul>
+<li>Some stories have a linear structure. The board is not helpful
+    for those.</li>
+<li>In a <em>physical</em> sprint with a physical board, it is easy to find
+    a task and just ask someone in the room what to do for that
+    task, in the virtual sprints with the virtual board, nobody is
+    next to me who can help me start on that task.</li>
+</ul>
+</li>
+<li>Many stories have to be better defined.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../requirements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Requirements">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Requirements
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../style-conventions/" class="md-footer__link md-footer__link--next" aria-label="Next: Style conventions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Style conventions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

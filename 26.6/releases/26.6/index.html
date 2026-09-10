@@ -1,0 +1,2599 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://new.fast-downward.org/26.6/releases/26.6/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../24.06/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Fast Downward 26.6 - Fast Downward</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fast_downward_266" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Fast Downward" class="md-header__button md-logo" aria-label="Fast Downward" data-md-component="logo">
+      
+  <img src="../../img/driller.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fast Downward
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fast Downward 26.6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aibasel/downward/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fast Downward" class="md-nav__button md-logo" aria-label="Fast Downward" data-md-component="logo">
+      
+  <img src="../../img/driller.svg" alt="logo">
+
+    </a>
+    Fast Downward
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aibasel/downward/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../documentation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/planner-usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planner usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/translator-options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../documentation/search/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Search plugins
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Search plugins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/ConstraintGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConstraintGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/Evaluator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/LabelReduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LabelReduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/LandmarkFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LandmarkFactory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeScoringFunction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeScoringFunction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeSelector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeSelector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeStrategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeStrategy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/MergeTree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MergeTree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/OpenList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenList
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/PatternCollectionGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatternCollectionGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/PatternGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PatternGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/PruningMethod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PruningMethod
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/SearchAlgorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SearchAlgorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/ShrinkStrategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShrinkStrategy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search/SubtaskGenerator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SubtaskGenerator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/search-plugin-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syntax for search plugins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/exit-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exit codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/pddl-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PDDL support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/ipc-planners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPC planners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/translator-output-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator output format
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Releases
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Fast Downward 26.6
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 26.6
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing_fast_downward_266" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencing Fast Downward 26.6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes_in_fast_downward_266" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes in Fast Downward 26.6
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 24.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 23.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 22.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 22.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 21.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 20.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19.12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 19.12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19.06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Downward 19.06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../literature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Literature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../for-developers/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    For Developers
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            For Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../for-developers/blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/blog/component-interaction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.07.2026: Overview of the new design of components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/blog/install-on-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01.04.2025: How to install and run Fast Downward on Windows 10 from source with Visual Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/blog/new-option-parser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.01.2023: The New Option Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/blog/logo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    31.01.2022: A Logo for Fast Downward
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/blog/a-deeper-look-at-states/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    29.01.2021: A Deeper Look at States
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/blog/a-day-in-the-life-of-a-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.01.2021: A Day in the Life of a State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/changelog-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog entries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/cmake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/code-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code reviews with Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/coding-conventions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++ coding conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/development-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/implementation-details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation details
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/long-term-plans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Long-term plans
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/problem-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problem transformations performed by the planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/profiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/release-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/sprint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/style-conventions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Style conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/translator-output-format-v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Translator Output Format v4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing_fast_downward_266" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencing Fast Downward 26.6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes_in_fast_downward_266" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes in Fast Downward 26.6
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="fast_downward_266">Fast Downward 26.6<a class="headerlink" href="#fast_downward_266" title="Permanent link">#</a></h1>
+<p>Fast Downward 26.6 was released on September 10, 2026.</p>
+<p>Highlights:</p>
+<ul>
+<li>
+<p>The version number no longer uses leading zeros (26.6 instead of
+  26.06). Our previous convention followed Ubuntu. Our new one follows
+  PyPI, which strips leading zeros. This change is in preparation of a
+  future release on PyPI.</p>
+</li>
+<li>
+<p>The translator is now available as the standalone package
+  <code>fast-downward.translate</code> on PyPI. The version number matches the
+  corresponding Fast Downward release. For example, install this
+  version with <code>pip install fast-downward.translate==26.6</code>. You can
+  also invoke the translator directly from source, circumventing the
+  <code>fast-downward.py</code> script, by running <code>python3 -m
+  fast_downward.translate</code> from directory <code>src/translate</code>. See
+  issue1235 and issue1185 for details.</p>
+</li>
+<li>
+<p>The planner now has better knowledge of which of its configurations
+  are complete and therefore returns the exit code <code>SEARCH_UNSOLVABLE</code>
+  in more cases where it previously returned
+  <code>SEARCH_UNSOLVED_INCOMPLETE</code>. There is also a new exit code
+  <code>SEARCH_UNSOLVABLE_WITHIN_BOUND</code> for cases where the user passed a
+  bound to the search algorithm. See issue1201 for details.</p>
+</li>
+<li>
+<p>PDDL error detection and handling are much improved. See issue220
+  for details.</p>
+</li>
+<li>
+<p>The search component now performs more checks on the validity of its
+  input file (<code>output.sas</code> by default). This is only relevant for
+  users that used the search component directly on tasks that were not
+  produced by Fast Downward's translator. See issue1146 for details.</p>
+</li>
+<li>
+<p>There is a new translator option
+  <code>--condition-normalization-strategy</code> for different ways of handling
+  complex condititions (preconditions, goals, effect conditions, axiom
+  bodies). The old behaviour is the default. See issue1222 for
+  details.</p>
+</li>
+<li>
+<p>There is a new translator option <code>--keep-no-ops</code> that can be used to
+  preserve operators without effects, which are pruned by default. See
+  issue1184 for details. As of this writing, there is a bug related to
+  enabling this option, which can be worked around by also enabling
+  <code>--keep-unimportant-variables</code>. See issue1241 for details.</p>
+</li>
+<li>
+<p>Evaluators (including heuristics) no longer have a <code>transform</code>
+  argument to modify action costs. Instead, the evaluator
+  <code>eval_modify_costs</code> can be used to invoke another evaluator with
+  modified costs. Configurations such as <code>h(...,
+  transform=adapt_costs(cost_type=X))</code> must be rewritten as
+  <code>eval_modify_costs(h(...), cost_type=X)</code>. See issue559 for details.</p>
+</li>
+<li>
+<p>The landmark factories <code>lm_exhaust</code> and <code>lm_rhw</code> no longer have the
+  option <code>only_causal_landmarks</code>. For <code>lm_exhaust</code>, there is a new
+  option <code>use_unary_relaxation</code>, which has a similar effect to the
+  removed option, but a cleaner and more efficient implementation. See
+  issue1074 for details.</p>
+</li>
+<li>
+<p>The <code>lmcut</code> heuristic has two new options to control the cut
+  generation. The default setting
+  <code>lmcut(goal_zone_detection=true,border_detection=true)</code> often leads
+  to an improved heuristic compared to the old behaviour. This
+  implements an idea by Lauer and Fickert (HSDIP workshop at ICAPS
+  2020). See issue1228 for details.</p>
+</li>
+<li>
+<p>For developers: the translator is now a Python package
+  <code>fast_downward.translate</code>. The code now is
+  in the directory <code>src/translate/fast_downward/translate</code> (previously
+  <code>src/translate</code>). See issue1235 and issue1185 for details.</p>
+</li>
+<li>
+<p>For developers: we have solved (although as a work-in-progress) the
+  "component interaction problem", which has been a major open issue
+  for more than 11 years. Components such as heuristics and search
+  algorithms now have two forms: a task-independent form and a
+  task-specific form. See issue559 for details. You can read more
+  about the design in the blog:</p>
+<p><a href="https://www.fast-downward.org/latest/for-developers/blog/component-interaction/">https://www.fast-downward.org/latest/for-developers/blog/component-interaction/</a></p>
+</li>
+</ul>
+<p>The Apptainer and Docker distributions of the planner include LP support using the <a href="https://soplex.zib.de/">SoPlex</a> solver.</p>
+<h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h2>
+<ul>
+<li>source tarball: <a href="../../files/release26.6/fast-downward-26.6.tar.gz">fast-downward-26.6.tar.gz</a></li>
+<li>Apptainer image: download with <code>apptainer pull fast-downward.sif docker://aibasel/downward:26.6</code></li>
+<li>Docker container: <a href="https://hub.docker.com/r/aibasel/downward">aibasel/downward:26.6 on Docker Hub</a></li>
+<li>Vagrantfile: <a href="../../files/release26.6/Vagrantfile">Vagrantfile</a> for Fast Downward 26.6</li>
+</ul>
+<p>For Apptainer, Docker and Vagrant, see "<a href="../../documentation/quick-start/">getting
+started</a>" for instructions on how to run the
+planner. That page explains how to run the latest release of Fast Downward, so
+you have to amend the instructions if you want to run an older release.</p>
+<p>For the tarball, if you have satisfied all dependencies, the following should build and run the planner with configuration alias <code>lama-first</code> on PDDL files <code>/path/to/domain.pddl</code> and <code>/path/to/problem.pddl</code> on a Linux or macOS system:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>fast-downward-26.6.tar.gz
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>fast-downward-26.6
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./build.py
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>./fast-downward.py<span class="w"> </span>--alias<span class="w"> </span>lama-first<span class="w"> </span>/path/to/domain.pddl<span class="w"> </span>/path/to/problem.pddl
+</span></code></pre></div>
+<p>For dependencies and more advanced information (including Windows builds), see <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">the build instructions</a>.</p>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
+<p>For licensing reasons, the binary distributions of Fast Downward have limited
+support for commercial LP solvers (like CPLEX). The Docker and Apptainer
+distributions only support SoPlex. The Vagrant version supports SoPlex and/or
+CPLEX if they are available at provisioning time. See "<a href="../../documentation/quick-start/">getting started</a>" for more information.</p>
+<h2 id="referencing_fast_downward_266">Referencing Fast Downward 26.6<a class="headerlink" href="#referencing_fast_downward_266" title="Permanent link">#</a></h2>
+<p>If you use this version of Fast Downward in a scientific publication, we encourage you to mention the version number, as in
+"We ran experiments with Fast Downward 26.6." The canonical reference for citing Fast Downward is the following journal paper:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>@Article{helmert-jair2006,
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  author =  "Malte Helmert",
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  title =   "The {Fast} {Downward} Planning System",
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  journal = "Journal of Artificial Intelligence Research",
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  year =    "2006",
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  volume =  "26",
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  pages =   "191--246"
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>}
+</span></code></pre></div>
+<h2 id="changes_in_fast_downward_266">Changes in Fast Downward 26.6<a class="headerlink" href="#changes_in_fast_downward_266" title="Permanent link">#</a></h2>
+<p>Details:</p>
+<ul>
+<li>
+<p>[issue1235] Make translator available on PyPI.</p>
+<p>Added the necessary scripts and infrastructure to upload the
+translator as a standalone package to PyPI.</p>
+<p>The plan is to make a translator release every time we make a regular
+Fast Downward release. The process is documented in our release docs.</p>
+<p>The translator used to be a module called <code>translate</code>, and the code
+lived in <code>src/translate</code>.</p>
+<p>It is now a module called <code>fast_downward/translate</code>, and the code
+lives in <code>src/translate/fast_downward/translate</code>.</p>
+<p>We changed the module name to support uploading the translator as a
+stand-alone package on PyPI with a reasonable name, and for the
+overall directory structure we also considered future plans with other
+Python code living alongside the translator. See the issue for more
+discussion.</p>
+<p>Inside the translator code, while the diff looks huge, the only real
+changes are replacing all occurrences of <code>from translate import XYZ</code>
+with <code>from fast_downward.translate import XYZ</code>.</p>
+</li>
+<li>
+<p>[issue1231] add early stopping to iterated search. (#302)</p>
+<p>Instead of having the user pass a <code>continue_on_fail</code> flag for the
+iterated search, we use the completeness checks to detect whether or not
+continuing the search makes sense, otherwise we stop early.</p>
+<p>Existing configs that call the iterated search with
+<code>continue_on_fail=&lt;whatever&gt;</code> should remove this part as the keyword
+argument <code>continue_on_fail</code> is no longer known to the iterated search.</p>
+</li>
+<li>
+<p>[issue1224] Switch two-sided to one-sided constraints in the LP interface.</p>
+<p>Constraints in the LP interface are now one-sided constraints, i.e. expr &lt;= RHS,
+instead of two-sided constraints, i.e. LB &lt;= expr &lt;= UB. This generally improves
+the performance of CPLEX configurations and has a negative impact on the Rankooh
+and Rintanen implementation of delete-relaxation constraints for SoPlex.</p>
+<p>Developers: you should represent two-sided constraints (LB &lt;= expr &lt;= UB) into a
+pair of one-sided constraints (expr &lt;= UB, expr &gt;= LB).</p>
+</li>
+<li>
+<p>[issue1229] Isolate domain transition graph in RHW landmark factory.</p>
+<p>This is a pure refactoring without noteworthy impact on planner performance.</p>
+</li>
+<li>
+<p>[issue1222] Add translator options to decompose complex conditions.</p>
+<p>Complex conditions can be handled in the following three different ways using the new translator option <code>--condition-normalization-strategy</code>.</p>
+<ul>
+<li><code>dnf</code> (default): Replace complex goals with a derived predicate defined by a single axiom and naively convert all conditions to DNF.</li>
+<li><code>axiomatize_disjunctions</code>: Replace complex goals with a derived predicate defined by a single axiom and decompose all disjunctions using derived predicates.</li>
+<li><code>axiomatize_disjunctions_existentials</code>: Decompose every disjunction and existential quantifier in action conditions and the goal, while decomposing only disjunctions in axiom bodies.</li>
+</ul>
+<p>The motivation for the three options are the following.</p>
+<ul>
+<li>Option <code>dnf</code> tries to avoid axioms, as they are not supported by many planner components.</li>
+<li>Option <code>axiomatize_disjunctions</code> decomposes complex conditions and thus avoids the exponential behavior of option <code>dnf</code>. However, it may introduce (more) axioms.</li>
+<li>Option <code>axiomatize_disjunctions_existentials</code> generally introduces the largest number of axioms, but it does not produce multiple operator instances for the same original operator (as the other two options may do). This can be particularly helpful for reasoning about the plan space, for example in plan counting and enumeration.</li>
+</ul>
+</li>
+<li>
+<p>[issue1228] alternative precondition choice functions for LM-Cut</p>
+<p>We added two options (goal_zone_detection and border_detection) to the
+LM-cut computation, following Lauer and Fickert (2020).</p>
+<p>The tie-breaking strategies control how the h^max supporter of a zero-cost
+operator is selected while creating the goal zone.</p>
+<p>We also made some minor code-style adjustments to conform to the coding
+conventions.</p>
+</li>
+<li>
+<p>[issue1201] Handle new exit code in driver.</p>
+<p>issue1201 added the new exit code <code>UNSOLVABLE_WITHIN_BOUND</code> that
+requires separate handling when running a portfolio.</p>
+</li>
+<li>
+<p>[issue1232] Rename translator problem file input from "task" to "problem".</p>
+<p>We aligned the terminology in the translator code base with the
+documentation on the website, making it more consistent.</p>
+<p>A "task" refers to the full task with initial state, actions, axioms,
+goal...  For the part corresponding to the PDDL problem file (objects,
+initial state, goal), we use the term "problem".</p>
+<p>We changed the name of the translator input and internal names
+accordingly.</p>
+</li>
+<li>
+<p>[issue1201] Check whether a configuration guarantees completeness.</p>
+<p>We added a check determining whether the chosen configuration guarantees completeness (within the given bound) of the search. We return the exit code <code>SEARCH_UNSOLVABLE</code> in more situations where we can now guarantee completeness of the search and we added the new exit code <code>SEARCH_UNSOLVABLE_WITHIN_BOUND</code> that is returned when completeness is guaranteed only within the given bound. We also added tests for both exit codes <code>SEARCH_UNSOLVABLE</code> and <code>SEARCH_UNSOLVABLE_WITHIN_BOUND</code>.</p>
+</li>
+<li>
+<p>[issue1223] Document translator options on the Fast Downward website.</p>
+<p>We now have an (auto-generated) page with the translator options
+on the Fast Downward website (e.g.
+<a href="https://www.fast-downward.org/latest/documentation/translator-options/">https://www.fast-downward.org/latest/documentation/translator-options/</a>).
+We also use the terms "task" and "problem" in the documentation in a
+more consistent fashion.</p>
+</li>
+<li>
+<p>[issue559] Switch to Task-Independent Components.</p>
+<p>We redesigned how components specified on the command line are associated with
+a specific task. Most of the changes are internal, but one user-visible change
+is that heuristics no longer accept an optional task transformation via the
+<code>transform</code> argument. The only supported task transformation was to evaluate
+the heuristic under a modified cost function. This functionality is now
+provided by the <code>eval_modify_costs</code> evaluator. Configurations such as
+  <code>h(..., transform=adapt_costs(cost_type=X))</code>
+must be rewritten as
+  <code>eval_modify_costs(h(...), cost_type=X)</code>.</p>
+<p>Developers: Internally, components such as heuristics and search algorithms now
+have two forms: a task-independent form and a task-specific form.
+Task-independent components can often use the templated helper
+<code>components::make_auto_task_independent_component</code>. It stores constructor
+arguments until a task is bound, recursively binds any subcomponents to that
+task, and then constructs the task-specific component from the resulting
+arguments.</p>
+<p>Arguments for nested components should now take task-independent types. For
+example, the sum evaluator now takes a list of <code>TaskIndependentEvaluator</code>s
+instead of a list of <code>Evaluator</code>s.</p>
+<p>You can read more about the design in the blog:
+<a href="https://www.fast-downward.org/latest/for-developers/blog/component-interaction/">https://www.fast-downward.org/latest/for-developers/blog/component-interaction/</a></p>
+</li>
+<li>
+<p>[issue1205] restrict weight parameter for weighted evaluator to be non-negative. (#294)</p>
+</li>
+<li>
+<p>[issue1214] prevent synopsis overwriting. (#289)</p>
+<p>Move part that would cause the overwriting of the synopsis to a note.</p>
+<p>Add assertions to prevent overwriting in the future.</p>
+</li>
+<li>
+<p>[issue1200] Add reference to documentation of AbstractTask.  (#282)</p>
+</li>
+<li>
+<p>[issue1217] translator: separate argument parser construction from parsing</p>
+<p>We now have two separate functions for creating the argument parser of the
+translator and parsing the arguments using this parser. This used to be
+combined in one function.</p>
+<p>For Fast Downward itself, this change makes no difference, but it makes it
+easier for other users of the translator to hook into the argument parsing
+process.</p>
+</li>
+<li>
+<p>[issue1193] Update clang-tidy-16 to clang-tidy-18. (#279)</p>
+</li>
+<li>
+<p>[issue1198] Refactor responsibilities of RawRegistry, TypeRegistry and Registry.</p>
+<p>Refactor the construction of the feature registry and type registry, so
+repeated construction cannot lead to errors and functionality is moved
+out of the RawRegistry class.</p>
+</li>
+<li>
+<p>[issue1197] Handle unstratified axioms error. (#280)</p>
+</li>
+<li>
+<p>[issue1195] Remove (buggy and unused) computation of CG heuristic cache statistics.</p>
+</li>
+<li>
+<p>[issue1063] translator: Compute indirect subtypes more efficiently.</p>
+</li>
+<li>
+<p>[issue1077] Remove the pattern collection generator "combo()".</p>
+<p>This pattern collection generator was ad hoc, lacked a description
+in the documentation and was never mentioned in the literature to
+the best of our knowledge.</p>
+<p>We recommend using the following generators instead:
+- with cpdbs: multiple_cegar or hillclimbing
+- with zopdbs: disjoint_cegar</p>
+<p>See the issue tracker for more discussion.</p>
+</li>
+<li>
+<p>[issue1191] Refactor interface of MergeSelector.</p>
+<p>MergeSelector now has two variants of the method for choosing the best
+merge candidate for a given factored transition system: one that
+considers all merge candidates for the given factored transition
+system, and another one that only considers the given (sub)set of merge
+candidates.</p>
+</li>
+<li>
+<p>[issue1192] Fix default value handling in MIASM scoring function.</p>
+<p>The MIASM scoring function now handles default/missing values (-1)
+for parameters max_states, max_states_before_merge, and
+shrink_threshold_before_merge in the same way as the merge-and-shrink
+heuristic does.</p>
+</li>
+<li>
+<p>[issue1190] Update documentation on the Fast Downward website.</p>
+<p>The online documentation for Fast Downward has been updated.
+Especially the steps for getting started with Fast Downward and running
+the planner should be clearer now.</p>
+</li>
+<li>
+<p>[issue1185] Make the translator a python package.</p>
+<p>The translator is now a python package (within Fast Downward).
+This does not affect how Fast Downward is called, but if you want to
+call the translator directly then use 'python3 -m translate' instead of
+'python3 translate/main.py' (which replaced the previous 'translate.py').</p>
+</li>
+<li>
+<p>[issue1146] Validate SAS file (#227)</p>
+<p>The search component now does more checking of the validity of its input file.
+We add a more thorough diagnostic message when invalid input is provided. We
+restructured to explicitly split the parser, lexer and internal task
+representation. The SAS task parsing now takes roughly 25% more time in our
+experiments.</p>
+</li>
+<li>
+<p>[issue1189] Check code style with clang-format instead of uncrustify.</p>
+<p>Because uncrustify does currently not correctly handle modern C++ features such as concepts, we switch to the more up-to-date clang-format. This makes our style checks more opinionated and more strict. Our configuration is based on the LLVM style and defined in <code>.clang-format</code>. To reformat all source files according to the configuration you can for example run the following command in the repository root: <code>clang-format -i src/search/**/*.{cc,h}</code>.</p>
+</li>
+<li>
+<p>[issue1186] Refactor the EagerSearch step function without changing the search behavior.</p>
+<ul>
+<li>Split logic from step() into get_next_node_to_expand() and expand().</li>
+<li>Move successor generation to a dedicated generate_successors() method.</li>
+<li>Add helper functions for collecting preferred operators.</li>
+</ul>
+</li>
+<li>
+<p>[issue1188] Add a script that creates a local build of the website.</p>
+<p>The script is located in misc/website and combines the generated
+documentation, the documentation from docs/ and the one from
+the separate downward-markdown repository.</p>
+</li>
+<li>
+<p>[issue1184] translator: Add --keep-no-ops option</p>
+<p>We added a new option <code>--keep-no-ops</code> to the translator, which defaults
+to false.</p>
+<p>To enable the option, add <code>--translate-options --keep-no-ops</code> to the end
+of the argument list for <code>fast-downward.py</code>.</p>
+<p>The translator component usually prunes all ground actions that have no
+effects. When the new option is set to true, these actions are no longer
+pruned. There is generally no good reason to use this option in regular
+classical planning settings. It is primarily intended for users that extend
+Fast Downward to richer planning formalisms such as FOND planning or
+other scenarios where the planner is part of a larger pipeline.</p>
+<p>On the extended downward-benchmark benchmark set, 1208 out of 3955
+tasks for which we could finish translation within the resource limits
+in our experiments produce at least one action with no effect with the
+new flag.</p>
+</li>
+<li>
+<p>[issue 1163] Print code that was used to build the code</p>
+<p>We now print the code revision that was used to build the search code.
+This is printed to to the log at the start of every planner run and
+also be queried directly with <code>./fast-downward.py --version</code>.
+As part of this change, we dropped support for builds outside of the
+<code>builds</code> directory.</p>
+</li>
+<li>
+<p>[issue992] Make landmark code more readable.</p>
+<p>Refactor all files in <code>src/search/landmarks</code> with the main objective to
+structure them to clarify what they do. The main changes include
+ - breaking apart long functions,
+ - renaming variables and functions, and
+ - making code consistent with our coding conventions.
+Further changes include
+ - using more suitable data structures,
+ - improving simple procedures, and
+ - using the <code>ranges</code> library.</p>
+<p>The general functionality remains unchanged, or at least that was our
+intention. We verified experimentally that this appears to be the case
+for the most commonly used landmark configurations. Performance was
+affected positively over all, mainly because landmark generation is
+faster with most factories. Most remarkably, the h^m landmark factory
+solves 24 more problems, but also LAMA improves slightly in terms of
+coverage (3-4 more problems solved).</p>
+</li>
+<li>
+<p>[issue1183] Improve how RHW determines landmark preconditions.</p>
+<p>The approximation of landmark preconditions may now yield larger, more accurate
+sets in the presence of conditional effects. This potentially leads to more
+landmarks found in the RHW backchaining landmark generation. The change has no
+effect in the optimal benchmark suite and only affects four domains in the
+satisficing benchmark suite: flashfill (~69% more landmarks), miconic-fulladl
+(~126% more landmarks), miconic-simpleadl (~88% more landmarks), and settlers
+(~88% more landmarks). This increase has no significant impact on the search
+behavior of LAMA and LAMA-first.</p>
+</li>
+<li>
+<p>[issue220] Improve PDDL error detection and handling</p>
+<ul>
+<li>Conditions are allowed to be empty.</li>
+<li>We print a warning if a predicate is defined in the predicates-section that
+  uses the same name as a type.</li>
+<li>Checking if the arity is correct now also happens for problem files and not
+  only for domain files.</li>
+<li>"number" cannot be defined as a (new) type in the types section because it is
+  reserved as a special type.</li>
+<li>The keyword "either" is allowed only in the predicates section because the
+  storage domain uses it. It is not supported though.</li>
+<li>We warn if duplicate action names occur.</li>
+<li>The end of a domain file is now better handled. Before, everything except
+  "metric" coming after the goal was ignored. Now nothing except the metric
+  section is allowed after the goal.</li>
+<li>An empty list before a type declaration raises a warning (not throws an error
+  because the woodworking domain contains some files where this would crash).</li>
+<li>Existence checks for predicate names and terms.</li>
+</ul>
+</li>
+<li>
+<p>[issue1182] Use std::make_unique instead of utils::make_unique_ptr.</p>
+</li>
+<li>
+<p>[issue1174] Retire autodoc for the wiki</p>
+<p>We used autodoc to generate the documentation of the search plugins
+for the wiki. Since the wiki has been retired, we remove this functionality
+from the code base. The tox test now instead tests the generation of the
+downward website (including the generation of the search plugin
+documentation).</p>
+</li>
+<li>
+<p>[issue1174] Polish markdown documentation</p>
+<p>We improved the markdown documentation while checking that everything has been
+carried over from the old wiki.  This includes also some updates of outdated
+examples (e.g.  replacing references to the lmcount heuristic with the
+corresponding new heuristics and replacing  the old --evaluator syntax with
+let(...).</p>
+</li>
+<li>
+<p>[issue1179] Avoid hardcoding bugfix releases in vagrantfile.</p>
+<p>In the Vagrantfile, the latest bugfix release is now cloned from the corresponding branch instead of using a hardcoded tag.</p>
+</li>
+<li>
+<p>[issue1174] Move version-dependent documentation into the main repository.</p>
+<p>In an effort to retire the old wiki, we move the parts of the documentation that
+belong to a specific code version into the main code repository. The documentation
+of the search plugin types is now also generated in markdown (from Scorpion).</p>
+</li>
+<li>
+<p>[issue1074] Change behavior of option to compute only causal landmarks.</p>
+<p>We remove the option to consider only causal landmarks (<code>only_causal_landmarks</code>)
+from the landmark factories <code>lm_exhaust</code> and <code>lm_rhw</code>. For <code>lm_exhaust</code> we add a
+new boolean option <code>use_unary_relaxation</code> which yields an equivalent landmark
+graph as a result. Its effect in the landmark computation is different, though,
+as it no longer constitutes a post-processing to remove all non-causal
+landmarks, but makes sure only causal landmarks are added in the first place.
+This results in lower landmark generation time for <code>lm_exhaust</code> with this option
+active; on average, landmark generation takes 25-30% of the time it used to.</p>
+<p>Removing the option from <code>lm_rhw</code> affects the portfolios seq-sat-fdss-2018 and
+seq-sat-fdss-2023, which used to have some configurations with the flag on and
+others with the flag off. Simply removing the option (essentially turning the
+flag off in all configurations) didn't have a negative effect as can be seen
+here:
+<a href="https://ai.dmi.unibas.ch/_experiments/ai/downward/issue1074/data/issue1074-v5-sat-eval/issue1074-v5-portfolios-issue1074-base-issue1074-v5-compare.html">https://ai.dmi.unibas.ch/_experiments/ai/downward/issue1074/data/issue1074-v5-sat-eval/issue1074-v5-portfolios-issue1074-base-issue1074-v5-compare.html</a></p>
+</li>
+<li>
+<p>[issue1081] Move error handling into constructors.</p>
+<p>Parameters are no longer checked in the Feature of a component but in its constructor.</p>
+</li>
+<li>
+<p>[issue1175] Fix Vagrantfile template after vagrant API change.</p>
+</li>
+<li>
+<p>[issue1170] SCC merge strategy: remove option to use a merge tree.</p>
+<p>Conceptually, it doesn't make too much sense to use a precomputed merge strategy for a subset of factors, and the option was never used in a paper. We remove it to simplify the code and facilitate the integration of other options.</p>
+</li>
+<li>
+<p>[issue1165] Stop getting landmarks by atom outside of landmark factories.</p>
+<p>We no longer assume that landmarks do not overlap outside of the landmark
+factories. Semantics of the code do not change and runtimes stay similar</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: ">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../24.06/" class="md-footer__link md-footer__link--next" aria-label="Next: Fast Downward 24.06">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Fast Downward 24.06
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
