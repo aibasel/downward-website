@@ -1970,20 +1970,21 @@
 <li>that we can successfully run the planner from the produced Vagrantfile (automatically includes SoPlex; to also build the VM with CPLEX, you need an environment variable <code>DOWNWARD_LP_INSTALLERS</code> that points to a directory containing the CPLEX installer in the correct version)</li>
 </ul>
 </li>
-<li>Build and upload the Python package to PyPI (requires credentials, Gabi has them.)<ol>
+<li>Build and upload the Python package to PyPI (requires credentials, Malte and Gabi have them.)<ol>
 <li>Prepare the Python package.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./misc/releases/prepare-translator-package.sh $TAG
 </span></code></pre></div></li>
 <li>Follow the instructions printed by the script to test and upload the package to PyPI.</li>
 </ol>
 </li>
-<li>Regular releases only: create a documentation page for the release in the <em>downward-markdown</em> repository. We suggest starting from a copy of the page for the latest release in <code>docs/releases</code>.<ol>
+<li>Regular releases only: create a documentation page for the release in the <em>downward-markdown</em> repository (main branch). We suggest starting from a copy of the page for the latest release in <code>docs/releases</code>.<ol>
 <li>Update the date and release version name.</li>
 <li>Update the links and references in section "Downloads".</li>
 <li>Update the changelog.</li>
 <li>Add the tarball to a new folder for the release in <code>docs/files</code>.</li>
 <li>Add the Vagrant file created by the <code>prepare-release.sh</code> script to the same folder.</li>
 <li>Create a link in <code>docs/releases/index.md</code> and <code>docs/releases/SUMMARY.md</code> to the page of the new release.</li>
+<li>Commit and push.</li>
 </ol>
 </li>
 <li>Bugfix releases only: update the documentation page of the release (for bugfix release <code>26.6.1</code>, reuse the release page <code>26.6</code>). See the page for <a href="../../releases/22.06/">release 22.06</a> for an example. The Vagrantfile does not need to be updated for a bugfix release.<ol>
