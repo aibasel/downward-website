@@ -2053,9 +2053,14 @@
 <p>A landmark factory specification is either a newly created instance or a landmark factory that has been defined previously. This page describes how one can specify a new landmark factory instance. For re-using landmark factories, see OptionSyntax#Landmark_Predefinitions.</p>
 <p>This feature type can be bound to variables using <code>let(variable_name, variable_definition, expression)</code> where <code>expression</code> can use <code>variable_name</code>. Predefinitions using <code>--evaluator</code>, <code>--heuristic</code>, and <code>--landmarks</code> are automatically transformed into <code>let</code>-expressions but are deprecated. (See <a href="../../search-plugin-syntax/#variables_as_parameters">search plugin syntax</a>)</p>
 <h2 id="exhaustive_landmarks">Exhaustive landmarks<a class="headerlink" href="#exhaustive_landmarks" title="Permanent link">#</a></h2>
-<p>Exhaustively checks for each atom if it is a landmark.This check is done using relaxed planning.
+<p>Tests for every atom if the relaxed planning task where all achievers of this atom are removed is solvable. If not, the atom is a landmark. For the concept of delete relaxation, see the following article:</p>
+<ul>
+<li>Jörg Hoffmann and Bernhard Nebel.<br />
+ <a href="https://doi.org/10.1613/jair.855">The FF Planning System: Fast Plan Generation Through Heuristic Search</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 14:253-302. 2001.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lm_exhaust(use_unary_relaxation=false, verbosity=normal)
-</span></code></pre></div></p>
+</span></code></pre></div>
 <ul>
 <li><em>use_unary_relaxation</em> (bool): compute landmarks of the unary relaxation, i.e., landmarks for the delete relaxation of a task transformation such that each operator is split into one operator for each of its effects. This kind of landmarks was previously known as "causal landmarks". Setting the option to true can reduce the overall number of landmarks, which can make the search more memory-efficient but potentially less informative.</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -2071,7 +2076,7 @@
 <li><strong>conditional_effects:</strong> ignored, i.e. not supported</li>
 </ul>
 <h2 id="hm_landmarks">h^m landmarks<a class="headerlink" href="#hm_landmarks" title="Permanent link">#</a></h2>
-<p>The landmark generation method introduced in the following paper</p>
+<p>The landmark generation method introduced in the following paper:</p>
 <ul>
 <li>Emil Keyder, Silvia Richter and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/keyder-et-al-ecai2010.pdf">Sound and Complete Landmarks for And/Or Graphs</a>.<br />
@@ -2116,10 +2121,10 @@
 <li><strong>conditional_effects:</strong> supported if all components support them</li>
 </ul>
 <h2 id="hps_orders">HPS orders<a class="headerlink" href="#hps_orders" title="Permanent link">#</a></h2>
-<p>Adds reasonable orders described in the following paper</p>
+<p>Adds reasonable orders described in the following article:</p>
 <ul>
 <li>Jörg Hoffmann, Julie Porteous and Laura Sebastia.<br />
- <a href="https://jair.org/index.php/jair/article/view/10390/24882">Ordered Landmarks in Planning</a>.<br />
+ <a href="https://doi.org/10.1613/jair.1492">Ordered Landmarks in Planning</a>.<br />
  <em>Journal of Artificial Intelligence Research</em> 22:215-278. 2004.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lm_reasonable_orders_hps(lm_factory, verbosity=normal)
@@ -2140,9 +2145,20 @@
 <li><strong>conditional_effects:</strong> supported if subcomponent supports them</li>
 </ul>
 <h2 id="rhw_landmarks">RHW landmarks<a class="headerlink" href="#rhw_landmarks" title="Permanent link">#</a></h2>
-<p>The landmark generation method introduced by Richter, Helmert and Westphal (AAAI 2008).
+<p>The landmark generation method was introduced in the following paper:</p>
+<ul>
+<li>Silvia Richter, Malte Helmert and Matthias Westphal.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/richter-et-al-aaai2008.pdf">Landmarks Revisited</a>.<br />
+ In <em>Proceedings of the 23rd AAAI Conference on Artificial Intelligence (AAAI 2008)</em>, pp. 975-982. AAAI Press, 2008.</li>
+</ul>
+<p>The algorithm is described in more detail in the following article:</p>
+<ul>
+<li>Silvia Richter and Matthias Westphal.<br />
+ <a href="https://doi.org/10.1613/jair.2972">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>lm_rhw(disjunctive_landmarks=true, use_orders=true, verbosity=normal)
-</span></code></pre></div></p>
+</span></code></pre></div>
 <ul>
 <li><em>disjunctive_landmarks</em> (bool): keep disjunctive landmarks</li>
 <li><em>use_orders</em> (bool): use orders between landmarks</li>
@@ -2159,9 +2175,14 @@
 <li><strong>conditional_effects:</strong> supported</li>
 </ul>
 <h2 id="zhugivan_landmarks">Zhu/Givan landmarks<a class="headerlink" href="#zhugivan_landmarks" title="Permanent link">#</a></h2>
-<p>The landmark generation method introduced by Zhu &amp; Givan (ICAPS 2003 Doctoral Consortium).
+<p>The landmark generation method is described in the following paper:</p>
+<ul>
+<li>Lin Zhu and Robert Givan.<br />
+ <a href="https://icaps03.icaps-conference.org/satellite_events/documents/dc/33/Zhu.pdf">Landmark Extraction via Planning Graph Propagation</a>.<br />
+ In <em>ICAPS 2003 Doctoral Consortium</em>, pp. 156-160. 2003.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>lm_zg(use_orders=true, verbosity=normal)
-</span></code></pre></div></p>
+</span></code></pre></div>
 <ul>
 <li><em>use_orders</em> (bool): use orders between landmarks</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>

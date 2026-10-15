@@ -2000,8 +2000,8 @@
 <h2 id="bismulation_based_shrink_strategy">Bismulation based shrink strategy<a class="headerlink" href="#bismulation_based_shrink_strategy" title="Permanent link">#</a></h2>
 <p>This shrink strategy implements the algorithm described in the paper:</p>
 <ul>
-<li>Raz Nissim, Joerg Hoffmann and Malte Helmert.<br />
- <a href="https://ai.dmi.unibas.ch/papers/nissim-et-al-ijcai2011.pdf">Computing Perfect Heuristics in Polynomial Time: On Bisimulation and Merge-and-Shrink Abstractions in Optimal Planning.</a>.<br />
+<li>Raz Nissim, Jörg Hoffmann and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/nissim-et-al-ijcai2011.pdf">Computing Perfect Heuristics in Polynomial Time: On Bisimulation and Merge-and-Shrink Abstraction in Optimal Planning</a>.<br />
  In <em>Proceedings of the Twenty-Second International Joint Conference on Artificial Intelligence (IJCAI 2011)</em>, pp. 1983-1990. AAAI Press, 2011.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>shrink_bisimulation(greedy=false, at_limit=return)
@@ -2019,7 +2019,7 @@
 <h2 id="f-preserving_shrink_strategy">f-preserving shrink strategy<a class="headerlink" href="#f-preserving_shrink_strategy" title="Permanent link">#</a></h2>
 <p>This shrink strategy implements the algorithm described in the paper:</p>
 <ul>
-<li>Malte Helmert, Patrik Haslum and Joerg Hoffmann.<br />
+<li>Malte Helmert, Patrik Haslum and Jörg Hoffmann.<br />
  <a href="https://ai.dmi.unibas.ch/papers/helmert-et-al-icaps2007.pdf">Flexible Abstraction Heuristics for Optimal Sequential Planning</a>.<br />
  In <em>Proceedings of the Seventeenth International Conference on Automated Planning and Scheduling (ICAPS 2007)</em>, pp. 176-183. AAAI Press, 2007.</li>
 </ul>
@@ -2041,6 +2041,12 @@
 <p><strong>Note:</strong> The strategy first partitions all states according to their combination of f- and h-values. These partitions are then sorted, first according to their f-value, then according to their h-value (increasing or decreasing, depending on the chosen options). States sorted last are shrinked together until reaching max_states.</p>
 <p><strong>shrink_fh():</strong> Combine this with the merge-and-shrink option max_states=N (where N is a numerical parameter for which sensible values include 1000, 10000, 50000, 100000 and 200000) and the linear merge startegy cg_goal_level to obtain the variant 'f-preserving shrinking of transition systems', called HHH in the IJCAI 2011 paper. Also see bisimulation based shrink strategy. When we last ran experiments on interaction of shrink strategies with label reduction, this strategy performed best when used with label reduction before merging (and no label reduction before shrinking). We also recommend using full pruning with this shrink strategy, because both distances from the initial state and to the goal states must be computed anyway, and because the existence of only one dead state causes this shrink strategy to always use the map-based approach for partitioning states rather than the more efficient vector-based approach.</p>
 <h2 id="random">Random<a class="headerlink" href="#random" title="Permanent link">#</a></h2>
+<p>Randomly combining abstract states is discussed as a baseline shrinking strategy in the following paper:</p>
+<ul>
+<li>Malte Helmert, Patrik Haslum and Jörg Hoffmann.<br />
+ <a href="https://cdn.aaai.org/ICAPS/2007/ICAPS07-023.pdf">Flexible Abstraction Heuristics for Optimal Sequential Planning</a>.<br />
+ In <em>Proceedings of the 17th International Conference on Automated Planning and Scheduling (ICAPS 2007)</em>, pp. 176-183. AAAI Press, 2007.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>shrink_random(random_seed=-1)
 </span></code></pre></div>
 <ul>

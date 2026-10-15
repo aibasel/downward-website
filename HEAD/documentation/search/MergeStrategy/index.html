@@ -1996,7 +1996,12 @@
 
   <h1>MergeStrategy</h1>
 
-<p>This page describes the various merge strategies supported by the planner.</p>
+<p>This page describes the various merge strategies supported by the planner. The following paper describes how to improve the DFP merge strategy with tie-breaking, and presents two new merge strategies (dyn-MIASM and SCC-DFP):</p>
+<ul>
+<li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-icaps2016.pdf">An Analysis of Merge Strategies for Merge-and-Shrink Heuristics</a>.<br />
+ In <em>Proceedings of the 26th International Conference on Automated Planning and Scheduling (ICAPS 2016)</em>, pp. 294-298. AAAI Press, 2016.</li>
+</ul>
 <h2 id="precomputed_merge_strategy">Precomputed merge strategy<a class="headerlink" href="#precomputed_merge_strategy" title="Permanent link">#</a></h2>
 <p>This merge strategy has a precomputed merge tree. Note that this merge strategy does not take into account the current state of the factored transition system. This also means that this merge strategy relies on the factored transition system being synchronized with this merge tree, i.e. all merges are performed exactly as given by the merge tree.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>merge_precomputed(merge_tree, verbosity=normal)
@@ -2019,7 +2024,7 @@
 <ul>
 <li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-icaps2016.pdf">An Analysis of Merge Strategies for Merge-and-Shrink Heuristics</a>.<br />
- In <em>Proceedings of the 26th International Conference on Planning and Scheduling (ICAPS 2016)</em>, pp. 2358-2366. AAAI Press, 2016.</li>
+ In <em>Proceedings of the 26th International Conference on Automated Planning and Scheduling (ICAPS 2016)</em>, pp. 294-298. AAAI Press, 2016.</li>
 </ul>
 <p>In a nutshell, it computes the maximal strongly connected components (SCCs) of the causal graph, obtaining a partitioning of the task's variables. Every such partition is then merged individually, using the specified fallback merge strategy, considering the SCCs in a configurable order. Afterwards, all resulting composite abstractions are merged to form the final abstraction, again using the specified fallback merge strategy and the configurable order of the SCCs.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>merge_sccs(order_of_sccs=topological, merge_selector, verbosity=normal)

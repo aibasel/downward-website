@@ -2034,7 +2034,13 @@
 
 <p>This page describes various merge scoring functions. A scoring function, given a list of merge candidates and a factored transition system, computes a score for each candidate based on this information and potentially some chosen options. Minimal scores are considered best. Scoring functions are currently only used within the score based filtering merge selector.</p>
 <h2 id="dfp_scoring">DFP scoring<a class="headerlink" href="#dfp_scoring" title="Permanent link">#</a></h2>
-<p>This scoring function computes the 'DFP' score as described in the paper "Directed model checking with distance-preserving abstractions" by Draeger, Finkbeiner and Podelski (SPIN 2006), adapted to planning in the following paper:</p>
+<p>This scoring function computes the 'DFP' score as described in the following article:</p>
+<ul>
+<li>Klaus Dräger, Bernd Finkbeiner and Andreas Podelski.<br />
+ <a href="https://doi.org/10.1007/s10009-008-0092-z">Directed model checking with distance-preserving abstractions</a>.<br />
+ <em>International Journal on Software Tools for Technology Transfer</em> 11(1):27-37. 2009.</li>
+</ul>
+<p>It was adapted to planning in the following paper:</p>
 <ul>
 <li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-aaai2014.pdf">Generalized Label Reduction for Merge-and-Shrink Heuristics</a>.<br />
@@ -2060,11 +2066,17 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>goal_relevance()
 </span></code></pre></div></p>
 <h2 id="miasm">MIASM<a class="headerlink" href="#miasm" title="Permanent link">#</a></h2>
-<p>This scoring function favors merging transition systems such that in their product, there are many dead states, which can then be pruned without sacrificing information. In particular, the score it assigns to a product is the ratio of alive states to the total number of states. To compute this score, this class thus computes the product of all pairs of transition systems, potentially copying and shrinking the transition systems before if otherwise their product would exceed the specified size limits. A stateless merge strategy using this scoring function is called dyn-MIASM (nowadays also called sbMIASM for score-based MIASM) and is described in the following paper:</p>
+<p>This scoring function favors merging transition systems such that in their product, there are many dead states, which can then be pruned without sacrificing information. In particular, the score it assigns to a product is the ratio of alive states to the total number of states. To compute this score, this class thus computes the product of all pairs of transition systems, potentially copying and shrinking the transition systems before if otherwise their product would exceed the specified size limits. The MIASM merge strategy was introduced in the following paper:</p>
+<ul>
+<li>Gaojian Fan, Martin Müller and Robert Holte.<br />
+ <a href="https://doi.org/10.1609/socs.v5i1.18330">Non-Linear Merging Strategies for Merge-and-Shrink Based on Variable Interactions</a>.<br />
+ In <em>Proceedings of the Seventh Annual Symposium on Combinatorial Search (SoCS 2014)</em>, pp. 53-61. AAAI Press, 2014.</li>
+</ul>
+<p>A stateless merge strategy using this scoring function is called dyn-MIASM (nowadays also called sbMIASM for score-based MIASM) and is described in the following paper:</p>
 <ul>
 <li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-icaps2016.pdf">An Analysis of Merge Strategies for Merge-and-Shrink Heuristics</a>.<br />
- In <em>Proceedings of the 26th International Conference on Planning and Scheduling (ICAPS 2016)</em>, pp. 2358-2366. AAAI Press, 2016.</li>
+ In <em>Proceedings of the 26th International Conference on Automated Planning and Scheduling (ICAPS 2016)</em>, pp. 294-298. AAAI Press, 2016.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sf_miasm(shrink_strategy, max_states=-1, max_states_before_merge=-1, threshold_before_merge=-1, use_caching=true)
 </span></code></pre></div>
@@ -2092,9 +2104,14 @@
 </span></code></pre></div></p>
 <p><strong>Note:</strong> Unless you know what you are doing, we recommend using the same options related to shrinking for <code>sf_miasm</code> as for <code>merge_and_shrink</code>, i.e. the options <code>shrink_strategy</code>, <code>max_states</code>, and <code>threshold_before_merge</code> should be set identically. Furthermore, as this scoring function maximizes the amount of possible pruning, merge-and-shrink should be configured to use full pruning, i.e. <code>prune_unreachable_states=true</code> and <code>prune_irrelevant_states=true</code> (the default).</p>
 <h2 id="single_random">Single random<a class="headerlink" href="#single_random" title="Permanent link">#</a></h2>
-<p>This scoring function assigns exactly one merge candidate a score of 0, chosen randomly, and infinity to all others.
+<p>This scoring function assigns exactly one merge candidate a score of 0, chosen randomly, and infinity to all others. It is used in the following paper:</p>
+<ul>
+<li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-icaps2016.pdf">An Analysis of Merge Strategies for Merge-and-Shrink Heuristics</a>.<br />
+ In <em>Proceedings of the 26th International Conference on Automated Planning and Scheduling (ICAPS 2016)</em>, pp. 294-298. AAAI Press, 2016.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>single_random(random_seed=-1)
-</span></code></pre></div></p>
+</span></code></pre></div>
 <ul>
 <li><em>random_seed</em> (int [-1, infinity]): Set to -1 (default) to use the global random number generator. Set to any other value to use a local random number generator with the given seed.</li>
 </ul>

@@ -1963,11 +1963,23 @@
 <p>This page describes the available merge trees that can be used to precompute a merge strategy, either for the entire task or a given subset of transition systems of a given factored transition system.
 Merge trees are typically used in the merge strategy of type 'precomputed', but they can also be used as fallback merge strategies in 'combined' merge strategies.</p>
 <h2 id="linear_merge_trees">Linear merge trees<a class="headerlink" href="#linear_merge_trees" title="Permanent link">#</a></h2>
-<p>These merge trees implement several linear merge orders, which are described in the paper:</p>
+<p>These merge trees implement several linear merge orders. The orders cg_goal_level and goal_cg_level are described in the following paper:</p>
 <ul>
-<li>Malte Helmert, Patrik Haslum and Joerg Hoffmann.<br />
+<li>Malte Helmert, Patrik Haslum and Jörg Hoffmann.<br />
  <a href="https://ai.dmi.unibas.ch/papers/helmert-et-al-icaps2007.pdf">Flexible Abstraction Heuristics for Optimal Sequential Planning</a>.<br />
  In <em>Proceedings of the Seventeenth International Conference on Automated Planning and Scheduling (ICAPS 2007)</em>, pp. 176-183. AAAI Press, 2007.</li>
+</ul>
+<p>The order level is described in the following paper:</p>
+<ul>
+<li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-icaps2016.pdf">An Analysis of Merge Strategies for Merge-and-Shrink Heuristics</a>.<br />
+ In <em>Proceedings of the 26th International Conference on Automated Planning and Scheduling (ICAPS 2016)</em>, pp. 294-298. AAAI Press, 2016.</li>
+</ul>
+<p>The order reverse_level is described in the following paper:</p>
+<ul>
+<li>Raz Nissim, Jörg Hoffmann and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/nissim-et-al-ijcai2011.pdf">Computing Perfect Heuristics in Polynomial Time: On Bisimulation and Merge-and-Shrink Abstraction in Optimal Planning</a>.<br />
+ In <em>Proceedings of the Twenty-Second International Joint Conference on Artificial Intelligence (IJCAI 2011)</em>, pp. 1983-1990. AAAI Press, 2011.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>linear(variable_order=cg_goal_level, random_seed=-1, update_option=use_random)
 </span></code></pre></div>

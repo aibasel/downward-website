@@ -2378,11 +2378,11 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
 <p>Note that this kind of plan extraction does not consider all successors of a state uniformly at random but rather uses the previously deterministically chosen generating operator to settle on one successor state, which is biased by the number of operators leading to the same successor from the given state. Further note that in the presence of zero-cost operators, this procedure does not guarantee that the computed plan is strongly optimal because it does not minimize the number of used zero-cost operators leading to the state when choosing a generating operator. Experiments have shown (issue1007) that this speeds up the computation significantly while not having a strongly negative effect on heuristic quality due to potentially computing worse plans.</p>
 <p>Two further changes fix bugs of the original implementation to match the description in the paper. The first bug fix is to raise a flaw for all goal variables of the task if the plan for a PDB can be executed on the concrete task but does not lead to a goal state. Previously, such flaws would not have been raised because all goal variables are part of the collection from the start on and therefore not considered. This means that the original implementation accidentally disallowed merging patterns due to goal violation flaws. The second bug fix is to actually randomize the order of parallel operators in wildcard plan steps.</p>
 <h2 id="genetic_algorithm_patterns">Genetic algorithm patterns<a class="headerlink" href="#genetic_algorithm_patterns" title="Permanent link">#</a></h2>
-<p>The following paper describes the automated creation of pattern databases with a genetic algorithm. Pattern collections are initially created with a bin-packing algorithm. The genetic algorithm is used to optimize the pattern collections with an objective function that estimates the mean heuristic value of the the pattern collections. Pattern collections with higher mean heuristic estimates are more likely selected for the next generation.</p>
+<p>The following paper describes the automated creation of pattern databases with a genetic algorithm. Pattern collections are initially created with a bin-packing algorithm. The genetic algorithm is used to optimize the pattern collections with an objective function that estimates the mean heuristic value of the pattern collections. Pattern collections with higher mean heuristic estimates are more likely selected for the next generation.</p>
 <ul>
 <li>Stefan Edelkamp.<br />
- <a href="http://www.springerlink.com/content/20613345434608x1/">Automated Creation of Pattern Database Search Heuristics</a>.<br />
- In <em>Proceedings of the 4th Workshop on Model Checking and Artificial Intelligence (!MoChArt 2006)</em>, pp. 35-50. AAAI Press, 2007.</li>
+ <a href="https://doi.org/10.1007/978-3-540-74128-2_3">Automated Creation of Pattern Database Search Heuristics</a>.<br />
+ In <em>Model Checking and Artificial Intelligence, 4th Workshop (MoChArt 2006), Revised Selected and Invited Papers</em>, pp. 35-50. Springer, 2007.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>genetic(pdb_max_size=50000, num_collections=5, num_episodes=30, mutation_probability=0.01, disjoint=false, random_seed=-1, verbosity=normal)
 </span></code></pre></div>
@@ -2428,7 +2428,7 @@ Further parameters allow blacklisting a (sub)set of the non-goal variables which
 <ul>
 <li>Silvan Sievers, Manuela Ortlieb and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-socs2012.pdf">Efficient Implementation of Pattern Database Heuristics for Classical Planning</a>.<br />
- In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 105-111. AAAI Press, 2012.</li>
+ In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 49-56. AAAI Press, 2012.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>hillclimbing(pdb_max_size=2000000, collection_max_size=20000000, num_samples=1000, min_improvement=10, max_time=infinity, random_seed=-1, verbosity=normal)
 </span></code></pre></div>
@@ -2551,7 +2551,7 @@ The algorithm runs until reaching a given time limit. Another parameter allows e
 <h2 id="systematically_generated_patterns">Systematically generated patterns<a class="headerlink" href="#systematically_generated_patterns" title="Permanent link">#</a></h2>
 <p>Generates all (interesting) patterns with up to pattern_max_size variables. For details, see</p>
 <ul>
-<li>Florian Pommerening, Gabriele Roeger and Malte Helmert.<br />
+<li>Florian Pommerening, Gabriele Röger and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/pommerening-et-al-ijcai2013.pdf">Getting the Most Out of Pattern Databases for Classical Planning</a>.<br />
  In <em>Proceedings of the Twenty-Third International Joint Conference on Artificial Intelligence (IJCAI 2013)</em>, pp. 2357-2364. AAAI Press, 2013.</li>
 </ul>

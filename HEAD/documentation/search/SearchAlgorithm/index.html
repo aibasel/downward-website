@@ -2250,6 +2250,12 @@
 </ul>
 </li>
 </ul>
+<p><strong>Reference:</strong> The A* algorithm is described in the following article:</p>
+<ul>
+<li>Peter E. Hart, Nils J. Nilsson and Bertram Raphael.<br />
+ <a href="https://doi.org/10.1109/TSSC.1968.300136">A Formal Basis for the Heuristic Determination of Minimum Cost Paths</a>.<br />
+ <em>IEEE Transactions on Systems Science and Cybernetics</em> 4(2):100-107. 1968.</li>
+</ul>
 <p><strong>lazy_evaluator:</strong> When a state s is taken out of the open list, the lazy evaluator h re-evaluates s. If h(s) changes (for example because h is path-dependent), s is not expanded, but instead reinserted into the open list. This option is currently only present for the A* algorithm.</p>
 <h3 id="equivalent_statements_using_general_eager_search">Equivalent statements using general eager search<a class="headerlink" href="#equivalent_statements_using_general_eager_search" title="Permanent link">#</a></h3>
 <div class="language-text highlight"><pre><span></span><code>--search "astar(evaluator)"
@@ -2260,6 +2266,12 @@
                     reopen_closed=true, f_eval=sum([g(), h])))"
 </code></pre></div>
 <h2 id="eager_best-first_search">Eager best-first search<a class="headerlink" href="#eager_best-first_search" title="Permanent link">#</a></h2>
+<p>Eager best-first search and its use of preferred operators are discussed in the following paper:</p>
+<ul>
+<li>Silvia Richter and Malte Helmert.<br />
+ <a href="https://doi.org/10.1609/icaps.v19i1.13345">Preferred Operators and Deferred Evaluation in Satisficing Planning</a>.<br />
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 273-280. AAAI Press, 2009.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>eager(open, reopen_closed=false, f_eval=&lt;none&gt;, preferred=[], pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description="eager", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2286,6 +2298,12 @@
 </li>
 </ul>
 <h2 id="greedy_search_eager">Greedy search (eager)<a class="headerlink" href="#greedy_search_eager" title="Permanent link">#</a></h2>
+<p>Greedy best-first search and its use of preferred operators are discussed in the following paper:</p>
+<ul>
+<li>Silvia Richter and Malte Helmert.<br />
+ <a href="https://doi.org/10.1609/icaps.v19i1.13345">Preferred Operators and Deferred Evaluation in Satisficing Planning</a>.<br />
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 273-280. AAAI Press, 2009.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>eager_greedy(evals, preferred=[], boost=0, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description="eager_greedy", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2341,6 +2359,12 @@
 <div class="language-text highlight"><pre><span></span><code>--search "eager(single(eval1))"
 </code></pre></div>
 <h2 id="eager_weighted_a_search">Eager weighted A* search<a class="headerlink" href="#eager_weighted_a_search" title="Permanent link">#</a></h2>
+<p>Weighted A* is described in the following article:</p>
+<ul>
+<li>Ira Pohl.<br />
+ <a href="https://doi.org/10.1016/0004-3702%2870%2990007-X">Heuristic Search Viewed as Path Finding in a Graph</a>.<br />
+ <em>Artificial Intelligence</em> 1(3-4):193-204. 1970.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>eager_wastar(evals, preferred=[], reopen_closed=true, boost=0, w=1, pruning=null(), cost_type=normal, bound=infinity, max_time=infinity, description="eager_wastar", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2368,15 +2392,22 @@
 </li>
 </ul>
 <p><strong>Open lists and equivalent statements using general eager search:</strong> See corresponding notes for "(Weighted) A* search (lazy)"</p>
-<p><strong>Note:</strong> Eager weighted A<em> search uses an alternation open list while A</em> search uses a tie-breaking open list. Consequently, </p>
+<p><strong>Note:</strong> Eager weighted A* search uses an alternation open list while A* search uses a tie-breaking open list. Consequently, </p>
 <div class="language-text highlight"><pre><span></span><code>--search "eager_wastar([h()], w=1)"
 </code></pre></div>
 <p>is <strong>not</strong> equivalent to</p>
 <div class="language-text highlight"><pre><span></span><code>--search "astar(h())"
 </code></pre></div>
 <h2 id="lazy_enforced_hill-climbing">Lazy enforced hill-climbing<a class="headerlink" href="#lazy_enforced_hill-climbing" title="Permanent link">#</a></h2>
+<p>Enforced hill-climbing search was introduced in the following article:</p>
+<ul>
+<li>Jörg Hoffmann and Bernhard Nebel.<br />
+ <a href="https://doi.org/10.1613/jair.855">The FF Planning System: Fast Plan Generation Through Heuristic Search</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 14:253-302. 2001.</li>
+</ul>
+<p>Note that the implementation differs from the algorithm described in the article in several ways. First, it evaluates states lazily, i.e., it computes the heuristic value of a state only when it is removed from the open list. Second, it uses a global closed list instead of detecting duplicates only within each local breadth-first search. As a result, it can fail to find a solution even on tasks without dead ends. Third, it orders states by their (adjusted) g value, i.e., it performs uniform-cost search instead of breadth-first search in each phase if the task has non-unit action costs. Fourth, instead of the helpful actions of the FF planner, it can use the preferred operators of arbitrary evaluators, either for pruning or for ranking successors.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ehc(h, preferred_usage=prune_by_preferred, preferred=[], cost_type=normal, bound=infinity, max_time=infinity, description="ehc", verbosity=normal)
-</span></code></pre></div>
+</span></code></pre></div></p>
 <ul>
 <li><em>h</em> (<a href="../Evaluator/">Evaluator</a>): heuristic</li>
 <li><em>preferred_usage</em> ({prune_by_preferred, rank_preferred_first}): preferred operator usage<ul>
@@ -2403,6 +2434,12 @@
 </li>
 </ul>
 <h2 id="iterated_search">Iterated search<a class="headerlink" href="#iterated_search" title="Permanent link">#</a></h2>
+<p>An application of iterated search with decreasing weighted A* weights is described in the following article:</p>
+<ul>
+<li>Silvia Richter and Matthias Westphal.<br />
+ <a href="https://doi.org/10.1613/jair.2972">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>iterated(algorithm_configs, pass_bound=true, repeat_last=false, continue_on_solve=true, cost_type=normal, bound=infinity, max_time=infinity, description="iterated", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2440,6 +2477,18 @@
                         lazy_wastar([h],w=1)]))"
 </code></pre></div>
 <h2 id="lazy_best-first_search">Lazy best-first search<a class="headerlink" href="#lazy_best-first_search" title="Permanent link">#</a></h2>
+<p>Lazy search (deferred evaluation) is described in the following article:</p>
+<ul>
+<li>Malte Helmert.<br />
+ <a href="https://doi.org/10.1613/jair.1705">The Fast Downward Planning System</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 26:191-246. 2006.</li>
+</ul>
+<p>Deferred evaluation and preferred operators are discussed in more detail in the following paper:</p>
+<ul>
+<li>Silvia Richter and Malte Helmert.<br />
+ <a href="https://doi.org/10.1609/icaps.v19i1.13345">Preferred Operators and Deferred Evaluation in Satisficing Planning</a>.<br />
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 273-280. AAAI Press, 2009.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>lazy(open, reopen_closed=false, preferred=[], randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description="lazy", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2468,6 +2517,18 @@
 </ul>
 <p><strong>Successor ordering:</strong> When using randomize_successors=true and preferred_successors_first=true, randomization happens before preferred operators are moved to the front.</p>
 <h2 id="greedy_search_lazy">Greedy search (lazy)<a class="headerlink" href="#greedy_search_lazy" title="Permanent link">#</a></h2>
+<p>Lazy search (deferred evaluation) is described in the following article:</p>
+<ul>
+<li>Malte Helmert.<br />
+ <a href="https://doi.org/10.1613/jair.1705">The Fast Downward Planning System</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 26:191-246. 2006.</li>
+</ul>
+<p>Deferred evaluation and preferred operators are discussed in more detail in the following paper:</p>
+<ul>
+<li>Silvia Richter and Malte Helmert.<br />
+ <a href="https://doi.org/10.1609/icaps.v19i1.13345">Preferred Operators and Deferred Evaluation in Satisficing Planning</a>.<br />
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 273-280. AAAI Press, 2009.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>lazy_greedy(evals, boost=1000, reopen_closed=false, preferred=[], randomize_successors=false, preferred_successors_first=false, random_seed=-1, cost_type=normal, bound=infinity, max_time=infinity, description="lazy_greedy", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2555,6 +2616,25 @@
 <li><code>debug</code>: like verbose with additional debug output</li>
 </ul>
 </li>
+</ul>
+<p><strong>Reference:</strong> Lazy search (deferred evaluation) is described in the following publications:</p>
+<ul>
+<li>
+<p>Malte Helmert.<br />
+ <a href="https://doi.org/10.1613/jair.1705">The Fast Downward Planning System</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 26:191-246. 2006.</p>
+</li>
+<li>
+<p>Silvia Richter and Malte Helmert.<br />
+ <a href="https://doi.org/10.1609/icaps.v19i1.13345">Preferred Operators and Deferred Evaluation in Satisficing Planning</a>.<br />
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 273-280. AAAI Press, 2009.</p>
+</li>
+</ul>
+<p>Lazy weighted A* is used and described in the following article:</p>
+<ul>
+<li>Silvia Richter and Matthias Westphal.<br />
+ <a href="https://doi.org/10.1613/jair.2972">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
 </ul>
 <p><strong>Successor ordering:</strong> When using randomize_successors=true and preferred_successors_first=true, randomization happens before preferred operators are moved to the front.</p>
 <p><strong>Open lists:</strong> In the general case, it uses an alternation open list with one queue for each evaluator h that ranks the nodes by g + w * h. If preferred operator evaluators are used, it adds for each of the evaluators another such queue that only inserts nodes that are generated by preferred operators. In the special case with only one evaluator and no preferred operator evaluators, it uses a single queue that is ranked by g + w * h. </p>

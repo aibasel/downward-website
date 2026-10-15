@@ -2592,6 +2592,18 @@
 </ul>
 <p>This feature type can be bound to variables using <code>let(variable_name, variable_definition, expression)</code> where <code>expression</code> can use <code>variable_name</code>. Predefinitions using <code>--evaluator</code>, <code>--heuristic</code>, and <code>--landmarks</code> are automatically transformed into <code>let</code>-expressions but are deprecated. (See <a href="../../search-plugin-syntax/#variables_as_parameters">search plugin syntax</a>)</p>
 <h2 id="additive_heuristic">Additive heuristic<a class="headerlink" href="#additive_heuristic" title="Permanent link">#</a></h2>
+<p>The additive heuristic is described in the following article:</p>
+<ul>
+<li>Blai Bonet and Hector Geffner.<br />
+ <a href="https://doi.org/10.1016/S0004-3702%2801%2900108-4">Planning as heuristic search</a>.<br />
+ <em>Artificial Intelligence</em> 129(1-2):5-33. 2001.</li>
+</ul>
+<p>For a discussion of the heuristic in the context of planning with action costs, see the following paper:</p>
+<ul>
+<li>Emil Keyder and Hector Geffner.<br />
+ <a href="https://doi.org/10.3233/978-1-58603-891-5-588">Heuristics for Planning with Action Costs Revisited</a>.<br />
+ In <em>Proceedings of the 18th European Conference on Artificial Intelligence (ECAI 2008)</em>, pp. 588-592. IOS Press, 2008.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>add(axioms=approximate_negative_cycles, cache_estimates=true, description="add", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2652,6 +2664,12 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="context-enhanced_additive_heuristic">Context-enhanced additive heuristic<a class="headerlink" href="#context-enhanced_additive_heuristic" title="Permanent link">#</a></h2>
+<p>The context-enhanced additive heuristic is described in the following paper:</p>
+<ul>
+<li>Malte Helmert and Hector Geffner.<br />
+ <a href="https://cdn.aaai.org/ICAPS/2008/ICAPS08-018.pdf">Unifying the Causal Graph and Additive Heuristics</a>.<br />
+ In <em>Proceedings of the 18th International Conference on Automated Planning and Scheduling (ICAPS 2008)</em>, pp. 140-147. AAAI Press, 2008.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cea(axioms=approximate_negative_cycles, cache_estimates=true, description="cea", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2687,7 +2705,7 @@
 <p>See the paper introducing counterexample-guided Cartesian abstraction refinement (CEGAR) for classical planning:</p>
 <ul>
 <li>Jendrik Seipp and Malte Helmert.<br />
- <a href="https://ai.dmi.unibas.ch/papers/seipp-helmert-icaps2013.pdf">Counterexample-guided Cartesian Abstraction Refinement</a>.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/seipp-helmert-icaps2013.pdf">Counterexample-Guided Cartesian Abstraction Refinement</a>.<br />
  In <em>Proceedings of the 23rd International Conference on Automated Planning and Scheduling (ICAPS 2013)</em>, pp. 347-351. AAAI Press, 2013.</li>
 </ul>
 <p>and the paper showing how to make the abstractions additive:</p>
@@ -2696,7 +2714,7 @@
  <a href="https://ai.dmi.unibas.ch/papers/seipp-helmert-icaps2014.pdf">Diverse and Additive Cartesian Abstraction Heuristics</a>.<br />
  In <em>Proceedings of the 24th International Conference on Automated Planning and Scheduling (ICAPS 2014)</em>, pp. 289-297. AAAI Press, 2014.</li>
 </ul>
-<p>For more details on Cartesian CEGAR and saturated cost partitioning, see the journal paper</p>
+<p>For more details on Cartesian CEGAR and saturated cost partitioning, see the article</p>
 <ul>
 <li>Jendrik Seipp and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/seipp-helmert-jair2018.pdf">Counterexample-Guided Cartesian Abstraction Refinement for Classical Planning</a>.<br />
@@ -2745,6 +2763,12 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="causal_graph_heuristic">Causal graph heuristic<a class="headerlink" href="#causal_graph_heuristic" title="Permanent link">#</a></h2>
+<p>The causal graph heuristic is described in the following paper:</p>
+<ul>
+<li>Malte Helmert.<br />
+ <a href="https://cdn.aaai.org/ICAPS/2004/ICAPS04-021.pdf">A Planning Heuristic Based on Causal Graph Analysis</a>.<br />
+ In <em>Proceedings of the 14th International Conference on Automated Planning and Scheduling (ICAPS 2004)</em>, pp. 161-170. AAAI Press, 2004.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cg(max_cache_size=1000000, axioms=approximate_negative_cycles, cache_estimates=true, description="cg", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2778,6 +2802,18 @@
 <li><strong>preferred operators:</strong> yes</li>
 </ul>
 <h2 id="ff_heuristic">FF heuristic<a class="headerlink" href="#ff_heuristic" title="Permanent link">#</a></h2>
+<p>The FF heuristic was introduced in the following article:</p>
+<ul>
+<li>Jörg Hoffmann and Bernhard Nebel.<br />
+ <a href="https://doi.org/10.1613/jair.855">The FF Planning System: Fast Plan Generation Through Heuristic Search</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 14:253-302. 2001.</li>
+</ul>
+<p>This implementation extracts the relaxed plan from the best supporters of the additive heuristic, which takes action costs into account. This variant is described in the following paper:</p>
+<ul>
+<li>Emil Keyder and Hector Geffner.<br />
+ <a href="https://doi.org/10.3233/978-1-58603-891-5-588">Heuristics for Planning with Action Costs Revisited</a>.<br />
+ In <em>Proceedings of the 18th European Conference on Artificial Intelligence (ECAI 2008)</em>, pp. 588-592. IOS Press, 2008.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ff(axioms=approximate_negative_cycles, cache_estimates=true, description="ff", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2810,6 +2846,12 @@
 <li><strong>preferred operators:</strong> yes</li>
 </ul>
 <h2 id="goal_count_heuristic">Goal count heuristic<a class="headerlink" href="#goal_count_heuristic" title="Permanent link">#</a></h2>
+<p>Counts the goal facts that are not true in the current state. An early use of the number of remaining goals to guide planning search is described in the following article:</p>
+<ul>
+<li>Richard E. Fikes and Nils J. Nilsson.<br />
+ <a href="https://doi.org/10.1016/0004-3702%2871%2990010-5">STRIPS: A New Approach to the Application of Theorem Proving to Problem Solving</a>.<br />
+ <em>Artificial Intelligence</em> 2(3-4):189-208. 1971.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>goalcount(cache_estimates=true, description="goalcount", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2837,8 +2879,15 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="hm_heuristic">h^m heuristic<a class="headerlink" href="#hm_heuristic" title="Permanent link">#</a></h2>
+<p>The h^m family of heuristics is described in the following paper:</p>
+<ul>
+<li>Patrik Haslum and Hector Geffner.<br />
+ <a href="https://www.ida.liu.se/divisions/aiics/publications/AIPS-2000-Admissible-Heuristics-Optimal.pdf">Admissible Heuristics for Optimal Planning</a>.<br />
+ In <em>Proceedings of the Fifth International Conference on Artificial Intelligence Planning Systems (AIPS 2000)</em>, pp. 140-149. AAAI Press, 2000.</li>
+</ul>
+<p>Note that the implementation of the h^m heuristic is preliminary and very inefficient. Please do not use it for comparisons.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>hm(m=2, cache_estimates=true, description="hm", verbosity=normal)
-</span></code></pre></div>
+</span></code></pre></div></p>
 <ul>
 <li><em>m</em> (int [1, infinity]): subset size</li>
 <li><em>cache_estimates</em> (bool): cache heuristic estimates</li>
@@ -2865,6 +2914,18 @@
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="max_heuristic">Max heuristic<a class="headerlink" href="#max_heuristic" title="Permanent link">#</a></h2>
+<p>The h^max heuristic is described in the following article:</p>
+<ul>
+<li>Blai Bonet and Hector Geffner.<br />
+ <a href="https://doi.org/10.1016/S0004-3702%2801%2900108-4">Planning as heuristic search</a>.<br />
+ <em>Artificial Intelligence</em> 129(1-2):5-33. 2001.</li>
+</ul>
+<p>For a discussion of the heuristic in the context of planning with action costs, see the following paper:</p>
+<ul>
+<li>Emil Keyder and Hector Geffner.<br />
+ <a href="https://doi.org/10.3233/978-1-58603-891-5-588">Heuristics for Planning with Action Costs Revisited</a>.<br />
+ In <em>Proceedings of the 18th European Conference on Artificial Intelligence (ECAI 2008)</em>, pp. 588-592. IOS Press, 2008.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>hmax(axioms=approximate_negative_cycles, cache_estimates=true, description="hmax", verbosity=normal)
 </span></code></pre></div>
 <ul>
@@ -2900,7 +2961,7 @@
 <p>Landmark progression is implemented according to the following paper:</p>
 <ul>
 <li>Clemens Büchner, Thomas Keller, Salomé Eriksson and Malte Helmert.<br />
- <a href="https://ai.dmi.unibas.ch/papers/buechner-et-al-icaps2023.pdf">Landmarks Progression in Heuristic Search</a>.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/buechner-et-al-icaps2023.pdf">Landmark Progression in Heuristic Search</a>.<br />
  In <em>Proceedings of the Thirty-Third International Conference on Automated Planning and Scheduling (ICAPS 2023)</em>, pp. 70-79. AAAI Press, 2023.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>landmark_cost_partitioning(lm_factory, pref=false, prog_goal=true, prog_gn=true, prog_r=true, cache_estimates=true, description="landmark_cost_partitioning", verbosity=normal, cost_partitioning=uniform, alm=true, lpsolver=cplex)
@@ -2934,19 +2995,19 @@
 </ul>
 <p><strong>Note:</strong> to use an LP solver, you must build the planner with LP support. See <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">build instructions</a>.</p>
 <p><strong>History Note:</strong> Formerly known as the admissible landmark heuristic.
-See the papers</p>
+The original landmark heuristic is described in the following article:</p>
+<ul>
+<li>Silvia Richter and Matthias Westphal.<br />
+ <a href="https://doi.org/10.1613/jair.2972">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
+</ul>
+<p>Admissible landmark heuristics based on cost partitioning are described in the following paper:</p>
 <ul>
 <li>Erez Karpas and Carmel Domshlak.<br />
  <a href="https://www.ijcai.org/Proceedings/09/Papers/288.pdf">Cost-Optimal Planning with Landmarks</a>.<br />
  In <em>Proceedings of the 21st International Joint Conference on Artificial Intelligence (IJCAI 2009)</em>, pp. 1728-1733. AAAI Press, 2009.</li>
 </ul>
-<p>and</p>
-<ul>
-<li>Emil Keyder and Silvia Richter and Malte Helmert.<br />
- <a href="https://ai.dmi.unibas.ch/papers/keyder-et-al-ecai2010.pdf">Sound and Complete Landmarks for And/Or Graphs</a>.<br />
- In <em>Proceedings of the 19th European Conference on Artificial Intelligence (ECAI 2010)</em>, pp. 335-340. IOS Press, 2010.</li>
-</ul>
-<p><strong>Usage with A*:</strong> We recommend to add this heuristic as lazy_evaluator when using it in the A* algorithm. This way, the heuristic is recomputed before a state is expanded, leading to improved estimates that incorporate all knowledge gained from paths that were found after the state was inserted into the open list.</p>
+<p><em><em>Usage with A</em>:</em>* We recommend to add this heuristic as lazy_evaluator when using it in the A* algorithm. This way, the heuristic is recomputed before a state is expanded, leading to improved estimates that incorporate all knowledge gained from paths that were found after the state was inserted into the open list.</p>
 <p><strong>Consistency:</strong> The heuristic is consistent along single paths if it is set as lazy_evaluator; i.e. when expanding s then we have h(s) &lt;= h(s')+cost(a) for all successors s' of s reached with a. But newly found paths to s can increase h(s), at which point the above inequality might not hold anymore.</p>
 <p><strong>Optimal Cost Partitioning:</strong> To use <code>cost_partitioning=optimal</code>, you must build the planner with LP support. See <a href="https://github.com/aibasel/downward/blob/main/BUILD.md">build instructions</a>.</p>
 <p><strong>Preferred operators:</strong> Preferred operators should not be used for optimal planning. See <a href="./#landmark_sum_heuristic">Landmark sum heuristic</a> for more information on using preferred operators; the comments there also apply to this heuristic.</p>
@@ -2967,7 +3028,7 @@ See the papers</p>
 <p>Landmark progression is implemented according to the following paper:</p>
 <ul>
 <li>Clemens Büchner, Thomas Keller, Salomé Eriksson and Malte Helmert.<br />
- <a href="https://ai.dmi.unibas.ch/papers/buechner-et-al-icaps2023.pdf">Landmarks Progression in Heuristic Search</a>.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/buechner-et-al-icaps2023.pdf">Landmark Progression in Heuristic Search</a>.<br />
  In <em>Proceedings of the Thirty-Third International Conference on Automated Planning and Scheduling (ICAPS 2023)</em>, pp. 70-79. AAAI Press, 2023.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>landmark_sum(lm_factory, pref=false, prog_goal=true, prog_gn=true, prog_r=true, cache_estimates=true, description="landmark_sum_heuristic", verbosity=normal, axioms=approximate_negative_cycles)
@@ -2994,17 +3055,17 @@ See the papers</p>
 </li>
 </ul>
 <p><strong>History Note:</strong> Formerly known as the landmark heuristic or landmark count heuristic.
-See the papers</p>
+See the article</p>
+<ul>
+<li>Silvia Richter and Matthias Westphal.<br />
+ <a href="https://doi.org/10.1613/jair.2972">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
+ <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
+</ul>
+<p>and the paper</p>
 <ul>
 <li>Silvia Richter, Malte Helmert and Matthias Westphal.<br />
  <a href="https://ai.dmi.unibas.ch/papers/richter-et-al-aaai2008.pdf">Landmarks Revisited</a>.<br />
  In <em>Proceedings of the 23rd AAAI Conference on Artificial Intelligence (AAAI 2008)</em>, pp. 975-982. AAAI Press, 2008.</li>
-</ul>
-<p>and</p>
-<ul>
-<li>Silvia Richter and Matthias Westphal.<br />
- <a href="http://www.aaai.org/Papers/JAIR/Vol39/JAIR-3903.pdf">The LAMA Planner: Guiding Cost-Based Anytime Planning with Landmarks</a>.<br />
- <em>Journal of Artificial Intelligence Research</em> 39:127-177. 2010.</li>
 </ul>
 <p><strong>Note on performance for satisficing planning:</strong> The cost of a landmark is based on the cost of the operators that achieve it. For satisficing search this can be counterproductive since it is often better to focus on distance from goal (i.e. length of the plan) rather than cost. In experiments we achieved the best performance wrapping this heuristic in 'eval_modify_costs(..., cost_type=one)' to enforce unit costs.</p>
 <p><strong>Preferred operators:</strong> Computing preferred operators is <em>only enabled</em> when setting pref=true because it has a nontrivial runtime cost. Using the heuristic for preferred operators without setting pref=true has no effect.
@@ -3032,7 +3093,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <ul>
 <li>Malte Helmert and Carmel Domshlak.<br />
  <a href="https://ai.dmi.unibas.ch/papers/helmert-domshlak-icaps2009.pdf">Landmarks, Critical Paths and Abstractions: What's the Difference Anyway?</a>.<br />
- In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 162-169. 2009.</li>
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 162-169. AAAI Press, 2009.</li>
 </ul>
 <p>The tie-breaking strategies for the precondition choice function (options <code>goal_zone_detection</code> and <code>border_detection</code>) are described in the following paper:</p>
 <ul>
@@ -3069,25 +3130,13 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <li><strong>preferred operators:</strong> no</li>
 </ul>
 <h2 id="merge-and-shrink_heuristic">Merge-and-shrink heuristic<a class="headerlink" href="#merge-and-shrink_heuristic" title="Permanent link">#</a></h2>
-<p>This heuristic implements the algorithm described in the following paper:</p>
-<ul>
-<li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
- <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-aaai2014.pdf">Generalized Label Reduction for Merge-and-Shrink Heuristics</a>.<br />
- In <em>Proceedings of the 28th AAAI Conference on Artificial Intelligence (AAAI 2014)</em>, pp. 2358-2366. AAAI Press, 2014.</li>
-</ul>
-<p>For a more exhaustive description of merge-and-shrink, see the journal paper</p>
+<p>This heuristic implements the merge-and-shrink algorithm. For a comprehensive description of merge-and-shrink, see the following article:</p>
 <ul>
 <li>Silvan Sievers and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-helmert-jair2021.pdf">Merge-and-Shrink: A Compositional Theory of Transformations of Factored Transition Systems</a>.<br />
  <em>Journal of Artificial Intelligence Research</em> 71:781-883. 2021.</li>
 </ul>
-<p>The following paper describes how to improve the DFP merge strategy with tie-breaking, and presents two new merge strategies (dyn-MIASM and SCC-DFP):</p>
-<ul>
-<li>Silvan Sievers, Martin Wehrle and Malte Helmert.<br />
- <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-icaps2016.pdf">An Analysis of Merge Strategies for Merge-and-Shrink Heuristics</a>.<br />
- In <em>Proceedings of the 26th International Conference on Automated Planning and Scheduling (ICAPS 2016)</em>, pp. 294-298. AAAI Press, 2016.</li>
-</ul>
-<p>Details of the algorithms and the implementation are described in the paper</p>
+<p>Details of the algorithms and the implementation are described in the following paper:</p>
 <ul>
 <li>Silvan Sievers.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-socs2018.pdf">Merge-and-Shrink Heuristics for Classical Planning: Efficient Implementation and Partial Abstractions</a>.<br />
@@ -3115,7 +3164,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 </li>
 </ul>
-<p><strong>Note:</strong> Conditional effects are supported directly. Note, however, that for tasks that are not factored (in the sense of the JACM 2014 merge-and-shrink paper), the atomic transition systems on which merge-and-shrink heuristics are based are nondeterministic, which can lead to poor heuristics even when only perfect shrinking is performed.</p>
+<p><strong>Note:</strong> Conditional effects are supported directly. Note, however, that for tasks that are not factored (in the sense of the JAIR 2021 merge-and-shrink article), the atomic transition systems on which merge-and-shrink heuristics are based are nondeterministic, which can lead to poor heuristics even when only perfect shrinking is performed.</p>
 <p><strong>Note:</strong> When pruning unreachable states, admissibility and consistency is only guaranteed for reachable states and transitions between reachable states. While this does not impact regular A* search which will never encounter any unreachable state, it impacts techniques like symmetry-based pruning: a reachable state which is mapped to an unreachable symmetric state (which hence is pruned) would falsely be considered a dead-end and also be pruned, thus violating optimality of the search.</p>
 <p><strong>Note:</strong> When using a time limit on the main loop of the merge-and-shrink algorithm, the heuristic will compute the maximum over all heuristics induced by the remaining factors if terminating the merge-and-shrink algorithm early. Exception: if there is an unsolvable factor, it will be used as the exclusive heuristic since the problem is unsolvable.</p>
 <p><strong>Note:</strong> A currently recommended good configuration uses bisimulation based shrinking, the merge strategy SCC-DFP, and the appropriate label reduction setting (max_states has been altered to be between 10k and 200k in the literature). As merge-and-shrink heuristics can be expensive to compute, we also recommend limiting time by setting <code>main_loop_max_time</code> to a finite value. A sensible value would be half of the time allocated for the planner.
@@ -3145,8 +3194,8 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <h2 id="operator-counting_heuristic">Operator-counting heuristic<a class="headerlink" href="#operator-counting_heuristic" title="Permanent link">#</a></h2>
 <p>An operator-counting heuristic computes a linear program (LP) in each state. The LP has one variable Count_o for each operator o that represents how often the operator is used in a plan. Operator-counting constraints are linear constraints over these variables that are guaranteed to have a solution with Count_o = occurrences(o, pi) for every plan pi. Minimizing the total cost of operators subject to some operator-counting constraints is an admissible heuristic. For details, see</p>
 <ul>
-<li>Florian Pommerening, Gabriele Roeger, Malte Helmert and Blai Bonet.<br />
- <a href="http://www.aaai.org/ocs/index.php/ICAPS/ICAPS14/paper/view/7892/8031">LP-based Heuristics for Cost-optimal Planning</a>.<br />
+<li>Florian Pommerening, Gabriele Röger, Malte Helmert and Blai Bonet.<br />
+ <a href="https://doi.org/10.1609/icaps.v24i1.13621">LP-Based Heuristics for Cost-Optimal Planning</a>.<br />
  In <em>Proceedings of the Twenty-Fourth International Conference on Automated Planning and Scheduling (ICAPS 2014)</em>, pp. 226-234. AAAI Press, 2014.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>operatorcounting(constraint_generators, use_integer_operator_counts=false, lpsolver=cplex, cache_estimates=true, description="operatorcounting", verbosity=normal)
@@ -3255,9 +3304,14 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </li>
 </ul>
 <h2 id="preference_evaluator">Preference evaluator<a class="headerlink" href="#preference_evaluator" title="Permanent link">#</a></h2>
-<p>Returns 0 if preferred is true and 1 otherwise.
+<p>Returns 0 if preferred is true and 1 otherwise. For the use of preferred operators in search, see the following paper:</p>
+<ul>
+<li>Silvia Richter and Malte Helmert.<br />
+ <a href="https://doi.org/10.1609/icaps.v19i1.13345">Preferred Operators and Deferred Evaluation in Satisficing Planning</a>.<br />
+ In <em>Proceedings of the 19th International Conference on Automated Planning and Scheduling (ICAPS 2009)</em>, pp. 273-280. AAAI Press, 2009.</li>
+</ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>pref(description="pref", verbosity=normal)
-</span></code></pre></div></p>
+</span></code></pre></div>
 <ul>
 <li><em>description</em> (string): description used to identify evaluator in logs</li>
 <li><em>verbosity</em> ({silent, normal, verbose, debug}): Option to specify the verbosity level.<ul>
@@ -3317,6 +3371,24 @@ Our implementation to compute preferred operators based on landmarks differs fro
 </ul>
 </li>
 </ul>
+<p><strong>Reference:</strong> The canonical pattern database heuristic was introduced in the following paper:</p>
+<ul>
+<li>Patrik Haslum, Adi Botea, Malte Helmert, Blai Bonet and Sven Koenig.<br />
+ <a href="https://cdn.aaai.org/AAAI/2007/AAAI07-160.pdf">Domain-Independent Construction of Pattern Database Heuristics for Cost-Optimal Planning</a>.<br />
+ In <em>Proceedings of the 22nd AAAI Conference on Artificial Intelligence (AAAI 2007)</em>, pp. 1007-1012. AAAI Press, 2007.</li>
+</ul>
+<p>It is discussed in the context of other cost partitioning methods in the following paper:</p>
+<ul>
+<li>Jendrik Seipp, Thomas Keller and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/seipp-et-al-icaps2017.pdf">A Comparison of Cost Partitioning Algorithms for Optimal Classical Planning</a>.<br />
+ In <em>Proceedings of the 27th International Conference on Automated Planning and Scheduling (ICAPS 2017)</em>, pp. 259-268. AAAI Press, 2017.</li>
+</ul>
+<p>For implementation notes, see:</p>
+<ul>
+<li>Silvan Sievers, Manuela Ortlieb and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-socs2012.pdf">Efficient Implementation of Pattern Database Heuristics for Classical Planning</a>.<br />
+ In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 49-56. AAAI Press, 2012.</li>
+</ul>
 <p>Supported language features:</p>
 <ul>
 <li><strong>action costs:</strong> supported</li>
@@ -3341,7 +3413,7 @@ Our implementation to compute preferred operators based on landmarks differs fro
 <ul>
 <li>Silvan Sievers, Manuela Ortlieb and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-socs2012.pdf">Efficient Implementation of Pattern Database Heuristics for Classical Planning</a>.<br />
- In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 105-111. AAAI Press, 2012.</li>
+ In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 49-56. AAAI Press, 2012.</li>
 </ul>
 <p>See also <a href="./#canonical_pdb">Canonical PDB</a> and <a href="../PatternCollectionGenerator/#hill_climbing">Hill climbing</a> for more details.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ipdb(pdb_max_size=2000000, collection_max_size=20000000, num_samples=1000, min_improvement=10, max_time=infinity, random_seed=-1, max_time_dominance_pruning=infinity, cache_estimates=true, description="cpdbs", verbosity=normal)
@@ -3397,7 +3469,7 @@ The search is ended if there is no more improvement (or the improvement is small
 <ul>
 <li>Silvan Sievers, Manuela Ortlieb and Malte Helmert.<br />
  <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-socs2012.pdf">Efficient Implementation of Pattern Database Heuristics for Classical Planning</a>.<br />
- In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 105-111. AAAI Press, 2012.</li>
+ In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 49-56. AAAI Press, 2012.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>pdb(pattern=greedy(), cache_estimates=true, description="pdb", verbosity=normal)
 </span></code></pre></div>
@@ -3441,6 +3513,30 @@ The search is ended if there is no more improvement (or the improvement is small
 <li><code>debug</code>: like verbose with additional debug output</li>
 </ul>
 </li>
+</ul>
+<p><strong>Reference:</strong> The idea of zero-one cost partitioning is described in the following paper:</p>
+<ul>
+<li>Patrik Haslum, Blai Bonet and Hector Geffner.<br />
+ <a href="https://cdn.aaai.org/AAAI/2005/AAAI05-184.pdf">New Admissible Heuristics for Domain-Independent Planning</a>.<br />
+ In <em>Proceedings of the 20th National Conference on Artificial Intelligence (AAAI 2005)</em>, pp. 1163-1168. AAAI Press, 2005.</li>
+</ul>
+<p>Greedy zero-one cost partitioning for pattern databases is described in the following paper:</p>
+<ul>
+<li>Stefan Edelkamp.<br />
+ <a href="https://cdn.aaai.org/AIPS/2002/AIPS02-028.pdf">Symbolic Pattern Databases in Heuristic Search Planning</a>.<br />
+ In <em>Proceedings of the Sixth International Conference on Artificial Intelligence Planning Systems (AIPS 2002)</em>, pp. 274-283. AAAI Press, 2002.</li>
+</ul>
+<p>It is discussed in the context of other cost partitioning methods in the following paper:</p>
+<ul>
+<li>Jendrik Seipp, Thomas Keller and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/seipp-et-al-icaps2017.pdf">A Comparison of Cost Partitioning Algorithms for Optimal Classical Planning</a>.<br />
+ In <em>Proceedings of the 27th International Conference on Automated Planning and Scheduling (ICAPS 2017)</em>, pp. 259-268. AAAI Press, 2017.</li>
+</ul>
+<p>For implementation notes, see:</p>
+<ul>
+<li>Silvan Sievers, Manuela Ortlieb and Malte Helmert.<br />
+ <a href="https://ai.dmi.unibas.ch/papers/sievers-et-al-socs2012.pdf">Efficient Implementation of Pattern Database Heuristics for Classical Planning</a>.<br />
+ In <em>Proceedings of the Fifth Annual Symposium on Combinatorial Search (SoCS 2012)</em>, pp. 49-56. AAAI Press, 2012.</li>
 </ul>
 <p>Supported language features:</p>
 <ul>
